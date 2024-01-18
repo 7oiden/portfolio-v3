@@ -1,0 +1,20 @@
+.header {
+  @extend .outer-wrapper;
+
+  &__container {
+    @extend .inner-wrapper;
+    padding: 1rem 0;
+  }
+}
+
+.nav__link-container {
+  display: flex;
+  gap: 2rem;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

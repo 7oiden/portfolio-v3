@@ -1,0 +1,71 @@
+$main-heading: "inter", sans-serif;
+$secondary-heading: "inter", sans-serif;
+$paragraph: "inter", sans-serif;
+$link: "lato", sans-serif;
+$background: "playfair-display", serif;
+
+$colors: (
+  primaryBg: #0f172a,
+  secondaryBg: #101e43,
+  semiTransparentBg: #ffffffbf,
+  footerBg: #070e1d,
+  footerHeading: #94A3B8,
+  headingLight: #e2e8f0,
+  headingAccent: #38bdf8,
+  textLight: #94a3b8,
+  accentCol1: #38bdf8,
+  accentCol2: #5eead4,
+  badgeBg: #132f4b,
+  badgeText: #5eead4,
+  iconBg: #122945,
+  dangerCol: #dc3545,
+  warningCol: #ffc107,
+  successCol: #198754,
+);
+
+@function getColor($color) {
+  @return map-get($colors, $color);
+}
+
+$breakpoints: (
+  xSmall: 420px,
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xLarge: 1200px,
+  xxLarge: 1400px,
+  xxxLarge: 1600px,
+);
+
+@function getBreakpoint($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+$fontSizes: (
+  heroHeadingS: 2rem,
+  heroHeadingM: 3.5rem,
+  heroHeadingL: 5rem,
+  pageHeadingS: 2rem,
+  pageHeadingM: 2.875rem,
+  pageHeadingL: 3.75rem,
+  sectionHeadingS: 1.5rem,
+  sectionHeadingM: 2.125rem,
+  sectionHeadingL: 2.75rem,
+  subHeadingS: 1.125rem,
+  subHeadingM: 1.3125rem,
+  subHeadingL: 1.5rem,
+  sectionBodyTextS: 1rem,
+  sectionBodyTextM: 1.25rem,
+  sectionBodyTextL: 1.5rem,
+  cardBodyTextS: 1rem,
+  cardBodyTextM: 1rem,
+  cardBodyTextL: 1.125rem,
+  navLinkS: 1.125rem,
+  navLinkM: 1.3125rem,
+  navLinkL: 1.5rem,
+  badgeText: 1rem,
+);
+
+@function getSize($fontSize) {
+  @return map-get($fontSizes, $fontSize);
+}

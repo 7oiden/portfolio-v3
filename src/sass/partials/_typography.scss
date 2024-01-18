@@ -1,0 +1,10 @@
+h1 {
+  color: white;
+}
+
+.footer__heading {
+  font-size: getFontSize(subHeadingS);
+  font-weight: 600;
+  color: getColor(footerHeading);
+  text-transform: uppercase;
+}

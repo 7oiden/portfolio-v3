@@ -1,0 +1,14 @@
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.outer-wrapper {
+  width: 100%;
+}
+
+.inner-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}

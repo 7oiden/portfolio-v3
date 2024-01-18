@@ -1,0 +1,20 @@
+.footer {
+  background-color: getColor(footerBg);
+  flex-shrink: 0;
+  margin-top: auto;
+  @extend .outer-wrapper;
+
+  &__container {
+    @extend .inner-wrapper;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
