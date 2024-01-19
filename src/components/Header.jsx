@@ -9,19 +9,25 @@ export default function Header() {
           <div className="nav__link-container">
             <NavLink
               to="projects"
-              className={({ isActive }) => (isActive ? "active-link" : null)}
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
             >
               Projects
             </NavLink>
             <NavLink
               to="background"
-              className={({ isActive }) => (isActive ? "active-link" : null)}
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
             >
               Background
             </NavLink>
             <NavLink
               to="about"
-              className={({ isActive }) => (isActive ? "active-link" : null)}
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
             >
               About
             </NavLink>

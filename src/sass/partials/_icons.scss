@@ -8,6 +8,10 @@
   width: 2rem;
   height: auto;
   color: inherit;
+
+  &--small {
+    width: 1.25rem;
+  }
 }
 
 .sub-heading-icon {
@@ -18,7 +22,7 @@
 .badge__icon {
   width: 1.5rem;
   height: auto;
-  color: getColor(link)
+  color: getColor(link);
 }
 
 .check-icon {

@@ -8,6 +8,10 @@ em {
   font-weight: 500;
 }
 
+p {
+  line-height: 1.4;
+}
+
 .underline {
   position: relative;
   margin-bottom: 1rem;
@@ -73,4 +77,19 @@ em {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.card__heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: getColor(headingLight);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.card__sub-heading {
+  font-weight: 700;
+  color: getColor(headingAccent);
+  text-transform: capitalize;
 }
