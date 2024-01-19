@@ -1,7 +1,5 @@
 .intro {
   @extend .inner-wrapper;
-  display: flex;
-  gap: 2rem;
   padding: 2rem 0;
   
   //   background-color: pink;
@@ -13,4 +11,11 @@
     align-self: center;
     // background-color: pink;
   }
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  // background-color: pink;
 }

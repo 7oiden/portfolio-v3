@@ -1,5 +1,28 @@
 .link-icon {
   width: 1.5rem;
-  height: 1.5rem;
+  height: auto;
   color: getColor(accentCol2);
+}
+
+.brand-icon {
+  width: 2rem;
+  height: auto;
+  color: inherit;
+}
+
+.sub-heading-icon {
+  width: 1.25rem;
+  height: auto;
+}
+
+.badge__icon {
+  width: 1.5rem;
+  height: auto;
+  color: getColor(link)
+}
+
+.check-icon {
+  width: 1rem;
+  height: auto;
+  color: getColor(link);
 }

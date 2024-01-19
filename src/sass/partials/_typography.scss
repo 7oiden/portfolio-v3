@@ -44,4 +44,21 @@ em {
   font-size: getSize(sectionHeadingS);
   font-weight: 700;
   color: getColor(sectionHeading);
+  margin-bottom: 2.5rem;
+}
+
+.sub-heading {
+  font-size: getSize(subHeadingS);
+  font-weight: 600;
+  color: getColor(headingAccent);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  // display: block;
 }

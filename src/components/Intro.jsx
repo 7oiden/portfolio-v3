@@ -5,14 +5,14 @@ import { MdArrowForward } from "react-icons/md";
 
 export default function Intro() {
   return (
-    <div className="intro">
-      <figure className="intro__avatar">
-        <img src={avatar} />
-      </figure>
+    <section className="intro">
       <div className="intro__container">
         <Heading size="2" cssClass="section-heading underline">
           Introduction
         </Heading>
+        <figure className="intro__avatar">
+          <img src={avatar} />
+        </figure>
         <p>
           My name is <em>Tommy Johnsen</em>, and I am a former construction
           engineer looking for a new career as a frontend developer.
@@ -25,10 +25,10 @@ export default function Intro() {
           Recently I completed the Frontend Career Path, an estimated 6 months
           course, at <em>Scrimba</em>
         </p>
-          <Link to="/about" className="link-container">
-            Learn more about me <MdArrowForward className="link-icon" />
-          </Link>
+        <Link to="/about" className="link-container">
+          Learn more about me <MdArrowForward className="link-icon" />
+        </Link>
       </div>
-    </div>
+    </section>
   );
 }

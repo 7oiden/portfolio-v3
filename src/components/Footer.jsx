@@ -1,6 +1,9 @@
 import Heading from "./Heading";
 import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -11,6 +14,17 @@ export default function Footer() {
             Tommy Johnsen
           </Heading>
           <p>Frontend Developer</p>
+          <div className="footer__icons">
+            <Link to="https://github.com/7oiden">
+              <FaGithub className="brand-icon" />
+            </Link>
+            <Link to="https://www.instagram.com/7oiden/">
+              <FaInstagramSquare className="brand-icon" />
+            </Link>
+            <Link to="https://www.linkedin.com/in/tommy-j-16b56678/">
+              <FaLinkedin className="brand-icon" />
+            </Link>
+          </div>
         </div>
         <div className="footer__item">
           <Heading size="5" cssClass="footer__heading">

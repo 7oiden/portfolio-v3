@@ -1,0 +1,55 @@
+.skills {
+  @extend .outer-wrapper;
+  background-color: getColor(primaryBg);
+
+  &__container {
+    @extend .inner-wrapper;
+    padding: 2rem 0;
+  }
+}
+
+.badge__list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+
+  & > li {
+    list-style: none;
+  }
+}
+
+.badge__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge__icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: getColor(badgeBg);
+  border-radius: 50%;
+}
+
+.skill__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    // padding-left: 1rem;
+    margin-left: 0;
+  }
+}

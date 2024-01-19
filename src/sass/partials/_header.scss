@@ -1,5 +1,6 @@
 .header {
   @extend .outer-wrapper;
+  height: 3rem;
 
   &__container {
     @extend .inner-wrapper;
