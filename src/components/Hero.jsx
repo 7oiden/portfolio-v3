@@ -1,9 +1,12 @@
+import Heading from "./Heading";
+
 export default function Hero() {
   return (
     <section className="hero">
       <div className="hero__container">
-        <h1 className="hero__title">Welcome to my website</h1>
-        <p className="hero__subtitle">This is a subtitle</p>
+        <Heading size="1" cssClass="hero__heading">
+          Hi, I am Tommy Frontend Developer
+        </Heading>
       </div>
     </section>
   );

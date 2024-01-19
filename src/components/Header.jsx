@@ -7,9 +7,25 @@ export default function Header() {
         <nav>
           <Link to="/">#</Link>
           <div className="nav__link-container">
-            <NavLink to="/portfolio">Portfolio</NavLink>
-            <NavLink to="/background">Background</NavLink>
-            <NavLink to="/about">About</NavLink>
+            <NavLink
+              to="/portfolio"
+              className={({ isActive }) => (isActive ? "active-link" : null)}
+            >
+              Portfolio
+            </NavLink>
+            <NavLink
+              to="/background"
+              className={({ isActive }) => (isActive ? "active-link" : null)}
+            >
+              Background
+            </NavLink>
+
+            <NavLink
+              to="/about"
+              className={({ isActive }) => (isActive ? "active-link" : null)}
+            >
+              About
+            </NavLink>
           </div>
         </nav>
       </div>

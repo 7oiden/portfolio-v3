@@ -2,9 +2,46 @@ h1 {
   color: white;
 }
 
+em {
+  color: getColor(sectionHeading);
+  font-style: unset;
+  font-weight: 500;
+}
+
+.underline {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.underline::before {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  // transform: translateX(-50%);
+  width: 15%;
+  height: 2px;
+  background-color: getColor(headingAccent);
+  border-radius: 4px;
+}
+
 .footer__heading {
-  font-size: getFontSize(subHeadingS);
+  font-size: getSize(subHeadingS);
   font-weight: 600;
   color: getColor(footerHeading);
   text-transform: uppercase;
+}
+
+.hero__heading {
+  font-size: getSize(heroHeadingS);
+  font-weight: 700;
+  color: getColor(heroHeading);
+  text-align: center;
+  text-shadow: 0 2px 6px getColor(textLight);
+}
+
+.section-heading {
+  font-size: getSize(sectionHeadingS);
+  font-weight: 700;
+  color: getColor(sectionHeading);
 }
