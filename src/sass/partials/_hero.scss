@@ -3,10 +3,17 @@
 
   &__container {
     display: flex;
-    height: 75%;
+    height: 60%;
     justify-content: center;
     align-items: center;
     // background-color: pink;
     @extend .inner-wrapper;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 }

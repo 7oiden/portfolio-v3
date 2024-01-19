@@ -79,6 +79,12 @@ img {
   gap: 0.5rem;
 }
 
+.button-link {
+  background-color: #0f172a;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -92,6 +98,12 @@ img {
 .inner-wrapper, .footer__container, .skills__container, .intro, .hero__container, .header__container {
   width: 90%;
   margin: 0 auto;
+}
+
+.main-layout {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
 h1 {
@@ -128,17 +140,23 @@ em {
 }
 
 .hero__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-shadow: 0 1px #fff;
+}
+
+.page-heading {
   font-size: 2rem;
   font-weight: 700;
-  text-align: center;
-  text-shadow: 0 2px 6px #94a3b8;
+  color: #e2e8f0;
+  margin-bottom: 2.5rem;
 }
 
 .section-heading {
   font-size: 1.5rem;
   font-weight: 700;
   color: #e2e8f0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .sub-heading {
@@ -154,6 +172,12 @@ em {
 .badge__label {
   font-size: 0.75rem;
   font-weight: 500;
+}
+
+.paragraph-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .header {
@@ -177,9 +201,15 @@ nav {
 
 .hero__container {
   display: flex;
-  height: 75%;
+  height: 60%;
   justify-content: center;
   align-items: center;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
 }
 
 .hero {
@@ -219,6 +249,7 @@ nav {
 
 .skills {
   background-color: #0f172a;
+  margin-bottom: 4rem;
 }
 .skills__container {
   padding: 2rem 0;

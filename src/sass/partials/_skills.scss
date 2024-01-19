@@ -1,6 +1,7 @@
 .skills {
   @extend .outer-wrapper;
   background-color: getColor(primaryBg);
+  margin-bottom: 4rem;
 
   &__container {
     @extend .inner-wrapper;

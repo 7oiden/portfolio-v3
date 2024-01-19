@@ -50,6 +50,7 @@ a {
   font-family: $link;
   color: getColor(link);
   font-size: getSize(navLinkS);
+  
 }
 
 svg {
@@ -82,6 +83,13 @@ img {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.button-link {
+  background-color: getColor(primaryBg);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: getColor($link);
 }
 
 // background-image: radial-gradient(

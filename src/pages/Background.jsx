@@ -1,7 +1,12 @@
+import Heading from "../components/Heading";
+
 export default function Background() {
   return (
-    <div>
-      <h1>Background</h1>
+    <div className="main-layout">
+      <Heading size="1" cssClass="page-heading">
+        Background.
+      </Heading>
+      <section></section>
     </div>
   );
 }

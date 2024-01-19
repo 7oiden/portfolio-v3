@@ -8,20 +8,19 @@ export default function Header() {
           <Link to="/">#</Link>
           <div className="nav__link-container">
             <NavLink
-              to="/portfolio"
+              to="projects"
               className={({ isActive }) => (isActive ? "active-link" : null)}
             >
-              Portfolio
+              Projects
             </NavLink>
             <NavLink
-              to="/background"
+              to="background"
               className={({ isActive }) => (isActive ? "active-link" : null)}
             >
               Background
             </NavLink>
-
             <NavLink
-              to="/about"
+              to="about"
               className={({ isActive }) => (isActive ? "active-link" : null)}
             >
               About
