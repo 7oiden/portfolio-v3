@@ -1,4 +1,4 @@
-import Heading from "./Heading";
+import Heading from "../../components/Heading";
 import { FaCode } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";

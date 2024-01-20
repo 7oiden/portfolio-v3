@@ -1,4 +1,4 @@
-import Heading from "./Heading";
+import Heading from "../../components/Heading";
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";

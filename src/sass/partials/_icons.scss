@@ -30,3 +30,9 @@
   height: auto;
   color: getColor(link);
 }
+
+.badge {
+  background-color: getColor(badgeBg);
+  padding: 0.25rem 1rem;  
+  border-radius: 64px;
+}

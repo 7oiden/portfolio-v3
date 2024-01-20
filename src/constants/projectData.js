@@ -10,7 +10,8 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1654681030/holidaze_x4owk1.jpg",
-    link: "https://holidaze-v2.netlify.app",
+    url: "https://holidaze-v2.netlify.app",
+    tools: ["react", "sass", "bootstrap", "wordpress", "strapi", "heroku"],
   },
   {
     id: 2,
@@ -23,7 +24,8 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1654681036/mercury_lyf9vl.jpg",
-    link: "https://mercury-shoes.netlify.app",
+    url: "https://mercury-shoes.netlify.app",
+    tools: ["HTML", "javascript", "sass", "strapi", "heroku"],
   },
   {
     id: 3,
@@ -36,7 +38,8 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1666601693/Passionate_Photography_bhxp8s.jpg",
-    link: "https://passionate-photography-7oiden.netlify.app",
+    url: "https://passionate-photography-7oiden.netlify.app",
+    tools: ["HTML", "javascript", "CSS", "wordpress"],
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1668508833/csm-bergen_gi4z7d.jpg",
-    link: "https://csm-bergen.netlify.app",
+    url: "https://csm-bergen.netlify.app",
+    tools: ["HTML", "javascript", "CSS"],
   },
 ];

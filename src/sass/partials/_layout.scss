@@ -14,9 +14,12 @@
 }
 
 .main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   width: 90%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0 6rem 0;
 }
 
 .skills__grid {
@@ -29,6 +32,12 @@
 .project__grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  gap: 4rem;
   // background-color: pink;
+}
+
+.badge__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

@@ -1,5 +1,5 @@
-import Heading from "./Heading";
-import avatar from "../assets/images/avatar.png";
+import Heading from "../../components/Heading";
+import avatar from "../../assets/images/avatar.png";
 import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 
