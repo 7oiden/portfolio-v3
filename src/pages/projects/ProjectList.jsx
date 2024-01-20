@@ -17,7 +17,8 @@ export default function ProjectList() {
             date={project.date}
             image={project.image}
             description={project.description}
-            url={project.url}
+            siteUrl={project.netlify_url}
+            codeUrl={project.github_url}
             tools={project.tools}
           />
         ))}

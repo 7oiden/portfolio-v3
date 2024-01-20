@@ -3,8 +3,8 @@ import { FaCode } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
-import SkillBadge from "./SkillBadge";
-import SkillListItem from "./SkillListItem";
+import IconBadge from "../../components/IconBadge";
+import InfoListItem from "../../components/InfoListItem";
 
 export default function Skills() {
   return (
@@ -21,22 +21,22 @@ export default function Skills() {
             </Heading>
             <ul className="badge__list">
               <li>
-                <SkillBadge title="HTML5" />
+                <IconBadge title="HTML5" />
               </li>
               <li>
-                <SkillBadge title="CSS3" />
+                <IconBadge title="CSS3" />
               </li>
               <li>
-                <SkillBadge title="JSE6" />
+                <IconBadge title="JSE6" />
               </li>
               <li>
-                <SkillBadge title="React" />
+                <IconBadge title="React" />
               </li>
               <li>
-                <SkillBadge title="Next.js" />
+                <IconBadge title="Next.js" />
               </li>
               <li>
-                <SkillBadge title="Wordpress" />
+                <IconBadge title="Wordpress" />
               </li>
             </ul>
           </div>
@@ -47,13 +47,13 @@ export default function Skills() {
             </Heading>
             <ul className="badge__list">
               <li>
-                <SkillBadge title="Adobe XD" />
+                <IconBadge title="Adobe XD" />
               </li>
               <li>
-                <SkillBadge title="Figma" />
+                <IconBadge title="Figma" />
               </li>
               <li>
-                <SkillBadge title="Photoshop" />
+                <IconBadge title="Photoshop" />
               </li>
             </ul>
           </div>
@@ -64,15 +64,15 @@ export default function Skills() {
               Tools
             </Heading>
             <ul className="skill__list">
-              <SkillListItem skill="Git + GitHub" />
-              <SkillListItem skill="VS Code" />
-              <SkillListItem skill="Postman" />
-              <SkillListItem skill="Hotjar" />
-              <SkillListItem skill="Strapi" />
-              <SkillListItem skill="Heroku" />
-              <SkillListItem skill="Firebase" />
-              <SkillListItem skill="Sass" />
-              <SkillListItem skill="Bootstrap" />
+              <InfoListItem skill="Git + GitHub" />
+              <InfoListItem skill="VS Code" />
+              <InfoListItem skill="Postman" />
+              <InfoListItem skill="Hotjar" />
+              <InfoListItem skill="Strapi" />
+              <InfoListItem skill="Heroku" />
+              <InfoListItem skill="Firebase" />
+              <InfoListItem skill="Sass" />
+              <InfoListItem skill="Bootstrap" />
             </ul>
           </div>
           <div>
@@ -81,15 +81,15 @@ export default function Skills() {
               Knowledge
             </Heading>
             <ul className="skill__list">
-              <SkillListItem skill="Design Principles" />
-              <SkillListItem skill="Interaction Design" />
-              <SkillListItem skill="UI Design" />
-              <SkillListItem skill="UX Design" />
-              <SkillListItem skill="Responsive Design " />
-              <SkillListItem skill="Prototyping" />
-              <SkillListItem skill="Accessability" />
-              <SkillListItem skill="SEO" />
-              <SkillListItem skill="Project Methodology" />
+              <InfoListItem skill="Design Principles" />
+              <InfoListItem skill="Interaction Design" />
+              <InfoListItem skill="UI Design" />
+              <InfoListItem skill="UX Design" />
+              <InfoListItem skill="Responsive Design " />
+              <InfoListItem skill="Prototyping" />
+              <InfoListItem skill="Accessability" />
+              <InfoListItem skill="SEO" />
+              <InfoListItem skill="Project Methodology" />
             </ul>
           </div>
         </div>

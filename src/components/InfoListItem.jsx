@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { MdCheck } from "react-icons/md";
 
-export default function SkillListItem({ skill }) {
+export default function InfoListItem({ skill }) {
   return (
     <li>
       <MdCheck className="check-icon"/>
@@ -10,6 +10,6 @@ export default function SkillListItem({ skill }) {
   );
 }
 
-SkillListItem.propTypes = {
+InfoListItem.propTypes = {
   skill: PropTypes.string.isRequired,
 };

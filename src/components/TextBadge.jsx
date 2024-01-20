@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function ProjectBadge({ tool }) {
+export default function TextBadge({ tool }) {
   const badgeText = tool.charAt(0).toUpperCase() + tool.slice(1);
 
   return (
@@ -10,7 +10,7 @@ export default function ProjectBadge({ tool }) {
   );
 }
 
-ProjectBadge.propTypes = {
+TextBadge.propTypes = {
   tool: PropTypes.string.isRequired,
 };
 

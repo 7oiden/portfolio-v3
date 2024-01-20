@@ -1,7 +1,5 @@
 import Heading from "../../components/Heading";
-import { Link } from "react-router-dom";
-import { MdArrowForward } from "react-icons/md";
-import { FaGithub } from "react-icons/fa";
+import GithubLink from "../../components/GithubLink";
 
 export default function Portfolio() {
   return (
@@ -23,10 +21,7 @@ export default function Portfolio() {
           <em>Adobe XD</em>.
         </p>
       </div>
-      <Link to="/about" className="link-container">
-        <FaGithub className="brand-icon brand-icon--small" />
-        GitHub <MdArrowForward className="link-icon" />
-      </Link>
+      <GithubLink codeUrl="https://github.com/7oiden/portfolio-v3.git" />
     </section>
   );
 }

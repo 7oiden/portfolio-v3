@@ -9,7 +9,7 @@ import {
 } from "react-icons/fa";
 import { SiNextdotjs, SiAdobexd, SiAdobephotoshop } from "react-icons/si";
 
-export default function SkillBadge({ title }) {
+export default function IconBadge({ title }) {
   let icon;
   let iconTitle = title.toLowerCase();
 
@@ -53,6 +53,6 @@ export default function SkillBadge({ title }) {
   );
 }
 
-SkillBadge.propTypes = {
+IconBadge.propTypes = {
   title: PropTypes.string.isRequired,
 };

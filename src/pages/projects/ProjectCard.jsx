@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Heading from "../../components/Heading";
-import ProjectBadge from "./ProjectBadge";
+import TextBadge from "../../components/TextBadge";
+import GithubLink from "../../components/GithubLink";
 
 export default function ProjectCard({
   image,
@@ -9,6 +10,8 @@ export default function ProjectCard({
   date,
   description,
   tools,
+  siteUrl,
+  codeUrl,
 }) {
   return (
     <div className="card">
@@ -23,13 +26,14 @@ export default function ProjectCard({
           {type} - {date}
         </Heading>
       </hgroup>
+      <GithubLink codeUrl={codeUrl} />
       <div className="paragraph-container">
         <p>{description[0]}</p>
         <p>{description[1]}</p>
       </div>
       <div className="badge__grid">
         {tools.map((tool) => (
-          <ProjectBadge key={tool} tool={tool} />
+          <TextBadge key={tool} tool={tool} />
         ))}
       </div>
     </div>
@@ -42,5 +46,7 @@ ProjectCard.propTypes = {
   type: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   description: PropTypes.array.isRequired,
+  siteUrl: PropTypes.string.isRequired,
+  codeUrl: PropTypes.string.isRequired,
   tools: PropTypes.array.isRequired,
 };
