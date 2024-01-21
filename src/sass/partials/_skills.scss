@@ -9,6 +9,17 @@
   }
 }
 
+.info {
+  background-color: getColor(primaryBg);
+  margin-left: -5%;
+  margin-right: -5%;
+
+  &__container {
+    @extend .inner-wrapper;
+    padding: 2rem 0;
+  }
+}
+
 .badge__list {
   margin: 0;
   padding: 0;

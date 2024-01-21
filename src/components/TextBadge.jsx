@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
-export default function TextBadge({ tool }) {
-  const badgeText = tool.charAt(0).toUpperCase() + tool.slice(1);
+export default function TextBadge({ children }) {
+  const badgeText = children.charAt(0).toUpperCase() + children.slice(1);
 
   return (
     <div className="badge">
@@ -11,6 +11,6 @@ export default function TextBadge({ tool }) {
 }
 
 TextBadge.propTypes = {
-  tool: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
 };
 

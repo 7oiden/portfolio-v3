@@ -22,7 +22,7 @@
   padding: 2rem 0 6rem 0;
 }
 
-.skills__grid {
+.skills__grid, .info__grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;

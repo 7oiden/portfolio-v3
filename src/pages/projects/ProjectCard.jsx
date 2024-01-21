@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Heading from "../../components/Heading";
 import TextBadge from "../../components/TextBadge";
-import GithubLink from "../../components/GithubLink";
+import LinkButton from "../../components/LinkButton";
 
 export default function ProjectCard({
   image,
@@ -26,14 +26,22 @@ export default function ProjectCard({
           {type} - {date}
         </Heading>
       </hgroup>
-      <GithubLink codeUrl={codeUrl} />
+      {/* <hr className="divider" /> */}
+      <div className="button-container">
+        <LinkButton icon="github" url={codeUrl}>
+          GitHub
+        </LinkButton>
+        <LinkButton icon="netlify" url={siteUrl}>
+          Live site
+        </LinkButton>
+      </div>
       <div className="paragraph-container">
         <p>{description[0]}</p>
         <p>{description[1]}</p>
       </div>
       <div className="badge__grid">
         {tools.map((tool) => (
-          <TextBadge key={tool} tool={tool} />
+          <TextBadge key={tool}>{tool}</TextBadge>
         ))}
       </div>
     </div>

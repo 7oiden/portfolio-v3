@@ -1,5 +1,5 @@
 import Heading from "../../components/Heading";
-import GithubLink from "../../components/GithubLink";
+import LinkButton from "../../components/LinkButton";
 
 export default function Portfolio() {
   return (
@@ -21,7 +21,14 @@ export default function Portfolio() {
           <em>Adobe XD</em>.
         </p>
       </div>
-      <GithubLink codeUrl="https://github.com/7oiden/portfolio-v3.git" />
+      <div className="button-container">
+        <LinkButton
+          icon="github"
+          url="https://github.com/7oiden/portfolio-v3.git"
+        >
+          GitHub
+        </LinkButton>
+      </div>
     </section>
   );
 }
