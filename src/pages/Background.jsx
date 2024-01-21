@@ -8,8 +8,8 @@ export default function Background() {
       <Heading size="1" cssClass="page-heading">
         Background.
       </Heading>
-      <Experience />
       <Education />
+      <Experience />
     </div>
   );
 }

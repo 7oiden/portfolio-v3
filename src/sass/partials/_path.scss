@@ -1,0 +1,57 @@
+.path {
+  position: relative;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 2rem;
+  //   background-color: black;
+}
+
+.path__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  //   background-color: getColor(primaryBg);
+  background-color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  width: 65%;
+  margin-left: auto;
+}
+
+.triangle-left {
+  position: absolute;
+  top: 0.5rem;
+  left: -2rem;
+  width: 0;
+  height: 0;
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-right: 2rem solid black;
+}
+
+.path-sub-heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.path__vert::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 0;
+  left: 10%;
+  border-left: 4px solid getColor(accentCol1);
+  transform: translateX(-50%);
+}
+
+.path__date {
+  position: absolute;
+  left: 0;
+  top: 3rem;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  color: getColor(link);
+  font-weight: 600;
+}

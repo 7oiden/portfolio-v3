@@ -33,6 +33,40 @@
 
 .badge {
   background-color: getColor(badgeBg);
-  padding: 0.25rem 1rem;  
+  padding: 0.25rem 1rem;
   border-radius: 64px;
+}
+
+.arrow-icon {
+  width: 1.125rem;
+  height: auto;
+  color: getColor(headingAccent);
+  cursor: pointer;
+
+  &--up {
+    transform: rotate(-90deg);
+  }
+
+  &--down {
+    transform: rotate(90deg);
+  }
+}
+
+.path__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: getColor(accentCol1);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 10%;
+  transform: translateX(-50%);
+}
+
+.path-icon {
+  width: 1.5rem;
+  height: auto;
+  color: getColor(link);
 }

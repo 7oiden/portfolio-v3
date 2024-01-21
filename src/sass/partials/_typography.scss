@@ -98,3 +98,14 @@ p {
   color: getColor(badgeText);
   font-size: getSize(badgeText);
 }
+
+.path-heading {
+  font-weight: 700;
+  color: getColor(headingLight);
+}
+
+.path-sub-heading {
+  font-weight: 700;
+  color: getColor(headingAccent);
+  text-transform: uppercase;
+}

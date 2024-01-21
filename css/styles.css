@@ -230,6 +230,17 @@ p {
   font-size: 0.875rem;
 }
 
+.path-heading {
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.path-sub-heading {
+  font-weight: 700;
+  color: #38bdf8;
+  text-transform: uppercase;
+}
+
 .header {
   height: 3rem;
   z-index: 1;
@@ -416,6 +427,38 @@ nav {
   border-radius: 64px;
 }
 
+.arrow-icon {
+  width: 1.125rem;
+  height: auto;
+  color: #38bdf8;
+  cursor: pointer;
+}
+.arrow-icon--up {
+  transform: rotate(-90deg);
+}
+.arrow-icon--down {
+  transform: rotate(90deg);
+}
+
+.path__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #38bdf8;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 10%;
+  transform: translateX(-50%);
+}
+
+.path-icon {
+  width: 1.5rem;
+  height: auto;
+  color: #e2e8f0;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -503,6 +546,59 @@ nav {
 .contact__input textarea {
   resize: none;
   height: 8rem;
+}
+
+.path {
+  position: relative;
+}
+
+.path__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 10px;
+  position: relative;
+  width: 65%;
+  margin-left: auto;
+}
+
+.triangle-left {
+  position: absolute;
+  top: 0.5rem;
+  left: -2rem;
+  width: 0;
+  height: 0;
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-right: 2rem solid black;
+}
+
+.path-sub-heading-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.path__vert::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 0;
+  left: 10%;
+  border-left: 4px solid #38bdf8;
+  transform: translateX(-50%);
+}
+
+.path__date {
+  position: absolute;
+  left: 0;
+  top: 3rem;
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  color: #e2e8f0;
+  font-weight: 600;
 }
 
 .footer {
