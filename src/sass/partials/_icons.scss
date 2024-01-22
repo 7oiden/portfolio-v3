@@ -54,6 +54,16 @@
   }
 }
 
+.show-icon {
+  width: 1.5rem;
+  height: auto;
+  color: getColor(accentCol1);
+
+  &--up {
+    transform: rotate(180deg);
+  }
+}
+
 .path__icon-container {
   display: flex;
   align-items: center;
@@ -63,8 +73,8 @@
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
-  left: 10%;
-  transform: translateX(-50%);
+  left: 0;
+  // transform: translateX(-50%);
 }
 
 .path-icon {

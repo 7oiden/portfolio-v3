@@ -38,9 +38,11 @@ export default function InfoBox({
       {isOpen && (
         <div className="paragraph-container">
           <p>{description}</p>
-          <Link to={url} className="path__link">
-            Link
-          </Link>
+          {url && (
+            <Link to={url} className="path__link">
+              Link
+            </Link>
+          )}
         </div>
       )}
     </div>

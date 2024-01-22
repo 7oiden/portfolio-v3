@@ -8,7 +8,7 @@ export const educationData = [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       "The course is delivered online, and is a combination of lectures, assignments and projects. The course is delivered in English, and is a mix of Norwegian and international students.",
     ],
-    url: "https://www.noroff.no/en/studies/frontend-development",
+    url: "https://scrimba.com/",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const educationData = [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       "The course is delivered online, and is a combination of lectures, assignments and projects. The course is delivered in English, and is a mix of Norwegian and international students.",
     ],
-    url: "https://www.noroff.no/en/studies/frontend-development",
+    url: "https://www.noroff.no/en/studies/vocational-school/front-end-development",
   },
   {
     id: 3,

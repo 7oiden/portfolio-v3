@@ -2,6 +2,7 @@ import Heading from "../../components/Heading";
 import PathSegment from "./PathSegment";
 import { educationData } from "../../constants/educationData";
 import { useState } from "react";
+import { FaChevronDown } from "react-icons/fa";
 
 export default function Education() {
   const [showMore, setShowMore] = useState(false);
@@ -29,9 +30,16 @@ export default function Education() {
             url={entry.url}
           />
         ))}
-        <button className="show-button" onClick={toggleShow}>
-          {showMore ? "Show less" : "Show more"}
-        </button>
+        <div className="show-button" onClick={toggleShow}>
+          <FaChevronDown
+            className={
+              showMore
+                ? "show-icon show-icon--up"
+                : "show-icon show-icon--down"
+            }
+          />
+          {showMore ? "Show Less" : "Show More"}
+        </div>
       </div>
     </section>
   );
