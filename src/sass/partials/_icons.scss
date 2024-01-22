@@ -82,3 +82,15 @@
   height: auto;
   color: getColor(link);
 }
+
+.menu-icon {
+  width: 2rem;
+  height: auto;
+  color: getColor(link);
+  cursor: pointer;
+
+  & > svg {
+    width: 100%;
+    height: auto;
+  }
+}
