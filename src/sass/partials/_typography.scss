@@ -100,11 +100,13 @@ p {
 }
 
 .path-heading {
+  font-size: 1rem;
   font-weight: 700;
   color: getColor(headingLight);
 }
 
 .path-sub-heading {
+  font-size: 0.875rem;
   font-weight: 700;
   color: getColor(headingAccent);
   text-transform: uppercase;

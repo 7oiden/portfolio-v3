@@ -1,9 +1,9 @@
 .path {
   position: relative;
-//   display: flex;
-//   flex-direction: column;
-//   gap: 2rem;
-  //   background-color: black;
+}
+
+.path__container {
+    position: relative;
 }
 
 .path__info {
@@ -11,12 +11,14 @@
   flex-direction: column;
   gap: 0.5rem;
   //   background-color: getColor(primaryBg);
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 1rem;
   border-radius: 10px;
   position: relative;
+//   top: -2rem;
   width: 65%;
   margin-left: auto;
+  margin-bottom: 3rem;
 }
 
 .triangle-left {
@@ -27,7 +29,7 @@
   height: 0;
   border-top: 1rem solid transparent;
   border-bottom: 1rem solid transparent;
-  border-right: 2rem solid black;
+  border-right: 2rem solid rgba(0, 0, 0, 0.5);
 }
 
 .path-sub-heading-container {
@@ -54,4 +56,5 @@
   text-orientation: sideways;
   color: getColor(link);
   font-weight: 600;
+  font-size: 0.875rem;
 }
