@@ -88,6 +88,7 @@
   height: auto;
   color: getColor(link);
   cursor: pointer;
+  align-self: flex-end;
 
   & > svg {
     width: 100%;

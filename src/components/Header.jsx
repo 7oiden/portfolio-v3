@@ -13,8 +13,8 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="header__container">
-        <nav className="desktop">
+      <div className="header__container desktop">
+        <nav className="desktop-nav">
           <Link to="/">#</Link>
           <div className="nav__link-container">
             <NavLink
@@ -43,19 +43,22 @@ export default function Header() {
             </NavLink>
           </div>
         </nav>
-        <nav className={isMenuOpen ? "mobile" : null}>
-          <div>
+      </div>
+      <div className="header__container mobile">
+        <nav className="mobile-nav">
+          <div className="mobile-wrapper">
+            <Link to="/">#</Link>
             <div className="menu-icon" onClick={handleToggle}>
               {menuIcon}
             </div>
-            {isMenuOpen && (
-              <div className="mobile__link-container">
-                <NavLink to="projects">Projects</NavLink>
-                <NavLink to="background">Background</NavLink>
-                <NavLink to="about">About</NavLink>
-              </div>
-            )}
           </div>
+          {isMenuOpen && (
+            <div className="mobile__link-container">
+              <NavLink to="projects">Projects</NavLink>
+              <NavLink to="background">Background</NavLink>
+              <NavLink to="about">About</NavLink>
+            </div>
+          )}
         </nav>
       </div>
     </header>
