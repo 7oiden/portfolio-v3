@@ -4,7 +4,13 @@ import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function InfoBox({ title, institution, description, url }) {
+export default function InfoBox({
+  title,
+  date,
+  institution,
+  description,
+  url,
+}) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleToggle() {
@@ -14,6 +20,7 @@ export default function InfoBox({ title, institution, description, url }) {
   return (
     <div className="path__info">
       <div className="triangle-left"></div>
+      {isOpen && <div className="path__date">{date}</div>}
       <Heading size="3" cssClass="path-heading">
         {title}
       </Heading>
@@ -42,6 +49,7 @@ export default function InfoBox({ title, institution, description, url }) {
 
 InfoBox.propTypes = {
   title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
   institution: PropTypes.string.isRequired,
   description: PropTypes.array.isRequired,
   url: PropTypes.string,

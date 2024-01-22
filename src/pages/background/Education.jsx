@@ -1,9 +1,17 @@
 import Heading from "../../components/Heading";
 import PathSegment from "./PathSegment";
 import { educationData } from "../../constants/educationData";
+import { useState } from "react";
 
 export default function Education() {
-  console.log(educationData);
+  const [showMore, setShowMore] = useState(false);
+  const [numToShow, setNumToShow] = useState(3);
+
+  function toggleShow() {
+    setShowMore((prevShowMore) => !prevShowMore);
+    setNumToShow(showMore ? 3 : educationData.length);
+  }
+
   return (
     <section>
       <Heading size="2" cssClass="section-heading underline">
@@ -11,7 +19,7 @@ export default function Education() {
       </Heading>
       <div className="path__container">
         <div className="path__vert"></div>
-        {educationData.map((entry) => (
+        {educationData.slice(0, numToShow).map((entry) => (
           <PathSegment
             key={entry.id}
             title={entry.title}
@@ -21,6 +29,9 @@ export default function Education() {
             url={entry.url}
           />
         ))}
+        <button className="show-button" onClick={toggleShow}>
+          {showMore ? "Show less" : "Show more"}
+        </button>
       </div>
     </section>
   );

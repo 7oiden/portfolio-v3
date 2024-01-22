@@ -11,12 +11,12 @@ export default function PathSegment({
 }) {
   return (
     <div className="path">
-      <div className="path__icon-container path-1">
+      <div className="path__icon-container">
         <SiScrimba className="path-icon" />
       </div>
-      <div className="path__date">{date}</div>
       <InfoBox
         title={title}
+        date={date}
         institution={institution}
         description={description}
         url={url}

@@ -516,6 +516,20 @@ nav {
   border: 2px solid #38bdf8;
 }
 
+.show-button {
+  position: relative;
+  transform: translateX(-50%);
+  left: 10%;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-family: lato;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 0.375rem 0.5rem;
+  cursor: pointer;
+}
+
 .contact__form {
   display: flex;
   flex-direction: column;
@@ -571,6 +585,7 @@ nav {
   padding: 1rem;
   border-radius: 10px;
   position: relative;
+  top: 0;
   width: 65%;
   margin-left: auto;
   margin-bottom: 3rem;
@@ -605,13 +620,14 @@ nav {
 
 .path__date {
   position: absolute;
-  left: 0;
-  top: 3rem;
+  top: 3.5rem;
+  left: -2rem;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   color: #e2e8f0;
   font-weight: 600;
   font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .footer {

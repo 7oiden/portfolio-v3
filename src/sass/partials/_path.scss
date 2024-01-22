@@ -3,7 +3,7 @@
 }
 
 .path__container {
-    position: relative;
+  position: relative;
 }
 
 .path__info {
@@ -15,7 +15,7 @@
   padding: 1rem;
   border-radius: 10px;
   position: relative;
-//   top: -2rem;
+  top: 0;
   width: 65%;
   margin-left: auto;
   margin-bottom: 3rem;
@@ -50,11 +50,12 @@
 
 .path__date {
   position: absolute;
-  left: 0;
-  top: 3rem;
+  top: 3.5rem;
+  left: -2rem;
   writing-mode: vertical-rl;
   text-orientation: sideways;
   color: getColor(link);
   font-weight: 600;
   font-size: 0.875rem;
+  white-space: nowrap;
 }
