@@ -13,7 +13,61 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="header__container desktop">
+      <nav className="nav">
+        <div className="logo">
+          <Link to="/">#</Link>
+        </div>
+        <ul className="nav__links">
+          <li>
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              Projects
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/background"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              Background
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              About
+            </NavLink>
+          </li>
+        </ul>
+        <div className="toggle-btn" onClick={handleToggle}>
+          {menuIcon}
+        </div>
+      </nav>
+
+      <nav className={isMenuOpen ? "dropdown dropdown--open" : "dropdown"}>
+        <ul className="dropdown__links">
+          <li>
+            <NavLink to="/projects">Projects</NavLink>
+          </li>
+          <li>
+            <NavLink to="/background">Background</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">About</NavLink>
+          </li>
+        </ul>
+      </nav>
+      {/* <div className="header__container desktop">
         <nav className="desktop-nav">
           <Link to="/">#</Link>
           <div className="nav__link-container">
@@ -60,7 +114,7 @@ export default function Header() {
             </div>
           )}
         </nav>
-      </div>
+      </div> */}
     </header>
   );
 }

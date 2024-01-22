@@ -34,6 +34,10 @@
   grid-template-columns: repeat(1, 1fr);
   gap: 4rem;
   // background-color: pink;
+
+  @media screen and (min-width: getBreakpoint(large)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .badge__grid {

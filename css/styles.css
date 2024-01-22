@@ -10,9 +10,6 @@ html {
 }
 
 body {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   height: 100%;
   margin: 0;
   background-color: pink;
@@ -127,6 +124,11 @@ img {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 4rem;
+}
+@media screen and (min-width: 992px) {
+  .project__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .badge__grid {
@@ -249,26 +251,29 @@ p {
 .header {
   z-index: 100;
   background-color: transparent;
+  position: relative;
 }
-.nav__link-container {
-  display: flex;
-  gap: 2rem;
-}
-
-.desktop-nav {
+.nav {
+  height: 3rem;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.mobile-nav {
-  display: flex;
-  flex-direction: column;
+.nav__links {
+  display: none;
+  gap: 2rem;
+  list-style: none;
+}
+@media (min-width: 992px) {
+  .nav__links {
+    display: flex;
+  }
 }
 
 .nav__link {
-  border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
 }
 .nav__link:hover {
@@ -278,7 +283,6 @@ p {
   content: "";
   display: block;
   border-bottom: 2px solid #38bdf8;
-  border-radius: 2px;
   transform: scaleX(0);
   transition: transform 0.4s;
   padding-top: 3px;
@@ -287,45 +291,61 @@ p {
   transform: scaleX(1);
 }
 
-.desktop {
-  display: none;
-  width: 90%;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-@media screen and (min-width: 992px) {
-  .desktop {
-    display: block;
-  }
+.active-link {
+  color: #38bdf8;
 }
 
-.mobile {
+.toggle-btn {
   display: block;
-  width: 100%;
-  padding: 1rem 5%;
+  width: 2rem;
+  cursor: pointer;
 }
-@media screen and (min-width: 992px) {
-  .mobile {
+.toggle-btn > svg {
+  width: 100%;
+  height: auto;
+  color: #e2e8f0;
+}
+@media (min-width: 992px) {
+  .toggle-btn {
     display: none;
   }
 }
 
-.mobile__link-container {
+.dropdown {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  position: absolute;
+  z-index: 100;
+  top: 3.5rem;
+  height: 0;
+  left: 5%;
+  right: 5%;
+  margin: 0 auto;
+  background: black;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2475);
 }
-.mobile__link-container :first-of-type {
-  margin-top: 1rem;
-}
-.mobile__link-container :last-of-type {
-  margin-bottom: 1rem;
+@media (min-width: 992px) {
+  .dropdown {
+    display: none;
+    width: 300px;
+  }
 }
 
-.mobile-wrapper {
+.dropdown--open {
+  height: 200px;
+}
+
+.dropdown__links {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .hero__container {
@@ -343,12 +363,13 @@ p {
 
 .hero {
   position: relative;
-  top: 0;
+  top: -3rem;
   background-image: url("../assets/images/mountains-bg.jpg");
   background-size: cover;
   background-position: bottom center;
   width: 100%;
   height: 100vh;
+  z-index: 1;
 }
 @media screen and (min-width: 992px) {
   .hero {
