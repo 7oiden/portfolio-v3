@@ -38,7 +38,7 @@ export default function Education() {
                 : "show-icon show-icon--down"
             }
           />
-          {showMore ? "Show Less" : "Show More"}
+          {showMore ? "Show Less" : "Show All"}
         </div>
       </div>
     </section>
