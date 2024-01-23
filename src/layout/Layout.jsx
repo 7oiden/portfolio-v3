@@ -4,12 +4,12 @@ import Footer from ".././components/Footer";
 
 export default function Layout() {
   return (
-    <div className="page-wrapper">
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+      <div className="page-wrapper">
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
   );
 }

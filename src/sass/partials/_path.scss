@@ -14,7 +14,7 @@
   flex-direction: column;
   gap: 0.5rem;
   //   background-color: getColor(primaryBg);
-  background-color: getColor(infoBoxBg);
+  background-color: getColor(primaryBg);
   padding: 1rem;
   border-radius: 10px;
   position: relative;
@@ -32,7 +32,7 @@
   height: 0;
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
-  border-right: 1.5rem solid getColor(infoBoxBg);
+  border-right: 1.5rem solid getColor(primaryBg);
 }
 
 .path-sub-heading-container {

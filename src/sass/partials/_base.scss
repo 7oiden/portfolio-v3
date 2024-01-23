@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   height: 100%;
+  user-select: none;
 }
 
 *,
@@ -10,14 +11,9 @@ html {
 }
 
 body {
-  height: 100%;
+  position: relative;
+  height: 100vh;
   margin: 0;
-  background-color: pink;
-  background-color: #222222;
-  opacity: 1;
-  background-image: linear-gradient(#b7b7b7 1px, transparent 1px),
-    linear-gradient(to right, #b7b7b7 1px, #222222 1px);
-  background-size: 100px 100px;
   background: rgb(16, 30, 67);
   background: radial-gradient(
     circle,
@@ -27,6 +23,14 @@ body {
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
+}
+
+#root {
+  background-image: linear-gradient(#b7b7b70d 1px, transparent 1px),
+    linear-gradient(to right, #b7b7b70d 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 p,
@@ -95,7 +99,6 @@ img {
   border-radius: 10px;
   color: getColor($link);
 }
-
 
 // background-image: radial-gradient(
 //       at 40% 40%,
