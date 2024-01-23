@@ -4,12 +4,12 @@ import Education from "./background/Education";
 
 export default function Background() {
   return (
-    <div className="main-layout">
+    <>
       <Heading size="1" cssClass="page-heading">
         Background.
       </Heading>
       <Education />
       <Experience />
-    </div>
+    </>
   );
 }

@@ -1,7 +1,26 @@
-.page-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.page-width {
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: getBreakpoint(medium)) {
+    width: 75%;
+  }
+
+  @media (min-width: getBreakpoint(large)) {
+    width: 80%;
+  }
+
+  @media (min-width: getBreakpoint(xLarge)) {
+    width: 75%;
+  }
+
+  @media (min-width: getBreakpoint(xxLarge)) {
+    width: 70%;
+  }
+
+  @media (min-width: getBreakpoint(xxxLarge)) {
+    width: 65%;
+  }
 }
 
 .outer-wrapper {
@@ -9,24 +28,54 @@
 }
 
 .inner-wrapper {
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
+
+  @media screen and (min-width: getBreakpoint(large)) {
+    width: 80%;
+  }
 }
 
-.main-layout {
+.page-heading {
+  @extend .page-width;
+
+  padding: 2rem 0 1rem 0;
+}
+
+.section-wrapper {
+  @extend .page-width;
+
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  width: 90%;
-  margin: 0 auto;
-  padding: 2rem 0 6rem 0;
+  gap: 1rem;
+  padding: 2rem 0;
 }
 
-.skills__grid, .info__grid {
+.skills__grid,
+.info__grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
   // background-color: pink;
+  @media (min-width: getBreakpoint(large)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.skills__grid-section-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.skills__grid-section-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media screen and (min-width: getBreakpoint(large)) {
+    flex-direction: row;
+  }
 }
 
 .project__grid {
@@ -35,7 +84,7 @@
   gap: 4rem;
   // background-color: pink;
 
-  @media screen and (min-width: getBreakpoint(large)) {
+  @media screen and (min-width: getBreakpoint(medium)) {
     grid-template-columns: repeat(2, 1fr);
   }
 }

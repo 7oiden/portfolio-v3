@@ -8,7 +8,7 @@ export default function Education() {
   const [numToShow, setNumToShow] = useState(3);
 
   return (
-    <section>
+    <section className="section-wrapper">
       <Heading size="2" cssClass="section-heading underline">
         Education & Training
       </Heading>

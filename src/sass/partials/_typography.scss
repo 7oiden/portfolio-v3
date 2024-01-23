@@ -1,7 +1,3 @@
-h1 {
-  color: white;
-}
-
 em {
   color: getColor(sectionHeading);
   font-style: unset;
@@ -47,14 +43,12 @@ p {
   font-size: getSize(pageHeadingS);
   font-weight: 700;
   color: getColor(headingLight);
-  margin-bottom: 1rem;
 }
 
 .section-heading {
   font-size: getSize(sectionHeadingS);
   font-weight: 700;
   color: getColor(sectionHeading);
-  margin-bottom: 1.5rem;
 }
 
 .sub-heading {

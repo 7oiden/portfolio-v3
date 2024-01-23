@@ -6,7 +6,7 @@ import TextBadge from "../../components/TextBadge";
 export default function Info() {
   return (
     <section className="info">
-      <div className="info__container">
+      <div className="info__container section-wrapper">
         <Heading size="2" cssClass="section-heading underline">
           Info
         </Heading>

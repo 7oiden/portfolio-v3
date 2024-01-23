@@ -4,7 +4,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function ProjectList() {
   return (
-    <section className="projects">
+    <section className="projects section-wrapper">
       <Heading size="2" cssClass="section-heading underline">
         Noroff School Projects
       </Heading>
