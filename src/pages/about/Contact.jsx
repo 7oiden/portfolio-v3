@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Contact() {
   return (
     <section className="section-wrapper">
-      <Heading size="2" cssClass="section-heading underline">
+      <Heading size="2" cssClass="section-heading">
         Contact
       </Heading>
       <p>

@@ -1,5 +1,4 @@
 .skills {
-  // @extend .inner-wrapper;
   width: 100%;
   margin: 0 auto;
   background-color: getColor(primaryBg);
@@ -7,18 +6,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-
-  &__container {
-  }
-}
-
-.info {
-  background-color: getColor(primaryBg);
-
-
-  &__container {
-    
-  }
 }
 
 .badge__list {

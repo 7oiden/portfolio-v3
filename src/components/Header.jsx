@@ -10,9 +10,11 @@ export default function Header() {
   }
 
   return (
-    <header className="header">
-      <Navbar handleToggle={handleToggle} isMenuOpen={isMenuOpen} />
-      <NavDropdown isMenuOpen={isMenuOpen} />
-    </header>
+    <div className={isMenuOpen ? "fade-bg" : ""}>
+      <header className="header">
+        <Navbar handleToggle={handleToggle} isMenuOpen={isMenuOpen} />
+        <NavDropdown isMenuOpen={isMenuOpen} />
+      </header>
+    </div>
   );
 }

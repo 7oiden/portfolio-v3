@@ -9,7 +9,7 @@ export default function Education() {
 
   return (
     <section className="section-wrapper">
-      <Heading size="2" cssClass="section-heading underline">
+      <Heading size="2" cssClass="section-heading">
         Education & Training
       </Heading>
       <div className="path__container">

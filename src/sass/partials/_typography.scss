@@ -1,3 +1,14 @@
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
 em {
   color: getColor(sectionHeading);
   font-style: unset;
@@ -8,22 +19,21 @@ p {
   line-height: 1.4;
 }
 
-.underline {
-  position: relative;
-  margin-bottom: 1rem;
-}
+// .underline {
+//   position: relative;
+//   margin-bottom: 1rem;
+// }
 
-.underline::before {
-  content: "";
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  // transform: translateX(-50%);
-  width: 15%;
-  height: 2px;
-  background-color: getColor(headingAccent);
-  border-radius: 4px;
-}
+// .underline::before {
+//   content: "";
+//   position: absolute;
+//   bottom: -0.5rem;
+//   left: 0;
+//   width: 15%;
+//   height: 2px;
+//   background-color: getColor(headingAccent);
+//   border-radius: 4px;
+// }
 
 .footer__heading {
   font-size: getSize(subHeadingS);
@@ -37,18 +47,30 @@ p {
   font-weight: 700;
   color: getColor(heroHeading);
   text-shadow: 0 1px #fff;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: getSize(pageHeadingL);
+  }
 }
 
 .page-heading {
   font-size: getSize(pageHeadingS);
   font-weight: 700;
   color: getColor(headingLight);
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: getSize(pageHeadingM);
+  }
 }
 
 .section-heading {
   font-size: getSize(sectionHeadingS);
-  font-weight: 700;
+  font-weight: 500;
   color: getColor(sectionHeading);
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: getSize(sectionHeadingM);
+  }
 }
 
 .sub-heading {
@@ -64,7 +86,6 @@ p {
 .badge__label {
   font-size: 0.75rem;
   font-weight: 500;
-  // display: block;
 }
 
 .paragraph-container {
@@ -76,7 +97,7 @@ p {
 
 .card__heading {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 500;
   color: getColor(headingLight);
   margin-bottom: 0.5rem;
   text-transform: uppercase;

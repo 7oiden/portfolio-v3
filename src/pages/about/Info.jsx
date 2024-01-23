@@ -7,7 +7,7 @@ export default function Info() {
   return (
     <section className="info">
       <div className="info__container section-wrapper">
-        <Heading size="2" cssClass="section-heading underline">
+        <Heading size="2" cssClass="section-heading">
           Info
         </Heading>
         <div className="info__grid">

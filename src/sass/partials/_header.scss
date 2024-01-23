@@ -9,9 +9,7 @@
 }
 
 .navbar {
-  @extend .inner-wrapper;
   height: 4rem;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -78,9 +76,9 @@
   left: 5%;
   right: 5%;
   margin: 0 auto;
-  background: black;
-  // backdrop-filter: blur(15px);
-  border-radius: 10px;
+  background: rgba($color: #fff, $alpha: 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 3px;
   overflow: hidden;
   transition: height 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.2475);
 

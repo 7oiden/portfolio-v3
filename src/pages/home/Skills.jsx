@@ -10,7 +10,7 @@ export default function Skills() {
   return (
     <section className="skills">
       <div className="skills__container section-wrapper">
-        <Heading size="2" cssClass="section-heading underline">
+        <Heading size="2" cssClass="section-heading">
           Skills
         </Heading>
         <div className="skills__grid">

@@ -9,7 +9,7 @@ export default function Experience() {
 
   return (
     <section className="section-wrapper">
-      <Heading size="2" cssClass="section-heading underline">
+      <Heading size="2" cssClass="section-heading">
         Work Experience
       </Heading>
       <div className="path__container">

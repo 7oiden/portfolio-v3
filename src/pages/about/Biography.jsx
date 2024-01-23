@@ -3,7 +3,7 @@ import Heading from "../../components/Heading";
 export default function Biography() {
   return (
     <section className="section-wrapper">
-      <Heading size="2" cssClass="section-heading underline">
+      <Heading size="2" cssClass="section-heading">
         Biography
       </Heading>
       <div className="paragraph-container">
