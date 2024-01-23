@@ -1,28 +1,63 @@
-.path {
-  position: relative;
-}
-
 .path__container {
   position: relative;
   width: 100%;
   margin-top: 1rem;
-  //   background-color: pink;
+}
+
+.path {
+  position: relative;
+  // background-color: pink;
 }
 
 .path__info {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   //   background-color: getColor(primaryBg);
   background-color: getColor(primaryBg);
+  // background-color: transparent;
   padding: 1rem;
   border-radius: 10px;
-  position: relative;
   top: 0;
-  width: auto;
-  max-width: 500px;
   margin-left: 5.5rem;
   margin-bottom: 3rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    right: 0;
+    left: 60%;
+    margin-left: 0;
+    width: 40%;
+  }
+}
+
+.path__info--odd {
+  @media (min-width: getBreakpoint(large)) {
+    left: 0;
+    margin-left: 0;
+    width: 40%;
+  }
+}
+
+// .path > :nth-child(odd) {
+//   @media (min-width: getBreakpoint(large)) {
+//     background-color: lightgray; /* Apply styles to odd child elements */
+//   }
+// }
+
+.triangle-default {
+  position: absolute;
+  top: 0.75rem;
+  left: -1.5rem;
+  width: 0;
+  height: 0;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-right: 1.5rem solid getColor(primaryBg);
+
+  @media (min-width: getBreakpoint(large)) {
+    display: none;
+  }
 }
 
 .triangle-left {
@@ -34,6 +69,27 @@
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
   border-right: 1.5rem solid getColor(primaryBg);
+  display: none;
+
+  @media (min-width: getBreakpoint(large)) {
+    display: block;
+  }
+}
+
+.triangle-right {
+  position: absolute;
+  top: 0.75rem;
+  right: -1.5rem;
+  width: 0;
+  height: 0;
+  border-top: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid transparent;
+  border-left: 1.5rem solid getColor(primaryBg);
+  display: none;
+
+  @media (min-width: getBreakpoint(large)) {
+    display: block;
+  }
 }
 
 .path-sub-heading-container {
@@ -50,6 +106,10 @@
   left: 1.25rem;
   border-left: 4px solid getColor(accentCol1);
   transform: translateX(-50%);
+
+  @media (min-width: getBreakpoint(large)) {
+    left: 50%;
+  }
 }
 
 .path__date {

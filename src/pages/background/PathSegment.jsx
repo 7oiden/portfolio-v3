@@ -3,6 +3,7 @@ import InfoBox from "./InfoBox";
 import { SiScrimba } from "react-icons/si";
 
 export default function PathSegment({
+  id,
   title,
   date,
   institution,
@@ -10,25 +11,30 @@ export default function PathSegment({
   url,
 }) {
   return (
-    <div className="path">
+    <>
       <div className="path__icon-container">
         <SiScrimba className="path-icon" />
       </div>
-      <InfoBox
-        title={title}
-        date={date}
-        institution={institution}
-        description={description}
-        url={url}
-      />
-    </div>
+      <div className="path">
+        <InfoBox
+          id={id}
+          title={title}
+          date={date}
+          institution={institution}
+          description={description}
+          url={url}
+        />
+      </div>
+    </>
   );
 }
 
 PathSegment.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   institution: PropTypes.string.isRequired,
   description: PropTypes.array.isRequired,
   url: PropTypes.string,
+  cssClass: PropTypes.string,
 };

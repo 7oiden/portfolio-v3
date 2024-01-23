@@ -6,7 +6,7 @@ export default function Background() {
   return (
     <>
       <Heading size="1" cssClass="page-heading">
-        Background.
+        Background<span className="accent-dot">.</span>
       </Heading>
       <Education />
       <Experience />

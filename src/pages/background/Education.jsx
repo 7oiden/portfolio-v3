@@ -17,6 +17,7 @@ export default function Education() {
         {educationData.slice(0, numToShow).map((entry) => (
           <PathSegment
             key={entry.id}
+            id={entry.id}
             title={entry.title}
             date={entry.date}
             institution={entry.institution}

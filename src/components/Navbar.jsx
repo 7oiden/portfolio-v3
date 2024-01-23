@@ -6,7 +6,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
   const menuIcon = isMenuOpen ? <MdClose /> : <MdMenu />;
 
   return (
-    <nav className="navbar">
+    <nav className={"navbar"}>
       <div className="logo">
         <Link to="/">#</Link>
       </div>

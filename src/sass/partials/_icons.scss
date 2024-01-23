@@ -75,6 +75,11 @@
   position: absolute;
   left: 0;
   // transform: translateX(-50%);
+
+  @media (min-width: getBreakpoint(large)) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
 }
 
 .path-icon {

@@ -2,12 +2,14 @@
   @extend .outer-wrapper;
 
   &__container {
+    @extend .inner-wrapper;
     display: flex;
     height: 60%;
     justify-content: center;
     align-items: center;
+    max-width: 700px;
     // background-color: pink;
-    @extend .inner-wrapper;
+    
   }
 
   &__content {

@@ -6,10 +6,10 @@ import Contact from "./about/Contact";
 export default function About() {
   return (
     <>
-        <Heading size="1" cssClass="page-heading">
-          About.
-        </Heading>
-        <Biography />
+      <Heading size="1" cssClass="page-heading">
+        About<span className="accent-dot">.</span>
+      </Heading>
+      <Biography />
       <Info />
       <Contact />
     </>

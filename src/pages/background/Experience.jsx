@@ -16,6 +16,7 @@ export default function Experience() {
         <div className="path__vert"></div>
         {experienceData.slice(0, numToShow).map((entry) => (
           <PathSegment
+            id={entry.id}
             key={entry.id}
             title={entry.title}
             date={entry.date}

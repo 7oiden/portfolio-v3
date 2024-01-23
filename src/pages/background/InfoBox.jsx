@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function InfoBox({
+  id,
   title,
   date,
   institution,
@@ -17,9 +18,19 @@ export default function InfoBox({
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }
 
-  return (
-    <div className="path__info">
+  const cssClass = id % 2 === 0 ? "path__info--even" : "path__info--odd";
+
+  const triangle =
+    id % 2 === 0 ? (
       <div className="triangle-left"></div>
+    ) : (
+      <div className="triangle-right"></div>
+    );
+
+  return (
+    <div className={`path__info ${cssClass}`}>
+      {triangle}
+      <div className="triangle-default"></div>
       {isOpen && <div className="path__date">{date}</div>}
       <Heading size="3" cssClass="path-heading">
         {title}
@@ -50,6 +61,7 @@ export default function InfoBox({
 }
 
 InfoBox.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   institution: PropTypes.string.isRequired,
