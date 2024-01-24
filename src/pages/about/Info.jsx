@@ -2,11 +2,15 @@ import Heading from "../../components/Heading";
 import InfoListItem from "../../components/InfoListItem";
 import { MdCamera, MdPerson } from "react-icons/md";
 import TextBadge from "../../components/TextBadge";
+import { hobbiesArr, attributesArr } from "../../constants/aboutData";
 
 export default function Info() {
+
+  
+
   return (
     <section className="info">
-      <div className="info__container section-wrapper">
+      <div className="section-wrapper">
         <Heading size="2" cssClass="section-heading">
           Info
         </Heading>
@@ -25,36 +29,20 @@ export default function Info() {
               </p>
             </div>
             <div className="badge__grid">
-              <TextBadge>Photography</TextBadge>
-              <TextBadge>Gaming</TextBadge>
-              <TextBadge>Football</TextBadge>
-              <TextBadge>Literature</TextBadge>
-              <TextBadge>Working out</TextBadge>
-              <TextBadge>Science</TextBadge>
-              <TextBadge>Hiking</TextBadge>
-              <TextBadge>Mindfulness</TextBadge>
-              <TextBadge>Metaverse</TextBadge>
-              <TextBadge>Psychology</TextBadge>
+              {hobbiesArr.map((hobby) => (
+                <TextBadge key={hobby}>{hobby}</TextBadge>
+              ))}
             </div>
           </div>
-          <div>
+          <div className="info__grid-section-2">
             <Heading size="3" cssClass="sub-heading">
               <MdPerson />
               Attributes
             </Heading>
             <ul className="skill__list">
-              <InfoListItem skill="Good work ethics" />
-              <InfoListItem skill="Attention to detail" />
-              <InfoListItem skill="Problem solver" />
-              <InfoListItem skill="Enjoys learning" />
-              <InfoListItem skill="Organized" />
-              <InfoListItem skill="Good communicator" />
-              <InfoListItem skill="Aesthetic sense" />
-              <InfoListItem skill="Decent writer" />
-              <InfoListItem skill="Takes responsibility" />
-              <InfoListItem skill="Quality oriented" />
-              <InfoListItem skill="Analytical skills" />
-              <InfoListItem skill="Something" />
+              {attributesArr.map((skill) => (
+                <InfoListItem key={skill} skill={skill} />
+              ))}
             </ul>
           </div>
         </div>

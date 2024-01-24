@@ -1,5 +1,5 @@
 import Heading from "../../components/Heading";
-import LinkButton from "../../components/LinkButton";
+import ProjectBtn from "../../components/ProjectBtn";
 
 export default function Portfolio() {
   return (
@@ -17,12 +17,12 @@ export default function Portfolio() {
         </p>
       </div>
       <div className="button-container">
-        <LinkButton
+        <ProjectBtn
           icon="github"
           url="https://github.com/7oiden/portfolio-v3.git"
         >
           GitHub
-        </LinkButton>
+        </ProjectBtn>
       </div>
     </section>
   );

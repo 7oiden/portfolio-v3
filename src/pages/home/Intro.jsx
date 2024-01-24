@@ -1,7 +1,6 @@
 import Heading from "../../components/Heading";
 import avatar from "../../assets/images/avatar.png";
-import { Link } from "react-router-dom";
-import { MdArrowForward } from "react-icons/md";
+import LinkBtn from "../../components/LinkBtn";
 
 export default function Intro() {
   return (
@@ -28,9 +27,7 @@ export default function Intro() {
               months course, at <em>Scrimba</em>
             </p>
           </div>
-          <Link to="/about" className="link-container">
-            Learn more about me <MdArrowForward className="link-icon" />
-          </Link>
+          <LinkBtn url="/about">Learn more about me</LinkBtn>
         </div>
       </div>
     </section>

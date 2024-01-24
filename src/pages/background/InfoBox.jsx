@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Heading from "../../components/Heading";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import LinkBtn from "../../components/LinkBtn";
 
 export default function InfoBox({
   id,
@@ -48,11 +48,15 @@ export default function InfoBox({
       </div>
       {isOpen && (
         <div className="paragraph-container">
-          <p className="path__body-text">{description}</p>
+          {description.map((paragraph, index) => (
+            <p className="path__body-text" key={index}>
+              {paragraph}
+            </p>
+          ))}
           {url && (
-            <Link to={url} className="path__link">
-              Link
-            </Link>
+            <LinkBtn url={url} className="path__link">
+              More info{" "}
+            </LinkBtn>
           )}
         </div>
       )}

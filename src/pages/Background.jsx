@@ -1,6 +1,7 @@
 import Heading from "../components/Heading";
 import Experience from "./background/Experience";
 import Education from "./background/Education";
+import ResumeLink from "./background/ResumeLink";
 
 export default function Background() {
   return (
@@ -10,6 +11,7 @@ export default function Background() {
       </Heading>
       <Education />
       <Experience />
+      <ResumeLink />
     </>
   );
 }

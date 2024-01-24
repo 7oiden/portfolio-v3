@@ -1,8 +1,5 @@
-import { Link } from "react-router-dom";
-import { MdArrowForward } from "react-icons/md";
-import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import LinkBtn from "./LinkBtn";
+import MediaLinks from "./MediaLinks";
 
 export default function Footer() {
   return (
@@ -11,29 +8,17 @@ export default function Footer() {
         <div className="footer__item">
           <p className="footer__heading">Tommy Johnsen</p>
           <p>Frontend Developer</p>
-          <div className="footer__icons">
-            <Link to="https://github.com/7oiden">
-              <FaGithub className="brand-icon" />
-            </Link>
-            <Link to="https://www.instagram.com/7oiden/">
-              <FaInstagramSquare className="brand-icon" />
-            </Link>
-            <Link to="https://www.linkedin.com/in/tommy-j-16b56678/">
-              <FaLinkedin className="brand-icon" />
-            </Link>
-          </div>
+          <MediaLinks />
         </div>
         <div className="footer__item">
           <p className="footer__heading">Phone</p>
-          <Link to="tel:92014618" className="link-container">
-            +47 920 14 618 <MdArrowForward className="link-icon" />
-          </Link>
+          <LinkBtn url="tel:92014618">+47 920 14 618</LinkBtn>
         </div>
         <div className="footer__item">
           <p className="footer__heading">Email</p>
-          <Link to="mailto: tommy.johnsen@live.com" className="link-container">
-            tommy.johnsen@live.com <MdArrowForward className="link-icon" />
-          </Link>
+          <LinkBtn url="mailto: tommy.johnsen@live.com">
+            tommy.johnsen@live.com
+          </LinkBtn>
         </div>
       </div>
     </footer>

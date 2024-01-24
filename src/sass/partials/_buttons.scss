@@ -1,3 +1,11 @@
+.hero__button {
+  background-color: getColor(primaryBg);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: getColor(link);
+  font-size: 1.25rem;
+}
+
 .link-button {
   display: flex;
   align-items: center;
@@ -64,3 +72,10 @@
     margin-left: 0;
   }
 }
+
+.media-links {
+  display: flex;
+  gap: 1rem;
+  color: getColor(link);
+}
+

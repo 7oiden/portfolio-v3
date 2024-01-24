@@ -13,6 +13,7 @@
   border: 1px solid getColor(textLight);
   background-color: transparent;
   font-family: inter;
+  font-size: inherit;
 
   &:focus {
     outline: none;
@@ -28,9 +29,9 @@
   gap: 0.25rem;
 
   & label {
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
     font-weight: 500;
-    font-family: lato;
+    // font-family: lato;
     color: getColor(accentCol2);
   }
 

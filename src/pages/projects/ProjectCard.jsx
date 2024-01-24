@@ -1,7 +1,9 @@
 import PropTypes from "prop-types";
 import Heading from "../../components/Heading";
 import TextBadge from "../../components/TextBadge";
-import LinkButton from "../../components/LinkButton";
+import ProjectBtn from "../../components/ProjectBtn";
+import { Link } from "react-router-dom";
+import { SiNetlify } from "react-icons/si";
 
 export default function ProjectCard({
   image,
@@ -15,9 +17,17 @@ export default function ProjectCard({
 }) {
   return (
     <div className="card">
-      <div className="card__image">
-        <img src={image} />
-      </div>
+      <Link to={siteUrl} className="card__link">
+        <div className="card__image">
+          <img src={image} />
+        </div>
+        <div className="card__overlay">
+          <div>
+            <span>Take me to live site at Netlify</span>
+            <SiNetlify size="2rem" />
+          </div>
+        </div>
+      </Link>
       <hgroup>
         <Heading size="3" cssClass="card__heading">
           {title}
@@ -28,12 +38,12 @@ export default function ProjectCard({
       </hgroup>
       {/* <hr className="divider" /> */}
       <div className="button-container">
-        <LinkButton icon="github" url={codeUrl}>
+        <ProjectBtn icon="github" url={codeUrl}>
           GitHub
-        </LinkButton>
-        <LinkButton icon="netlify" url={siteUrl}>
+        </ProjectBtn>
+        <ProjectBtn icon="netlify" url={siteUrl}>
           Live site
-        </LinkButton>
+        </ProjectBtn>
       </div>
       <div className="paragraph-container">
         <p>{description[0]}</p>

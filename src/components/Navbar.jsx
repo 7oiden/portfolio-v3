@@ -8,7 +8,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
   return (
     <nav className={"navbar"}>
       <div className="logo">
-        <Link to="/">#</Link>
+        <Link to="/">#home</Link>
       </div>
       <ul className="nav__links">
         <li>

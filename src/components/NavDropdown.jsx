@@ -29,13 +29,34 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
     <nav className={isMenuOpen ? "dropdown dropdown--open" : "dropdown"}>
       <ul className="dropdown__links">
         <li>
-          <NavLink to="/projects">Projects</NavLink>
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              isActive ? "active-link" : ""
+            }
+          >
+            Projects
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/background">Background</NavLink>
+          <NavLink
+            to="/background"
+            className={({ isActive }) =>
+              isActive ? "active-link" : ""
+            }
+          >
+            Background
+          </NavLink>
         </li>
         <li>
-          <NavLink to="/about">About</NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "active-link" : ""
+            }
+          >
+            About
+          </NavLink>
         </li>
       </ul>
     </nav>

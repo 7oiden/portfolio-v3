@@ -7,7 +7,7 @@ export const experienceData = [
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
-    url: "https://scrimba.com/",
+    url: null,
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const experienceData = [
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
-    url: "https://www.noroff.no/en/studies/vocational-school/front-end-development",
+    url: null,
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ export const experienceData = [
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
-    url: "https://www.noroff.no/en/studies/frontend-development",
+    url: null,
   },
   {
     id: 4,

@@ -10,9 +10,9 @@
     padding: 3rem 0;
 
     @media screen and (min-width: getBreakpoint(large)) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   &__item {
@@ -21,9 +21,5 @@
     gap: 0.5rem;
     color: getColor(link);
   }
-
-  &__icons {
-    display: flex;
-    gap: 1rem;
-  }
 }
+

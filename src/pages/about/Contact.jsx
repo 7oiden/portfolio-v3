@@ -1,15 +1,18 @@
 import Heading from "../../components/Heading";
-import { Link } from "react-router-dom";
+import LinkBtn from "../../components/LinkBtn";
+
 
 export default function Contact() {
   return (
-    <section className="section-wrapper">
+    <section id="contact" className="section-wrapper">
       <Heading size="2" cssClass="section-heading">
         Contact
       </Heading>
       <p>
-        Get in touch or shoot me an email directly on{" "}
-        <Link to="mailto: tommy.johnsen@live.com">tommy.johnsen@live.com</Link>
+        Get in touch or shoot me an email directly on:
+        <LinkBtn url="mailto: tommy.johnsen@live.com">
+          tommy.johnsen@live.com
+        </LinkBtn>
       </p>
       <form className="contact__form">
         <div className="contact__input">

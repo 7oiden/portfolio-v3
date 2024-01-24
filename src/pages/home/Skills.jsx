@@ -5,11 +5,17 @@ import { FaTools } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
 import IconBadge from "../../components/IconBadge";
 import InfoListItem from "../../components/InfoListItem";
+import {
+  designArr,
+  developmentArr,
+  toolsArr,
+  knowledgeArr,
+} from "../../constants/skillsData";
 
 export default function Skills() {
   return (
     <section className="skills">
-      <div className="skills__container section-wrapper">
+      <div className="section-wrapper">
         <Heading size="2" cssClass="section-heading">
           Skills
         </Heading>
@@ -22,24 +28,11 @@ export default function Skills() {
               </Heading>
               <div>
                 <ul className="badge__list">
-                  <li>
-                    <IconBadge title="HTML5" />
-                  </li>
-                  <li>
-                    <IconBadge title="CSS3" />
-                  </li>
-                  <li>
-                    <IconBadge title="JSE6" />
-                  </li>
-                  <li>
-                    <IconBadge title="React" />
-                  </li>
-                  <li>
-                    <IconBadge title="Next.js" />
-                  </li>
-                  <li>
-                    <IconBadge title="Wordpress" />
-                  </li>
+                  {developmentArr.map((skill) => (
+                    <li key={skill}>
+                      <IconBadge title={skill} />
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -52,19 +45,14 @@ export default function Skills() {
                 Design
               </Heading>
               <ul className="badge__list">
-                <li>
-                  <IconBadge title="Adobe XD" />
-                </li>
-                <li>
-                  <IconBadge title="Figma" />
-                </li>
-                <li>
-                  <IconBadge title="Photoshop" />
-                </li>
+                {designArr.map((skill) => (
+                  <li key={skill}>
+                    <IconBadge title={skill} />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-          {/* <hr className="divider" /> */}
           <div className="skills__grid-section-2">
             <div>
               <Heading size="3" cssClass="sub-heading">
@@ -72,15 +60,9 @@ export default function Skills() {
                 Tools
               </Heading>
               <ul className="skill__list">
-                <InfoListItem skill="Git + GitHub" />
-                <InfoListItem skill="VS Code" />
-                <InfoListItem skill="Postman" />
-                <InfoListItem skill="Hotjar" />
-                <InfoListItem skill="Strapi" />
-                <InfoListItem skill="Heroku" />
-                <InfoListItem skill="Firebase" />
-                <InfoListItem skill="Sass" />
-                <InfoListItem skill="Bootstrap" />
+                {toolsArr.map((tool) => (
+                  <InfoListItem key={tool} skill={tool} />
+                ))}
               </ul>
             </div>
             <div>
@@ -89,15 +71,9 @@ export default function Skills() {
                 Knowledge
               </Heading>
               <ul className="skill__list">
-                <InfoListItem skill="Design Principles" />
-                <InfoListItem skill="Interaction Design" />
-                <InfoListItem skill="UI Design" />
-                <InfoListItem skill="UX Design" />
-                <InfoListItem skill="Responsive Design " />
-                <InfoListItem skill="Prototyping" />
-                <InfoListItem skill="Accessability" />
-                <InfoListItem skill="SEO" />
-                <InfoListItem skill="Project Methodology" />
+                {knowledgeArr.map((skill) => (
+                  <InfoListItem key={skill} skill={skill} />
+                ))}
               </ul>
             </div>
           </div>
