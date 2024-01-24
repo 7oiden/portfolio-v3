@@ -46,19 +46,21 @@
 
 .show-button {
   position: relative;
-  top: 1rem;
-  left: 0;
+  left: 0.375rem;
   display: flex;
-  flex-direction: column;
+  gap: 0.5rem;
   align-items: center;
-  justify-content: center;
+  left: 0.5rem;
+  // justify-content: center;
   color: getColor(link);
   font-family: $link;
   cursor: pointer;
   // background-color: pink;
-  width: 6rem;
 
   @media (min-width: getBreakpoint(large)) {
+    flex-direction: column;
+    gap: 0.25rem;
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
     margin-left: 0;

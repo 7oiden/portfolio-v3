@@ -121,12 +121,29 @@ p {
 }
 
 .path-sub-heading {
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 600;
   color: getColor(headingAccent);
   text-transform: uppercase;
 }
 
 .accent-dot {
   color: getColor(headingAccent);
+}
+
+.path__heading {
+  margin-bottom: 1rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    text-align: center;
+  }
+}
+
+.path__body-text {
+  font-size: 0.875rem;
+  padding-right: 1rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1rem;
+  }
 }

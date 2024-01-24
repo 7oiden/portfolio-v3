@@ -10,11 +10,20 @@ export default function PathSegment({
   description,
   url,
 }) {
+
+const dateEl =
+  id % 2 === 0 ? (
+    <div className="path__date path__date--left">{date}</div>
+  ) : (
+    <div className="path__date path__date--right">{date}</div>
+  );
+
   return (
     <>
       <div className="path__icon-container">
         <SiScrimba className="path-icon" />
       </div>
+      {dateEl}
       <div className="path">
         <InfoBox
           id={id}

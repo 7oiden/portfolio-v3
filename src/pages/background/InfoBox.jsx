@@ -20,7 +20,7 @@ export default function InfoBox({
 
   const cssClass = id % 2 === 0 ? "path__info--even" : "path__info--odd";
 
-  const triangle =
+  const triangleEl =
     id % 2 === 0 ? (
       <div className="triangle-left"></div>
     ) : (
@@ -29,9 +29,9 @@ export default function InfoBox({
 
   return (
     <div className={`path__info ${cssClass}`}>
-      {triangle}
+      {triangleEl}
       <div className="triangle-default"></div>
-      {isOpen && <div className="path__date">{date}</div>}
+      {isOpen && <div className="path__date--mobile">{date}</div>}
       <Heading size="3" cssClass="path-heading">
         {title}
       </Heading>
@@ -48,7 +48,7 @@ export default function InfoBox({
       </div>
       {isOpen && (
         <div className="paragraph-container">
-          <p>{description}</p>
+          <p className="path__body-text">{description}</p>
           {url && (
             <Link to={url} className="path__link">
               Link
