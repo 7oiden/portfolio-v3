@@ -12,10 +12,12 @@ html {
   box-sizing: inherit;
 }
 
-#root {
-  background-image: linear-gradient(rgba(183, 183, 183, 0.0509803922) 1px, transparent 1px), linear-gradient(to right, rgba(183, 183, 183, 0.0509803922) 1px, transparent 1px);
+.page-wrapper {
+  position: relative;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100px 100px;
   background-position: center;
+  background-attachment: fixed;
 }
 
 body {
@@ -41,8 +43,6 @@ a {
   text-decoration: unset;
   color: unset;
   font-family: "lato", sans-serif;
-  color: #e2e8f0;
-  font-size: 1.125rem;
   display: block;
 }
 
@@ -102,20 +102,21 @@ img {
 
 .bg-container {
   position: absolute;
+  background-color: transparent;
 }
 
 .bg-text {
   font-family: playfair-display, serif;
   position: fixed;
   font-weight: 1000;
-  /* Place it behind the content */
-  font-size: 15rem; /* Adjust font size as needed */
-  color: rgba(0, 0, 0, 0.1); /* Adjust text color and opacity */
+  font-size: 15rem;
+  color: rgba(0, 0, 0, 0.1);
   z-index: -100;
-  bottom: 5%;
+  bottom: 2.5%;
   left: -5%;
   text-align: center;
-  color: rgba(255, 255, 255, 0.02);
+  color: rgba(255, 255, 255, 0.025);
+  background-blend-mode: difference;
 }
 
 .page-width, .section-wrapper, .page-heading {
@@ -412,7 +413,9 @@ p {
   display: none;
   gap: 2rem;
   list-style: none;
-  font-weight: 500;
+  font-weight: 400;
+  color: #e2e8f0;
+  font-size: 1.125rem;
 }
 @media (min-width: 992px) {
   .nav__links {
@@ -955,7 +958,7 @@ p {
 }
 
 .footer {
-  background-color: #070e1d;
+  background-color: transparent;
   flex-shrink: 0;
   margin-top: auto;
 }

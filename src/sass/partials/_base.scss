@@ -10,13 +10,18 @@ html {
   box-sizing: inherit;
 }
 
-#root {
-  background-image: linear-gradient(#b7b7b70d 1px, transparent 1px),
-    linear-gradient(to right, #b7b7b70d 1px, transparent 1px);
+.page-wrapper {
+  position: relative;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.02) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100px 100px;
   // background-repeat: repeat;
   background-position: center;
-  // background-attachment: fixed;
+  background-attachment: fixed;
+  // z-index: -200;
 }
 
 body {
@@ -46,8 +51,6 @@ a {
   text-decoration: unset;
   color: unset;
   font-family: $link;
-  color: getColor(link);
-  font-size: getSize(navLinkS);
   display: block;
 }
 
@@ -107,25 +110,20 @@ img {
 
 .bg-container {
   position: absolute;
-  
+  background-color: transparent;
+  // background-blend-mode: multiply;
 }
 
 .bg-text {
   font-family: playfair-display, serif;
   position: fixed;
   font-weight: 1000;
-   /* Place it behind the content */
-  font-size: 15rem; /* Adjust font size as needed */
-  // writing-mode: vertical-rl;
-  // text-orientation: sideways;
-  color: rgba(0, 0, 0, 0.1); /* Adjust text color and opacity */
-  // transform: translateY(-50%);
-  // top: 50%;
-  // left: 50%;
+  font-size: 15rem;
+  color: rgba(0, 0, 0, 0.1);
   z-index: -100;
-  // transform: translateY(-50%);
-  bottom: 5%;
+  bottom: 2.5%;
   left: -5%;
   text-align: center;
-  color: rgba($color: #fff, $alpha: 0.02);
+  color: rgba(255, 255, 255, 0.025);
+  background-blend-mode: difference;
 }

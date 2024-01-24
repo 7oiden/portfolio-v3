@@ -23,7 +23,9 @@
   display: none;
   gap: 2rem;
   list-style: none;
-  font-weight: 500;
+  font-weight: 400;
+  color: getColor(link);
+  font-size: getSize(navLinkS);
 
   @media (min-width: getBreakpoint(large)) {
     display: flex;
