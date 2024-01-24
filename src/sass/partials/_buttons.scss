@@ -51,11 +51,9 @@
   gap: 0.5rem;
   align-items: center;
   left: 0.5rem;
-  // justify-content: center;
   color: getColor(link);
   font-family: $link;
   cursor: pointer;
-  // background-color: pink;
 
   @media (min-width: getBreakpoint(large)) {
     flex-direction: column;

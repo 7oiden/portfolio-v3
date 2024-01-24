@@ -100,6 +100,24 @@ img {
   z-index: 100;
 }
 
+.bg-container {
+  position: absolute;
+}
+
+.bg-text {
+  font-family: playfair-display, serif;
+  position: fixed;
+  font-weight: 1000;
+  /* Place it behind the content */
+  font-size: 15rem; /* Adjust font size as needed */
+  color: rgba(0, 0, 0, 0.1); /* Adjust text color and opacity */
+  z-index: -100;
+  bottom: 5%;
+  left: -5%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.02);
+}
+
 .page-width, .section-wrapper, .page-heading {
   width: 90%;
   margin: 0 auto;
@@ -518,11 +536,11 @@ p {
   border-radius: 3px;
 }
 
-.skills {
+.skills, .info {
   width: 100%;
   margin: 0 auto;
   background-color: #0f172a;
-  padding: 3rem 0;
+  padding: 2rem 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -746,6 +764,7 @@ p {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1rem 0;
+  max-width: 500px;
 }
 
 .contact__form input,
