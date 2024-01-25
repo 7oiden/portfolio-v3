@@ -79,3 +79,14 @@
   color: getColor(link);
 }
 
+.link-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: getColor(link);
+  margin-right: auto;
+
+  & div {
+    width: 1.5rem;
+  }
+}

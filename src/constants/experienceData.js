@@ -3,7 +3,7 @@ export const experienceData = [
     id: 1,
     title: "Developer",
     company: "Box Protector AS",
-    date: "MAR 23 - JAN 24",
+    date: "Mar 23 - Jan 24",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
@@ -13,7 +13,7 @@ export const experienceData = [
     id: 2,
     title: "Team Leader Engineering",
     company: "NOBI Voss",
-    date: "AUG 18 - MAY 19",
+    date: "Aug 18 - May 19",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
@@ -23,7 +23,7 @@ export const experienceData = [
     id: 3,
     title: "Project Engineer",
     company: "Spenncon AS",
-    date: "AUG 14 - JUN 18",
+    date: "Aug 14 - Jun 18",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
@@ -33,7 +33,7 @@ export const experienceData = [
     id: 4,
     title: "Project Engineer",
     company: "Voss Cementvarefabrikk AS",
-    date: "AUG 12 - AUG 14",
+    date: "Aug 12 - Aug 14",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
@@ -43,7 +43,7 @@ export const experienceData = [
     id: 5,
     title: "Project Engineer",
     company: "Spenncon AS",
-    date: "AUG 08 - AUG 12",
+    date: "Aug 08 - Aug 12",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
@@ -53,7 +53,7 @@ export const experienceData = [
     id: 6,
     title: "Lager/butikk (deltid)",
     company: "Geitanger Bygg AS",
-    date: "AUG 05 - JUL 08",
+    date: "Aug 05 - Jul 08",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],
@@ -63,7 +63,7 @@ export const experienceData = [
     id: 7,
     title: "Production Worker",
     company: "Spenncon AS",
-    date: "JUN 97 - JUN 03",
+    date: "Jun 97 - Jun 03",
     description: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     ],

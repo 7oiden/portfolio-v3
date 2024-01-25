@@ -3,6 +3,7 @@ import Heading from "../../components/Heading";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
 import LinkBtn from "../../components/LinkBtn";
+import { useSpring, animated } from "@react-spring/web";
 
 export default function InfoBox({
   id,
@@ -13,6 +14,19 @@ export default function InfoBox({
   url,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const dateSpring = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    reset: true,
+    config: { duration: 1000 },
+  });
+
+  const springs2 = useSpring({
+    from: { height: 0 },
+    to: { height: "auto" },
+    reset: true,
+  });
 
   function handleToggle() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
@@ -31,7 +45,11 @@ export default function InfoBox({
     <div className={`path__info ${cssClass}`}>
       {triangleEl}
       <div className="triangle-default"></div>
-      {isOpen && <div className="path__date--mobile">{date}</div>}
+      {isOpen && (
+        <animated.div className="path__date--mobile" style={{ ...dateSpring }}>
+          {date}
+        </animated.div>
+      )}
       <Heading size="3" cssClass="path-heading">
         {title}
       </Heading>
@@ -47,7 +65,7 @@ export default function InfoBox({
         />
       </div>
       {isOpen && (
-        <div className="paragraph-container">
+        <animated.div className="paragraph-container" style={{ ...springs2 }}>
           {description.map((paragraph, index) => (
             <p className="path__body-text" key={index}>
               {paragraph}
@@ -58,7 +76,7 @@ export default function InfoBox({
               More info{" "}
             </LinkBtn>
           )}
-        </div>
+        </animated.div>
       )}
     </div>
   );

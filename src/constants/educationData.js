@@ -3,7 +3,7 @@ export const educationData = [
     id: 1,
     title: "The Frontend Career Path",
     institution: "Scrimba",
-    date: "FEB 23 - JAN 24",
+    date: "Feb 23 - Jan 24",
     description: [
       "The Frontend Developer Path course contains over 70 hours of top-notch tutorials, hundreds of coding challenges, and dozens of real-world projects.",
       "The program contains 12 modules. All modules are filled with interactive coding challenges to ensure that you don't fall off the wagon. You'll learn HTML, CSS, JavaScript, React, UI design, career strategy, and more.",
@@ -14,7 +14,7 @@ export const educationData = [
     id: 2,
     title: "Frontend Development",
     institution: "Noroff",
-    date: "AUG 21 - JUN 22",
+    date: "Aug 21 - Jun 22",
     description: [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       "The course is delivered online, and is a combination of lectures, assignments and projects. The course is delivered in English, and is a mix of Norwegian and international students.",
@@ -25,7 +25,7 @@ export const educationData = [
     id: 3,
     title: "Bachelor's programme in Civil Engineering",
     institution: "Bergen University College",
-    date: "AUG 05 - JUN 08",
+    date: "Aug 05 - Jun 08",
     description: [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       
@@ -36,7 +36,7 @@ export const educationData = [
     id: 4,
     title: "Forkurs til ingeniørutdanning",
     institution: "Ålesund University College",
-    date: "AUG 03 - JUN 04",
+    date: "Aug 03 - Jun 04",
     description: [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       "The course is delivered online, and is a combination of lectures, assignments and projects. The course is delivered in English, and is a mix of Norwegian and international students.",
@@ -47,7 +47,7 @@ export const educationData = [
     id: 5,
     title: "GK Tekinske Byggfag, VK1 og VK2 Teknisk Tegning",
     institution: "Ålesund University College",
-    date: "AUG 94 - JUN 97",
+    date: "Aug 94 - Jun 97",
     description: [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       "The course is delivered online, and is a combination of lectures, assignments and projects. The course is delivered in English, and is a mix of Norwegian and international students.",

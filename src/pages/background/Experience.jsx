@@ -8,7 +8,7 @@ export default function Experience() {
   const [numToShow, setNumToShow] = useState(3);
 
   return (
-    <section className="section-wrapper">
+    <section className="section-wrapper experience-section">
       <Heading size="2" cssClass="section-heading path__heading">
         Work Experience
       </Heading>

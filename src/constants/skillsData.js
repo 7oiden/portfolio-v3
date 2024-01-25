@@ -31,4 +31,4 @@ export const developmentArr = [
   "Wordpress",
 ];
 
-export const designArr = ["Adobe XD", "Figma", "Photoshop", "Illustrator"];
+export const designArr = ["Adobe XD", "Figma", "Photoshop"];
