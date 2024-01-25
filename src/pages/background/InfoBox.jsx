@@ -72,7 +72,7 @@ export default function InfoBox({
             </p>
           ))}
           {url && (
-            <LinkBtn url={url} className="path__link">
+            <LinkBtn url={url} className="path__link" size="sm">
               More info{" "}
             </LinkBtn>
           )}

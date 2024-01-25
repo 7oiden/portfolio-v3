@@ -27,7 +27,9 @@ export default function Intro() {
               months course, at <em>Scrimba</em>
             </p>
           </div>
-          <LinkBtn url="/about">Learn more about me</LinkBtn>
+          <LinkBtn url="/about" size="md">
+            Learn more about me
+          </LinkBtn>
         </div>
       </div>
     </section>

@@ -28,6 +28,10 @@
   flex-direction: column;
   gap: 0.25rem;
 
+  & input {
+    color: getColor(textLight);
+  }
+
   & label {
     // font-size: 0.875rem;
     font-weight: 500;
@@ -38,5 +42,7 @@
   & textarea {
     resize: none;
     height: 8rem;
+    color: getColor(textLight);
   }
 }
+

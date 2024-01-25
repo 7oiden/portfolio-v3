@@ -12,11 +12,13 @@ export default function Footer() {
         </div>
         <div className="footer__item">
           <p className="footer__heading">Phone</p>
-          <LinkBtn url="tel:92014618">+47 920 14 618</LinkBtn>
+          <LinkBtn url="tel:92014618" size="sm">
+            +47 920 14 618
+          </LinkBtn>
         </div>
         <div className="footer__item">
           <p className="footer__heading">Email</p>
-          <LinkBtn url="mailto: tommy.johnsen@live.com">
+          <LinkBtn url="mailto: tommy.johnsen@live.com" size="sm">
             tommy.johnsen@live.com
           </LinkBtn>
         </div>

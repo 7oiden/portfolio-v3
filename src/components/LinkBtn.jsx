@@ -2,8 +2,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
+import classNames from "classnames";
 
-export default function LinkBtn({ children, url }) {
+export default function LinkBtn({ children, url, size = "sm" }) {
   const [springs, api] = useSpring(() => ({
     from: { x: 0 },
   }));
@@ -32,16 +33,22 @@ export default function LinkBtn({ children, url }) {
     });
   };
 
+  let linkClass = `link-btn--${size}`;
+  const allLinkClasses = classNames("link-container", linkClass);
+
+  let iconClass = `link-icon--${size}`;
+  const allIconClasses = classNames("link-icon", iconClass);
+
   return (
     <Link
       to={url}
       onMouseEnter={handleHover}
       onMouseLeave={handleHoverExit}
-      className="link-container"
+      className={allLinkClasses}
     >
       {children}
-      <animated.div style={{ ...springs }}>
-        <MdArrowForward className="link-icon" />
+      <animated.div style={{ ...springs }} className={allIconClasses}>
+        <MdArrowForward />
       </animated.div>
     </Link>
   );
@@ -50,4 +57,5 @@ export default function LinkBtn({ children, url }) {
 LinkBtn.propTypes = {
   children: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  size: PropTypes.string,
 };

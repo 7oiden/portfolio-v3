@@ -1,5 +1,6 @@
 .footer {
-  background-color: transparent;
+  background-color: getColor(footerBg);
+  background: linear-gradient(2780deg, rgba(16,30,67,0) 0%, rgba(15, 23, 42, 1) 100%);
   flex-shrink: 0;
   margin-top: auto;
 

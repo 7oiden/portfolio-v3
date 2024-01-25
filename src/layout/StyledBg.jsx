@@ -1,7 +1,6 @@
 import { useLocation } from "react-router-dom";
 
 export default function StyledBg() {
-//   const [scrollY, setScrollY] = useState(0);
 
   const locationPath = useLocation().pathname;
 

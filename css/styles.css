@@ -190,7 +190,7 @@ svg {
 .info__grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
+  gap: 3rem;
 }
 @media (min-width: 992px) {
   .skills__grid,
@@ -258,7 +258,12 @@ svg {
   align-items: center;
   background-color: #122a45;
   margin-top: 4rem;
-  padding: 1.5rem 0;
+  padding: 1rem 0;
+}
+@media screen and (min-width: 992px) {
+  .resume {
+    padding: 1.5rem 0;
+  }
 }
 
 .resume__link {
@@ -267,7 +272,12 @@ svg {
   gap: 1rem;
   color: #5eead4;
   font-family: "lato", sans-serif;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
+}
+@media screen and (min-width: 992px) {
+  .resume__link {
+    font-size: 1.375rem;
+  }
 }
 
 p,
@@ -404,6 +414,12 @@ p {
   .path__body-text {
     font-size: 1rem;
   }
+}
+
+.input-error {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #fd740b;
 }
 
 .header {
@@ -561,7 +577,6 @@ img {
   width: 100%;
   height: 100vh;
   z-index: 1;
-  filter: brightness(0.8);
 }
 @media screen and (min-width: 992px) {
   .hero {
@@ -853,9 +868,30 @@ img {
   gap: 0.5rem;
   color: #e2e8f0;
   margin-right: auto;
+  font-size: 1.125rem;
 }
 .link-container div {
   width: 1.5rem;
+}
+
+.link-btn--sm {
+  font-size: 1rem;
+}
+.link-btn--md {
+  font-size: 1.125rem;
+}
+.link-btn--lg {
+  font-size: 1.25rem;
+}
+
+.link-icon--sm {
+  font-size: 1.25rem;
+}
+.link-icon--md {
+  font-size: 1.5rem;
+}
+.link-icon--lg {
+  font-size: 1.75rem;
 }
 
 .contact__form {
@@ -888,6 +924,9 @@ img {
   flex-direction: column;
   gap: 0.25rem;
 }
+.contact__input input {
+  color: #94a3b8;
+}
 .contact__input label {
   font-weight: 500;
   color: #5eead4;
@@ -895,6 +934,7 @@ img {
 .contact__input textarea {
   resize: none;
   height: 8rem;
+  color: #94a3b8;
 }
 
 .path__container {
@@ -1054,7 +1094,8 @@ img {
 }
 
 .footer {
-  background-color: transparent;
+  background-color: #070e1d;
+  background: linear-gradient(2780deg, rgba(16, 30, 67, 0) 0%, rgb(15, 23, 42) 100%);
   flex-shrink: 0;
   margin-top: auto;
 }
@@ -1075,4 +1116,80 @@ img {
   flex-direction: column;
   gap: 0.5rem;
   color: #e2e8f0;
+}
+
+.banner {
+  font-family: "inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  padding: 1rem 2rem 1rem 4rem;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 0.5rem;
+  border-radius: 4px;
+  background: #ecfdf5;
+  position: relative;
+}
+.banner--warning {
+  background-color: #fffbeb;
+}
+.banner--info {
+  background-color: #eff6ff;
+}
+
+.banner__heading {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+.banner__heading--success {
+  color: #065f46;
+}
+.banner__heading--warning {
+  color: #92400e;
+}
+.banner__heading--error {
+  color: #92400e;
+}
+.banner__heading--info {
+  color: #1e40af;
+}
+
+.banner__text {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.banner__text--success {
+  color: #047857;
+}
+.banner__text--warning {
+  background-color: #fffbeb;
+  color: #b45309;
+}
+.banner__text--error {
+  color: #fd740b;
+}
+.banner__text--info {
+  background-color: #eff6ff;
+  color: #1c51b9;
+}
+
+.banner__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+.banner__icon--success {
+  color: #34d399;
+}
+.banner__icon--warning {
+  color: #fbbf24;
+}
+.banner__icon--error {
+  color: #f87171;
+}
+.banner__icon--info {
+  color: #60a5fa;
 }/*# sourceMappingURL=styles.css.map */

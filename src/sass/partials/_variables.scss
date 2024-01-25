@@ -25,9 +25,20 @@ $colors: (
   buttonText: #38bdf8,
   iconBg: #122945,
   infoBoxBg: rgba(0, 0, 0, 0.25),
-  dangerCol: #dc3545,
-  warningCol: #ffc107,
-  successCol: #198754,
+  successHeading: #065f46,
+  successText: #047857,
+  successIcon: #34d399,
+  errorHeading: #92400e,
+  errorText: #fd740b,
+  errorIcon: #f87171,
+  warning: #fffbeb,
+  warningHeading: #92400e,
+  warningText: #b45309,
+  warningIcon: #fbbf24,
+  info: #eff6ff,
+  infoHeading: #1e40af,
+  infoText: #1c51b9,
+  infoIcon: #60a5fa,
 );
 
 @function getColor($color) {

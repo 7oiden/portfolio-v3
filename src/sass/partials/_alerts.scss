@@ -1,0 +1,99 @@
+.banner {
+  font-family: $paragraph;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  padding: 1rem 2rem 1rem 4rem;
+  align-items: flex-start;
+  align-self: flex-start;
+  gap: 0.5rem;
+  border-radius: 4px;
+  background: #ecfdf5;
+  position: relative;
+
+  &--success {
+    background-color: getColor(success);
+  }
+
+  &--warning {
+    background-color: getColor(warning);
+  }
+
+  &--error {
+    background-color: getColor(error);
+  }
+
+  &--info {
+    background-color: getColor(info);
+  }
+}
+
+.banner__heading {
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  &--success {
+    color: getColor(successHeading);
+  }
+
+  &--warning {
+    color: getColor(warningHeading);
+  }
+
+  &--error {
+    color: getColor(errorHeading);
+  }
+
+  &--info {
+    color: getColor(infoHeading);
+  }
+}
+
+.banner__text {
+  font-size: 1rem;
+  font-weight: 400;
+
+  &--success {
+    background-color: getColor(success);
+    color: getColor(successText);
+  }
+
+  &--warning {
+    background-color: getColor(warning);
+    color: getColor(warningText);
+  }
+
+  &--error {
+    background-color: getColor(error);
+    color: getColor(errorText);
+  }
+
+  &--info {
+    background-color: getColor(info);
+    color: getColor(infoText);
+  }
+}
+
+.banner__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+
+  &--success {
+    color: getColor(successIcon);
+  }
+
+  &--warning {
+    color: getColor(warningIcon);
+  }
+
+  &--error {
+    color: getColor(errorIcon);
+  }
+
+  &--info {
+    color: getColor(infoIcon);
+  }
+}
