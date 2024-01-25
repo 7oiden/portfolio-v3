@@ -84,6 +84,7 @@ svg {
   left: -5%;
   text-align: center;
   color: rgba(255, 255, 255, 0.025);
+  overflow: hidden;
 }
 
 .page-width, .section-wrapper, .page-heading, .footer__container {
@@ -487,10 +488,11 @@ p {
   z-index: 100;
   top: 4rem;
   width: 100%;
-  height: 150px;
-  right: -100%;
+  height: 0;
+  top: 4rem;
   margin: 0 auto;
   background-color: #070e1d;
+  overflow: hidden;
 }
 @media (min-width: 992px) {
   .dropdown {
@@ -500,16 +502,15 @@ p {
 }
 
 .dropdown--open {
-  right: -500px;
   animation: test 0.3s ease forwards;
 }
 
 @keyframes test {
   0% {
-    right: -1000px;
+    height: 0;
   }
   100% {
-    right: 0;
+    height: 150px;
   }
 }
 .dropdown__links {
@@ -560,6 +561,7 @@ img {
   width: 100%;
   height: 100vh;
   z-index: 1;
+  filter: brightness(0.8);
 }
 @media screen and (min-width: 992px) {
   .hero {
