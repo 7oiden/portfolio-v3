@@ -25,6 +25,7 @@ $colors: (
   buttonText: #38bdf8,
   iconBg: #122945,
   infoBoxBg: rgba(0, 0, 0, 0.25),
+  // infoBoxBg: rgba(0, 0, 0, 0.25),
   successHeading: #065f46,
   successText: #047857,
   successIcon: #34d399,
@@ -39,6 +40,8 @@ $colors: (
   infoHeading: #1e40af,
   infoText: #1c51b9,
   infoIcon: #60a5fa,
+
+  test: #64748b,
 );
 
 @function getColor($color) {

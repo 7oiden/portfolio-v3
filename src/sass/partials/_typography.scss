@@ -106,8 +106,8 @@ p {
 }
 
 .card__sub-heading {
-  font-weight: 700;
-  color: getColor(headingAccent);
+  font-weight: 600;
+  color: getColor(accentCol1);
   text-transform: uppercase;
 }
 
@@ -125,8 +125,8 @@ p {
 .path-sub-heading {
   font-size: 1rem;
   font-weight: 600;
-  color: getColor(headingAccent);
-  // text-transform: uppercase;
+  color: getColor(accentCol1);
+  text-transform: uppercase;
 }
 
 .accent-dot {

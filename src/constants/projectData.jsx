@@ -2,7 +2,7 @@ export const projectData = [
   {
     id: 1,
     title: "Holidaze",
-    type: "Project exam 2",
+    type: "Project Exam 2",
     date: "May 2022",
     description: [
       "Holidaze is an accommodation booking site for a local tourist agency located in Bergen, Norway. The site is coded with React based on React-Bootstrap components and styled using Sass. The site has a customer facing side with booking functionality, and a admin section that can be accessed with the use of JWT tokens. In the admin section, contact and booking enquiries can be handled as well the option to add new establishments.",
@@ -16,7 +16,7 @@ export const projectData = [
   },
   {
     id: 2,
-    title: "Mercury shoes",
+    title: "Mercury Shoes",
     type: "Semester Project 2",
     date: "Dec 2021",
     description: [
@@ -46,7 +46,7 @@ export const projectData = [
   },
   {
     id: 4,
-    title: "Community science museum",
+    title: "Community Science Museum",
     type: "Semester project 1",
     date: "Dec 2020",
     description: [
