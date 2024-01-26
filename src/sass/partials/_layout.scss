@@ -164,9 +164,9 @@
   //   grid-template-columns: repeat(2, 1fr);
   // }
 
-  // @media (min-width: getBreakpoint(large)) {
-  //   gap: 6rem;
-  // }
+  @media (min-width: getBreakpoint(large)) {
+    gap: 6rem;
+  }
 }
 
 .badge__grid {

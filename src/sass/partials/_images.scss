@@ -20,7 +20,7 @@ img {
   height: 100vh;
   z-index: 1;
 
-  @media screen and (min-width: getBreakpoint(large)) {
+  @media (min-width: getBreakpoint(large)) {
     top: -4rem;
   }
 }
@@ -34,8 +34,16 @@ img {
   }
 }
 
-.card__image {
+.project__image {
   border-radius: 3px;
-  width: 300px;
-  max-width: 300px;
+
+  @media (min-width: getBreakpoint(medium)) {
+    width: 250px;
+    max-width: 250px;
+  }
+
+  @media (min-width: getBreakpoint(large)) {
+    width: 300px;
+    max-width: 300px;
+  }
 }
