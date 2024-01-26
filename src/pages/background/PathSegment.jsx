@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import InfoBox from "./InfoBox";
-import { SiScrimba } from "react-icons/si";
+import { cloneElement } from "react";
 
 export default function PathSegment({
   id,
@@ -9,19 +9,20 @@ export default function PathSegment({
   institution,
   description,
   url,
+  icon,
 }) {
 
-const dateEl =
-  id % 2 === 0 ? (
-    <div className="path__date path__date--left">{date}</div>
-  ) : (
-    <div className="path__date path__date--right">{date}</div>
-  );
+  const dateEl =
+    id % 2 === 0 ? (
+      <div className="path__date path__date--left">{date}</div>
+    ) : (
+      <div className="path__date path__date--right">{date}</div>
+    );
 
   return (
     <>
       <div className="path__icon-container">
-        <SiScrimba className="path-icon" />
+        {cloneElement(icon, { className: "path__icon" })}
       </div>
       {dateEl}
       <div className="path">
@@ -46,4 +47,6 @@ PathSegment.propTypes = {
   description: PropTypes.array.isRequired,
   url: PropTypes.string,
   cssClass: PropTypes.string,
+  icon: PropTypes.element,
+  // icon: PropTypes.string,
 };

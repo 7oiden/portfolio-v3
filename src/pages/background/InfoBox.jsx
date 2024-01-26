@@ -73,7 +73,7 @@ export default function InfoBox({
           ))}
           {url && (
             <LinkBtn url={url} className="path__link" size="sm">
-              More info{" "}
+              More info
             </LinkBtn>
           )}
         </animated.div>

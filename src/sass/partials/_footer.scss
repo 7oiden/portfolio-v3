@@ -12,7 +12,7 @@
 
     @media screen and (min-width: getBreakpoint(large)) {
       flex-direction: row;
-      // justify-content: flex-end;
+      padding: 3rem 0;
     }
   }
 

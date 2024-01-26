@@ -23,6 +23,7 @@ export default function Experience() {
             institution={entry.company}
             description={entry.description}
             url={entry.url}
+            icon={entry.icon}
           />
         ))}
         <PathToggleBtn

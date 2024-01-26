@@ -23,6 +23,7 @@ export default function Education() {
             institution={entry.institution}
             description={entry.description}
             url={entry.url}
+            icon={entry.icon}
           />
         ))}
         <PathToggleBtn
