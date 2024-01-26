@@ -13,7 +13,7 @@ html {
 .page-wrapper {
   position: relative;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.02) 1px,
+      rgba(255, 255, 255, 0.025) 1px,
       transparent 1px
     ),
     linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
@@ -45,6 +45,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
+  position: relative;
 
   @media (min-width: getBreakpoint(large)) {
     margin-bottom: 8rem;
@@ -77,21 +78,25 @@ svg {
 .bg-container {
   position: absolute;
   background-color: transparent;
+  // position: fixed;
+  // background-color: pink;
   // background-blend-mode: multiply;
 }
 
 .bg-text {
   font-family: playfair-display, serif;
-  position: fixed;
-  font-weight: 1000;
+  position: absolute;
+  font-weight: 600;
   font-size: 15rem;
-  color: rgba(0, 0, 0, 0.1);
   z-index: -100;
-  bottom: 2.5%;
+  bottom: -2.5%;
   left: -5%;
-  text-align: center;
-  color: rgba(255, 255, 255, 0.025);
+  // text-align: center;
+  color: rgba(255, 255, 255, 0.015);
   overflow: hidden;
+  // background-color: pink;
+  // writing-mode: vertical-rl;
+  // text-orientation: sideways;
   // background-blend-mode: difference;
 }
 

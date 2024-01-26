@@ -95,7 +95,7 @@ p {
 }
 
 .card__heading {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
   color: getColor(headingLight);
   margin-bottom: 0.5rem;
@@ -105,7 +105,7 @@ p {
 .card__sub-heading {
   font-weight: 700;
   color: getColor(headingAccent);
-  text-transform: uppercase;
+  // text-transform: uppercase;
 }
 
 .badge__text {

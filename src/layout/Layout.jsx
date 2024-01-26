@@ -8,10 +8,10 @@ export default function Layout() {
     <div className="page-wrapper">
       <Header />
       <main>
-        <StyledBg />
         <Outlet />
       </main>
       <Footer />
+      <StyledBg />
     </div>
   );
 }

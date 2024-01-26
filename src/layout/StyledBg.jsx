@@ -7,8 +7,6 @@ export default function StyledBg() {
   const bgText = locationPath.slice(1).charAt(0).toUpperCase() + locationPath.slice(2) + ".";
 
   return (
-    <div className="bg-container">
       <div className="bg-text">{bgText}</div>
-    </div>
   );
 }
