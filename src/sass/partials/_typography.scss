@@ -36,7 +36,10 @@ p {
 // }
 
 .footer__heading {
-  font-size: getSize(subHeadingS);
+  // font-size: getSize(subHeadingS);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-weight: 600;
   color: getColor(footerHeading);
   text-transform: uppercase;

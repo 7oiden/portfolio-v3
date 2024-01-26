@@ -76,28 +76,31 @@ svg {
 }
 
 .bg-container {
-  position: absolute;
+  position: fixed;
   background-color: transparent;
+  overflow: hidden;
+  z-index: -100;
+  bottom: -5%;
+  left: 12rem;
+  transform-origin: 0 100%;
+  transform: rotate(-90deg);
+  // transform: translateX(50%);
   // position: fixed;
-  // background-color: pink;
+  // border: 1px solid red;
   // background-blend-mode: multiply;
 }
 
 .bg-text {
   font-family: playfair-display, serif;
-  position: absolute;
+  // position: absolute;
   font-weight: 600;
   font-size: 15rem;
-  z-index: -100;
-  bottom: -2.5%;
-  left: -5%;
+  overflow: hidden;
   // text-align: center;
   color: rgba(255, 255, 255, 0.015);
-  overflow: hidden;
+  // overflow: hidden;
   // background-color: pink;
   // writing-mode: vertical-rl;
   // text-orientation: sideways;
   // background-blend-mode: difference;
 }
-
-

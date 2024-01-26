@@ -9,9 +9,9 @@ export default function Layout() {
       <Header />
       <main>
         <Outlet />
+        <StyledBg />
       </main>
       <Footer />
-      <StyledBg />
     </div>
   );
 }

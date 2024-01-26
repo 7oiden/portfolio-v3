@@ -8,11 +8,12 @@ export default function Contact() {
       <Heading size="2" cssClass="section-heading">
         Contact
       </Heading>
-      <p>Get in touch or shoot me an email directly on:</p>
-      <LinkBtn url="mailto: tommy.johnsen@live.com">
-        tommy.johnsen@live.com
-      </LinkBtn>
-
+      <div>
+        <p>Get in touch or shoot me an email directly on:</p>
+        <LinkBtn url="mailto: tommy.johnsen@live.com">
+          tommy.johnsen@live.com
+        </LinkBtn>
+      </div>
       <ContactForm />
     </section>
   );

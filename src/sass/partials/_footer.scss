@@ -8,11 +8,11 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 3rem 0;
+    padding: 2rem 0;
 
     @media screen and (min-width: getBreakpoint(large)) {
       flex-direction: row;
-      justify-content: space-between;
+      // justify-content: flex-end;
     }
   }
 
@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    color: getColor(link);
+    color: getColor(textLight);
   }
 }
 

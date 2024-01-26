@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { set, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Banner from "../../components/alerts/Banner";
+import axios from "axios";
+import { BASE_URL } from "../../constants/api";
 
 const schema = yup.object().shape({
-  name: yup
+  first_name: yup
     .string()
     .required("Please enter your name")
     .min(3, "Your first name must be at least 3 characters")
@@ -33,7 +35,8 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
-  const [show, setShow] = useState(false);
+
+  const url = BASE_URL + "contacts";
 
   const {
     register,
@@ -47,33 +50,48 @@ export default function ContactForm() {
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    setSubmitted(true);
-    setShow(true);
     console.log(data);
     reset();
 
     const jsonData = {
       data: {
-        name: data.name,
+        first_name: data.first_name,
         email: data.email,
         subject: data.subject,
         message: data.message,
       },
     };
+
+    try {
+      const response = await axios.post(url, jsonData);
+      console.log("response", response.data);
+      setSubmitting(true);
+      setSubmitted(true);
+    } catch (error) {
+      console.log("error", error);
+      setServerError(error.toString());
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShow(false);
+      setSubmitted(false);
     }, 3000);
     return () => clearTimeout(timer);
-  }, [show]);
+  }, [submitted]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
       <div className="contact__input">
         <label htmlFor="name">Name</label>
-        <input type="text" placeholder="Name" id="name" {...register("name")} />
+        <input
+          type="text"
+          placeholder="Name"
+          id="name"
+          {...register("first_name")}
+        />
         {errors.name && (
           <span className="input-error">{errors.name.message}</span>
         )}
@@ -94,8 +112,8 @@ export default function ContactForm() {
         <label htmlFor="name">Subject</label>
         <input
           type="text"
-          placeholder="Last name"
-          id="name"
+          placeholder="Subject"
+          id="subject"
           {...register("subject")}
         />
         {errors.subject && (
@@ -110,11 +128,7 @@ export default function ContactForm() {
         )}
       </div>
       {submitted && (
-        <Banner
-          heading="Thank you for your message!"
-          status="success"
-          show={show}
-        >
+        <Banner heading="Thank you for your message!" status="success">
           I will get back to you shortly.
         </Banner>
       )}
@@ -125,7 +139,7 @@ export default function ContactForm() {
           message={serverError}
         />
       )}
-      <button className="contact__button">Send</button>
+      <button className="contact__button">{submitting ? "Submitting" : "Send"}</button>
     </form>
   );
 }

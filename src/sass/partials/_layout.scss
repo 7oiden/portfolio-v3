@@ -37,7 +37,16 @@
 }
 
 .footer__container {
-  @extend .page-width;
+  width: 90%;
+  margin: 0 auto;
+
+  @media (min-width: getBreakpoint(medium)) {
+    width: 90%;
+  }
+
+  @media (min-width: getBreakpoint(xxLarge)) {
+    width: 85%;
+  }
 }
 
 .outer-wrapper {
