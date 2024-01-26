@@ -46,4 +46,9 @@ img {
     width: 300px;
     max-width: 300px;
   }
+
+  @media (min-width: getBreakpoint(xLarge)) {
+    width: 350px;
+    max-width: 350px;
+  }
 }

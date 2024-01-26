@@ -63,7 +63,6 @@ export default function ProjectCard({
           </div>
         </div>
       </div>
-      <hr className="hr" />
     </>
   );
 }
