@@ -10,7 +10,7 @@ export default function Hero() {
           <Heading size="1" cssClass="hero__heading">
             Hi, I am Tommy Frontend Developer
           </Heading>
-          <HashLink smooth to="/about#contact" className="hero__button">
+          <HashLink smooth to="/about#contact" className="button hero__button">
             Get in touch
           </HashLink>
           <MediaLinks />

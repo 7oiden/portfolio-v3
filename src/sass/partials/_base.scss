@@ -18,10 +18,8 @@ html {
     ),
     linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100px 100px;
-  // background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
-  // mix-blend-mode: lighten;
 }
 
 body {
@@ -76,31 +74,25 @@ svg {
 }
 
 .bg-container {
-  position: fixed;
+  position: absolute;
   background-color: transparent;
   overflow: hidden;
   z-index: -100;
-  bottom: -5%;
   left: 12rem;
+  bottom: -25%;
   transform-origin: 0 100%;
   transform: rotate(-90deg);
-  // transform: translateX(50%);
-  // position: fixed;
-  // border: 1px solid red;
-  // background-blend-mode: multiply;
+
+  @media (min-width: getBreakpoint(large)) {
+    position: fixed;
+    bottom: -5%;
+  }
 }
 
 .bg-text {
   font-family: playfair-display, serif;
-  // position: absolute;
   font-weight: 600;
   font-size: 15rem;
   overflow: hidden;
-  // text-align: center;
   color: rgba(255, 255, 255, 0.015);
-  // overflow: hidden;
-  // background-color: pink;
-  // writing-mode: vertical-rl;
-  // text-orientation: sideways;
-  // background-blend-mode: difference;
 }

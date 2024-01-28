@@ -1,48 +1,13 @@
-.hero__button {
-  background-color: getColor(primaryBg);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
-  color: getColor(link);
-  font-size: 1.25rem;
-}
-
-.link-button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.button {
   background-color: getColor(badgeBg);
   color: getColor(buttonText);
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  padding: 0.375rem 0.75rem;
-  font-size: getSize(navLinkS);
-  transition: all 0.2s ease-in-out;
-  font-size: 1rem;
-
-  &:hover {
-    background-color: transparent;
-    color: getColor(link);
-    border: 2px solid getColor(buttonText);
-  }
-}
-
-.button-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.contact__button {
-  display: flex;
-  margin-right: auto;
-  background-color: getColor(footerBg);
-  color: getColor(buttonText);
-  border: 2px solid transparent;
-  border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   font-size: getSize(navLinkS);
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
+  margin-right: auto;
   cursor: pointer;
 
   &:hover {
@@ -50,6 +15,23 @@
     color: getColor(link);
     border: 2px solid getColor(buttonText);
   }
+}
+
+.hero__button {
+  font-size: 1.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.link-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .show-button {
@@ -76,8 +58,13 @@
 .media-links {
   display: flex;
   gap: 1rem;
-  color: getColor(link);
+  color: getColor(textLight);
   margin-top: 0.5rem;
+  // transition: all 0.2s ease-in-out;
+
+  :hover {
+    color: getColor(link);
+  }
 }
 
 .link-container {

@@ -6,7 +6,6 @@
 
 .path {
   position: relative;
-  // background-color: pink;
 }
 
 .path__info {
@@ -14,12 +13,10 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  // background-color: getColor(primaryBg);
-
   padding: 1rem;
   border-radius: 10px;
   top: 0;
-  margin-left: 5.5rem;
+  margin-left: 5rem;
   margin-bottom: 3rem;
   max-width: 400px;
   background: linear-gradient(
@@ -29,7 +26,6 @@
   );
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   border-top: 1px solid rgba(148, 163, 184, 0.1);
-  // background-blend-mode: darken;
 
   @media (min-width: getBreakpoint(large)) {
     right: 0;
@@ -48,12 +44,6 @@
     width: 40%;
   }
 }
-
-// .path > :nth-child(odd) {
-//   @media (min-width: getBreakpoint(large)) {
-//     background-color: lightgray; /* Apply styles to odd child elements */
-//   }
-// }
 
 .triangle-default {
   position: absolute;
@@ -164,4 +154,8 @@
 .path__date--right {
   right: 0;
   left: 60%;
+}
+
+.path-info-body {
+  padding-top: 0.5rem;
 }

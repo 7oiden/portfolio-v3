@@ -11,7 +11,6 @@ export default function PathSegment({
   url,
   icon,
 }) {
-
   const dateEl =
     id % 2 === 0 ? (
       <div className="path__date path__date--left">{date}</div>
@@ -27,6 +26,7 @@ export default function PathSegment({
       {dateEl}
       <div className="path">
         <InfoBox
+          key={id}
           id={id}
           title={title}
           date={date}

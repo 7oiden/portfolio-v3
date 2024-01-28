@@ -139,7 +139,7 @@ export default function ContactForm() {
           message={serverError}
         />
       )}
-      <button className="contact__button">
+      <button className="button">
         {submitting ? "Please wait..." : "Send"}
       </button>
     </form>

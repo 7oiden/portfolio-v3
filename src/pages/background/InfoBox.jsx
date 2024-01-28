@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import Heading from "../../components/Heading";
 import InfoToggler from "../../components/InfoToggler";
-// import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
 import LinkBtn from "../../components/LinkBtn";
 import { useSpring, animated } from "@react-spring/web";
@@ -16,22 +15,11 @@ export default function InfoBox({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const dateSpring = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
-    reset: true,
-    config: { duration: 1000 },
+  const textAppear = useSpring({
+    maxHeight: isOpen ? "500px" : "0px",
+    opacity: isOpen ? 1 : 0,
+    // config: { duration: 1000 },
   });
-
-  const springs2 = useSpring({
-    from: { height: 0 },
-    to: { height: "auto" },
-    reset: true,
-  });
-
-  // function handleToggle() {
-  //   setIsOpen((prevIsOpen) => !prevIsOpen);
-  // }
 
   const cssClass = id % 2 === 0 ? "path__info--even" : "path__info--odd";
 
@@ -47,7 +35,7 @@ export default function InfoBox({
       {triangleEl}
       <div className="triangle-default"></div>
       {isOpen && (
-        <animated.div className="path__date--mobile" style={{ ...dateSpring }}>
+        <animated.div className="path__date--mobile" style={{ ...textAppear }}>
           {date}
         </animated.div>
       )}
@@ -59,19 +47,16 @@ export default function InfoBox({
           {institution}
         </Heading>
         <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} />
-        {/* <MdOutlineArrowForwardIos
-          className={
-            isOpen ? "arrow-icon arrow-icon--up" : "arrow-icon arrow-icon--down"
-          }
-          onClick={handleToggle}
-        /> */}
       </div>
-      {isOpen && (
-        <animated.div className="paragraph-container" style={{ ...springs2 }}>
+      {isOpen ? (
+        <animated.div
+          className="paragraph-container path-info-body"
+          style={{ ...textAppear }}
+        >
           {description.map((paragraph, index) => (
-            <p className="path__body-text" key={index}>
+            <animated.p className="path__body-text" key={index}>
               {paragraph}
-            </p>
+            </animated.p>
           ))}
           {url && (
             <LinkBtn url={url} className="path__link" size="sm">
@@ -79,7 +64,7 @@ export default function InfoBox({
             </LinkBtn>
           )}
         </animated.div>
-      )}
+      ) : null}
     </div>
   );
 }
