@@ -33,7 +33,7 @@
 
 .badge {
   background-color: getColor(badgeBg);
-  padding: 0.25rem 1rem;
+  padding: 0.375rem 1rem;
   border-radius: 64px;
 }
 
@@ -99,4 +99,10 @@
     width: 100%;
     height: auto;
   }
+}
+
+.info-toggler {
+  display: flex;
+  color: getColor(link);
+  cursor: pointer;
 }

@@ -5,7 +5,7 @@ export default function Portfolio() {
   return (
     <section className="portfolio section-wrapper">
       <Heading size="2" cssClass="section-heading">
-        My Portfolio Site v3
+        My Portfolio v3
       </Heading>
       <div className="paragraph-container">
         <p>

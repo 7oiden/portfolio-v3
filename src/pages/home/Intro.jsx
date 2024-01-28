@@ -20,11 +20,9 @@ export default function Intro() {
             </p>
             <p>
               In 2022 I graduated as a frontend developer from{" "}
-              <em>Noroff School of Technology and Digital Media</em>.
-            </p>
-            <p>
-              Recently I completed the Frontend Career Path, an estimated 6
-              months course, at <em>Scrimba</em>
+              <em>Noroff School of Technology and Digital Media</em>, recently I
+              completed the Frontend Career Path, an estimated 6 months course,
+              at <em>Scrimba</em>
             </p>
           </div>
           <LinkBtn url="/about" size="md">

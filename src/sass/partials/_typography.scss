@@ -16,24 +16,8 @@ em {
 }
 
 p {
-  line-height: 1.4;
+  
 }
-
-// .underline {
-//   position: relative;
-//   margin-bottom: 1rem;
-// }
-
-// .underline::before {
-//   content: "";
-//   position: absolute;
-//   bottom: -0.5rem;
-//   left: 0;
-//   width: 15%;
-//   height: 2px;
-//   background-color: getColor(headingAccent);
-//   border-radius: 4px;
-// }
 
 .footer__heading {
   // font-size: getSize(subHeadingS);
@@ -95,6 +79,8 @@ p {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  line-height: 1.4;
+  max-width: 800px;
 }
 
 .card__heading {

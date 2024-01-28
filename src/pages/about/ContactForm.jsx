@@ -10,8 +10,8 @@ const schema = yup.object().shape({
   first_name: yup
     .string()
     .required("Please enter your name")
-    .min(3, "Your first name must be at least 3 characters")
-    .max(20, "First name can't be more than 20 characters"),
+    .min(3, "Your name must be at least 3 characters")
+    .max(20, "Name can't be more than 20 characters"),
 
   email: yup
     .string()
@@ -92,8 +92,8 @@ export default function ContactForm() {
           id="name"
           {...register("first_name")}
         />
-        {errors.name && (
-          <span className="input-error">{errors.name.message}</span>
+        {errors.first_name && (
+          <span className="input-error">{errors.first_name.message}</span>
         )}
       </div>
       <div className="contact__input">
@@ -139,7 +139,9 @@ export default function ContactForm() {
           message={serverError}
         />
       )}
-      <button className="contact__button">{submitting ? "Submitting" : "Send"}</button>
+      <button className="contact__button">
+        {submitting ? "Please wait..." : "Send"}
+      </button>
     </form>
   );
 }

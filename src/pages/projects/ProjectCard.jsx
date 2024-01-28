@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
+import { useState } from "react";
 import Heading from "../../components/Heading";
 import TextBadge from "../../components/TextBadge";
 import ProjectBtn from "../../components/ProjectBtn";
 import { Link } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { SiNetlify } from "react-icons/si";
+import InfoToggler from "../../components/InfoToggler";
 
 export default function ProjectCard({
   image,
@@ -16,6 +18,8 @@ export default function ProjectCard({
   siteUrl,
   codeUrl,
 }) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div className="project">
@@ -54,7 +58,10 @@ export default function ProjectCard({
           </div>
           <div className="paragraph-container">
             <p>{description[0]}</p>
-            <p>{description[1]}</p>
+            {isOpen && <p>{description[1]}</p>}
+            <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen}>
+              {isOpen ? "Show less" : "Read more"}
+            </InfoToggler>
           </div>
           <div className="badge__grid">
             {tools.map((tool) => (

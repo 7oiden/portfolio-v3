@@ -16,6 +16,21 @@ export const projectData = [
   },
   {
     id: 2,
+    title: "My Portfolio v2",
+    type: "Module Course Project",
+    date: "Jan 2022",
+    description: [
+      "This was my first real attempt to make a personal portfolio site, and was a mandatory project that marked the end of the Portfolio module at Noroff.",
+      "The site is coded using HTML and vanilla Javascript, and is styled using Sass, with a time frame of one week . The site is responsive and has a mobile first approach.",
+    ],
+    image:
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1706447026/my-portfolio-v2_vjerto.png",
+    netlify_url: "https://tommy-johnsen-portfolio.netlify.app",
+    github_url: "https://github.com/7oiden/my-portfolio.git",
+    tools: ["HTML", "javascript", "sass"],
+  },
+  {
+    id: 3,
     title: "Mercury Shoes",
     type: "Semester Project 2",
     date: "Dec 2021",
@@ -30,7 +45,7 @@ export const projectData = [
     tools: ["HTML", "javascript", "sass", "strapi", "heroku"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Passionate photography",
     type: "Project Exam 1",
     date: "May 2021",
@@ -45,7 +60,7 @@ export const projectData = [
     tools: ["HTML", "javascript", "CSS", "wordpress"],
   },
   {
-    id: 4,
+    id: 5,
     title: "Community Science Museum",
     type: "Semester project 1",
     date: "Dec 2020",

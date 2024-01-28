@@ -23,7 +23,7 @@ export const experienceData = [
     company: "NOBI Voss",
     date: "Aug '18 - May '19",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Responsible for planning, resource distribution and support of a engineering team of eight people.",
     ],
     url: null,
     icon: <RiTeamFill />,
@@ -63,11 +63,11 @@ export const experienceData = [
   },
   {
     id: 6,
-    title: "Lager/butikk (deltid)",
+    title: "Shop and warehouse",
     company: "Geitanger Bygg AS",
     date: "Aug '05 - Jul '08",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Worked part time in the shop and the warehouse of a hardware / building supply store while studying full time.",
     ],
     url: null,
     icon: <FaWarehouse />,
@@ -77,9 +77,7 @@ export const experienceData = [
     title: "Production Worker",
     company: "Spenncon AS",
     date: "Jun '97 - Jun '03",
-    description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    ],
+    description: ["Production of concrete slabs based on technical drawings."],
     url: null,
     icon: <MdFactory />,
   },

@@ -4,11 +4,22 @@
   gap: 1.5rem;
   padding: 1rem 0;
   max-width: 500px;
-  background-color: rgba(59, 77, 103, 0.1);
+  background: linear-gradient(
+    to right bottom,
+    rgba(25, 42, 77, 0.8),
+    rgba(20, 35, 60, 0.8)
+  );
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   border-top: 1px solid rgba(148, 163, 184, 0.2);
   border-radius: 10px;
   padding: 2rem;
+}
+
+.form__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact__form input,

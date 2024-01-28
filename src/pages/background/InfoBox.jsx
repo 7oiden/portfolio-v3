@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Heading from "../../components/Heading";
-import { MdOutlineArrowForwardIos } from "react-icons/md";
+import InfoToggler from "../../components/InfoToggler";
+// import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { useState } from "react";
 import LinkBtn from "../../components/LinkBtn";
 import { useSpring, animated } from "@react-spring/web";
@@ -28,9 +29,9 @@ export default function InfoBox({
     reset: true,
   });
 
-  function handleToggle() {
-    setIsOpen((prevIsOpen) => !prevIsOpen);
-  }
+  // function handleToggle() {
+  //   setIsOpen((prevIsOpen) => !prevIsOpen);
+  // }
 
   const cssClass = id % 2 === 0 ? "path__info--even" : "path__info--odd";
 
@@ -57,12 +58,13 @@ export default function InfoBox({
         <Heading size="4" cssClass="path-sub-heading">
           {institution}
         </Heading>
-        <MdOutlineArrowForwardIos
+        <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} />
+        {/* <MdOutlineArrowForwardIos
           className={
             isOpen ? "arrow-icon arrow-icon--up" : "arrow-icon arrow-icon--down"
           }
           onClick={handleToggle}
-        />
+        /> */}
       </div>
       {isOpen && (
         <animated.div className="paragraph-container" style={{ ...springs2 }}>

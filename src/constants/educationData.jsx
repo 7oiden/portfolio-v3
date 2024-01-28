@@ -35,7 +35,7 @@ export const educationData = [
     institution: "Bergen University College",
     date: "Aug '05 - Jun '08",
     description: [
-      "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
+      "Specializing in structural in the second and third year, with a focus on steel, wood and concrete structures.",
     ],
     url: null,
     icon: <FaUniversity />,

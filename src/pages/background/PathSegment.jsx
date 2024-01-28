@@ -48,5 +48,4 @@ PathSegment.propTypes = {
   url: PropTypes.string,
   cssClass: PropTypes.string,
   icon: PropTypes.element,
-  // icon: PropTypes.string,
 };
