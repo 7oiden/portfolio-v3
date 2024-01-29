@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { SiNetlify } from "react-icons/si";
 import InfoToggler from "../../components/InfoToggler";
+import { useSpring, animated } from "@react-spring/web";
 
 export default function ProjectCard({
   image,
@@ -19,6 +20,11 @@ export default function ProjectCard({
   codeUrl,
 }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const textAppear = useSpring({
+    maxHeight: isOpen ? "500px" : "0px",
+    opacity: isOpen ? 1 : 0,
+  });
 
   return (
     <>
@@ -58,7 +64,11 @@ export default function ProjectCard({
           </div>
           <div className="paragraph-container">
             <p>{description[0]}</p>
-            {isOpen && <p>{description[1]}</p>}
+            {isOpen && (
+              <animated.p style={{ ...textAppear }}>
+                {description[1]}
+              </animated.p>
+            )}
             <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen}>
               {isOpen ? "Show less" : "Read more"}
             </InfoToggler>

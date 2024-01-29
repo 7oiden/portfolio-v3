@@ -21,8 +21,8 @@
     text-transform: uppercase;
 
     @media (min-width: getBreakpoint(large)) {
-    font-size: 1.125rem;
-  }
+      font-size: 1.125rem;
+    }
   }
 
   &__link {
@@ -63,6 +63,7 @@
 }
 
 .card {
+  position: relative;
   border-radius: 10px;
   font-size: 0.875rem;
   display: flex;
@@ -84,13 +85,7 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    // align-items: center;
   }
 }
 
-.project__date-icon {
-  color: getColor(accentCol1);
-  width: 1.5rem;
-  height: 1.5rem;
-}
 

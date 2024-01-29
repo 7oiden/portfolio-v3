@@ -11,15 +11,15 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   }, [location]);
 
   useEffect(() => {
-    // Add a resize event listener to the window
+    // Adds a resize event listener to the window
     const handleResize = () => {
-      // Close the dropdown when the window is resized
+      // Closes the dropdown when the window is resized
       setIsMenuOpen(false);
     };
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup: remove the event listener when the component is unmounted
+    // Cleanup: removes the event listener when the component is unmounted
     return () => {
       window.removeEventListener("resize", handleResize);
     };

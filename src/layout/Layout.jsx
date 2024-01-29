@@ -5,13 +5,14 @@ import StyledBg from "./StyledBg";
 
 export default function Layout() {
   return (
-    <div className="page-wrapper">
+    <>
+      <div className="page-wrapper"></div>
       <StyledBg />
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
+import { useSpring, animated } from "react-spring";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
-  const menuIcon = isMenuOpen ? <MdClose /> : <MdMenu />;
+  // const menuIcon = isMenuOpen ? <MdClose /> : <MdMenu />;
+
+  const { opacity, transform } = useSpring({
+    // opacity: isMenuOpen ? 0 : 1,
+    transform: isMenuOpen ? `rotate(90deg)` : `rotate(0deg)`,
+  });
 
   return (
     <nav className="navbar">
@@ -43,7 +49,9 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
         </li>
       </ul>
       <div className="toggle-btn" onClick={handleToggle}>
-        {menuIcon}
+        <animated.div className="toggle-btn" style={{ opacity, transform }}>
+          {isMenuOpen ? <MdClose /> : <MdMenu />}
+        </animated.div>
       </div>
     </nav>
   );

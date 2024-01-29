@@ -10,23 +10,6 @@ html {
   box-sizing: inherit;
 }
 
-.page-wrapper {
-  position: relative;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 100px 100px;
-  background-position: center;
-  background-attachment: scroll;
-  overflow: hidden;
-
-  @media (min-width: getBreakpoint(large)) {
-    background-attachment: fixed;
-  }
-}
-
 body {
   position: relative;
   height: 100vh;
@@ -41,6 +24,24 @@ body {
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
+}
+
+.page-wrapper::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 100px 100px;
+  background-position: center;
+  background-attachment: fixed;
+  z-index: -200;
 }
 
 main {

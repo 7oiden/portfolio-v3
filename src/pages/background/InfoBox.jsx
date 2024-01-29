@@ -18,7 +18,6 @@ export default function InfoBox({
   const textAppear = useSpring({
     maxHeight: isOpen ? "500px" : "0px",
     opacity: isOpen ? 1 : 0,
-    // config: { duration: 1000 },
   });
 
   const cssClass = id % 2 === 0 ? "path__info--even" : "path__info--odd";

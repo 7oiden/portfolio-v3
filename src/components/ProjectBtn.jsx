@@ -12,7 +12,7 @@ export default function ProjectBtn({ icon, url, children }) {
   }
 
   return (
-    <Link to={url} className="button link-button">
+    <Link to={url} className="button project-button">
       {buttonIcon}
       {children}
     </Link>
