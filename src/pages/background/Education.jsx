@@ -7,6 +7,8 @@ import PathToggleBtn from "./PathToggleBtn";
 export default function Education() {
   const [numToShow, setNumToShow] = useState(3);
 
+  const slicedEducationData = educationData.slice(0, numToShow);
+
   return (
     <section className="section-wrapper">
       <Heading size="2" cssClass="section-heading path__heading">
@@ -14,7 +16,7 @@ export default function Education() {
       </Heading>
       <div className="path__container">
         <div className="path__vert"></div>
-        {educationData.slice(0, numToShow).map((entry) => (
+        {slicedEducationData.map((entry) => (
           <PathSegment
             key={entry.id}
             id={entry.id}

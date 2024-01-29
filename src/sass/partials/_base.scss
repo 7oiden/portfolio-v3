@@ -11,7 +11,6 @@ html {
 }
 
 .page-wrapper {
-  position: relative;
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.025) 1px,
       transparent 1px
@@ -19,11 +18,15 @@ html {
     linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100px 100px;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
+
+  @media (min-width: getBreakpoint(large)) {
+    position: relative;
+    background-attachment: fixed;
+  }
 }
 
 body {
-  position: relative;
   height: 100vh;
   margin: 0;
   background: rgb(16, 30, 67);
@@ -36,6 +39,10 @@ body {
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    position: relative;
+  }
 }
 
 main {
@@ -43,10 +50,10 @@ main {
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
-  position: relative;
 
   @media (min-width: getBreakpoint(large)) {
     margin-bottom: 8rem;
+    position: relative;
   }
 }
 
@@ -79,7 +86,7 @@ svg {
   overflow: hidden;
   z-index: -100;
   left: 12rem;
-  bottom: -25%;
+  bottom: 0;
   transform-origin: 0 100%;
   transform: rotate(-90deg);
 
