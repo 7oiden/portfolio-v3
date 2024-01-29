@@ -36,12 +36,6 @@
   background-color: transparent;
   font-family: inter;
   font-size: inherit;
-
-  &:focus {
-    outline: none;
-    border: 1px solid getColor(accentCol2);
-    background-color: getColor(primaryBg);
-  }
 }
 
 .contact__input {
@@ -52,6 +46,12 @@
 
   & input {
     color: getColor(textLight);
+
+    &:focus {
+      outline: none;
+      border: 1px solid getColor(accentCol2);
+      background-color: getColor(primaryBg);
+    }
   }
 
   & label {

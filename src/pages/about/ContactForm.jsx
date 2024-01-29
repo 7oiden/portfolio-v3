@@ -127,6 +127,11 @@ export default function ContactForm() {
           <span className="input-error">{errors.message.message}</span>
         )}
       </div>
+      {submitting && (
+        <Banner heading="Please hold!" status="warning">
+          Heroku API is waking up...
+        </Banner>
+      )}
       {submitted && (
         <Banner heading="Thank you for your message!" status="success">
           I will get back to you shortly.
