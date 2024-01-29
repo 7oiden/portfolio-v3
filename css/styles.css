@@ -14,7 +14,6 @@ html {
 
 body {
   position: relative;
-  height: 100vh;
   margin: 0;
   background: rgb(16, 30, 67);
   background: radial-gradient(circle, rgb(16, 30, 67) 0%, rgb(15, 23, 42) 100%);
