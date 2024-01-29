@@ -24,6 +24,10 @@ body {
   font-size: 1rem;
 }
 
+#root {
+  position: relative;
+}
+
 .page-wrapper::before {
   content: "";
   position: fixed;
@@ -36,6 +40,13 @@ body {
   background-position: center;
   background-attachment: fixed;
   z-index: -200;
+  display: none;
+}
+@media (min-width: 992px) {
+  .page-wrapper::before {
+    margin-bottom: 8rem;
+    display: block;
+  }
 }
 
 main {
@@ -76,31 +87,20 @@ svg {
 }
 
 .bg-container {
-  position: absolute;
-  background-color: transparent;
-  overflow: hidden;
+  position: fixed;
   z-index: -100;
-  left: 12rem;
+  left: 10rem;
   bottom: -5%;
-  transform-origin: 0 100%;
-  transform: rotate(-90deg);
-  margin-right: auto;
-}
-@media (min-width: 992px) {
-  .bg-container {
-    position: fixed;
-  }
-}
-
-.bg-text {
   font-family: playfair-display, serif;
   font-weight: 600;
   font-size: 12rem;
   overflow: hidden;
+  transform-origin: 0 100%;
+  transform: rotate(-90deg);
   color: rgba(255, 255, 255, 0.015);
 }
 @media (min-width: 992px) {
-  .bg-text {
+  .bg-container {
     font-size: 15rem;
   }
 }

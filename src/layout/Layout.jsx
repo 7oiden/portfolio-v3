@@ -7,12 +7,12 @@ export default function Layout() {
   return (
     <>
       <div className="page-wrapper"></div>
-      <StyledBg />
       <Header />
       <main>
         <Outlet />
       </main>
       <Footer />
+      <StyledBg />
     </>
   );
 }
