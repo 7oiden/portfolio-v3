@@ -11,27 +11,29 @@ export default function Education() {
 
   return (
     <section className="section-wrapper">
-      <Heading size="2" cssClass="section-heading path__heading">
-        Education & Training
-      </Heading>
-      <div className="path__container">
-        <div className="path__vert"></div>
-        {slicedEducationData.map((entry) => (
-          <PathSegment
-            key={entry.id}
-            id={entry.id}
-            title={entry.title}
-            date={entry.date}
-            institution={entry.institution}
-            description={entry.description}
-            url={entry.url}
-            icon={entry.icon}
+      <div className="path__wrapper">
+        <Heading size="2" cssClass="section-heading path__heading">
+          Education & Training
+        </Heading>
+        <div className="path__container">
+          <div className="path__vert"></div>
+          {slicedEducationData.map((entry) => (
+            <PathSegment
+              key={entry.id}
+              id={entry.id}
+              title={entry.title}
+              date={entry.date}
+              institution={entry.institution}
+              description={entry.description}
+              url={entry.url}
+              icon={entry.icon}
+            />
+          ))}
+          <PathToggleBtn
+            setNumToShow={setNumToShow}
+            educationData={educationData}
           />
-        ))}
-        <PathToggleBtn
-          setNumToShow={setNumToShow}
-          educationData={educationData}
-        />
+        </div>
       </div>
     </section>
   );

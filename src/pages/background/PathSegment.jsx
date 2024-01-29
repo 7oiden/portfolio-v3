@@ -24,7 +24,7 @@ export default function PathSegment({
         {cloneElement(icon, { className: "path__icon" })}
       </div>
       {dateEl}
-      <div className="path">
+      <div>
         <InfoBox
           key={id}
           id={id}

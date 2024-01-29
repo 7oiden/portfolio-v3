@@ -20,45 +20,43 @@ export default function InfoBox({
     opacity: isOpen ? 1 : 0,
   });
 
-  const cssClass = id % 2 === 0 ? "path__info--even" : "path__info--odd";
+  const cssClass = id % 2 === 0 ? null : "info-box--odd";
 
   const triangleEl =
     id % 2 === 0 ? (
-      <div className="triangle-left"></div>
+      <div className="info-box__marker info-box__marker--left"></div>
     ) : (
-      <div className="triangle-right"></div>
+      <div className="info-box__marker info-box__marker--right"></div>
     );
 
   return (
-    <div className={`path__info ${cssClass}`}>
+    <div className={`info-box ${cssClass}`}>
       {triangleEl}
-      <div className="triangle-default"></div>
+      <div className="info-box__marker info-box__marker--default"></div>
       {isOpen && (
         <animated.div className="path__date--mobile" style={{ ...textAppear }}>
           {date}
         </animated.div>
       )}
-      <Heading size="3" cssClass="path-heading">
+      <Heading size="3" cssClass="info-box__heading">
         {title}
       </Heading>
-      <div className="path-sub-heading-container">
-        <Heading size="4" cssClass="path-sub-heading">
+      <div className="info-box__header">
+        <Heading size="4" cssClass="info-box__sub-heading">
           {institution}
         </Heading>
         <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
       {isOpen ? (
         <animated.div
-          className="paragraph-container path-info-body"
+          className="paragraph-container info-box__body"
           style={{ ...textAppear }}
         >
           {description.map((paragraph, index) => (
-            <animated.p className="path__body-text" key={index}>
-              {paragraph}
-            </animated.p>
+            <p key={index}>{paragraph}</p>
           ))}
           {url && (
-            <LinkBtn url={url} className="path__link" size="sm">
+            <LinkBtn url={url} size="sm">
               More info
             </LinkBtn>
           )}

@@ -10,11 +10,12 @@ export default function Header() {
   }
 
   return (
-    <div className={isMenuOpen ? "fade-bg" : ""}>
+    <>
+      <div className={isMenuOpen ? "fade-bg" : ""}></div>
       <header className={isMenuOpen ? "header navbar--open" : "header"}>
         <Navbar handleToggle={handleToggle} isMenuOpen={isMenuOpen} />
         <NavDropdown isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </header>
-    </div>
+    </>
   );
 }

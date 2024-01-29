@@ -46,6 +46,10 @@ em {
   }
 }
 
+.accent-dot {
+  color: getColor(headingAccent);
+}
+
 .section-heading {
   font-size: getSize(sectionHeadingS);
   font-weight: 500;
@@ -99,28 +103,25 @@ em {
   font-size: getSize(badgeText);
 }
 
-.path-heading {
+.info-box__heading {
   font-size: 1rem;
   font-weight: 500;
   color: getColor(headingLight);
 }
 
-.path-sub-heading {
+.info-box__sub-heading {
   font-size: 1rem;
   font-weight: 600;
   color: getColor(accentCol1);
   text-transform: uppercase;
 }
 
-.accent-dot {
-  color: getColor(headingAccent);
-}
-
 .path__heading {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 
   @media (min-width: getBreakpoint(large)) {
     text-align: center;
+    margin-bottom: 3rem;
   }
 }
 

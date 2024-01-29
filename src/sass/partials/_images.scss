@@ -12,17 +12,13 @@ img {
 
 .hero {
   position: relative;
-  // top: -4rem;
+  top: -4rem;
   background-image: url("../assets/images/mountains-bg-dark.jpg");
   background-size: cover;
   background-position: bottom center;
   width: 100%;
   height: 100vh;
   z-index: 1;
-
-  @media (min-width: getBreakpoint(large)) {
-    // top: -4rem;
-  }
 }
 
 .intro__avatar {
