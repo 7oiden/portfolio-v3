@@ -6,10 +6,10 @@ import StyledBg from "./StyledBg";
 export default function Layout() {
   return (
     <div className="page-wrapper">
+      <StyledBg />
       <Header />
       <main>
         <Outlet />
-        <StyledBg />
       </main>
       <Footer />
     </div>
