@@ -188,7 +188,6 @@ svg {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin-top: -4rem;
 }
 @media (min-width: 992px) {
   .intro__container {
@@ -598,7 +597,6 @@ img {
 
 .hero {
   position: relative;
-  top: -4rem;
   background-image: url("../assets/images/mountains-bg-dark.jpg");
   background-size: cover;
   background-position: bottom center;
@@ -606,12 +604,6 @@ img {
   height: 100vh;
   z-index: 1;
 }
-@media (min-width: 992px) {
-  .hero {
-    top: -4rem;
-  }
-}
-
 .intro__avatar {
   width: 200px;
   border-radius: 50%;
