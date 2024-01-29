@@ -6,7 +6,7 @@ import Footer from ".././components/Footer";
 export default function Layout() {
   return (
     <>
-      <div className="page-wrapper"></div>
+      {/* <div className="page-wrapper"></div> */}
       <Header />
       <main>
         <Outlet />
