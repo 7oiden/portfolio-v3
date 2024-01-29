@@ -12,6 +12,7 @@ html {
 
 body {
   position: relative;
+  height: 100%;
   margin: 0;
   background: rgb(16, 30, 67);
   background: radial-gradient(
@@ -19,7 +20,7 @@ body {
     rgba(16, 30, 67, 1) 0%,
     rgba(15, 23, 42, 1) 100%
   );
-  background-attachment: fixed;
+  // background-attachment: fixed;
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
@@ -96,7 +97,7 @@ svg {
   font-family: playfair-display, serif;
   font-weight: 600;
   font-size: 12rem;
-  overflow: hidden;
+  // overflow: hidden;
   transform-origin: 0 100%;
   transform: rotate(-90deg);
   color: rgba(255, 255, 255, 0.015);

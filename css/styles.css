@@ -14,10 +14,10 @@ html {
 
 body {
   position: relative;
+  height: 100%;
   margin: 0;
   background: rgb(16, 30, 67);
   background: radial-gradient(circle, rgb(16, 30, 67) 0%, rgb(15, 23, 42) 100%);
-  background-attachment: fixed;
   color: #94a3b8;
   font-family: "inter", sans-serif;
   font-size: 1rem;
@@ -92,7 +92,6 @@ svg {
   font-family: playfair-display, serif;
   font-weight: 600;
   font-size: 12rem;
-  overflow: hidden;
   transform-origin: 0 100%;
   transform: rotate(-90deg);
   color: rgba(255, 255, 255, 0.015);
