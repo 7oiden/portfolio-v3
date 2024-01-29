@@ -21,6 +21,12 @@ body {
   color: #94a3b8;
   font-family: "inter", sans-serif;
   font-size: 1rem;
+  background-attachment: scroll;
+}
+@media (min-width: 992px) {
+  body {
+    background-attachment: fixed;
+  }
 }
 
 #root {
@@ -37,7 +43,7 @@ body {
   background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px), linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100px 100px;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   z-index: -200;
   display: none;
 }
@@ -45,6 +51,7 @@ body {
   .page-wrapper::before {
     margin-bottom: 8rem;
     display: block;
+    background-attachment: fixed;
   }
 }
 
@@ -91,7 +98,6 @@ svg {
   bottom: -5%;
   font-family: playfair-display, serif;
   font-weight: 600;
-  font-size: 12rem;
   transform-origin: 0 100%;
   transform: rotate(-90deg);
   color: rgba(255, 255, 255, 0.015);
@@ -99,8 +105,8 @@ svg {
 }
 @media (min-width: 992px) {
   .bg-container {
-    font-size: 15rem;
     display: block;
+    font-size: 15rem;
   }
 }
 
@@ -805,6 +811,16 @@ img {
   height: 1.5rem;
 }
 
+.media-links {
+  display: flex;
+  gap: 1rem;
+  color: #e2e8f0;
+  margin-top: 0.5rem;
+}
+.media-links :hover {
+  color: #e2e8f0;
+}
+
 .project {
   display: flex;
   flex-direction: column;
@@ -886,12 +902,15 @@ img {
 .card__header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .button {
-  background-color: #0B1B2B;
+  background-color: transparent;
   color: #38bdf8;
-  border: 2px solid transparent;
+  border: 2px solid rgba(56, 189, 248, 0.7490196078);
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   font-size: 1.125rem;
@@ -903,12 +922,19 @@ img {
 .button:hover {
   background-color: transparent;
   color: #e2e8f0;
-  border: 2px solid #38bdf8;
+  border: 2px solid #e2e8f0;
 }
 
 .hero__button {
   font-size: 1.25rem;
   transition: all 0.2s ease-in-out;
+  background-color: #0B1B2B;
+  border: 2px solid transparent;
+}
+.hero__button:hover {
+  background-color: transparent;
+  color: #e2e8f0;
+  border: 2px solid #e2e8f0;
 }
 
 .project-button {
@@ -944,16 +970,6 @@ img {
     transform: translateX(-50%);
     margin-left: 0;
   }
-}
-
-.media-links {
-  display: flex;
-  gap: 1rem;
-  color: #94a3b8;
-  margin-top: 0.5rem;
-}
-.media-links :hover {
-  color: #e2e8f0;
 }
 
 .link-container {

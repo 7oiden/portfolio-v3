@@ -1,7 +1,7 @@
 .button {
-  background-color: getColor(buttonBg);
+  background-color: transparent;
   color: getColor(buttonText);
-  border: 2px solid transparent;
+  border: 2px solid #38bdf8bf;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   font-size: getSize(navLinkS);
@@ -13,13 +13,21 @@
   &:hover {
     background-color: transparent;
     color: getColor(link);
-    border: 2px solid getColor(buttonText);
+    border: 2px solid getColor(link);
   }
 }
 
 .hero__button {
   font-size: 1.25rem;
   transition: all 0.2s ease-in-out;
+  background-color: getColor(buttonBg);
+  border: 2px solid transparent;
+
+  &:hover {
+    background-color: transparent;
+    color: getColor(link);
+    border: 2px solid getColor(link);
+  }
 }
 
 .project-button {
@@ -53,18 +61,6 @@
     left: 50%;
     transform: translateX(-50%);
     margin-left: 0;
-  }
-}
-
-.media-links {
-  display: flex;
-  gap: 1rem;
-  color: getColor(textLight);
-  margin-top: 0.5rem;
-  // transition: all 0.2s ease-in-out;
-
-  :hover {
-    color: getColor(link);
   }
 }
 

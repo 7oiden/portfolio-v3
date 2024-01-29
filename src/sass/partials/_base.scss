@@ -20,10 +20,14 @@ body {
     rgba(16, 30, 67, 1) 0%,
     rgba(15, 23, 42, 1) 100%
   );
-  // background-attachment: fixed;
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
+  background-attachment: scroll;
+
+   @media (min-width: getBreakpoint(large)) {
+    background-attachment: fixed;
+  }
 }
 
 #root {
@@ -44,13 +48,14 @@ body {
     linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100px 100px;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
   z-index: -200;
   display: none;
 
   @media (min-width: getBreakpoint(large)) {
     margin-bottom: 8rem;
     display: block;
+    background-attachment: fixed;
   }
 }
 
@@ -96,7 +101,6 @@ svg {
   bottom: -5%;
   font-family: playfair-display, serif;
   font-weight: 600;
-  font-size: 12rem;
   // overflow: hidden;
   transform-origin: 0 100%;
   transform: rotate(-90deg);
@@ -104,8 +108,7 @@ svg {
   display: none;
 
   @media (min-width: getBreakpoint(large)) {
-    font-size: 15rem;
     display: block;
+    font-size: 15rem;
   }
 }
-
