@@ -98,10 +98,12 @@ svg {
   transform-origin: 0 100%;
   transform: rotate(-90deg);
   color: rgba(255, 255, 255, 0.015);
+  display: none;
 }
 @media (min-width: 992px) {
   .bg-container {
     font-size: 15rem;
+    display: block;
   }
 }
 
