@@ -50,7 +50,6 @@ body {
 
 main {
   position: relative;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 6rem;
@@ -481,7 +480,7 @@ em {
 
 .logo {
   font-weight: 400;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .nav__links {
@@ -891,7 +890,7 @@ img {
 }
 
 .button {
-  background-color: #132f4b;
+  background-color: #0B1B2B;
   color: #38bdf8;
   border: 2px solid transparent;
   border-radius: 0.25rem;
