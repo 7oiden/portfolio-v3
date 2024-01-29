@@ -5,9 +5,6 @@ import TextBadge from "../../components/TextBadge";
 import { hobbiesArr, attributesArr } from "../../constants/aboutData";
 
 export default function Info() {
-
-  
-
   return (
     <section className="info">
       <div className="section-wrapper">
@@ -22,10 +19,10 @@ export default function Info() {
             </Heading>
             <div className="paragraph-container">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+                Explore my hobbies and interests, where passion meets curiosity.
+                Discover the things I love to do in my leisure time, offering a
+                glimpse into the pursuits that inspire me beyond the digital
+                realm.
               </p>
             </div>
             <div className="badge__grid">

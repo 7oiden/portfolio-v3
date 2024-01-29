@@ -13,10 +13,12 @@ export default function Contact() {
           Send me a message or get in touch directly on email or on my LinkedIn
           profile:
         </p>
-        <LinkBtn url="mailto: tommy.johnsen@live.com">
-          tommy.johnsen@live.com
-        </LinkBtn>
-        <LinkBtn url="tel:92014618">LinkedIn</LinkBtn>
+        <div className="form__link-container">
+          <LinkBtn url="mailto: tommy.johnsen@live.com">Email</LinkBtn>
+          <LinkBtn url="https://www.linkedin.com/in/tommy-j-16b56678/">
+            LinkedIn
+          </LinkBtn>
+        </div>
       </div>
       <ContactForm />
     </section>

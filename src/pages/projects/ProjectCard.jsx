@@ -11,6 +11,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 export default function ProjectCard({
   image,
+  imageAlt,
   title,
   type,
   date,
@@ -36,7 +37,7 @@ export default function ProjectCard({
           </div>
           <Link to={siteUrl} className="project__link">
             <div className="project__image">
-              <img src={image} className="project__image" />
+              <img src={image} alt={imageAlt} className="project__image" />
             </div>
             <div className="project__overlay">
               <div>
@@ -87,6 +88,7 @@ export default function ProjectCard({
 ProjectCard.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   description: PropTypes.array.isRequired,

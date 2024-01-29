@@ -1,5 +1,6 @@
 import Heading from "../../components/Heading";
 
+/* eslint-disable react/no-unescaped-entities */
 export default function Biography() {
   return (
     <section className="section-wrapper">
@@ -19,7 +20,7 @@ export default function Biography() {
         </p>
         <p>
           In 2020 i decided to pursue a new career as a frontend-developer by
-          enrolling in <em>Noroff &apos s </em>frontend-programme as an full-time
+          enrolling in <em>Noroff's</em> frontend-programme as an full-time
           online student.
         </p>
         <p>
