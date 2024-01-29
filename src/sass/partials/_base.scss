@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  position: relative;
+  // position: relative;
   height: 100%;
   margin: 0;
   background: rgb(16, 30, 67);
@@ -23,7 +23,7 @@ body {
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
-  background-attachment: scroll;
+  // background-attachment: scroll;
 
   @media (min-width: getBreakpoint(large)) {
     background-attachment: fixed;
@@ -36,24 +36,24 @@ body {
 }
 
 .page-wrapper::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.025) 1px,
-      transparent 1px
-    ),
-    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-  background-size: 100px 100px;
-  background-position: center;
-  background-attachment: scroll;
-  z-index: -200;
   display: none;
 
   @media (min-width: getBreakpoint(large)) {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: center;
+    background-attachment: scroll;
+    z-index: -200;
+    position: fixed;
     margin-bottom: 8rem;
     display: block;
     background-attachment: fixed;
