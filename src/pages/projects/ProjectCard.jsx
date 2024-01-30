@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import Heading from "../../components/Heading";
-import TextBadge from "../../components/TextBadge";
+import Heading from "../../components/common/Heading";
+import TextBadge from "../../components/common/TextBadge";
 import ProjectBtn from "./ProjectBtn";
 import { Link } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { SiNetlify } from "react-icons/si";
-import InfoToggler from "../../components/InfoToggler";
+import InfoToggler from "../../components/common/InfoToggler";
 import { useSpring, animated } from "@react-spring/web";
 
 export default function ProjectCard({
@@ -58,9 +58,7 @@ export default function ProjectCard({
               </Heading>
             </hgroup>
             <div className="button-container">
-              <ProjectBtn icon="github" url={codeUrl}>
-                GitHub
-              </ProjectBtn>
+              <ProjectBtn url={codeUrl}>GitHub</ProjectBtn>
             </div>
           </div>
           <div className="paragraph-container">

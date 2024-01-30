@@ -1,4 +1,4 @@
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import PathSegment from "./PathSegment";
 import { experienceData } from "../../constants/experienceData";
 import { useState } from "react";

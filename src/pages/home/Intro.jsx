@@ -1,6 +1,6 @@
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import avatar from "../../assets/images/avatar.png";
-import LinkBtn from "../../components/LinkBtn";
+import LinkBtn from "../../components/common/LinkBtn";
 
 export default function Intro() {
   return (

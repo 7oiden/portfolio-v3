@@ -1,4 +1,4 @@
-import Heading from "../components/Heading";
+import Heading from "../components/common/Heading";
 import Experience from "./background/Experience";
 import Education from "./background/Education";
 import ResumeLink from "./background/ResumeLink";

@@ -1,10 +1,10 @@
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import { FaCode } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
 import IconBadge from "./SkillBadge";
-import InfoListItem from "../../components/InfoListItem";
+import InfoListItem from "../../components/common/InfoListItem";
 import {
   designArr,
   developmentArr,

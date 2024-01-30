@@ -1,4 +1,4 @@
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import { projectData } from "../../constants/projectData";
 import ProjectCard from "./ProjectCard";
 

@@ -1,5 +1,5 @@
-import Heading from "../../components/Heading";
-import LinkBtn from "../../components/LinkBtn";
+import Heading from "../../components/common/Heading";
+import LinkBtn from "../../components/common/LinkBtn";
 import ContactForm from "./ContactForm";
 
 export default function Contact() {

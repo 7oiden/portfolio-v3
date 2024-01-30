@@ -1,6 +1,6 @@
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 import { HashLink } from "react-router-hash-link";
-import MediaLinks from "../../components/MediaLinks";
+import MediaLinks from "../../components/common/MediaLinks";
 
 export default function Hero() {
   return (

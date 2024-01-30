@@ -1,4 +1,4 @@
-import Heading from "../../components/Heading";
+import Heading from "../../components/common/Heading";
 
 /* eslint-disable react/no-unescaped-entities */
 export default function Biography() {

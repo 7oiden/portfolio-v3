@@ -1,7 +1,7 @@
-import Heading from "../../components/Heading";
-import InfoListItem from "../../components/InfoListItem";
+import Heading from "../../components/common/Heading";
+import InfoListItem from "../../components/common/InfoListItem";
 import { MdCamera, MdPerson } from "react-icons/md";
-import TextBadge from "../../components/TextBadge";
+import TextBadge from "../../components/common/TextBadge";
 import { hobbiesArr, attributesArr } from "../../constants/aboutData";
 
 export default function Info() {

@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import Heading from "../../components/Heading";
-import InfoToggler from "../../components/InfoToggler";
+import Heading from "../../components/common/Heading";
+import InfoToggler from "../../components/common/InfoToggler";
 import { useState } from "react";
-import LinkBtn from "../../components/LinkBtn";
+import LinkBtn from "../../components/common/LinkBtn";
 import { useSpring, animated } from "@react-spring/web";
 
 export default function InfoBox({

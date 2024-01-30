@@ -109,6 +109,10 @@ svg {
   }
 }
 
+.portfolio-text {
+  margin-bottom: 1rem;
+}
+
 .page-width, .section-wrapper, .page-heading, .footer__container {
   width: 90%;
   margin: 0 auto;
@@ -391,7 +395,7 @@ em {
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  color: #94a3b8;
+  color: #66b0d8;
   text-transform: uppercase;
 }
 
@@ -410,7 +414,7 @@ em {
 .card__sub-heading {
   font-size: 1rem;
   font-weight: 600;
-  color: #38bdf8;
+  color: #66b0d8;
   text-transform: uppercase;
 }
 
@@ -438,7 +442,7 @@ em {
 .info-box__sub-heading {
   font-size: 1rem;
   font-weight: 600;
-  color: #38bdf8;
+  color: #66b0d8;
   text-transform: uppercase;
 }
 
@@ -750,6 +754,16 @@ img {
   color: #e2e8f0;
 }
 
+.project-btn__icon {
+  width: 1.125rem;
+  height: auto;
+}
+@media (min-width: 992px) {
+  .project-btn__icon {
+    width: 1.25rem;
+  }
+}
+
 .project {
   display: flex;
   flex-direction: column;
@@ -838,9 +852,9 @@ img {
 }
 
 .button {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.25);
   color: #38bdf8;
-  border: 2px solid rgba(56, 189, 248, 0.7490196078);
+  border: 2px solid transparent;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
   font-size: 1.125rem;
@@ -848,30 +862,27 @@ img {
   font-size: 1rem;
   margin-right: auto;
   cursor: pointer;
+  border-radius: 10px;
 }
 .button:hover {
   background-color: transparent;
-  color: #e2e8f0;
-  border: 2px solid #e2e8f0;
+  border: 2px solid #38bdf8;
 }
 
 .hero__button {
   font-size: 1.25rem;
-  transition: all 0.2s ease-in-out;
-  background-color: #0B1B2B;
-  border: 2px solid transparent;
-}
-.hero__button:hover {
-  background-color: transparent;
-  color: #e2e8f0;
-  border: 2px solid #e2e8f0;
 }
 
-.project-button {
+.project-btn {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.375rem 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
+@media (min-width: 992px) {
+  .project-btn {
+    padding: 0.375rem 0.75rem;
+  }
 }
 
 .button-container {
@@ -948,6 +959,26 @@ img {
   .nav__toggle-btn {
     display: none;
   }
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #000428 0%, #004e92 51%, #000428 100%);
+  margin: 10px;
+  padding: 15px 45px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-grad:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 .contact__form {

@@ -1,4 +1,4 @@
-import Heading from "../components/Heading";
+import Heading from "../components/common/Heading";
 import Portfolio from "./projects/Portfolio";
 import ProjectList from "./projects/ProjectList";
 

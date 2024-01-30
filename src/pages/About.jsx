@@ -1,4 +1,4 @@
-import Heading from "../components/Heading";
+import Heading from "../components/common/Heading";
 import Biography from "./about/Biography";
 import Info from "./about/Info";
 import Contact from "./about/Contact";
