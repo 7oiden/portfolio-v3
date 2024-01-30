@@ -8,6 +8,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
 
   useEffect(() => {
     setIsMenuOpen(false);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   useEffect(() => {
@@ -23,14 +24,15 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <nav className={isMenuOpen ? "dropdown dropdown--open" : "dropdown"}>
-      <ul className="dropdown__links">
+    <nav className={isMenuOpen ? "nav__dropdown nav__dropdown--open" : "nav__dropdown"}>
+      <ul className="nav-dropdown__links-list">
         <li>
           <NavLink
-            to="/projects"
+            to="projects"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             Projects
@@ -38,7 +40,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
         </li>
         <li>
           <NavLink
-            to="/background"
+            to="background"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             Background
@@ -46,7 +48,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
         </li>
         <li>
           <NavLink
-            to="/about"
+            to="about"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             About

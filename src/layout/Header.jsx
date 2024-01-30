@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
-import NavDropdown from "./NavDropdown";
+import Navbar from "../components/navigation/Navbar";
+import NavDropdown from "../components/navigation/NavDropdown";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function Header() {
   return (
     <>
       <div className={isMenuOpen ? "fade-bg" : ""}></div>
-      <header className={isMenuOpen ? "header navbar--open" : "header"}>
+      <header className={isMenuOpen ? "header nav--open" : "header"}>
         <Navbar handleToggle={handleToggle} isMenuOpen={isMenuOpen} />
         <NavDropdown isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </header>

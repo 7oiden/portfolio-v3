@@ -1,5 +1,5 @@
 import Heading from "../../components/Heading";
-import ProjectBtn from "../../components/ProjectBtn";
+import ProjectBtn from "./ProjectBtn";
 
 export default function Portfolio() {
   return (

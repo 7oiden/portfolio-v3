@@ -14,7 +14,8 @@
     }
 
     @media (min-width: getBreakpoint(large)) {
-      height: 60%;
+      height: 65%;
+      max-width: 700px;
     }
 
     @media (min-width: getBreakpoint(xLarge)) {

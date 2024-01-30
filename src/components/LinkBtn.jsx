@@ -37,7 +37,7 @@ export default function LinkBtn({ children, url, size = "sm" }) {
   const allLinkClasses = classNames("link-container", linkClass);
 
   let iconClass = `link-icon--${size}`;
-  const allIconClasses = classNames("link-icon", iconClass);
+  const allIconClasses = classNames("link-arrow-icon", iconClass);
 
   return (
     <Link

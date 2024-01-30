@@ -3,7 +3,7 @@ import { FaCode } from "react-icons/fa";
 import { FaPencilRuler } from "react-icons/fa";
 import { FaTools } from "react-icons/fa";
 import { FaLightbulb } from "react-icons/fa";
-import IconBadge from "../../components/IconBadge";
+import IconBadge from "./SkillBadge";
 import InfoListItem from "../../components/InfoListItem";
 import {
   designArr,
@@ -27,10 +27,10 @@ export default function Skills() {
                 Development
               </Heading>
               <div>
-                <ul className="badge__list">
+                <ul className="skills__badge-list">
                   {developmentArr.map((skill) => (
-                    <li key={skill}>
-                      <IconBadge title={skill} />
+                    <li key={skill.title}>
+                      <IconBadge title={skill.title} icon={skill.icon} />
                     </li>
                   ))}
                 </ul>
@@ -44,10 +44,10 @@ export default function Skills() {
                 />
                 Design
               </Heading>
-              <ul className="badge__list">
+              <ul className="skills__badge-list">
                 {designArr.map((skill) => (
-                  <li key={skill}>
-                    <IconBadge title={skill} />
+                  <li key={skill.title}>
+                    <IconBadge title={skill.title} icon={skill.icon} />
                   </li>
                 ))}
               </ul>
@@ -59,7 +59,7 @@ export default function Skills() {
                 <FaTools aria-hidden="true" className="sub-heading-icon" />
                 Tools
               </Heading>
-              <ul className="skill__list">
+              <ul className="skills__list">
                 {toolsArr.map((tool) => (
                   <InfoListItem key={tool} skill={tool} />
                 ))}
@@ -70,7 +70,7 @@ export default function Skills() {
                 <FaLightbulb aria-hidden="true" className="sub-heading-icon" />
                 Knowledge
               </Heading>
-              <ul className="skill__list">
+              <ul className="skills__list">
                 {knowledgeArr.map((skill) => (
                   <InfoListItem key={skill} skill={skill} />
                 ))}

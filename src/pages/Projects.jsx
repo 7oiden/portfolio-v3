@@ -6,7 +6,7 @@ export default function Projects() {
   return (
     <>
       <Heading size="1" cssClass="page-heading">
-        Projects<span className="accent-dot">.</span>
+        Projects<span className="page-heading__dot">.</span>
       </Heading>
       <Portfolio />
       <ProjectList />

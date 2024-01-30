@@ -84,9 +84,10 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
-      <div className="contact__input">
+      <div className="contact__input-container">
         <label htmlFor="name">Name</label>
         <input
+          className="contact__input"
           type="text"
           placeholder="Name"
           id="name"
@@ -96,9 +97,10 @@ export default function ContactForm() {
           <span className="input-error">{errors.first_name.message}</span>
         )}
       </div>
-      <div className="contact__input">
+      <div className="contact__input-container">
         <label htmlFor="email">Email</label>
         <input
+          className="contact__input"
           type="text"
           placeholder="Email"
           id="email"
@@ -108,9 +110,10 @@ export default function ContactForm() {
           <span className="input-error">{errors.email.message}</span>
         )}
       </div>
-      <div className="contact__input">
+      <div className="contact__input-container">
         <label htmlFor="name">Subject</label>
         <input
+          className="contact__input"
           type="text"
           placeholder="Subject"
           id="subject"
@@ -120,9 +123,14 @@ export default function ContactForm() {
           <span className="input-error">{errors.subject.message}</span>
         )}
       </div>
-      <div className="contact__input">
+      <div className="contact__input-container">
         <label htmlFor="message">Message</label>
-        <textarea placeholder="Message" id="message" {...register("message")} />
+        <textarea
+          className="contact__textarea"
+          placeholder="Message"
+          id="message"
+          {...register("message")}
+        />
         {errors.message && (
           <span className="input-error">{errors.message.message}</span>
         )}

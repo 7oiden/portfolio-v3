@@ -1,5 +1,5 @@
-import LinkBtn from "./LinkBtn";
-import MediaLinks from "./MediaLinks";
+import LinkBtn from "../components/LinkBtn";
+import MediaLinks from "../components/MediaLinks";
 import { FaCopyright } from "react-icons/fa";
 
 export default function Footer() {

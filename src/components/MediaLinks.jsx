@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaInstagramSquare } from "react-icons/fa";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export default function MediaLinks() {
   return (
@@ -10,10 +10,10 @@ export default function MediaLinks() {
         <FaGithub className="brand-icon" />
       </Link>
       <Link to="https://www.instagram.com/7oiden/">
-        <FaInstagramSquare className="brand-icon" />
+        <FaInstagram className="brand-icon" />
       </Link>
       <Link to="https://www.linkedin.com/in/tommy-j-16b56678/">
-        <FaLinkedin className="brand-icon" />
+        <FaLinkedinIn className="brand-icon" />
       </Link>
     </div>
   );

@@ -4,7 +4,7 @@ import { MdCheck } from "react-icons/md";
 export default function InfoListItem({ skill }) {
   return (
     <li>
-      <MdCheck className="check-icon"/>
+      <MdCheck className="check-mark-icon"/>
       {skill}
     </li>
   );

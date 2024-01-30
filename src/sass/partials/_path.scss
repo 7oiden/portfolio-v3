@@ -71,6 +71,23 @@
   }
 }
 
+.path__icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: getColor(accentCol1);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  position: absolute;
+  left: 0;
+
+  @media (min-width: getBreakpoint(large)) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 .info-box {
   position: relative;
   display: flex;

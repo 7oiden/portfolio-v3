@@ -1,4 +1,4 @@
-.link-icon {
+.link-arrow-icon {
   width: 100%;
   height: auto;
   color: getColor(accentCol2);
@@ -19,22 +19,16 @@
   height: auto;
 }
 
-.badge__icon {
+.skill-badge__icon {
   width: 1.5rem;
   height: auto;
   color: getColor(link);
 }
 
-.check-icon {
+.check-mark-icon {
   width: 1rem;
   height: auto;
   color: getColor(accentCol2);
-}
-
-.badge {
-  background-color: getColor(badgeBg);
-  padding: 0.375rem 1rem;
-  border-radius: 64px;
 }
 
 .arrow-icon {
@@ -42,7 +36,6 @@
   height: auto;
   color: getColor(headingAccent);
   cursor: pointer;
-  margin-left: 1rem;
   flex-shrink: 0;
 
   &-path {
@@ -59,24 +52,6 @@
 
   &--up {
     transform: rotate(180deg);
-  }
-}
-
-.path__icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: getColor(accentCol1);
-  border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
-  position: absolute;
-  left: 0;
-  // transform: translateX(-50%);
-
-  @media (min-width: getBreakpoint(large)) {
-    left: 50%;
-    transform: translateX(-50%);
   }
 }
 
@@ -101,6 +76,7 @@
 
 .info-toggler {
   display: flex;
+  gap: 1rem;
   color: getColor(link);
   cursor: pointer;
 }

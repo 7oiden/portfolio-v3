@@ -8,7 +8,7 @@
   }
 }
 
-.navbar {
+.nav {
   height: 4rem;
   display: flex;
   justify-content: space-between;
@@ -18,47 +18,45 @@
   &--open {
     background-color: getColor(footerBg);
   }
-}
 
-.logo {
-  font-weight: 400;
-  color: getColor(lightText);
-  font-size: 2rem;
-}
-
-.nav__links {
-  display: none;
-  gap: 2rem;
-  list-style: none;
-  font-weight: 400;
-  color: getColor(link);
-  font-size: getSize(navLinkS);
-
-  @media (min-width: getBreakpoint(large)) {
-    display: flex;
-  }
-}
-
-.nav__link {
-  border-top: 2px solid transparent;
-  border-bottom: 2px solid transparent;
-
-  &:hover {
-    color: getColor(accentCol1);
+  &__logo {
+    font-size: 2rem;
   }
 
-  &::after {
-    content: "";
-    display: block;
+  &__link-list {
+    display: none;
+    gap: 2rem;
+    list-style: none;
+    font-weight: 400;
+    color: getColor(link);
+    font-size: getSize(navLinkS);
+
+    @media (min-width: getBreakpoint(large)) {
+      display: flex;
+    }
+  }
+
+  &__link {
     border-top: 2px solid transparent;
-    border-bottom: 2px solid getColor(accentCol1);
-    transform: scaleX(0);
-    transition: transform 0.4s;
-    padding-top: 3px;
-  }
+    border-bottom: 2px solid transparent;
 
-  &:hover::after {
-    transform: scaleX(1);
+    &:hover {
+      color: getColor(accentCol1);
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid getColor(accentCol1);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+      padding-top: 3px;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -66,23 +64,7 @@
   color: getColor(accentCol1);
 }
 
-.toggle-btn {
-  display: block;
-  width: 2rem;
-  cursor: pointer;
-
-  & > svg {
-    width: 100%;
-    height: auto;
-    color: getColor(link);
-  }
-
-  @media (min-width: getBreakpoint(large)) {
-    display: none;
-  }
-}
-
-.dropdown {
+.nav__dropdown {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -99,7 +81,7 @@
   }
 }
 
-.dropdown--open {
+.nav__dropdown--open {
   animation: test 0.3s ease forwards;
 }
 
@@ -113,7 +95,7 @@
   }
 }
 
-.dropdown__links {
+.nav-dropdown__links-list {
   width: 100%;
   display: flex;
   flex-direction: column;

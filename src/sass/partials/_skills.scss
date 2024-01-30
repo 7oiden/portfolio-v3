@@ -1,4 +1,4 @@
-.badge__list {
+.skills__badge-list {
   margin: 0;
   padding: 0;
   display: flex;
@@ -10,24 +10,7 @@
   }
 }
 
-.badge__item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.badge__icon-container {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: getColor(badgeBg);
-  border-radius: 50%;
-}
-
-.skill__list {
+.skills__list {
   list-style: none;
   display: flex;
   flex-direction: column;

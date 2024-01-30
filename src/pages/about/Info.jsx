@@ -25,7 +25,7 @@ export default function Info() {
                 realm.
               </p>
             </div>
-            <div className="badge__grid">
+            <div className="badge-grid">
               {hobbiesArr.map((hobby) => (
                 <TextBadge key={hobby}>{hobby}</TextBadge>
               ))}
@@ -36,7 +36,7 @@ export default function Info() {
               <MdPerson />
               Attributes
             </Heading>
-            <ul className="skill__list">
+            <ul className="skills__list">
               {attributesArr.map((skill) => (
                 <InfoListItem key={skill} skill={skill} />
               ))}

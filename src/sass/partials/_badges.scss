@@ -1,0 +1,22 @@
+.skill-badge__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-badge__icon-container {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: getColor(badgeBg);
+  border-radius: 50%;
+}
+
+.text-badge {
+  background-color: getColor(badgeBg);
+  padding: 0.375rem 1rem;
+  border-radius: 64px;
+}
