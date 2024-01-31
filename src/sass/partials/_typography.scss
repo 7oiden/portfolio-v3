@@ -26,7 +26,7 @@ em {
 
 .hero__heading {
   font-size: getSize(heroHeadingS);
-  font-weight: 700;
+  font-weight: 6 00;
   color: getColor(heroHeading);
   text-shadow: 0 1px #fff;
 
@@ -78,7 +78,7 @@ em {
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  color: #66b0d8;
+  color: getColor(headingAccent);
   text-transform: uppercase;
 }
 
@@ -97,7 +97,7 @@ em {
 .card__sub-heading {
   font-size: 1rem;
   font-weight: 600;
-  color: #66b0d8;
+  color: getColor(headingAccent);
   text-transform: uppercase;
 }
 
@@ -124,7 +124,7 @@ em {
 .info-box__sub-heading {
   font-size: 1rem;
   font-weight: 600;
-  color: #66b0d8;
+  color: getColor(headingAccent);
   text-transform: uppercase;
 }
 

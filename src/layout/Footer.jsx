@@ -13,10 +13,14 @@ export default function Footer() {
             <FaCopyright />
             <span>2024</span>
           </div>
-          <LinkBtn url="mailto: tommy.johnsen@live.com" size="sm">
+          <LinkBtn
+            url="mailto: tommy.johnsen@live.com"
+            size="sm"
+            rotation="-45deg"
+          >
             tommy.johnsen@live.com
           </LinkBtn>
-          <MediaLinks />
+          <MediaLinks cssClass="footer__media-links" />
         </div>
       </div>
     </footer>

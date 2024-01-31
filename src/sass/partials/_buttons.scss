@@ -1,8 +1,6 @@
-.button {
-  // background-color: rgba(0, 0, 0, 0.15);
-  // background-color: getColor(badgeBg);
+.contact__btn {
   background-color: getColor(primaryBg);
-  color: #66b0d8;
+  color: getColor(headingAccent);
   border: 2px solid transparent;
   border-radius: 0.25rem;
   padding: 0.5rem 1rem;
@@ -12,6 +10,10 @@
   margin-right: auto;
   cursor: pointer;
   border-radius: 4px;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1.125rem;
+  }
 
   &:hover {
     background-color: transparent;
@@ -23,6 +25,19 @@
 
 .hero__button {
   font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.5rem;
+  color: getColor(link);
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1.5rem;
+  }
+
+  &:hover {
+    color: getColor(accentCol1);
+  }
 }
 
 .project-btn {
@@ -70,6 +85,10 @@
   color: getColor(link);
   font-size: 1.125rem;
 
+  &:hover {
+    color: getColor(accentCol1);
+  }
+
   &--left {
     margin-left: 0;
     margin-right: auto;
@@ -91,21 +110,13 @@
   }
 
   &--md {
-    font-size: 1.125rem;
+    font-size: 1rem;
   }
 
   &--lg {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
-
-// .link-btn__text {
-//   display: none;
-
-//   @media (min-width: getBreakpoint(large)) {
-//     display: inline-block;
-//   }
-// }
 
 .link-icon {
   &--sm {

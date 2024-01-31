@@ -1,11 +1,13 @@
+import PropTypes from "prop-types";
+
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-export default function MediaLinks() {
+export default function MediaLinks({ cssClass }) {
   return (
-    <div className="media-links">
+    <div className={cssClass}>
       <Link to="https://github.com/7oiden">
         <FaGithub className="brand-icon" />
       </Link>
@@ -18,3 +20,7 @@ export default function MediaLinks() {
     </div>
   );
 }
+
+MediaLinks.propTypes = {
+  cssClass: PropTypes.string,
+};

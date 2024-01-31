@@ -1,25 +1,20 @@
 .hero {
-  @extend .outer-wrapper;
-
   &__container {
     @extend .inner-wrapper;
-    display: flex;
-    height: 65%;
-    justify-content: center;
-    align-items: center;
-    max-width: 600px;
+    position: relative;
+    top: 15%;
+    max-width: 100%;
+    // border: 1px solid red;
 
     @media (min-width: getBreakpoint(medium)) {
-      width: 70%;
+      max-width: 600px;
     }
 
     @media (min-width: getBreakpoint(large)) {
-      height: 65%;
       max-width: 700px;
     }
 
     @media (min-width: getBreakpoint(xLarge)) {
-      height: 55%;
     }
   }
 

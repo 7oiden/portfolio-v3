@@ -25,7 +25,7 @@ export default function Intro() {
               at <em>Scrimba</em>.
             </p>
           </div>
-          <LinkBtn url="/about" size="md">
+          <LinkBtn url="/about" size="md" rotation="0deg">
             Learn more about me
           </LinkBtn>
         </div>

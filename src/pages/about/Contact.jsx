@@ -10,7 +10,7 @@ export default function Contact() {
       </Heading>
       <div className="paragraph-container mb">
         <p>Send me a message or get in touch directly on email:</p>
-        <LinkBtn url="mailto: tommy.johnsen@live.com">
+        <LinkBtn url="mailto: tommy.johnsen@live.com" size="md">
           tommy.johnsen@live.com
         </LinkBtn>
       </div>

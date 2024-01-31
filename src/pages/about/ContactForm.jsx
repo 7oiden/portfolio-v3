@@ -152,7 +152,7 @@ export default function ContactForm() {
           message={serverError}
         />
       )}
-      <button className="button">
+      <button className="contact__btn">
         {submitting ? "Submitting..." : "Send"}
       </button>
     </form>
