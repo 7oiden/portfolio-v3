@@ -1,5 +1,5 @@
 import Heading from "../../components/common/Heading";
-import ProjectBtn from "./ProjectBtn";
+import LinkBtn from "../../components/common/LinkBtn";
 
 export default function Portfolio() {
   return (
@@ -7,7 +7,7 @@ export default function Portfolio() {
       <Heading size="2" cssClass="section-heading">
         My Portfolio v3
       </Heading>
-      <div className="paragraph-container portfolio-text">
+      <div className="paragraph-container mb">
         <p>
           This site was deployed to Netlify in January 2024, and are build in{" "}
           <em>React</em> and styled using <em>Sass</em>. For the contact form I
@@ -16,11 +16,14 @@ export default function Portfolio() {
           prototyped in <em>Adobe XD</em>.
         </p>
       </div>
-      <div className="button-container">
-        <ProjectBtn url="https://github.com/7oiden/portfolio-v3.git">
-          GitHub
-        </ProjectBtn>
-      </div>
+      <LinkBtn
+        url="https://github.com/7oiden/portfolio-v3.git"
+        icon
+        size="lg"
+        position="left"
+      >
+        GitHub
+      </LinkBtn>
     </section>
   );
 }

@@ -8,17 +8,11 @@ export default function Contact() {
       <Heading size="2" cssClass="section-heading">
         Contact
       </Heading>
-      <div className="contact__header">
-        <p>
-          Send me a message or get in touch directly on email or on my LinkedIn
-          profile:
-        </p>
-        <div className="contact__link-container">
-          <LinkBtn url="mailto: tommy.johnsen@live.com">Email</LinkBtn>
-          <LinkBtn url="https://www.linkedin.com/in/tommy-j-16b56678/">
-            LinkedIn
-          </LinkBtn>
-        </div>
+      <div className="paragraph-container mb">
+        <p>Send me a message or get in touch directly on email:</p>
+        <LinkBtn url="mailto: tommy.johnsen@live.com">
+          tommy.johnsen@live.com
+        </LinkBtn>
       </div>
       <ContactForm />
     </section>
