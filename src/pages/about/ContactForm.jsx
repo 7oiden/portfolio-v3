@@ -146,11 +146,9 @@ export default function ContactForm() {
         </Banner>
       )}
       {serverError && (
-        <Banner
-          heading="Something went wrong!"
-          status="error"
-          message={serverError}
-        />
+        <Banner heading="Something went wrong!" status="error">
+          {serverError}
+        </Banner>
       )}
       <button className="contact__btn">
         {submitting ? "Submitting..." : "Send"}

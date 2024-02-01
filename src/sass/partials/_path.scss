@@ -1,27 +1,28 @@
-.path__wrapper {
-  position: relative;
-  width: 100%;
-  margin-top: 1rem;
-  left: 50%;
-  max-width: 500px;
-  transform: translateX(-50%);
+.path {
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: 1rem;
+    left: 50%;
+    max-width: 500px;
+    transform: translateX(-50%);
 
-  @media (min-width: getBreakpoint(large)) {
-    max-width: 100%;
+    @media (min-width: getBreakpoint(large)) {
+      max-width: 100%;
+    }
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  &__segment {
+    position: relative;
+    padding-bottom: 3rem;
   }
 }
 
-.path__container {
-  position: relative;
-}
-
-.segment-container {
-  position: relative;
-  padding-bottom: 3rem;
-  // background-color: pink;
-}
-
-.path__vert::before {
+.path__vert-line::before {
   content: "";
   position: absolute;
   height: 100%;
@@ -103,7 +104,6 @@
   border-radius: 10px;
   top: 0;
   margin-left: 5rem;
-  // margin-bottom: 3rem;
   max-width: 500px;
 
   @media (min-width: getBreakpoint(large)) {
@@ -162,7 +162,7 @@
   }
 
   &--default {
-    left: -1.5rem;
+    left: -1.45rem;
     border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
 
     @media (min-width: getBreakpoint(large)) {
@@ -171,12 +171,12 @@
   }
 
   &--left {
-    left: -1.5rem;
-    border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
+    left: -1.45rem;
+    border-right: 1.55rem solid rgba(25, 42, 77, 0.8);
   }
 
   &--right {
-    right: -1.5rem;
+    right: -1.45rem;
     border-left: 1.5rem solid rgba(25, 42, 77, 0.8);
     display: none;
 

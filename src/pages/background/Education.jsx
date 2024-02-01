@@ -15,8 +15,8 @@ export default function Education() {
         </Heading>
         <div className="path__container">
           {educationData.slice(0, numToShow).map((entry) => (
-            <div key={entry.id} className="segment-container">
-              <div className="path__vert"></div>
+            <div key={entry.id} className="path__segment">
+              <div className="path__vert-line"></div>
               <PathSegment
                 id={entry.id}
                 key={entry.id}

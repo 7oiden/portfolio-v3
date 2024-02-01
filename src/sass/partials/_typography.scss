@@ -122,22 +122,18 @@ em {
 }
 
 .info-box__sub-heading {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: getColor(headingAccent);
   text-transform: uppercase;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1rem;
+  }
 }
-
-// .path__body-text {
-//   font-size: 0.875rem;
-
-//   @media (min-width: getBreakpoint(large)) {
-//     font-size: 1rem;
-//   }
-// }
 
 .input-error {
   font-size: 0.875rem;
-  font-weight: 500;
-  color: getColor(errorText);
+  font-weight: 400;
+  color: getColor(errorIcon);
 }

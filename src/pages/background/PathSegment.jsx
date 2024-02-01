@@ -24,17 +24,15 @@ export default function PathSegment({
         {cloneElement(icon, { className: "path__icon" })}
       </div>
       {dateEl}
-      <div>
-        <InfoBox
-          key={id}
-          id={id}
-          title={title}
-          date={date}
-          institution={institution}
-          description={description}
-          url={url}
-        />
-      </div>
+      <InfoBox
+        key={id}
+        id={id}
+        title={title}
+        date={date}
+        institution={institution}
+        description={description}
+        url={url}
+      />
     </>
   );
 }
