@@ -4,6 +4,7 @@ html {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -825,18 +826,35 @@ img {
 
 .page-scroll {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  width: 2rem;
-  height: 2rem;
+  bottom: 0;
+  right: 0;
+  width: 6rem;
+  height: 6rem;
   z-index: 1000;
-  opacity: 0.75;
+  background-color: #38bdf8;
+  border-radius: 50%;
   cursor: pointer;
 }
+@media (min-width: 992px) {
+  .page-scroll {
+    width: 8rem;
+    height: 8rem;
+  }
+}
 .page-scroll__icon {
-  width: 100%;
+  width: 1rem;
   height: auto;
-  color: #94a3b8;
+  color: #fff;
+  position: absolute;
+  left: 1.25rem;
+  top: 1.25rem;
+}
+@media (min-width: 992px) {
+  .page-scroll__icon {
+    width: 1.5rem;
+    left: 1.5rem;
+    top: 1.5rem;
+  }
 }
 
 .project {

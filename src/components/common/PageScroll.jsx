@@ -1,24 +1,40 @@
-import { useEffect } from "react";
-import { FaCircleArrowDown } from "react-icons/fa6";
+import { useEffect, useRef } from "react";
+import { FaArrowUpLong } from "react-icons/fa6";
 import { useSpring, animated } from "@react-spring/web";
 
 export default function PageScroll() {
-  const AnimatedIcon = animated(FaCircleArrowDown);
-
   const [springs, api] = useSpring(() => ({
-    from: { transform: "rotate(0deg)" },
+    from: { opacity: 0, transform: "translate(50%, 50%)" },
   }));
 
+  const prevScrollY = useRef(0);
+
+  console.log(prevScrollY);
+
   const handleScroll = () => {
-    if (window.scrollY > 100) {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > prevScrollY.current) {
+      // Scrolling down
       api.start({
-        to: { transform: "rotate(180deg)" },
+        to: { opacity: 0 },
+        config: { duration: 200 },
+      });
+    } else if (currentScrollY < 100) {
+      // At top of page
+      api.start({
+        to: { opacity: 0 },
+        config: { duration: 200 },
       });
     } else {
+      // Scrolling up
       api.start({
-        to: { transform: "rotate(0deg)" },
+        to: { opacity: 1 },
+        config: { duration: 200 },
       });
     }
+
+    prevScrollY.current = currentScrollY;
   };
 
   function handleScrollToTop() {
@@ -35,8 +51,12 @@ export default function PageScroll() {
   }, []);
 
   return (
-    <div className="page-scroll" onClick={handleScrollToTop}>
-      <AnimatedIcon className="page-scroll__icon" style={{ ...springs }} />
-    </div>
+    <animated.div
+      className="page-scroll"
+      onClick={handleScrollToTop}
+      style={{ ...springs }}
+    >
+      <FaArrowUpLong className="page-scroll__icon" />
+    </animated.div>
   );
 }
