@@ -161,3 +161,12 @@
     width: 1.25rem;
   }
 }
+
+.file-icon {
+  width: 1.25rem;
+  height: auto;
+
+  @media (min-width: getBreakpoint(large)) {
+    width: 1.5rem;
+  }
+}

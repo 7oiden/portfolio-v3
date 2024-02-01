@@ -180,19 +180,6 @@
   }
 }
 
-.resume__link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  color: getColor(accentCol2);
-  font-family: $link;
-  font-size: 1.25rem;
-
-  @media (min-width: getBreakpoint(large)) {
-    font-size: 1.375rem;
-  }
-}
-
 .mb {
   margin-bottom: 1rem;
 }

@@ -14,25 +14,27 @@ export default function Experience() {
           Work Experience
         </Heading>
         <div className="path__container">
-          <div className="path__vert"></div>
           {experienceData.slice(0, numToShow).map((entry) => (
-            <PathSegment
-              id={entry.id}
-              key={entry.id}
-              title={entry.title}
-              date={entry.date}
-              institution={entry.company}
-              description={entry.description}
-              url={entry.url}
-              icon={entry.icon}
-            />
+            <div key={entry.id} className="segment-container">
+              <div className="path__vert"></div>
+              <PathSegment
+                id={entry.id}
+                key={entry.id}
+                title={entry.title}
+                date={entry.date}
+                institution={entry.company}
+                description={entry.description}
+                url={entry.url}
+                icon={entry.icon}
+              />
+            </div>
           ))}
-          <PathToggleBtn
-            setNumToShow={setNumToShow}
-            educationData={experienceData}
-          />
         </div>
       </div>
+      <PathToggleBtn
+        setNumToShow={setNumToShow}
+        dataArr={experienceData}
+      />
     </section>
   );
 }

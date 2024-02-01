@@ -3,12 +3,12 @@ import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { useSpring, animated } from "@react-spring/web";
 
-export default function PathToggleBtn({ setNumToShow, educationData }) {
+export default function PathToggleBtn({ setNumToShow, dataArr }) {
   const [showMore, setShowMore] = useState(false);
 
   function toggleShow() {
     setShowMore((prevShowMore) => !prevShowMore);
-    setNumToShow(showMore ? 3 : educationData.length);
+    setNumToShow(showMore ? 3 : dataArr.length);
   }
 
   const AnimatedArrow = animated(FaChevronDown);
@@ -30,5 +30,5 @@ export default function PathToggleBtn({ setNumToShow, educationData }) {
 
 PathToggleBtn.propTypes = {
   setNumToShow: PropTypes.func.isRequired,
-  educationData: PropTypes.array.isRequired,
+  dataArr: PropTypes.array.isRequired,
 };
