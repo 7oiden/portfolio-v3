@@ -10,7 +10,7 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1654681030/holidaze_x4owk1.jpg",
-    image_alt: "Holidaze",
+    image_alt: "Screenshot of the Holidaze site home page on desktop",
     netlify_url: "https://holidaze-v2.netlify.app",
     github_url: "https://github.com/7oiden/holidaze-exam-2-v2.git",
     tools: ["react", "sass", "bootstrap", "wordpress", "strapi", "heroku"],
@@ -26,7 +26,7 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1706447026/my-portfolio-v2_vjerto.png",
-    image_alt: "My Portfolio v2",
+    image_alt: "The Portfolio version 2 site home page on desktop",
     netlify_url: "https://tommy-johnsen-portfolio.netlify.app",
     github_url: "https://github.com/7oiden/my-portfolio.git",
     tools: ["HTML", "javascript", "sass"],
@@ -42,7 +42,7 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1654681036/mercury_lyf9vl.jpg",
-    image_alt: "Mercury Shoes",
+    image_alt: "Screenshot of the Mercury Shoes site home page on desktop",
     netlify_url: "https://mercury-shoes.netlify.app",
     github_url: "https://github.com/7oiden/mercury-shoes-sp2.git",
     tools: ["HTML", "javascript", "sass", "strapi", "heroku"],
@@ -58,7 +58,7 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1666601693/Passionate_Photography_bhxp8s.jpg",
-    image_alt: "Passionate Photography",
+    image_alt: "Screenshot of The Passionate Photography home page on desktop",
     netlify_url: "https://passionate-photography-7oiden.netlify.app",
     github_url: "https://github.com/7oiden/passionate-photography-exam-1.git",
     tools: ["HTML", "javascript", "CSS", "wordpress"],
@@ -74,7 +74,7 @@ export const projectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1668508833/csm-bergen_gi4z7d.jpg",
-    image_alt: "Community Science Museum",
+    image_alt: "Screenshot of the Community Science Museum homepage on desktop",
     netlify_url: "https://csm-bergen.netlify.app",
     github_url: "https://github.com/7oiden/community-science-museum-sp1.git",
     tools: ["HTML", "javascript", "CSS"],

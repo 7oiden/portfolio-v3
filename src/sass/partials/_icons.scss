@@ -35,16 +35,26 @@
   color: getColor(link);
 }
 
-.check-mark-icon {
-  width: 1rem;
-  height: auto;
-  color: getColor(accentCol2);
+.list-check {
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: getColor(badgeBg);
+  border-radius: 50%;
+
+  &__icon {
+    width: 0.9rem;
+    height: auto;
+    color: getColor(accentCol2);
+  }
 }
 
 .arrow-icon {
   width: 1.125rem;
   height: auto;
-  color: getColor(headingAccent);
+  color: getColor(accentCol1);
   cursor: pointer;
   flex-shrink: 0;
 

@@ -65,10 +65,12 @@
   align-items: center;
   left: 0.5rem;
   color: getColor(link);
-  font-family: $link;
   cursor: pointer;
+  width: 8rem;
+  
 
   @media (min-width: getBreakpoint(large)) {
+    width: 6rem;
     flex-direction: column;
     gap: 0.25rem;
     top: 1rem;

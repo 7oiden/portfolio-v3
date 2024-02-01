@@ -7,7 +7,7 @@ export default function Intro() {
     <section className="intro section-wrapper">
       <div className="intro__container">
         <figure className="intro__avatar">
-          <img src={avatar} />
+          <img src={avatar} alt="A 3D graphics avatar head shot of myself wearing a Discord t-shirt" />
         </figure>
         <div className="intro__body">
           <Heading size="2" cssClass="section-heading">

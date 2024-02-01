@@ -89,9 +89,8 @@
 }
 
 .info-box {
+  @extend .card-styling;
   position: relative;
-  display: flex;
-  flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
   border-radius: 10px;
@@ -99,13 +98,6 @@
   margin-left: 5rem;
   margin-bottom: 3rem;
   max-width: 500px;
-  background: linear-gradient(
-    to right bottom,
-    rgba(25, 42, 77, 0.8),
-    rgba(20, 35, 60, 0.8)
-  );
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.15), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  border-top: 1px solid rgba(148, 163, 184, 0.1);
 
   @media (min-width: getBreakpoint(large)) {
     right: 0;

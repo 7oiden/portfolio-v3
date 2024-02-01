@@ -4,7 +4,9 @@ import { FaCheck } from "react-icons/fa6";
 export default function InfoListItem({ skill }) {
   return (
     <li>
-      <FaCheck className="check-mark-icon" />
+      <div className="list-check">
+        <FaCheck className="list-check__icon" />
+      </div>
       {skill}
     </li>
   );

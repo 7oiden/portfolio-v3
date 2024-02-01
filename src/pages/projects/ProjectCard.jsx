@@ -69,7 +69,7 @@ export default function ProjectCard({
                 {description[1]}
               </animated.p>
             )}
-            <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen}>
+            <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} position="left">
               {isOpen ? "Show less" : "Read more"}
             </InfoToggler>
           </div>

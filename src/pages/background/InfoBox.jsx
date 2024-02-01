@@ -45,7 +45,7 @@ export default function InfoBox({
         <Heading size="4" cssClass="info-box__sub-heading">
           {institution}
         </Heading>
-        <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} />
+        <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} position="right" />
       </div>
       {isOpen ? (
         <animated.div
