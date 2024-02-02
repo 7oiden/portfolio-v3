@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import StyledBg from "./StyledBg";
-import PageScroll from "../components/common/PageScroll";
+import PageScrollBtn from "../components/common/PageScrollBtn";
 
 export default function Layout() {
   return (
@@ -14,7 +14,7 @@ export default function Layout() {
       </main>
       <Footer />
       <StyledBg />
-      <PageScroll />
+      <PageScrollBtn />
     </>
   );
 }

@@ -171,34 +171,99 @@
   }
 }
 
+// .page-scroll {
+//   position: fixed;
+//   bottom: 0;
+//   right: 0;
+//   width: 6rem;
+//   height: 6rem;
+//   z-index: 1000;
+//   background-color: getColor(accentCol1);
+//   border-radius: 50%;
+//   cursor: pointer;
+
+//   @media (min-width: getBreakpoint(large)) {
+//     width: 8rem;
+//   height: 8rem;
+//   }
+
+//   &__icon {
+//     width: 1rem;
+//     height: auto;
+//     color: #fff;
+//     position: absolute;
+//     left: 1.25rem;
+//     top: 1.25rem;
+
+//     @media (min-width: getBreakpoint(large)) {
+//       width: 1.5rem;
+//       left: 1.5rem;
+//       top: 1.5rem;
+//     }
+//   }
+// }
+
 .page-scroll {
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 6rem;
-  height: 6rem;
-  z-index: 1000;
-  background-color: getColor(accentCol1);
-  border-radius: 50%;
   cursor: pointer;
+  z-index: 1000;
 
   @media (min-width: getBreakpoint(large)) {
-    width: 8rem;
-  height: 8rem;
+    bottom: 5%;
+    right: 5%;
+  }
+
+  @media (min-width: getBreakpoint(xxLarge)) {
+    right: 7.5%;
+  }
+
+  &__container {
+    width: 100px;
+    height: 100px;
+    background-color: getColor(accentCol1);
+    color: getColor(link);
+    border-radius: 50%;
+
+    @media (min-width: getBreakpoint(large)) {
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      border: 2px solid getColor(accentCol1);
+      border-radius: 64px;
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      align-items: center;
+      padding: 0.375rem 1rem;
+      transform-origin: center;
+      transform: rotate(-90deg) translate(50%, -50%);
+      color: getColor(accentCol1);
+      font-family: $link;
+      line-height: 1;
+    }
   }
 
   &__icon {
-    width: 1rem;
-    height: auto;
-    color: #fff;
+    transform: rotate(-90deg);
     position: absolute;
-    left: 1.25rem;
-    top: 1.25rem;
+    left: 20px;
+    top: 20px;
 
     @media (min-width: getBreakpoint(large)) {
-      width: 1.5rem;
-      left: 1.5rem;
-      top: 1.5rem;
+      transform: rotate(0);
+      position: static;
+    }
+  }
+
+  &__text {
+    display: none;
+
+    @media (min-width: getBreakpoint(large)) {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 400;
     }
   }
 }

@@ -3,13 +3,14 @@
   color: getColor(headingAccent);
   border: 2px solid transparent;
   border-radius: 0.25rem;
-  padding: 0.5rem 1rem;
+  padding: 0.375rem 1rem;
   font-size: getSize(navLinkS);
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
   margin-right: auto;
   cursor: pointer;
   border-radius: 4px;
+  font-family: $link;
 
   @media (min-width: getBreakpoint(large)) {
     font-size: 1.125rem;

@@ -27,9 +27,9 @@
   width: 90%;
   margin: 0 auto;
 
-  @media (min-width: getBreakpoint(medium)) {
-    width: 90%;
-  }
+  // @media (min-width: getBreakpoint(medium)) {
+  //   width: 90%;
+  // }
 
   @media (min-width: getBreakpoint(xxLarge)) {
     width: 85%;
@@ -180,6 +180,14 @@
   }
 }
 
+.mt {
+  margin-top: 1rem;
+}
+
 .mb {
   margin-bottom: 1rem;
+}
+
+.contact__container {
+  align-self: center;
 }

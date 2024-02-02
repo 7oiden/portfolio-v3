@@ -1,15 +1,13 @@
 import { useEffect, useRef } from "react";
-import { FaArrowUpLong } from "react-icons/fa6";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { useSpring, animated } from "@react-spring/web";
 
-export default function PageScroll() {
+export default function PageScrollBtn() {
   const [springs, api] = useSpring(() => ({
     from: { opacity: 0, transform: "translate(50%, 50%)" },
   }));
 
   const prevScrollY = useRef(0);
-
-  console.log(prevScrollY);
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
@@ -56,7 +54,10 @@ export default function PageScroll() {
       onClick={handleScrollToTop}
       style={{ ...springs }}
     >
-      <FaArrowUpLong className="page-scroll__icon" />
+      <div className="page-scroll__container">
+        <span className="page-scroll__text">To top</span>
+        <FaArrowRightLong className="page-scroll__icon" size={20} />
+      </div>
     </animated.div>
   );
 }
