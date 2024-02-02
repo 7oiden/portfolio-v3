@@ -283,7 +283,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .resume {
@@ -310,7 +310,14 @@ svg {
 }
 
 .contact__container {
-  align-self: center;
+  margin-top: 2rem;
+  max-width: 450px;
+}
+@media (min-width: 992px) {
+  .contact__container {
+    width: 450px;
+    align-self: center;
+  }
 }
 
 p,
@@ -690,7 +697,7 @@ img {
 }
 
 .skill-badge__icon {
-  width: 1.5rem;
+  width: 1.375rem;
   height: auto;
   color: #e2e8f0;
 }
@@ -768,12 +775,12 @@ img {
   position: absolute;
   display: flex;
   gap: 1rem;
-  flex-direction: column;
   bottom: 4rem;
   left: 5%;
 }
 @media (min-width: 992px) {
   .hero__media-links {
+    flex-direction: column;
     left: auto;
     right: 5%;
     top: 20%;
@@ -781,7 +788,6 @@ img {
 }
 @media (min-width: 1400px) {
   .hero__media-links {
-    flex-direction: column;
     right: 7.5%;
     top: 20%;
   }

@@ -23,7 +23,8 @@ export const experienceData = [
     company: "NOBI Voss",
     date: "Aug '18 - May '19",
     description: [
-      "Responsible for planning, resource distribution and support of a engineering team of eight people.",
+      "Project management, as well as responsible for resource management and planning with associated personnel responsibility for the engineering department.",
+      "I also worked on implementing LEAN workflow principles in the engineering department.",
     ],
     url: null,
     icon: <RiTeamFill />,
@@ -34,7 +35,8 @@ export const experienceData = [
     company: "Spenncon AS",
     date: "Aug '14 - Jun '18",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Led project management efforts for a contractor company specializing in the production, engineering, and assembly of concrete slabs.",
+      "Managed end-to-end project lifecycle, from conception to completion, ensuring adherence to strict quality standards and project timelines",
     ],
     url: null,
     icon: <MdEngineering />,
@@ -45,7 +47,8 @@ export const experienceData = [
     company: "Voss Cementvarefabrikk AS",
     date: "Aug '12 - Aug '14",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Led project management efforts for a contractor company specializing in the production, engineering, and assembly of concrete slabs.",
+      "Managed end-to-end project lifecycle, from conception to completion, ensuring adherence to strict quality standards and project timelines",
     ],
     url: null,
     icon: <MdEngineering />,
@@ -56,7 +59,8 @@ export const experienceData = [
     company: "Spenncon AS",
     date: "Aug '08 - Aug '12",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Led project management efforts for a contractor company specializing in the production, engineering, and assembly of concrete slabs.",
+      "Managed end-to-end project lifecycle, from conception to completion, ensuring adherence to strict quality standards and project timelines",
     ],
     url: null,
     icon: <MdEngineering />,
@@ -67,7 +71,7 @@ export const experienceData = [
     company: "Geitanger Bygg AS",
     date: "Aug '05 - Jul '08",
     description: [
-      "Worked part time in the shop and the warehouse of a hardware / building supply store while studying full time.",
+      "Worked part time in the shop and the warehouse of a hardware/building supply store during full time studies.",
     ],
     url: null,
     icon: <FaWarehouse />,

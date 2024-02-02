@@ -30,7 +30,7 @@
 }
 
 .skill-badge__icon {
-  width: 1.5rem;
+  width: 1.375rem;
   height: auto;
   color: getColor(link);
 }
@@ -112,18 +112,17 @@
   position: absolute;
   display: flex;
   gap: 1rem;
-  flex-direction: column;
   bottom: 4rem;
   left: 5%;
 
   @media (min-width: getBreakpoint(large)) {
+    flex-direction: column;
     left: auto;
     right: 5%;
     top: 20%;
   }
 
   @media (min-width: getBreakpoint(xxLarge)) {
-    flex-direction: column;
     right: 7.5%;
     top: 20%;
   }

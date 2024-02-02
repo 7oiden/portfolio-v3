@@ -35,7 +35,9 @@ export const educationData = [
     institution: "Bergen University College",
     date: "Aug '05 - Jun '08",
     description: [
-      "Specializing in structural in the second and third year, with a focus on steel, wood and concrete structures.",
+      "In the first year I had my first exposure to programming when we learned VBA for Excel.",
+      "In the second and third year i specialized in structural engineering, with a focus on steel, wood and concrete structures.",
+      "Math, physics and chemistry was also a big part of the curriculum.",
     ],
     url: null,
     icon: <FaUniversity />,
@@ -59,7 +61,7 @@ export const educationData = [
     date: "Aug '94 - Jun '97",
     description: [
       "GK Technical Construction Subjects.",
-      "VK1 & VK2 Technical Drawing.",
+      "VK1 & VK2 Technical Drawing with the main focus on AutoCAD.",
     ],
     url: null,
     icon: <MdArchitecture />,

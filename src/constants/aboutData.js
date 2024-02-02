@@ -3,6 +3,7 @@ export const hobbiesArr = [
   "gaming",
   "football",
   "literature",
+  "film",
   "working out",
   "science",
   "hiking",

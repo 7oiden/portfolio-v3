@@ -10,7 +10,7 @@ export default function Contact() {
           Contact
         </Heading>
         <div className="paragraph-container mt mb">
-          <p>Send me a message or get in touch directly on email:</p>
+          <p>If you want to get in touch, please send me a message or shoot me an email directly on:</p>
           <LinkBtn url="mailto: tommy.johnsen@live.com" size="md">
             tommy.johnsen@live.com
           </LinkBtn>

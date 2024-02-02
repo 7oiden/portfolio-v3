@@ -17,7 +17,7 @@ export default function Skills() {
     <section className="skills">
       <div className="section-wrapper">
         <Heading size="2" cssClass="section-heading">
-          Skills
+          My skills
         </Heading>
         <div className="skills__grid">
           <div className="skills__grid-section-1">

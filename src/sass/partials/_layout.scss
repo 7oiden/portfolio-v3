@@ -163,7 +163,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .resume {
@@ -189,5 +189,12 @@
 }
 
 .contact__container {
-  align-self: center;
+  margin-top: 2rem;
+  max-width: 450px;
+
+  @media (min-width: getBreakpoint(large)) {
+    width: 450px;
+    align-self: center;
+  }
 }
+

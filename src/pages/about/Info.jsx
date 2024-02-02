@@ -9,7 +9,7 @@ export default function Info() {
     <section className="info">
       <div className="section-wrapper">
         <Heading size="2" cssClass="section-heading">
-          Info
+          Personal profile
         </Heading>
         <div className="info__grid">
           <div>
@@ -19,10 +19,7 @@ export default function Info() {
             </Heading>
             <div className="paragraph-container">
               <p>
-                Explore my hobbies and interests, where passion meets curiosity.
-                Discover the things I love to do in my leisure time, offering a
-                glimpse into the pursuits that inspire me beyond the digital
-                realm.
+                With a curious mind and a passion for learning, I have always been taking interest in a wide range of themes. I believe that having a diverse set of interests can help to keep the mind sharp and the creativity flowing.
               </p>
             </div>
             <div className="badge-grid">

@@ -47,29 +47,3 @@ export default function Hero() {
   );
 }
 
-{
-  /* <section className="hero">
-      <div className="hero__container">
-        <div className="hero__content">
-          <div>
-            <Heading size="1" cssClass="hero__heading">
-              Hi, I am Tommy Frontend Developer
-            </Heading>
-            <HashLink
-              smooth
-              to="/about#contact"
-              className="hero__button"
-              onMouseEnter={handleHover}
-              onMouseLeave={handleHoverExit}
-            >
-              <span>Get in touch</span>
-              <animated.div style={{ ...springs }}>
-                <MdArrowForward className="hero__arrow-icon" />
-              </animated.div>
-            </HashLink>
-          </div>
-          <MediaLinks />
-        </div>
-      </div>
-    </section> */
-}
