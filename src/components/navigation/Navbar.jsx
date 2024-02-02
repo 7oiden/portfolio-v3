@@ -1,20 +1,25 @@
 import PropTypes from "prop-types";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
 import { useSpring, animated } from "react-spring";
 import { FaHashtag } from "react-icons/fa";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
- 
+  const location = useLocation().pathname;
+
   const { opacity, transform } = useSpring({
     transform: isMenuOpen ? `rotate(90deg)` : `rotate(0deg)`,
   });
 
   return (
     <nav className="nav">
-      <Link to="/" className="nav__logo">
-        <FaHashtag />
-      </Link>
+      {location === "/" ? (
+        <div></div>
+      ) : (
+        <Link to="/" className="nav__logo">
+          <FaHashtag />
+        </Link>
+      )}
       <ul className="nav__link-list">
         <li>
           <NavLink
