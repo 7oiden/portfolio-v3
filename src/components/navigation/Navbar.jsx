@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
 import { useSpring, animated } from "react-spring";
+import { FaHashtag } from "react-icons/fa";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
  
@@ -11,7 +12,9 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
 
   return (
     <nav className="nav">
-        <Link to="/" className="nav__logo">#</Link>
+      <Link to="/" className="nav__logo">
+        <FaHashtag />
+      </Link>
       <ul className="nav__link-list">
         <li>
           <NavLink
@@ -45,7 +48,10 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
         </li>
       </ul>
       <div className="nav__toggle-btn" onClick={handleToggle}>
-        <animated.div className="nav__toggle-btn" style={{ opacity, transform }}>
+        <animated.div
+          className="nav__toggle-btn"
+          style={{ opacity, transform }}
+        >
           {isMenuOpen ? <MdClose /> : <MdMenu />}
         </animated.div>
       </div>
