@@ -13,7 +13,7 @@
   background-color: transparent;
 
   &--open {
-    background-color: getColor(footerBg);
+    background-color: getColor(headerBg);
   }
 
   &__logo {
@@ -72,7 +72,7 @@
   height: 0;
   top: 4rem;
   margin: 0 auto;
-  background-color: getColor(footerBg);
+  background-color: getColor(headerBg);
   overflow: hidden;
 
   @media (min-width: getBreakpoint(large)) {

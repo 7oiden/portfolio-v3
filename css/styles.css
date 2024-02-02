@@ -479,6 +479,9 @@ em {
   align-items: center;
   background-color: transparent;
 }
+.nav--open {
+  background-color: #0d121e;
+}
 .nav__logo {
   font-size: 1.75rem;
 }
@@ -530,6 +533,7 @@ em {
   height: 0;
   top: 4rem;
   margin: 0 auto;
+  background-color: #0d121e;
   overflow: hidden;
 }
 @media (min-width: 992px) {
