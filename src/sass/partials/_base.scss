@@ -12,7 +12,6 @@ html {
 }
 
 body {
-  // position: relative;
   height: 100%;
   margin: 0;
   background: rgb(16, 30, 67);
@@ -24,7 +23,6 @@ body {
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
-  // background-attachment: scroll;
 
   @media (min-width: getBreakpoint(large)) {
     background-attachment: fixed;
@@ -101,13 +99,11 @@ svg {
   @media (min-width: getBreakpoint(large)) {
     display: block;
     position: fixed;
-    // background-color: rgba(0, 0, 0, 0.2);
     z-index: -100;
     left: 10rem;
     bottom: -5%;
     font-family: playfair-display, serif;
     font-weight: 600;
-    // overflow: hidden;
     transform-origin: 0 100%;
     transform: rotate(-90deg);
     color: rgba(255, 255, 255, 0.015);

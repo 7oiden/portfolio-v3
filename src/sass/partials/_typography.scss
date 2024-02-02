@@ -10,7 +10,7 @@ h6 {
 }
 
 em {
-  color: getColor(sectionHeading);
+  color: getColor(textBright);
   font-style: unset;
   font-weight: 500;
 }
@@ -26,9 +26,13 @@ em {
 
 .hero__heading {
   font-size: getSize(heroHeadingS);
-  font-weight: 600;
+  font-weight: 400;
   color: getColor(heroHeading);
-  text-shadow: 0 1px #fff;
+  text-shadow: 0 1px getColor(heroHeading);
+
+  & span {
+    font-weight: 700;
+  }
 
   @media (min-width: getBreakpoint(medium)) {
     font-size: getSize(heroHeadingM);
@@ -42,7 +46,7 @@ em {
 .page-heading {
   font-size: getSize(pageHeadingS);
   font-weight: 700;
-  color: getColor(headingLight);
+  color: getColor(textBright);
 
   @media (min-width: getBreakpoint(large)) {
     font-size: getSize(pageHeadingM);
@@ -56,7 +60,7 @@ em {
 .section-heading {
   font-size: getSize(sectionHeadingS);
   font-weight: 500;
-  color: getColor(sectionHeading);
+  color: getColor(textBright);
 
   @media (min-width: getBreakpoint(large)) {
     font-size: getSize(sectionHeadingM);
@@ -78,7 +82,6 @@ em {
   align-items: center;
   gap: 0.5rem;
   font-weight: 600;
-  color: getColor(headingAccent);
   text-transform: uppercase;
 }
 
@@ -102,7 +105,7 @@ em {
 }
 
 .text-badge__text {
-  color: getColor(badgeText);
+  color: getColor(accentCol2);
   font-size: getSize(badgeText);
 }
 
@@ -118,7 +121,7 @@ em {
 .info-box__heading {
   font-size: 1rem;
   font-weight: 500;
-  color: getColor(headingLight);
+  color: getColor(textBright);
 }
 
 .info-box__sub-heading {

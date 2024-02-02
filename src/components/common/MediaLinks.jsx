@@ -9,13 +9,13 @@ export default function MediaLinks({ cssClass }) {
   return (
     <div className={cssClass}>
       <Link to="https://github.com/7oiden">
-        <FaGithub className="brand-icon" />
+        <FaGithub className="media-icon" />
       </Link>
       <Link to="https://www.instagram.com/7oiden/">
-        <FaInstagram className="brand-icon" />
+        <FaInstagram className="media-icon" />
       </Link>
       <Link to="https://www.linkedin.com/in/tommy-j-16b56678/">
-        <FaLinkedinIn className="brand-icon" />
+        <FaLinkedinIn className="media-icon" />
       </Link>
     </div>
   );

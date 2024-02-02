@@ -26,7 +26,7 @@ export default function Hero() {
       <div className="hero__container">
         <div className="hero__content">
           <Heading size="1" cssClass="hero__heading">
-            Hi, I am Tommy Frontend Developer
+            Hi, I am <span>Tommy</span> frontend developer
           </Heading>
           <HashLink
             smooth
@@ -46,4 +46,3 @@ export default function Hero() {
     </section>
   );
 }
-

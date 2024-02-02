@@ -38,6 +38,7 @@
     border-bottom: 2px solid transparent;
 
     &:hover {
+      font-weight: 500;
       color: getColor(accentCol1);
     }
 

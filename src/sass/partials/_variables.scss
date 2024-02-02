@@ -4,30 +4,18 @@ $paragraph: "inter", sans-serif;
 $link: "JetBrains Mono", sans-serif;
 $background: "playfair-display", serif;
 
-
-
 $colors: (
   primaryBg: #0f172a,
   secondaryBg: #101e43,
-  semiTransparentBg: #ffffffbf,
-  footerBg: #070e1d,
-  footerHeading: #94a3b8,
-  headingLight: #e2e8f0,
   headingAccent: #66b0d8,
   heroHeading: #fff,
-  sectionHeading: #e2e8f0,
+  textBright: #e2e8f0,
   textLight: #94a3b8,
-  navLinks: #fff,
   link: #e2e8f0,
   accentCol1: #38bdf8,
   accentCol2: #5eead4,
   badgeBg: #132f4b,
-  badgeText: #5eead4,
-  buttonBg: #0B1B2B,
-  buttonText: #38bdf8,
-  iconBg: #122945,
-  // infoBoxBg: rgba(0, 0, 0, 0.25),
-  // infoBoxBg: rgba(0, 0, 0, 0.25),
+  // Alerts
   successHeading: #065f46,
   successText: #047857,
   successIcon: #34d399,
@@ -42,7 +30,6 @@ $colors: (
   infoHeading: #1e40af,
   infoText: #1c51b9,
   infoIcon: #60a5fa,
-  // cardBg: #0f172a,
 );
 
 @function getColor($color) {

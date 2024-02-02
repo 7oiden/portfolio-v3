@@ -30,7 +30,7 @@ export default function ResumeLink() {
         className="resume__link"
       >
         Download my full résumé{" "}
-        <AnimatedIcon style={{ ...springs }} className="file-icon" />
+        <AnimatedIcon style={{ ...springs }} className="download-file-icon" />
       </Link>
     </div>
   );
