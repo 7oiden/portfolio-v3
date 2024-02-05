@@ -275,6 +275,7 @@ svg {
 @media (min-width: 992px) {
   .project__grid {
     gap: 6rem;
+    max-width: 100%;
   }
 }
 
@@ -622,7 +623,7 @@ img {
 }
 
 .project__image {
-  border-radius: 3px;
+  border-radius: 10px;
 }
 @media (min-width: 768px) {
   .project__image {
@@ -833,24 +834,23 @@ img {
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 2px;
-  font-size: 1.25rem;
-  color: #5eead4;
-}
-.project__overlay div {
-  font-family: "JetBrains Mono", sans-serif;
-  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 100%;
-  text-align: center;
-  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: opacity 0.3s ease;
+  border-radius: 0 0 10px 10px;
+  font-size: 1.25rem;
+  color: #5eead4;
+  opacity: 0;
+  font-size: 1rem;
+}
+@media (min-width: 992px) {
+  .project__overlay {
+    opacity: 0;
+    border-radius: 10px;
+  }
 }
 .project__btn-container {
   display: flex;
@@ -859,8 +859,10 @@ img {
   gap: 2rem;
 }
 
-.project__link:hover .project__overlay {
-  opacity: 1;
+@media (min-width: 992px) {
+  .project__link:hover .project__overlay {
+    opacity: 1;
+  }
 }
 
 .card {
@@ -881,13 +883,38 @@ img {
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
 }
 @media (min-width: 420px) {
   .card__header {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+  }
+}
+
+.overlay__body {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mobile__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0 10px 0 15px;
+  color: #38bdf8;
+}
+@media (min-width: 992px) {
+  .mobile__icon {
+    display: none;
   }
 }
 
@@ -1099,6 +1126,7 @@ img {
   background-color: #38bdf8;
   color: #e2e8f0;
   border-radius: 50%;
+  box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
 }
 @media (min-width: 992px) {
   .page-scroll__container {
@@ -1117,6 +1145,7 @@ img {
     color: #38bdf8;
     font-family: "JetBrains Mono", sans-serif;
     line-height: 1;
+    box-shadow: none;
   }
 }
 .page-scroll__icon {
@@ -1265,14 +1294,13 @@ img {
 }
 .path__date--mobile {
   position: absolute;
-  top: 3.5rem;
-  left: -3rem;
-  writing-mode: vertical-rl;
-  text-orientation: sideways;
-  color: #e2e8f0;
+  top: 9rem;
+  left: -1.75rem;
   font-weight: 600;
   font-size: 0.875rem;
   white-space: nowrap;
+  transform-origin: bottom left;
+  transform: rotate(-90deg);
 }
 @media (min-width: 992px) {
   .path__date--mobile {

@@ -31,7 +31,7 @@ img {
 }
 
 .project__image {
-  border-radius: 3px;
+  border-radius: 10px;
 
   @media (min-width: getBreakpoint(medium)) {
     width: 250px;

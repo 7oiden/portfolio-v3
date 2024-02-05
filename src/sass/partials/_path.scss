@@ -45,7 +45,6 @@
   width: 40%;
   padding-top: 0.5rem;
   display: none;
-  color: getColor(test);
 
   @media (min-width: getBreakpoint(large)) {
     display: block;
@@ -64,14 +63,13 @@
 
   &--mobile {
     position: absolute;
-    top: 3.5rem;
-    left: -3rem;
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-    color: getColor(link);
+    top: 9rem;
+    left: -1.75rem;
     font-weight: 600;
     font-size: 0.875rem;
     white-space: nowrap;
+    transform-origin: bottom left;
+    transform: rotate(-90deg);
 
     @media (min-width: getBreakpoint(large)) {
       display: none;

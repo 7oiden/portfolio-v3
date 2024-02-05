@@ -37,24 +37,21 @@
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
     background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0;
     transition: opacity 0.3s ease;
-    border-radius: 2px;
+    border-radius: 0 0 10px 10px;
     font-size: 1.25rem;
     color: getColor(accentCol2);
+    opacity: 0;
+    font-size: 1rem;
 
-    & div {
-      font-family: $link;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      width: 100%;
-      text-align: center;
-      padding: 1rem;
+    @media (min-width: getBreakpoint(large)) {
+      opacity: 0;
+      border-radius: 10px;
     }
   }
 
@@ -67,7 +64,9 @@
 }
 
 .project__link:hover .project__overlay {
-  opacity: 1;
+  @media (min-width: getBreakpoint(large)) {
+    opacity: 1;
+  }
 }
 
 .card {
@@ -88,12 +87,36 @@
     flex-direction: column-reverse;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 1rem;
+    gap: 0.5rem 1rem;
 
     @media (min-width: getBreakpoint(xSmall)) {
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
     }
+  }
+}
+
+.overlay__body {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.mobile__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 0 10px 0 15px;
+  color: getColor(accentCol1);
+
+  @media (min-width: getBreakpoint(large)) {
+    display: none;
   }
 }

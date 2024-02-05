@@ -212,6 +212,7 @@
     background-color: getColor(accentCol1);
     color: getColor(link);
     border-radius: 50%;
+    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
 
     @media (min-width: getBreakpoint(large)) {
       width: auto;
@@ -229,6 +230,7 @@
       color: getColor(accentCol1);
       font-family: $link;
       line-height: 1;
+      box-shadow: none;
     }
   }
 

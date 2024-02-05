@@ -49,7 +49,7 @@ export const projectData = [
   },
   {
     id: 4,
-    title: "Passionate photography",
+    title: "Passionate Photography",
     type: "Project Exam 1",
     date: "May 2021",
     description: [

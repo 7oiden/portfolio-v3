@@ -8,6 +8,7 @@ export default function InfoToggler({
   children,
   position = "left",
 }) {
+  
   function handleToggle() {
     setIsOpen((prevIsOpen) => !prevIsOpen);
   }
