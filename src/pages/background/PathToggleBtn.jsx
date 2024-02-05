@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa6";
 import { useSpring, animated } from "@react-spring/web";
+// import { set } from "react-hook-form";
 
 export default function PathToggleBtn({ setNumToShow, dataArr }) {
   const [showMore, setShowMore] = useState(false);

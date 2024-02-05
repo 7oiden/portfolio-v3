@@ -7,6 +7,8 @@ import PathToggleBtn from "./PathToggleBtn";
 export default function Education() {
   const [numToShow, setNumToShow] = useState(3);
 
+  const slicedDataArr = educationData.slice(0, numToShow);
+
   return (
     <section className="section-wrapper experience-section">
       <div className="path__wrapper">
@@ -14,9 +16,9 @@ export default function Education() {
           Education & Training
         </Heading>
         <div className="path__container">
-          {educationData.slice(0, numToShow).map((entry) => (
+          {slicedDataArr.map((entry) => (
             <div key={entry.id} className="path__segment">
-              <div className="path__vert-line"></div>
+              {/* <div className="path__vert-line"></div> */}
               <PathSegment
                 id={entry.id}
                 key={entry.id}
@@ -30,8 +32,11 @@ export default function Education() {
             </div>
           ))}
         </div>
+        <PathToggleBtn
+          setNumToShow={setNumToShow}
+          dataArr={educationData}
+        />
       </div>
-      <PathToggleBtn setNumToShow={setNumToShow} dataArr={educationData} />
     </section>
   );
 }

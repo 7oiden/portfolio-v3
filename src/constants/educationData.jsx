@@ -11,8 +11,8 @@ export const educationData = [
     institution: "Scrimba",
     date: "Feb '23 - Jan '24",
     description: [
-      "The Frontend Developer Path course contains over 70 hours of top-notch tutorials, hundreds of coding challenges, and dozens of real-world projects.",
-      "The program contains 12 modules. All modules are filled with interactive coding challenges to ensure that you don't fall off the wagon. You'll learn HTML, CSS, JavaScript, React, UI design, career strategy, and more.",
+      "The Frontend Developer Path course included over 70 hours of tutorials, hundreds of coding challenges, and dozens of real-world projects.",
+      "The program contained 12 modules. All modules was filled with interactive coding challenges. The modules included HTML, CSS, JavaScript, React, UI design, career strategy, and more.",
     ],
     url: "https://scrimba.com/",
     icon: <SiScrimba />,

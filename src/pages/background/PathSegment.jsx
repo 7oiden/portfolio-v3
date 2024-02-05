@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import InfoBox from "./InfoBox";
 import { cloneElement } from "react";
+import { useSpring, animated } from "@react-spring/web";
 
 export default function PathSegment({
   id,
@@ -18,8 +19,14 @@ export default function PathSegment({
       <div className="path__date path__date--right">{date}</div>
     );
 
+  const pathExpand = useSpring({
+    opacity: 1,
+    from: id > 3 ? { opacity: 0 } : { opacity: 1 },
+  });
+
   return (
-    <>
+    <animated.div style={{ ...pathExpand }}>
+      <div className="path__vert-line"></div>
       <div className="path__icon-container">
         {cloneElement(icon, { className: "path__icon" })}
       </div>
@@ -33,7 +40,7 @@ export default function PathSegment({
         description={description}
         url={url}
       />
-    </>
+    </animated.div>
   );
 }
 

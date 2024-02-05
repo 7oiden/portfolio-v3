@@ -12,7 +12,9 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
   });
 
   return (
-    <nav className="nav">
+    <nav
+      className="nav">
+      
       {location === "/" ? (
         <div></div>
       ) : (

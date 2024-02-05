@@ -30,6 +30,7 @@
 
     @media (min-width: getBreakpoint(large)) {
       display: flex;
+      align-items: center;
     }
   }
 
