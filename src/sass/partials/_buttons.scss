@@ -126,11 +126,8 @@
   align-items: center;
   gap: 0.5rem;
   color: getColor(link);
+  color: getColor(accentCol1);
   font-size: 1.125rem;
-
-  &:hover {
-    color: getColor(accentCol1);
-  }
 
   &--left {
     margin-left: 0;
@@ -180,7 +177,7 @@
 .resume__link {
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 0.5rem 1.25rem;
   color: getColor(accentCol2);
   font-family: $link;

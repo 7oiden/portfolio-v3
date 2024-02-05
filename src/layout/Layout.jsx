@@ -6,7 +6,7 @@ import PageScrollBtn from "../components/common/PageScrollBtn";
 
 export default function Layout() {
   return (
-    <>
+    <div className="bg-gradient">
       <div className="page-wrapper"></div>
       <Header />
       <main>
@@ -15,6 +15,6 @@ export default function Layout() {
       <Footer />
       <StyledBg />
       <PageScrollBtn />
-    </>
+    </div>
   );
 }

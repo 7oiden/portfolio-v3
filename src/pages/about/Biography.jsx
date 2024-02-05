@@ -7,7 +7,6 @@ export default function Biography() {
       <Heading size="2" cssClass="section-heading">
         Biography
       </Heading>
-  
         <div className="paragraph-container">
           <p>
             I am originally from Sunnmøre, but moved to <em>Bergen</em> in 2004

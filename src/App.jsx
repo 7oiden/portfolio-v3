@@ -11,15 +11,15 @@ import { ScrollToTop } from "./utils/ScrollToTop";
 function App() {
   return (
     <BrowserRouter>
-    <ScrollToTop>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/background" element={<Background />} />
+      <ScrollToTop>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/background" element={<Background />} />
             <Route path="/about" element={<About />} />
-        </Route>
-      </Routes>
+          </Route>
+        </Routes>
       </ScrollToTop>
     </BrowserRouter>
   );
