@@ -8,13 +8,19 @@ import { FaInstagram } from "react-icons/fa";
 export default function MediaLinks({ cssClass }) {
   return (
     <div className={cssClass}>
-      <Link to="https://github.com/7oiden">
+      <Link to="https://github.com/7oiden" aria-label="Visit my GitHub page">
         <FaGithub className="media-icon" />
       </Link>
-      <Link to="https://www.instagram.com/7oiden/">
+      <Link
+        to="https://www.instagram.com/7oiden/"
+        aria-label="Visit my Instagram account"
+      >
         <FaInstagram className="media-icon" />
       </Link>
-      <Link to="https://www.linkedin.com/in/tommy-j-16b56678/">
+      <Link
+        to="https://www.linkedin.com/in/tommy-j-16b56678/"
+        aria-label="Visit my LinkedIn profile"
+      >
         <FaLinkedinIn className="media-icon" />
       </Link>
     </div>

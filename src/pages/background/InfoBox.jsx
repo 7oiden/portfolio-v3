@@ -45,12 +45,19 @@ export default function InfoBox({
         <Heading size="4" cssClass="info-box__sub-heading">
           {institution}
         </Heading>
-        <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} position="right" />
+        <InfoToggler
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          position="right"
+          aria-expanded={isOpen}
+          aria-controls="content-to-toggle"
+        />
       </div>
       {isOpen ? (
         <animated.div
           className="paragraph-container info-box__body"
           style={{ ...textAppear }}
+          id="content-to-toggle"
         >
           {description.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>

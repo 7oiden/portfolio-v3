@@ -18,7 +18,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
       {location === "/" ? (
         <div></div>
       ) : (
-        <Link to="/" className="nav__logo">
+        <Link to="/" className="nav__logo" aria-label="Return to homepage">
           <FaHashtag />
         </Link>
       )}

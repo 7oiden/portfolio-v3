@@ -375,9 +375,14 @@ em {
   font-weight: 700;
   color: #e2e8f0;
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .page-heading {
     font-size: 2.875rem;
+  }
+}
+@media (min-width: 992px) {
+  .page-heading {
+    font-size: 3.75rem;
   }
 }
 .page-heading__dot {

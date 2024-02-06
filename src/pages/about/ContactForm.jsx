@@ -91,6 +91,7 @@ export default function ContactForm() {
           type="text"
           placeholder="Name"
           id="name"
+          autoComplete="name"
           {...register("first_name")}
         />
         {errors.first_name && (
@@ -104,6 +105,7 @@ export default function ContactForm() {
           type="text"
           placeholder="Email"
           id="email"
+          autoComplete="email"
           {...register("email")}
         />
         {errors.email && (
@@ -111,12 +113,13 @@ export default function ContactForm() {
         )}
       </div>
       <div className="contact__input-container">
-        <label htmlFor="name">Subject</label>
+        <label htmlFor="subject">Subject</label>
         <input
           className="contact__input"
           type="text"
           placeholder="Subject"
           id="subject"
+          autoComplete="off"
           {...register("subject")}
         />
         {errors.subject && (
@@ -129,6 +132,7 @@ export default function ContactForm() {
           className="contact__textarea"
           placeholder="Message"
           id="message"
+          autoComplete="off"
           {...register("message")}
         />
         {errors.message && (

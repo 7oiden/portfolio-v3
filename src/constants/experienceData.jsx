@@ -7,7 +7,7 @@ import { FaWarehouse } from "react-icons/fa";
 export const experienceData = [
   {
     id: 1,
-    title: "Developer, warehouse and logistics",
+    title: "Developer, Warehouse and Logistics",
     company: "Box Protector AS",
     date: "Mar '23 - Jan '24",
     description: [
@@ -67,7 +67,7 @@ export const experienceData = [
   },
   {
     id: 6,
-    title: "Shop and warehouse",
+    title: "Shop and Warehouse",
     company: "Geitanger Bygg AS",
     date: "Aug '05 - Jul '08",
     description: [

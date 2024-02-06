@@ -11,12 +11,12 @@ export default function Portfolio() {
         <p>
           This site was deployed to Netlify in January 2024, and are build in{" "}
           <em>React</em> and styled using <em>Sass</em>. For the contact form I
-          am using Wordpress as headless CSM, and fetching the data trough the{" "}
-          <em>Wordpress REST API</em>.
+          am using a <em>Strapi API</em> hosted on <em>Heroku</em>.
         </p>
         <p>
           Prior to coding the site was designed and prototyped in{" "}
-          <em>Adobe XD</em>.
+          <em>Adobe XD</em>. All components are custom made, and the site is
+          fully responsive.
         </p>
       </div>
       <LinkBtn

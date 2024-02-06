@@ -28,6 +28,7 @@ export default function ResumeLink() {
         onMouseEnter={handleHover}
         onMouseLeave={handleHoverExit}
         className="resume__link"
+        aria-label="Download my full résumé"
       >
         Download my full résumé{" "}
         <AnimatedIcon style={{ ...springs }} className="download-file-icon" />

@@ -75,9 +75,17 @@ export default function ProjectCard({
         <div className="paragraph-container">
           <p>{description[0]}</p>
           {isOpen && (
-            <animated.p style={{ ...textAppear }}>{description[1]}</animated.p>
+            <animated.p style={{ ...textAppear }} id="content-to-toggle">
+              {description[1]}
+            </animated.p>
           )}
-          <InfoToggler isOpen={isOpen} setIsOpen={setIsOpen} position="left">
+          <InfoToggler
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            position="left"
+            aria-expanded={isOpen}
+            aria-controls="content-to-toggle"
+          >
             {isOpen ? "Show less" : "Read more"}
           </InfoToggler>
         </div>
