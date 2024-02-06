@@ -23,7 +23,7 @@ export default function Skills() {
           <div className="skills__grid-section-1">
             <div>
               <Heading size="3" cssClass="sub-heading">
-                <FaCode aria-hidden="true" className="sub-heading-icon" />
+                <FaCode aria-hidden="true" className="sub-heading-icon" id="code-icon" />
                 Development
               </Heading>
               <div>

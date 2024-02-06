@@ -8,7 +8,7 @@ export default function Layout() {
 
   return (
     <>
-      <div className="page-wrapper"></div>
+      <div className="bg-pattern"></div>
       <Header />
       <main>
         <Outlet />

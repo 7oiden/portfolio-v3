@@ -1,0 +1,72 @@
+.bg-gradient::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(16, 30, 67);
+  background: radial-gradient(
+    circle,
+    rgba(16, 30, 67, 1) 0%,
+    rgba(15, 23, 42, 1) 100%
+  );
+  z-index: -300;
+
+  @media (min-width: getBreakpoint(large)) {
+    background-attachment: fixed;
+  }
+}
+
+.bg-pattern::before {
+  content: "";
+
+  @media (min-width: getBreakpoint(large)) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.025) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 100px 100px;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -200;
+    margin-bottom: 8rem;
+    display: block;
+  }
+}
+
+.bg-text {
+  display: block;
+  position: fixed;
+  z-index: -100;
+  left: 10rem;
+  bottom: -5%;
+  font-family: playfair-display, serif;
+  font-weight: 600;
+  transform-origin: 0 100%;
+  transform: rotate(-90deg);
+  color: rgba(255, 255, 255, 0.025);
+  font-size: 10rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 15rem;
+  }
+}
+
+.fade-bg::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}

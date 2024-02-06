@@ -30,7 +30,7 @@ export default function Info() {
           </div>
           <div className="info__grid-section-2">
             <Heading size="3" cssClass="sub-heading">
-              <MdPerson />
+              <MdPerson id="person-icon" />
               Attributes
             </Heading>
             <ul className="skills__list">
