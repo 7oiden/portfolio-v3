@@ -2,13 +2,19 @@ import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { useSpring, animated } from "@react-spring/web";
 
 export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
 
+  const dropdown = useSpring({
+    maxHeight: isMenuOpen ? "225px" : "0px",
+    config: { duration: 200 },
+  });
+
   useEffect(() => {
     setIsMenuOpen(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   useEffect(() => {
@@ -28,7 +34,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   }, []);
 
   return (
-    <nav className={isMenuOpen ? "nav__dropdown nav__dropdown--open" : "nav__dropdown"}>
+    <animated.nav className="nav__dropdown" style={{ ...dropdown }}>
       <ul className="nav-dropdown__links-list">
         <li>
           <NavLink
@@ -55,7 +61,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
           </NavLink>
         </li>
       </ul>
-    </nav>
+    </animated.nav>
   );
 }
 

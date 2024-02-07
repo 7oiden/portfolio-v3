@@ -1,7 +1,6 @@
 .header {
   @extend .outer-wrapper;
   z-index: 100;
-  background-color: transparent;
   position: relative;
 }
 
@@ -12,12 +11,9 @@
   align-items: center;
   background-color: transparent;
 
-  &--open {
-    background-color: getColor(headerBg);
-  }
-
   &__logo {
     font-size: 1.75rem;
+    z-index: 1000;
   }
 
   &__link-list {
@@ -70,8 +66,8 @@
   position: absolute;
   z-index: 100;
   width: 100%;
-  height: 0;
-  top: 4rem;
+  height: auto;
+  top: 0;
   margin: 0 auto;
   background-color: getColor(headerBg);
   overflow: hidden;
@@ -81,19 +77,19 @@
   }
 }
 
-.nav__dropdown--open {
-  animation: test 0.3s ease forwards;
-}
+// .nav__dropdown--open {
+//   animation: dropdown 0.3s ease forwards;
+// }
 
-@keyframes test {
-  0% {
-    height: 0;
-  }
+// @keyframes dropdown {
+//   0% {
+//     height: 0;
+//   }
 
-  100% {
-    height: 150px;
-  }
-}
+//   100% {
+//     height: 150px;
+//   }
+// }
 
 .nav-dropdown__links-list {
   width: 100%;
@@ -104,7 +100,7 @@
   gap: 1.5rem;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 4rem 0 2rem 0;
   font-size: 1.125rem;
   color: getColor(link);
 }
