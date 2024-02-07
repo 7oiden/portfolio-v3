@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";

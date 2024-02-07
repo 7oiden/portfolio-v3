@@ -1,20 +1,38 @@
 import PropTypes from "prop-types";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
-import { useSpring, animated } from "react-spring";
+import { useSprings, animated } from "react-spring";
 import { FaHashtag } from "react-icons/fa";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
   const location = useLocation().pathname;
 
-  const { opacity, transform } = useSpring({
-    transform: isMenuOpen ? `rotate(90deg)` : `rotate(0deg)`,
-  });
+  const iconSprings = useSprings(
+    2,
+    isMenuOpen
+      ? [
+          { transform: "scale(0)", display: "none", config: { duration: 200 } },
+          {
+            transform: "scale(1)",
+            display: "block",
+            config: { duration: 200 },
+          },
+        ]
+      : [
+          {
+            transform: "scale(1)",
+            display: "block",
+            config: { duration: 200 },
+          },
+          { transform: "scale(0)", display: "none", config: { duration: 200 } },
+        ]
+  );
+
+  const AnimatedMenu = animated(MdMenu);
+  const AnimatedClose = animated(MdClose);
 
   return (
-    <nav
-      className="nav">
-      
+    <nav className="nav">
       {location === "/" ? (
         <div></div>
       ) : (
@@ -55,12 +73,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
         </li>
       </ul>
       <div className="nav__toggle-btn" onClick={handleToggle}>
-        <animated.div
-          className="nav__toggle-btn"
-          style={{ opacity, transform }}
-        >
-          {isMenuOpen ? <MdClose /> : <MdMenu />}
-        </animated.div>
+        <AnimatedMenu style={iconSprings[0]} />
+        <AnimatedClose style={iconSprings[1]} />
       </div>
     </nav>
   );
