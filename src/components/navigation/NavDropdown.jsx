@@ -8,7 +8,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
 
   const dropdown = useSpring({
-    maxHeight: isMenuOpen ? "225px" : "0px",
+    maxHeight: isMenuOpen ? "215px" : "0px",
     config: { duration: 200 },
   });
 

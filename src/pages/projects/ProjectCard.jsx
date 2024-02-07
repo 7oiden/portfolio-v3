@@ -23,6 +23,28 @@ export default function ProjectCard({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const AnimatedIcon = animated(MdArrowForward);
+
+  const [springs, api] = useSpring(() => ({
+    from: { x: 0, y: 0, transform: "rotate(-45deg)" },
+  }));
+
+  const handleHover = () => {
+    api.start({
+      x: 6,
+      y: -6,
+      delay: 200,
+    });
+  };
+
+  const handleHoverExit = () => {
+    api.start({
+      x: 0,
+      y: 0,
+      loop: false,
+    });
+  };
+
   const textAppear = useSpring({
     maxHeight: isOpen ? "500px" : "0px",
     opacity: isOpen ? 1 : 0,
@@ -35,25 +57,24 @@ export default function ProjectCard({
           <p>{date}</p>
           <MdOutlineKeyboardDoubleArrowRight className="project__date-icon" />
         </div>
-        <Link to={siteUrl} className="project__link">
+        <Link
+          to={siteUrl}
+          className="project__link"
+          onMouseEnter={handleHover}
+          onMouseLeave={handleHoverExit}
+        >
           <div className="project__image">
             <img src={image} alt={imageAlt} className="project__image" />
           </div>
           <div className="mobile__icon">
-            <MdArrowForward
-              size="1.5rem"
-              style={{ transform: "rotate(-45deg)" }}
-            />
+            <MdArrowForward size="1.5rem" style={{ transform: "rotate(-45deg)" }} />
           </div>
           <div className="project__overlay">
             <span>Go to live site at:</span>
             <div className="overlay__body">
               <SiNetlify size="1.5rem" />
               <span className="overlay__text">Netlify</span>
-              <MdArrowForward
-                size="1.5rem"
-                style={{ transform: "rotate(-45deg)" }}
-              />
+              <AnimatedIcon size="1.5rem" style={{ ...springs }} />
             </div>
           </div>
         </Link>

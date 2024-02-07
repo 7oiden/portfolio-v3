@@ -66,19 +66,31 @@ em {
   font-weight: 500;
   color: getColor(textBright);
 
-  @media (min-width: getBreakpoint(large)) {
+  @media (min-width: getBreakpoint(medium)) {
     font-size: getSize(sectionHeadingM);
+  }
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: getSize(sectionHeadingL);
   }
 }
 
 .sub-heading {
   font-size: getSize(subHeadingS);
-  font-weight: 600;
+  font-weight: 500;
   color: getColor(headingAccent);
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
+
+  @media (min-width: getBreakpoint(medium)) {
+    font-size: getSize(subHeadingM);
+  }
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: getSize(subHeadingL);
+  }
 }
 
 .footer__heading {

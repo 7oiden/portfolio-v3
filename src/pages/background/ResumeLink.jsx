@@ -24,7 +24,7 @@ export default function ResumeLink() {
   return (
     <div className="resume">
       <Link
-        to="https://res.cloudinary.com/dhd2paq70/raw/upload/v1706536450/CV_Tommy_Johnsen_-_2024_jrq8no.docx"
+        to="https://res.cloudinary.com/dhd2paq70/raw/upload/v1707309298/CV_Tommy_Johnsen_2024_ynhshb.docx"
         onMouseEnter={handleHover}
         onMouseLeave={handleHoverExit}
         className="resume__link"
