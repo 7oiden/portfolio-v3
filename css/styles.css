@@ -311,17 +311,14 @@ svg {
   }
 }
 
-.fade-bg::before {
-  content: "";
-  position: fixed;
+.fade-bg {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.2);
   z-index: 100;
+  display: none;
 }
 
 p,
@@ -543,6 +540,7 @@ em {
   margin: 0 auto;
   background-color: #0d121e;
   overflow: hidden;
+  box-shadow: 0 6px 8px 1px rgba(0, 0, 0, 0.1);
 }
 @media (min-width: 992px) {
   .nav__dropdown {

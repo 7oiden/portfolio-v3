@@ -71,25 +71,12 @@
   margin: 0 auto;
   background-color: getColor(headerBg);
   overflow: hidden;
+  box-shadow: 0 6px 8px 1px rgb(0 0 0 / 0.1);
 
   @media (min-width: getBreakpoint(large)) {
     display: none;
   }
 }
-
-// .nav__dropdown--open {
-//   animation: dropdown 0.3s ease forwards;
-// }
-
-// @keyframes dropdown {
-//   0% {
-//     height: 0;
-//   }
-
-//   100% {
-//     height: 150px;
-//   }
-// }
 
 .nav-dropdown__links-list {
   width: 100%;
