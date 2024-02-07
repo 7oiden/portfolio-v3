@@ -1,11 +1,11 @@
 .project {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 2rem;
   flex-shrink: 0;
+  grid-template-columns: 1fr;
 
   @media (min-width: getBreakpoint(medium)) {
-    flex-direction: row;
+    grid-template-columns: 1fr 2fr;
   }
 
   &__col {
@@ -75,10 +75,10 @@
   border-radius: 10px;
   font-size: 0.875rem;
   gap: 1rem;
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1.5rem;
 
-  @media (min-width: getBreakpoint(medium)) {
-    padding: 1.5rem;
+  @media (min-width: getBreakpoint(large)) {
+    padding: 2rem;
     font-size: 1rem;
   }
 

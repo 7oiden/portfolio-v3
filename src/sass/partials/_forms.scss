@@ -2,9 +2,9 @@
   &__form {
     @extend .card-styling;
     gap: 1.5rem;
-    padding: 1rem 0;
     border-radius: 10px;
     padding: 2rem;
+    margin-top: 2rem;
   }
 
   &__ {
@@ -48,6 +48,10 @@
     outline: none;
     border: 1px solid getColor(accentCol2);
     background-color: getColor(primaryBg);
+    color: getColor(textLight);
+  }
+
+  &::placeholder {
     color: getColor(textLight);
   }
 }

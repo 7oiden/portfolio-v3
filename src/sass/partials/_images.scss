@@ -32,19 +32,4 @@ img {
 
 .project__image {
   border-radius: 10px;
-
-  @media (min-width: getBreakpoint(medium)) {
-    width: 250px;
-    max-width: 250px;
-  }
-
-  @media (min-width: getBreakpoint(large)) {
-    width: 300px;
-    max-width: 300px;
-  }
-
-  @media (min-width: getBreakpoint(xLarge)) {
-    width: 350px;
-    max-width: 350px;
-  }
 }

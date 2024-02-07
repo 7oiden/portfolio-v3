@@ -1,6 +1,5 @@
 .bg-gradient::before {
   content: "";
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -14,6 +13,7 @@
   z-index: -300;
 
   @media (min-width: getBreakpoint(large)) {
+    position: fixed;
     background-attachment: fixed;
   }
 }
@@ -27,11 +27,17 @@
     left: 0;
     width: 100%;
     height: 100%;
+    // background-image: linear-gradient(
+    //     rgba(255, 255, 255, 0.025) 1px,
+    //     transparent 1px
+    //   ),
+    //   linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    // background-size: 100px 100px;
     background-image: linear-gradient(
-        rgba(255, 255, 255, 0.025) 1px,
+        rgba(148, 163, 184, 0.025) 1px,
         transparent 1px
       ),
-      linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+      linear-gradient(to right, rgba(148, 163, 184, 0.025) 1px, transparent 1px);
     background-size: 100px 100px;
     background-position: center;
     background-attachment: fixed;
@@ -42,20 +48,29 @@
 }
 
 .bg-text {
-  display: block;
-  position: fixed;
+  position: absolute;
+  bottom: 8rem;
+  // display: block;
+  left: -5%;
   z-index: -100;
-  left: 10rem;
-  bottom: -5%;
   font-family: playfair-display, serif;
   font-weight: 600;
-  transform-origin: 0 100%;
-  transform: rotate(-90deg);
   color: rgba(255, 255, 255, 0.025);
   font-size: 10rem;
+  width: 105%;
+  overflow: hidden;
+
+  @media (min-width: getBreakpoint(medium)) {
+    font-size: 12.5rem;
+  }
 
   @media (min-width: getBreakpoint(large)) {
+    position: fixed;
     font-size: 15rem;
+    transform-origin: 0 100%;
+    transform: rotate(-90deg);
+    left: 10rem;
+    bottom: -5%;
   }
 }
 

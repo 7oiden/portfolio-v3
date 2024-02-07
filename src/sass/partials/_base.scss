@@ -22,11 +22,15 @@ body {
   font-size: 1rem;
 }
 
+#root {
+  position: relative;
+}
+
 main {
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
 
   @media (min-width: getBreakpoint(large)) {
-    margin-bottom: 8rem;
+    margin-bottom: 10rem;
   }
 }
 

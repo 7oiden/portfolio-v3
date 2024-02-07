@@ -45,7 +45,9 @@ $breakpoints: (
   large: 992px,
   xLarge: 1200px,
   xxLarge: 1400px,
-  xxxLarge: 1600px,
+  3xLarge: 1600px,
+  4xLarge: 1800px,
+  5xLarge: 2000px,
 );
 
 @function getBreakpoint($breakpoint) {

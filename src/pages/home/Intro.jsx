@@ -17,7 +17,7 @@ export default function Intro() {
           <Heading size="2" cssClass="section-heading">
             Introduction
           </Heading>
-          <div className="paragraph-container mb">
+          <div className="paragraph-container mb mw">
             <p>
               My name is <em>Tommy Johnsen</em>, and I am a former construction
               engineer looking for a new career as a frontend developer.

@@ -1,12 +1,14 @@
 import Heading from "../../components/common/Heading";
+import mapPng from "../../assets/images/norway2.png";
 
 /* eslint-disable react/no-unescaped-entities */
 export default function Biography() {
   return (
-    <section className="section-wrapper">
-      <Heading size="2" cssClass="section-heading">
-        Biography
-      </Heading>
+    <section className="section-wrapper" id="test">
+      <div className="test2">
+        <Heading size="2" cssClass="section-heading">
+          Biography
+        </Heading>
         <div className="paragraph-container">
           <p>
             I am originally from Sunnmøre, but moved to <em>Bergen</em> in 2004
@@ -35,6 +37,10 @@ export default function Biography() {
             things to expand my horizon; both as a person and as a professional.
           </p>
         </div>
+      </div>
+      <div className="map-image">
+        <img src={mapPng} />
+      </div>
     </section>
   );
 }

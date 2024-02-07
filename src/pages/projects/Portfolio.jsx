@@ -7,7 +7,7 @@ export default function Portfolio() {
       <Heading size="2" cssClass="section-heading">
         My Portfolio v3
       </Heading>
-      <div className="paragraph-container mb">
+      <div className="paragraph-container mw">
         <p>
           This site was deployed to Netlify in January 2024, and are build in{" "}
           <em>React</em> and styled using <em>Sass</em>. For the contact form I
