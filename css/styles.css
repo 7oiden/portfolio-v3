@@ -321,7 +321,7 @@ svg {
   height: 16px;
   background-color: transparent;
   border-radius: 50%;
-  border: 2px solid #38bdf8;
+  border: 2px solid #66b0d8;
   opacity: 1;
   display: flex;
   opacity: 1;
@@ -337,7 +337,7 @@ svg {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #38bdf8;
+  background-color: #66b0d8;
   opacity: 1;
   transform: translate(-50%, -50%);
   opacity: 1;
@@ -393,7 +393,7 @@ svg {
   z-index: -100;
   font-family: playfair-display, serif;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.025);
+  color: rgba(148, 163, 184, 0.025);
   font-size: 10rem;
   width: 105%;
   overflow: hidden;

@@ -261,7 +261,7 @@
   height: 16px;
   background-color: transparent;
   border-radius: 50%;
-  border: 2px solid getColor(accentCol1);
+  border: 2px solid getColor(headingAccent);
   opacity: 1;
   display: flex;
   opacity: 1;
@@ -277,7 +277,7 @@
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: getColor(accentCol1);
+  background-color: getColor(headingAccent);
   opacity: 1;
   transform: translate(-50%, -50%);
   opacity: 1;
