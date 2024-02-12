@@ -11,6 +11,8 @@ export default function PathSegment({
   description,
   url,
   icon,
+  isSelected,
+  setIsSelected,
 }) {
   const dateEl =
     id % 2 === 0 ? (
@@ -39,6 +41,8 @@ export default function PathSegment({
         institution={institution}
         description={description}
         url={url}
+        isSelected={isSelected}
+        setIsSelected={setIsSelected}
       />
     </animated.div>
   );
@@ -53,4 +57,6 @@ PathSegment.propTypes = {
   url: PropTypes.string,
   cssClass: PropTypes.string,
   icon: PropTypes.element,
+  isSelected: PropTypes.number,
+  setIsSelected: PropTypes.func,
 };

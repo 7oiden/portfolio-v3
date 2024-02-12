@@ -43,6 +43,7 @@
   background-color: transparent;
   font-family: inter;
   font-size: inherit;
+  color: getColor(textLight);
 
   &:focus {
     outline: none;

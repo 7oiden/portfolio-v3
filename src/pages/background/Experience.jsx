@@ -6,6 +6,7 @@ import PathToggleBtn from "./PathToggleBtn";
 
 export default function Experience() {
   const [numToShow, setNumToShow] = useState(3);
+  const [isSelected, setIsSelected] = useState(null);
 
   const slicedDataArr = experienceData.slice(0, numToShow);
 
@@ -18,7 +19,6 @@ export default function Experience() {
         <div className="path__container">
           {slicedDataArr.map((entry) => (
             <div key={entry.id} className="path__segment">
-              {/* <div className="path__vert-line"></div> */}
               <PathSegment
                 id={entry.id}
                 key={entry.id}
@@ -28,6 +28,8 @@ export default function Experience() {
                 description={entry.description}
                 url={entry.url}
                 icon={entry.icon}
+                isSelected={isSelected}
+                setIsSelected={setIsSelected}
               />
             </div>
           ))}

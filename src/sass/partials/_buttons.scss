@@ -16,6 +16,9 @@
 }
 
 .contact__btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
   background-color: getColor(buttonBg);
   color: getColor(headingAccent);
   border: 2px solid transparent;

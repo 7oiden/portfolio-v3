@@ -97,8 +97,7 @@
 .info-box {
   @extend .card-styling;
   position: relative;
-  gap: 0.5rem;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   border-radius: 10px;
   top: 0;
   margin-left: 5rem;
@@ -110,17 +109,25 @@
     margin-left: 0;
     max-width: 40%;
     width: 40%;
-    padding: 1.5rem;
+    padding: 1.5rem 1.5rem 0 1.5rem;
   }
 
   &__header {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  &__body {
-    padding-top: 0.5rem;
+  &__expander {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+  }
+
+  &__bottom {
+    @media (min-width: getBreakpoint(large)) {
+      padding-bottom: 0.5rem;
+    }
   }
 }
 

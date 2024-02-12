@@ -6,6 +6,7 @@ import PathToggleBtn from "./PathToggleBtn";
 
 export default function Education() {
   const [numToShow, setNumToShow] = useState(3);
+  const [isSelected, setIsSelected] = useState(null);
 
   const slicedDataArr = educationData.slice(0, numToShow);
 
@@ -27,14 +28,13 @@ export default function Education() {
                 description={entry.description}
                 url={entry.url}
                 icon={entry.icon}
+                isSelected={isSelected}
+                setIsSelected={setIsSelected}
               />
             </div>
           ))}
         </div>
-        <PathToggleBtn
-          setNumToShow={setNumToShow}
-          dataArr={educationData}
-        />
+        <PathToggleBtn setNumToShow={setNumToShow} dataArr={educationData} />
       </div>
     </section>
   );

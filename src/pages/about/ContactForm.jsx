@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import Banner from "../../components/alerts/Banner";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
+import Spinner from "../../components/common/Spinner";
 
 const schema = yup.object().shape({
   first_name: yup
@@ -78,7 +79,7 @@ export default function ContactForm() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setSubmitted(false);
-    }, 3000);
+    }, 4000);
     return () => clearTimeout(timer);
   }, [submitted]);
 
@@ -155,7 +156,7 @@ export default function ContactForm() {
         </Banner>
       )}
       <button className="contact__btn">
-        {submitting ? "Submitting..." : "Send"}
+        {submitting ? <> <Spinner /> Submitting... </> : "Send"}
       </button>
     </form>
   );
