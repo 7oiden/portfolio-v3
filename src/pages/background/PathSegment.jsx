@@ -21,13 +21,13 @@ export default function PathSegment({
       <div className="path__date path__date--right">{date}</div>
     );
 
-  const pathExpand = useSpring({
-    opacity: 1,
-    from: id > 3 ? { opacity: 0 } : { opacity: 1 },
-  });
+    const pathExpand = useSpring({
+      maxHeight: "400px",
+      from: id > 3 ? { maxHeight: "0" } : { maxHeight: "400px" },
+    });
 
   return (
-    <animated.div style={{ ...pathExpand }}>
+    <animated.div style={{...pathExpand}}>
       <div className="path__vert-line"></div>
       <div className="path__icon-container">
         {cloneElement(icon, { className: "path__icon" })}

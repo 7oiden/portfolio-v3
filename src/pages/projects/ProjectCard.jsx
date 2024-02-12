@@ -33,7 +33,7 @@ export default function ProjectCard({
     api.start({
       x: 6,
       y: -6,
-      delay: 200,
+      delay: 250,
     });
   };
 
@@ -46,8 +46,9 @@ export default function ProjectCard({
   };
 
   const textAppear = useSpring({
-    maxHeight: isOpen ? "500px" : "0px",
-    opacity: isOpen ? 1 : 0,
+    maxHeight: isOpen ? "180px" : "0",
+    opacity: isOpen ? "1" : "0",
+    config: { duration: 250 },
   });
 
   return (
@@ -67,7 +68,10 @@ export default function ProjectCard({
             <img src={image} alt={imageAlt} className="project__image" />
           </div>
           <div className="mobile__icon">
-            <MdArrowForward size="1.5rem" style={{ transform: "rotate(-45deg)" }} />
+            <MdArrowForward
+              size="1.5rem"
+              style={{ transform: "rotate(-45deg)" }}
+            />
           </div>
           <div className="project__overlay">
             <span>Go to live site at:</span>
@@ -93,23 +97,23 @@ export default function ProjectCard({
             GitHub
           </LinkBtn>
         </div>
-        <div className="paragraph-container">
+        <div className="card__body">
           <p>{description[0]}</p>
-          {isOpen && (
-            <animated.p style={{ ...textAppear }} id="content-to-toggle">
+          <animated.div style={{ ...textAppear }}>
+            <p id="content-to-toggle" className="card__hidden mb">
               {description[1]}
-            </animated.p>
-          )}
-          <InfoToggler
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            position="left"
-            aria-expanded={isOpen}
-            aria-controls="content-to-toggle"
-          >
-            {isOpen ? "Show less" : "Read more"}
-          </InfoToggler>
+            </p>
+          </animated.div>
         </div>
+        <InfoToggler
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          position="left"
+          aria-expanded={isOpen}
+          aria-controls="content-to-toggle"
+        >
+          {isOpen ? "Show less" : "Read more"}
+        </InfoToggler>
         <div className="badge-grid">
           {tools.map((tool) => (
             <TextBadge key={tool}>{tool}</TextBadge>

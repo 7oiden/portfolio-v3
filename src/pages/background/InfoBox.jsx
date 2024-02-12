@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import Heading from "../../components/common/Heading";
-// import InfoToggler from "../../components/common/InfoToggler";
 import InfoBoxToggler from "./InfoBoxToggler";
 import LinkBtn from "../../components/common/LinkBtn";
 import { useSpring, animated } from "@react-spring/web";
@@ -17,8 +16,13 @@ export default function InfoBox({
 }) {
   const expandInfo = useSpring({
     maxHeight: isSelected === id ? "500px" : "0px",
-    // opacity: isSelected === id ? 1 : 0,
-    // config: { duration: 3000 },
+    opacity: isSelected === id ? "1" : "0",
+    config: { duration: 250 },
+  });
+
+  const showDate = useSpring({
+    opacity: isSelected === id ? "1" : "0",
+    config: { duration: 250 },
   });
 
   const cssClass = id % 2 === 0 ? "" : "info-box--odd";
@@ -35,7 +39,7 @@ export default function InfoBox({
       {triangleEl}
       <div className="info-box__marker info-box__marker--default"></div>
       {isSelected === id && (
-        <animated.div className="path__date--mobile" style={{ ...expandInfo }}>
+        <animated.div className="path__date--mobile" style={{ ...showDate }}>
           {date}
         </animated.div>
       )}

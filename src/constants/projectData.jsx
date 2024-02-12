@@ -38,7 +38,7 @@ export const projectData = [
     date: "Dec 2021",
     description: [
       "Mercury shoes is an e-commerce site selling running shoes. The site is coded using HTML and vanilla Javascript, and is styled using Sass. The site has a costumer facing side with basket functionality using local storage to store data, and also an admin facing side, where products can be added, edited and deleted. An API from Strapi hosted on Heroku is used to store and fetch product data.",
-      "This project was an assignment from Noroff's Frontend course second year and was delivered in December 2021. The time frame was 5 weeks, and the project requirements are listed in the next section. The site was given a facelift as well as given some added functionality like the favorites feature, when working with our portfolio assignment from Noroff in 2022.",
+      "This project was an assignment from Noroff's Frontend course second year and was delivered in December 2021. The site was given a facelift as well as given some added functionality like the favorites feature, when working with our portfolio assignment from Noroff in 2022.",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1654681036/mercury_lyf9vl.jpg",

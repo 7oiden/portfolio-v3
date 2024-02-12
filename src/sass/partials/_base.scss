@@ -12,11 +12,12 @@ html {
 }
 
 body {
-  height: 100%;
+  position: relative;
+  // height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: getColor(primaryBg);
+  // background-color: getColor(primaryBg);
   color: getColor(textLight);
   font-family: $paragraph;
   font-size: 1rem;
@@ -55,4 +56,8 @@ svg {
   );
   box-shadow: 0 6px 8px 1px rgb(0 0 0 / 0.1);
   border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+#content-to-toggle {
+  overflow: hidden;
 }

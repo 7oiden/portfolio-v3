@@ -121,6 +121,7 @@
   &__expander {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 1rem;
   }
 
@@ -177,7 +178,12 @@
 
   &--left {
     left: -1.45rem;
-    border-right: 1.55rem solid rgba(25, 42, 77, 0.8);
+    border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
+    display: none;
+
+    @media (min-width: getBreakpoint(large)) {
+      display: block;
+    }
   }
 
   &--right {

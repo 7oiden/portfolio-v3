@@ -14,11 +14,10 @@ html {
 }
 
 body {
-  height: 100%;
+  position: relative;
   margin: 0;
   display: flex;
   flex-direction: column;
-  background-color: #0f172a;
   color: #94a3b8;
   font-family: "inter", sans-serif;
   font-size: 1rem;
@@ -54,6 +53,10 @@ svg {
   background: linear-gradient(to right bottom, rgba(25, 42, 77, 0.8), rgba(20, 35, 60, 0.8));
   box-shadow: 0 6px 8px 1px rgba(0, 0, 0, 0.1);
   border-top: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+#content-to-toggle {
+  overflow: hidden;
 }
 
 .page-width, .section-wrapper, .page-heading, .footer__container {
@@ -243,7 +246,7 @@ svg {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 .resume {
@@ -351,11 +354,13 @@ svg {
 
 .bg-gradient::before {
   content: "";
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: rgb(16, 30, 67);
+  background-attachment: scroll;
   background: radial-gradient(circle, rgb(16, 30, 67) 0%, rgb(15, 23, 42) 100%);
   z-index: -300;
 }
@@ -860,6 +865,7 @@ img {
   gap: 1rem;
   color: #e2e8f0;
   cursor: pointer;
+  margin-top: -1rem;
 }
 
 .project__date-icon {
@@ -966,11 +972,11 @@ img {
   border-radius: 10px;
   font-size: 0.875rem;
   gap: 1rem;
-  padding: 1.5rem;
+  padding: 1rem;
 }
 @media (min-width: 992px) {
   .card {
-    padding: 2rem;
+    padding: 1.5rem;
     font-size: 1rem;
   }
 }
@@ -987,6 +993,17 @@ img {
     justify-content: space-between;
     align-items: flex-start;
   }
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.4;
+  margin-right: 1rem;
+  overflow: hidden;
+}
+.card__hidden {
+  overflow: hidden;
 }
 
 .overlay__body {
@@ -1461,6 +1478,7 @@ img {
 .info-box__expander {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-bottom: 1rem;
 }
 @media (min-width: 992px) {
@@ -1517,7 +1535,13 @@ img {
 }
 .info-box__marker--left {
   left: -1.45rem;
-  border-right: 1.55rem solid rgba(25, 42, 77, 0.8);
+  border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
+  display: none;
+}
+@media (min-width: 992px) {
+  .info-box__marker--left {
+    display: block;
+  }
 }
 .info-box__marker--right {
   right: -1.45rem;
