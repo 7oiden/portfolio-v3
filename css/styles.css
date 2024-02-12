@@ -83,17 +83,17 @@ svg {
     width: 70%;
   }
 }
-@media (min-width: 1600px) {
+@media (min-width: ) {
   .page-width, .section-wrapper, .page-heading, .footer__container {
     width: 65%;
   }
 }
-@media (min-width: 1800px) {
+@media (min-width: ) {
   .page-width, .section-wrapper, .page-heading, .footer__container {
     width: 60%;
   }
 }
-@media (min-width: 2000px) {
+@media (min-width: ) {
   .page-width, .section-wrapper, .page-heading, .footer__container {
     width: 55%;
   }
@@ -285,43 +285,27 @@ svg {
   }
 }
 
-#test {
+.biography {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
 }
-
-.test2 {
+.biography__wrapper {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.map-image {
-  position: relative;
-  width: 250px;
-  flex-shrink: 0;
-  display: none;
-}
-@media (min-width: 992px) {
-  .map-image {
-    display: block;
-  }
-}
-.map-image img {
-  width: 100%;
-  opacity: 0.15;
-}
-
-.map-image::before {
+.location-marker::before {
   content: "";
   position: absolute;
-  top: 255px;
-  left: 0;
+  top: 258px;
+  left: 6px;
   width: 16px;
   height: 16px;
+  transform: translate(-50%, -50%);
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid #66b0d8;
@@ -330,13 +314,15 @@ svg {
   opacity: 1;
   z-index: 1000;
   cursor: pointer;
+  transition: all 0.3s ease;
+  scale: 1;
 }
 
-.map-image::after {
+.location-marker::after {
   content: "";
   position: absolute;
-  top: 263px;
-  left: 8px;
+  top: 258px;
+  left: 6px;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -346,6 +332,28 @@ svg {
   opacity: 1;
   z-index: 1000;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.location-marker:hover::before {
+  border: 2px solid #38bdf8;
+  width: 24px;
+  height: 24px;
+}
+
+.location-marker:hover::after {
+  background-color: #38bdf8;
+}
+
+.test {
+  position: absolute;
+  top: 239px;
+  left: 25px;
+  display: block;
+  transform: rotate(-30deg);
+  transform-origin: bottom left;
+  color: #66b0d8;
+  opacity: 0.8;
 }
 
 .mw {
@@ -475,18 +483,18 @@ em {
 }
 
 .page-heading {
-  font-size: 2.125rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #e2e8f0;
 }
 @media (min-width: 768px) {
   .page-heading {
-    font-size: 2.875rem;
+    font-size: 3rem;
   }
 }
 @media (min-width: 992px) {
   .page-heading {
-    font-size: 3.75rem;
+    font-size: 4rem;
   }
 }
 .page-heading__dot {
@@ -738,6 +746,22 @@ img {
 
 .project__image {
   border-radius: 10px;
+}
+
+.map-image {
+  position: relative;
+  width: 250px;
+  flex-shrink: 0;
+  display: none;
+}
+@media (min-width: 992px) {
+  .map-image {
+    display: block;
+  }
+}
+.map-image img {
+  width: 100%;
+  opacity: 0.15;
 }
 
 .skills__badge-list {
@@ -1051,7 +1075,8 @@ img {
 .contact__btn {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  gap: 0.5rem;
   background-color: #0d121e;
   color: #66b0d8;
   border: 2px solid transparent;
@@ -1064,6 +1089,7 @@ img {
   cursor: pointer;
   border-radius: 4px;
   font-family: "JetBrains Mono", sans-serif;
+  min-width: 80px;
 }
 @media (min-width: 992px) {
   .contact__btn {
@@ -1657,23 +1683,14 @@ img {
 }
 
 .spinner {
-  border: 0.1rem solid #38bdf8;
+  border: 0.1rem solid #66b0d8;
   border-top: 0.1rem solid transparent;
   margin: 0 auto;
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
-  animation: spin 1s ease-in-out infinite;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .skill-badge__item {
   display: flex;
   flex-direction: column;

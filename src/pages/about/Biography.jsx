@@ -1,11 +1,12 @@
 import Heading from "../../components/common/Heading";
 import mapPng from "../../assets/images/norway2.png";
+import { Link } from "react-router-dom";
 
 /* eslint-disable react/no-unescaped-entities */
 export default function Biography() {
   return (
-    <section className="section-wrapper" id="test">
-      <div className="test2">
+    <section className="section-wrapper biography">
+      <div className="biography__wrapper">
         <Heading size="2" cssClass="section-heading">
           Biography
         </Heading>
@@ -40,6 +41,12 @@ export default function Biography() {
       </div>
       <div className="map-image">
         <img src={mapPng} />
+        <Link
+          to="https://maps.app.goo.gl/GPHnNxc53yVv1Uv5A"
+          className="location-marker"
+        >
+          <span className="test">Where I live</span>
+        </Link>
       </div>
     </section>
   );

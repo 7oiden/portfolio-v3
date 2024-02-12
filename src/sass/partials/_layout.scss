@@ -18,15 +18,15 @@
     width: 70%;
   }
 
-  @media (min-width: getBreakpoint(3xLarge)) {
+  @media (min-width: getBreakpoint(3xlarge)) {
     width: 65%;
   }
 
-  @media (min-width: getBreakpoint(4xLarge)) {
+  @media (min-width: getBreakpoint(4xlarge)) {
     width: 60%;
   }
 
-  @media (min-width: getBreakpoint(5xLarge)) {
+  @media (min-width: getBreakpoint(5xlarge)) {
     width: 55%;
   }
 }
@@ -189,7 +189,6 @@
   justify-content: center;
   align-items: center;
   background-color: #122a45bf;
-  // background-color: getColor(headerBg);
   margin-top: 4rem;
   padding: 1rem 0;
 
@@ -218,47 +217,28 @@
   }
 }
 
-#test {
+.biography {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 4rem;
-}
 
-.test2 {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.map-image {
-  position: relative;
-  width: 250px;
-  flex-shrink: 0;
-  display: none;
-
-  @media (min-width: getBreakpoint(large)) {
-    display: block;
-  }
-
-  & img {
-    width: 100%;
-    opacity: 0.15;
-    // transition: all 0.3s ease-in-out;
-    // &:hover {
-    //   opacity: 0.5;
-    // }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 }
 
-.map-image::before {
+.location-marker::before {
   content: "";
   position: absolute;
-  top: 255px;
-  left: 0;
+  top: 258px;
+  left: 6px;
   width: 16px;
   height: 16px;
+  transform: translate(-50%, -50%);
   background-color: transparent;
   border-radius: 50%;
   border: 2px solid getColor(headingAccent);
@@ -267,13 +247,15 @@
   opacity: 1;
   z-index: 1000;
   cursor: pointer;
+  transition: all 0.3s ease;
+  scale: 1;
 }
 
-.map-image::after {
+.location-marker::after {
   content: "";
   position: absolute;
-  top: 263px;
-  left: 8px;
+  top: 258px;
+  left: 6px;
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -283,9 +265,30 @@
   opacity: 1;
   z-index: 1000;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.location-marker:hover::before {
+  border: 2px solid getColor(accentCol1);
+  width: 24px;
+  height: 24px;
+}
+
+.location-marker:hover::after {
+  background-color: getColor(accentCol1);
+}
+
+.test {
+  position: absolute;
+  top: 239px;
+  left: 25px;
+  display: block;
+  transform: rotate(-30deg);
+  transform-origin: bottom left;
+  color: getColor(headingAccent);
+  opacity: 0.8;
 }
 
 .mw {
   max-width: 750px;
 }
-

@@ -141,7 +141,7 @@ export default function ContactForm() {
         )}
       </div>
       {submitting && (
-        <Banner heading="Please hold..." status="info">
+        <Banner heading="Please hold" status="info">
           While the Heroku API is waking up...
         </Banner>
       )}
@@ -156,7 +156,14 @@ export default function ContactForm() {
         </Banner>
       )}
       <button className="contact__btn">
-        {submitting ? <> <Spinner /> Submitting... </> : "Send"}
+        {submitting ? (
+          <>
+            <Spinner />
+            Submitting
+          </>
+        ) : (
+          "Send"
+        )}
       </button>
     </form>
   );

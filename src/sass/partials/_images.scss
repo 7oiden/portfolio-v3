@@ -33,3 +33,19 @@ img {
 .project__image {
   border-radius: 10px;
 }
+
+.map-image {
+  position: relative;
+  width: 250px;
+  flex-shrink: 0;
+  display: none;
+
+  @media (min-width: getBreakpoint(large)) {
+    display: block;
+  }
+
+  & img {
+    width: 100%;
+    opacity: 0.15;
+  }
+}

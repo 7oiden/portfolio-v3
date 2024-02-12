@@ -18,7 +18,8 @@
 .contact__btn {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  gap: 0.5rem;
   background-color: getColor(buttonBg);
   color: getColor(headingAccent);
   border: 2px solid transparent;
@@ -31,6 +32,7 @@
   cursor: pointer;
   border-radius: 4px;
   font-family: $link;
+  min-width: 80px;
 
   @media (min-width: getBreakpoint(large)) {
     font-size: 1.125rem;
