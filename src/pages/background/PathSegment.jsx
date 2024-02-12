@@ -22,8 +22,8 @@ export default function PathSegment({
     );
 
     const pathExpand = useSpring({
-      maxHeight: "400px",
-      from: id > 3 ? { maxHeight: "0" } : { maxHeight: "400px" },
+      maxHeight: "500px",
+      from: id > 3 ? { maxHeight: "0" } : { maxHeight: "500px" },
     });
 
   return (

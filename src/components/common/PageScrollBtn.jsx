@@ -4,7 +4,7 @@ import { useSpring, animated } from "@react-spring/web";
 
 export default function PageScrollBtn() {
   const [springs, api] = useSpring(() => ({
-    from: { opacity: 0, transform: "translate(50%, 50%)" },
+    from: { width: "0", transform: "translate(50%, 50%)" },
   }));
 
   const prevScrollY = useRef(0);
@@ -15,20 +15,20 @@ export default function PageScrollBtn() {
     if (currentScrollY > prevScrollY.current) {
       // Scrolling down
       api.start({
-        to: { opacity: 0 },
-        config: { duration: 200 },
+        to: { width: "0" },
+        config: { duration: 100 },
       });
     } else if (currentScrollY < 100) {
       // At top of page
       api.start({
-        to: { opacity: 0 },
-        config: { duration: 200 },
+        to: { width: "0" },
+        config: { duration: 100 },
       });
     } else {
       // Scrolling up
       api.start({
-        to: { opacity: 1 },
-        config: { duration: 200 },
+        to: { width: "100px" },
+        config: { duration: 100 },
       });
     }
 
