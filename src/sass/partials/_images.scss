@@ -36,7 +36,7 @@ img {
 
 .map-image {
   position: relative;
-  width: 250px;
+  width: 300px;
   flex-shrink: 0;
   display: none;
 
@@ -46,6 +46,5 @@ img {
 
   & img {
     width: 100%;
-    opacity: 0.15;
   }
 }

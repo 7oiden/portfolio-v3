@@ -11,7 +11,7 @@ export default function Education() {
   const slicedDataArr = educationData.slice(0, numToShow);
 
   return (
-    <section className="section-wrapper experience-section">
+    <section className="section-wrapper">
       <div className="path__wrapper">
         <Heading size="2" cssClass="section-heading path__heading">
           Education & Training
