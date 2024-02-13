@@ -126,6 +126,11 @@ svg {
 .page-heading {
   padding: 2rem 0 1rem 0;
 }
+@media (min-width: 992px) {
+  .page-heading {
+    padding: 4rem 0 1rem 0;
+  }
+}
 
 .section-wrapper {
   display: flex;
@@ -593,6 +598,15 @@ em {
 }
 @media (min-width: 992px) {
   .info-box__sub-heading {
+    font-size: 1rem;
+  }
+}
+
+.info-box__text {
+  font-size: 0.875rem;
+}
+@media (min-width: 992px) {
+  .info-box__text {
     font-size: 1rem;
   }
 }
@@ -1319,6 +1333,18 @@ img {
   border-radius: 10px;
   padding: 2rem;
   margin-top: 2rem;
+}
+.contact__fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.contact__fieldset:disabled {
+  background-color: #0f172a;
+  color: #6b7280;
 }
 .contact__ {
   display: flex;

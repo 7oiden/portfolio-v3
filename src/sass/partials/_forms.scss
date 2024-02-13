@@ -7,6 +7,20 @@
     margin-top: 2rem;
   }
 
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: none;
+    margin: 0;
+    padding: 0;
+
+    &:disabled {
+      background-color: getColor(primaryBg);
+      color: getColor(textDisabled);
+    }
+  }
+
   &__ {
     display: flex;
     flex-direction: column;

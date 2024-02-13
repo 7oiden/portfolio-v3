@@ -15,7 +15,7 @@ export default function InfoBox({
   setIsSelected,
 }) {
   const expandInfo = useSpring({
-    maxHeight: isSelected === id ? "500px" : "0px",
+    maxHeight: isSelected === id ? "450px" : "0px",
     opacity: isSelected === id ? "1" : "0",
     config: { duration: 250 },
   });
@@ -62,7 +62,7 @@ export default function InfoBox({
         </div>
       </div>
       <animated.div
-        className="paragraph-container"
+        className="paragraph-container info-box__text"
         style={{ ...expandInfo }}
         id="content-to-toggle"
       >

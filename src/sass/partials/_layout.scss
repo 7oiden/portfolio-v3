@@ -59,8 +59,11 @@
 
 .page-heading {
   @extend .page-width;
-
   padding: 2rem 0 1rem 0;
+
+  @media (min-width: getBreakpoint(large)) {
+    padding: 4rem 0 1rem 0;
+  }
 }
 
 .section-wrapper {

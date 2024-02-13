@@ -36,6 +36,7 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
+  const [showInfoMessage, setShowInfoMessage] = useState(false);
 
   const url = BASE_URL + "contacts";
 
@@ -43,24 +44,25 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState,
+    formState: { errors, isSubmitSuccessful },
   } = useForm({
     resolver: yupResolver(schema),
+    defaultValues: {
+      first_name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
   });
 
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
     console.log(data);
-    reset();
 
     const jsonData = {
-      data: {
-        first_name: data.first_name,
-        email: data.email,
-        subject: data.subject,
-        message: data.message,
-      },
+      data,
     };
 
     try {
@@ -77,72 +79,99 @@ export default function ContactForm() {
   }
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setSubmitted(false);
-    }, 4000);
+    if (isSubmitSuccessful) {
+      reset();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formState, reset]);
+
+  useEffect(() => {
+    let infoMessageTimer;
+    if (submitting) {
+      // Show info message after 3 seconds
+      infoMessageTimer = setTimeout(() => {
+        setShowInfoMessage(true);
+      }, 3000);
+    }
+
+    return () => {
+      clearTimeout(infoMessageTimer);
+    };
+  }, [submitting]);
+
+  useEffect(() => {
+    let timer;
+    if (submitted) {
+      // Hide success message after 4 seconds
+      timer = setTimeout(() => {
+        setSubmitted(false);
+      }, 4000);
+    }
     return () => clearTimeout(timer);
   }, [submitted]);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
-      <div className="contact__input-container">
-        <label htmlFor="name">Name</label>
-        <input
-          className="contact__input"
-          type="text"
-          placeholder="Name"
-          id="name"
-          autoComplete="name"
-          {...register("first_name")}
-        />
-        {errors.first_name && (
-          <span className="input-error">{errors.first_name.message}</span>
-        )}
-      </div>
-      <div className="contact__input-container">
-        <label htmlFor="email">Email</label>
-        <input
-          className="contact__input"
-          type="text"
-          placeholder="Email"
-          id="email"
-          autoComplete="email"
-          {...register("email")}
-        />
-        {errors.email && (
-          <span className="input-error">{errors.email.message}</span>
-        )}
-      </div>
-      <div className="contact__input-container">
-        <label htmlFor="subject">Subject</label>
-        <input
-          className="contact__input"
-          type="text"
-          placeholder="Subject"
-          id="subject"
-          autoComplete="off"
-          {...register("subject")}
-        />
-        {errors.subject && (
-          <span className="input-error">{errors.subject.message}</span>
-        )}
-      </div>
-      <div className="contact__input-container">
-        <label htmlFor="message">Message</label>
-        <textarea
-          className="contact__textarea"
-          placeholder="Message"
-          id="message"
-          autoComplete="off"
-          {...register("message")}
-        />
-        {errors.message && (
-          <span className="input-error">{errors.message.message}</span>
-        )}
-      </div>
-      {submitting && (
-        <Banner heading="Please hold" status="info">
-          While the Heroku API is waking up...
+      <fieldset disabled={submitting} className="contact__fieldset">
+        <div className="contact__input-container">
+          <label htmlFor="name">Name</label>
+          <input
+            className="contact__input"
+            type="text"
+            placeholder="Name"
+            id="name"
+            autoComplete="name"
+            {...register("first_name")}
+          />
+          {errors.first_name && (
+            <span className="input-error">{errors.first_name.message}</span>
+          )}
+        </div>
+        <div className="contact__input-container">
+          <label htmlFor="email">Email</label>
+          <input
+            className="contact__input"
+            type="text"
+            placeholder="Email"
+            id="email"
+            autoComplete="email"
+            {...register("email")}
+          />
+          {errors.email && (
+            <span className="input-error">{errors.email.message}</span>
+          )}
+        </div>
+        <div className="contact__input-container">
+          <label htmlFor="subject">Subject</label>
+          <input
+            className="contact__input"
+            type="text"
+            placeholder="Subject"
+            id="subject"
+            autoComplete="off"
+            {...register("subject")}
+          />
+          {errors.subject && (
+            <span className="input-error">{errors.subject.message}</span>
+          )}
+        </div>
+        <div className="contact__input-container">
+          <label htmlFor="message">Message</label>
+          <textarea
+            className="contact__textarea"
+            placeholder="Message"
+            id="message"
+            autoComplete="off"
+            {...register("message")}
+          />
+          {errors.message && (
+            <span className="input-error">{errors.message.message}</span>
+          )}
+        </div>
+      </fieldset>
+      {submitting && showInfoMessage && (
+        <Banner heading="Please hold!" status="info">
+          ...while the Heroku API is waking up.
         </Banner>
       )}
       {submitted && (
