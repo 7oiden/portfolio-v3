@@ -5,7 +5,7 @@
 }
 
 .nav {
-  height: 4rem;
+  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,7 +18,7 @@
 
   &__link-list {
     display: none;
-    gap: 2rem;
+    gap: 2.5rem;
     list-style: none;
     font-weight: 400;
     color: getColor(link);

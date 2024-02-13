@@ -3,11 +3,12 @@ import mapPng from "../../assets/images/norway2.png";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import { MdArrowForward } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 /* eslint-disable react/no-unescaped-entities */
 export default function Biography() {
   const [springMap, apiMap] = useSpring(() => ({
-    from: { opacity: 0.15 },
+    from: { opacity: 0.2 },
   }));
 
   const [springLink, apiLink] = useSpring(() => ({
@@ -28,7 +29,7 @@ export default function Biography() {
 
   const handleHover = () => {
     apiMap.start({
-      opacity: 0.25,
+      opacity: 0.3,
     });
     apiLink.start({
       color: "#38bdf8",
@@ -47,7 +48,7 @@ export default function Biography() {
 
   const handleHoverExit = () => {
     apiMap.start({
-      opacity: 0.15,
+      opacity: 0.2,
     });
     apiLink.start({
       color: "#66b0d8",
@@ -74,33 +75,45 @@ export default function Biography() {
       <div className="biography__wrapper">
         <div className="paragraph-container">
           <p>
-            I am originally from Sunnmøre, but moved to <em>Bergen</em> in 2004
-            to study, and has been living in the Bergen area more or less since.
+            Hailing originally from the picturesque landscapes of Sunnmøre, I
+            embarked on a journey to <em>Bergen</em> in 2004 to pursue higher
+            education, and my roots have firmly intertwined with the vibrant
+            tapestry of Bergen ever since.
           </p>
           <p>
-            Previously i have more than
-            <em> 10 years of experience as an engineer</em> in the construction
-            industry, where i in the later years was in charge of several large
-            and complex projects.
+            Armed with over a decade of experience as an engineer in the dynamic
+            realm of construction, I've orchestrated the symphony of more than{" "}
+            <em>10 years of professional expertise</em>, conducting large and
+            intricate projects in the latter part of my career.
           </p>
           <p>
-            In 2020 i decided to pursue a new career as a frontend-developer by
-            enrolling in <em>Noroff's</em> frontend-programme as an full-time
-            online student.
+            The year 2020 marked a pivotal moment as I decided to chart a new
+            course, transitioning into the exhilarating world of frontend
+            development. Enrolling in <em>Noroff's</em> comprehensive frontend
+            program as a full-time online student, I embraced the challenge and
+            opportunity for growth.
           </p>
           <p>
-            I love that as <em>frontend-developer</em> i get to use my former
-            conditioning in logics, analytical thinking and problem solving as
-            well as being able to express my more creative and esthetic sides;
-            the latter something i always missed in my previous line of work.
+            What captivates me most about being a <em>frontend developer</em> is
+            the harmonious blend of logical reasoning, analytical thinking, and
+            creative expression. It's a space where I can leverage my
+            problem-solving skills while giving life to my artistic
+            inclinations—a facet I yearned for in my previous professional
+            endeavors.
           </p>
           <p>
-            As a person i am open-minded, self-reflected and curios, and i am
-            always thirsting for knowledge and <em>eager to learn</em> new
-            things to expand my horizon; both as a person and as a professional.
+            Beyond my technical prowess, I embody an open-minded,
+            self-reflective, and curious spirit. I harbor an insatiable thirst
+            for knowledge and remain perpetually <em>eager to learn</em>,
+            consistently expanding my horizons—both as an individual and as a
+            dedicated professional.
           </p>
         </div>
         <div className="map-image">
+          <div className="test">
+            <div>Home</div>
+            <MdOutlineKeyboardDoubleArrowRight className="location-marker__arrow" />
+          </div>
           <animated.img src={mapPng} style={{ ...springMap }} />
           <AnimatedLink
             to="https://maps.app.goo.gl/GPHnNxc53yVv1Uv5A"
@@ -114,7 +127,6 @@ export default function Biography() {
                 className="location-marker__circle"
                 style={{
                   ...springCircle,
-                  // border: springCircle.border.to((border) => border),
                 }}
               >
                 <animated.div
@@ -126,7 +138,7 @@ export default function Biography() {
                 className="location-marker__text"
                 style={{ ...springText }}
               >
-                Where I live
+                Google Maps
                 <MdArrowForward className="location-marker__icon" />
               </animated.div>
             </div>
