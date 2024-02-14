@@ -1227,13 +1227,28 @@ img {
 }
 
 .link-btn--sm {
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+@media (min-width: 992px) {
+  .link-btn--sm {
+    font-size: 1rem;
+  }
 }
 .link-btn--md {
   font-size: 1rem;
 }
+@media (min-width: 992px) {
+  .link-btn--md {
+    font-size: 1.125rem;
+  }
+}
 .link-btn--lg {
   font-size: 1.125rem;
+}
+@media (min-width: 992px) {
+  .link-btn--lg {
+    font-size: 1.25rem;
+  }
 }
 
 .nav__toggle-btn {

@@ -19,14 +19,21 @@ export default function Intro() {
           </Heading>
           <div className="paragraph-container mb mw">
             <p>
-              My name is <em>Tommy Johnsen</em>, and I am a former construction
-              engineer looking for a new career as a frontend developer.
+              Greetings! My name is <em>Tommy Johnsen</em>, a seasoned
+              structural engineer looking for a new career as a frontend
+              developer.
             </p>
             <p>
-              In 2022 I graduated as a frontend developer from{" "}
-              <em>Noroff School of Technology and Digital Media</em>, and just
-              recently I have completed the Frontend Career Path, an estimated 6
-              months course, at <em>Scrimba</em>.
+              In the transformative year of 2022 I graduated as a frontend
+              developer from{" "}
+              <em>Noroff School of Technology and Digital Media</em>, and has
+              since also completed the Frontend Career Path, a comprehensive
+              6-month online course at <em>Scrimba</em>.
+            </p>
+            <p>
+              I thrive on the dual excitement of designing and creating great{" "}
+              <em>user experiences</em>, and bringing them to life
+              through code.
             </p>
           </div>
           <ScrollToTop>

@@ -75,36 +75,33 @@ export default function Biography() {
       <div className="biography__wrapper">
         <div className="paragraph-container">
           <p>
-            Hailing originally from the picturesque landscapes of Sunnmøre, I
-            embarked on a journey to <em>Bergen</em> in 2004 to pursue higher
-            education, and my roots have firmly intertwined with the vibrant
-            tapestry of Bergen ever since.
+            Originally from the picturesque landscapes of Sunnmøre, I embarked
+            on a journey to <em>Bergen</em> in 2004 to pursue higher education,
+            and has been living in the Bergen area (more or less) ever since.
           </p>
           <p>
-            Armed with over a decade of experience as an engineer in the dynamic
-            realm of construction, I've orchestrated the symphony of more than{" "}
-            <em>10 years of professional expertise</em>, conducting large and
-            intricate projects in the latter part of my career.
+            I have over a decade of <em>experience as an engineer </em>in the
+            dynamic realm of construction, where I was conducting large and
+            intricate projects especially in the latter part of my career.
           </p>
           <p>
-            The year 2020 marked a pivotal moment as I decided to chart a new
-            course, transitioning into the exhilarating world of frontend
+            The year 2020 marked a <em>pivotal moment</em> as I decided to chart
+            a new course, transitioning into the exciting world of frontend
             development. Enrolling in <em>Noroff's</em> comprehensive frontend
             program as a full-time online student, I embraced the challenge and
             opportunity for growth.
           </p>
           <p>
             What captivates me most about being a <em>frontend developer</em> is
-            the harmonious blend of logical reasoning, analytical thinking, and
+            the perfect blend of logical reasoning, analytical thinking, and
             creative expression. It's a space where I can leverage my
-            problem-solving skills while giving life to my artistic
-            inclinations—a facet I yearned for in my previous professional
-            endeavors.
+            problem-solving skills while giving life to my artistic inclinations
+            — a facet I yearned for in my previous professional endeavors.
           </p>
           <p>
             Beyond my technical prowess, I embody an open-minded,
-            self-reflective, and curious spirit. I harbor an insatiable thirst
-            for knowledge and remain perpetually <em>eager to learn</em>,
+            self-reflective, and curious spirit. I harbor an innate thirst for
+            knowledge and remain perpetually <em>eager to learn</em>,
             consistently expanding my horizons—both as an individual and as a
             dedicated professional.
           </p>
