@@ -3,6 +3,7 @@ import { HashLink } from "react-router-hash-link";
 import MediaLinks from "../../components/common/MediaLinks";
 import { MdArrowForward } from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
+// import { FaChevronDown } from "react-icons/fa6";
 
 export default function Hero() {
   const [springs, api] = useSpring(() => ({
@@ -49,6 +50,9 @@ export default function Hero() {
         </div>
       </div>
       <MediaLinks cssClass="hero__media-links" />
+      {/* <HashLink smooth to="/#intro" className="hero__scroll-down">
+          <FaChevronDown />
+      </HashLink> */}
     </section>
   );
 }

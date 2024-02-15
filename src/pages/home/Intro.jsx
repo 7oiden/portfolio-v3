@@ -5,7 +5,7 @@ import { ScrollToTop } from "../../utils/ScrollToTop";
 
 export default function Intro() {
   return (
-    <section className="intro section-wrapper">
+    <section className="intro section-wrapper" id="intro">
       <div className="intro__container">
         <figure className="intro__avatar">
           <img

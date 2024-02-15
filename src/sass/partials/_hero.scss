@@ -14,7 +14,6 @@
 
     @media (min-width: getBreakpoint(large)) {
       max-width: 700px;
-      top: 15%;
     }
 
     @media (min-width: getBreakpoint(xLarge)) {
@@ -56,3 +55,21 @@
     }
   }
 }
+
+// .hero__scroll-down {
+//   position: absolute;
+//   left: 50%;
+//   bottom: 15%;
+//   transform: translate(-50%, 0);
+
+//   & svg {
+//     color: getColor(link);
+//     font-size: 2rem;
+//     cursor: pointer;
+//     transition: color 0.2s ease-in-out;
+
+//     &:hover {
+//       color: getColor(accentCol1);
+//     }
+//   }
+// }

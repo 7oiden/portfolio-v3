@@ -1,12 +1,9 @@
 import PropTypes from "prop-types";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
 import { useSprings, animated } from "react-spring";
-import { FaHashtag } from "react-icons/fa";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
-  const location = useLocation().pathname;
-
   const iconSprings = useSprings(
     2,
     isMenuOpen
@@ -33,13 +30,9 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
 
   return (
     <nav className="nav">
-      {location === "/" ? (
-        <div></div>
-      ) : (
-        <Link to="/" className="nav__logo" aria-label="Return to homepage">
-          <FaHashtag />
-        </Link>
-      )}
+      <Link to="/" className="nav__logo" aria-label="Return to homepage">
+        #TJ.
+      </Link>
       <ul className="nav__link-list">
         <li>
           <NavLink
