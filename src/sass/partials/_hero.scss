@@ -4,6 +4,9 @@
     position: relative;
     top: 15%;
     max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @media (min-width: getBreakpoint(medium)) {
       max-width: 600px;
@@ -11,6 +14,7 @@
 
     @media (min-width: getBreakpoint(large)) {
       max-width: 700px;
+      top: 15%;
     }
 
     @media (min-width: getBreakpoint(xLarge)) {
@@ -21,5 +25,34 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    
+  }
+}
+
+.hero__media-links {
+  position: absolute;
+  display: flex;
+  gap: 1rem;
+  bottom: 6rem;
+  left: 5%;
+
+  @media (min-width: getBreakpoint(large)) {
+    flex-direction: column;
+    left: auto;
+    right: 5%;
+    top: 15%;
+  }
+
+  @media (min-width: getBreakpoint(xxLarge)) {
+    right: 7.5%;
+  }
+
+  & a {
+    color: getColor(link);
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: getColor(accentCol1);
+    }
   }
 }

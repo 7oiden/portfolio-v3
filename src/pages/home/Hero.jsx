@@ -25,9 +25,15 @@ export default function Hero() {
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
-          <Heading size="1" cssClass="hero__heading">
-            Hi, I am <span>Tommy</span> frontend developer
-          </Heading>
+          <hgroup className="hero__hgroup">
+            {/* <div className="hero__heading--thin">Hi, my name is</div> */}
+            <Heading size="1" cssClass="hero__heading--main">
+              Tommy Johnsen<span className="hero__heading--dot">.</span>
+            </Heading>
+            <Heading size="2" cssClass="hero__heading--sub">
+              Frontend Developer
+            </Heading>
+          </hgroup>
           <HashLink
             smooth
             to="/about#contact"
@@ -35,7 +41,7 @@ export default function Hero() {
             onMouseEnter={handleHover}
             onMouseLeave={handleHoverExit}
           >
-            <span>Get in touch</span>
+            Get in touch
             <animated.div style={{ ...springs }}>
               <MdArrowForward className="hero__arrow-icon" />
             </animated.div>

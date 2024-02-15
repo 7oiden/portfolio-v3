@@ -24,14 +24,57 @@ em {
   overflow: hidden;
 }
 
+.hero__hgroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .hero__heading {
   font-size: getSize(heroHeadingS);
-  font-weight: 700;
   color: getColor(heroHeading);
-  text-shadow: 0 1px getColor(heroHeading);
+  // text-shadow: 0 1px getColor(heroHeading);
 
-  & span {
+  &--main {
     font-weight: 700;
+    font-size: getSize(heroHeadingS);
+    color: getColor(heroHeading);
+    text-shadow: 0 1px getColor(heroHeading);
+
+    @media (min-width: getBreakpoint(medium)) {
+      font-size: getSize(heroHeadingM);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: getSize(heroHeadingL);
+    }
+  }
+
+  &--thin {
+    font-weight: 400;
+    font-size: 1.5rem;
+    color: getColor(accentCol2);
+  }
+
+  &--sub {
+    font-weight: 300;
+    font-size: 2.5rem;
+    font-size: getSize(heroSubHeadingS);
+    color: getColor(textBright);
+    text-shadow: 0 1px getColor(textBright);
+
+    @media (min-width: getBreakpoint(medium)) {
+      font-size: getSize(heroSubHeadingM);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: getSize(heroSubHeadingL);
+    }
+  }
+
+  &--dot {
+    color: getColor(headingAccent);
+    text-shadow: 0 1px getColor(headingAccent);
   }
 
   @media (min-width: getBreakpoint(medium)) {

@@ -14,12 +14,12 @@ export default function Intro() {
           />
         </figure>
         <div className="intro__body">
-          <Heading size="2" cssClass="section-heading">
+          <Heading size="3" cssClass="section-heading">
             Introduction
           </Heading>
           <div className="paragraph-container mb mw">
             <p>
-              Greetings! My name is <em>Tommy Johnsen</em>, a seasoned
+              Hello! I&apos;m <em>Tommy</em>, a seasoned
               structural engineer looking for a new career as a frontend
               developer.
             </p>
