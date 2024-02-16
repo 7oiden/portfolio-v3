@@ -1,20 +1,36 @@
 .hero {
+  position: relative;
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: getBreakpoint(xxLarge)) {
+    width: 85%;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    margin-bottom: 500px;
+
+    @media (min-width: getBreakpoint(large)) {
+      margin-bottom: 300px;
+    }
+  }
+
   &__container {
     @extend .inner-wrapper;
-    position: relative;
-    top: 10%;
     max-width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
 
     @media (min-width: getBreakpoint(medium)) {
       max-width: 600px;
     }
 
     @media (min-width: getBreakpoint(large)) {
-      top: 20%;
       max-width: 700px;
     }
 
@@ -26,26 +42,16 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    
   }
 }
 
 .hero__media-links {
-  position: absolute;
-  display: flex;
-  gap: 1rem;
-  bottom: 6rem;
-  left: 5%;
+  display: none;
 
   @media (min-width: getBreakpoint(large)) {
+    display: flex;
     flex-direction: column;
-    left: auto;
-    right: 5%;
-    top: 20%;
-  }
-
-  @media (min-width: getBreakpoint(xxLarge)) {
-    right: 7.5%;
+    gap: 1rem;
   }
 
   & a {
@@ -64,16 +70,16 @@
   transform-origin: center center;
   transform: translate(-50%, 0) rotate(90deg);
 
-   @media (min-width: getBreakpoint(large)) {
+  @media (min-width: getBreakpoint(large)) {
     bottom: 15%;
   }
- 
+
   & svg {
     color: getColor(link);
     font-size: 3rem;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
-     color: getColor(headingAccent);
+    color: getColor(headingAccent);
 
     &:hover {
       color: getColor(accentCol1);

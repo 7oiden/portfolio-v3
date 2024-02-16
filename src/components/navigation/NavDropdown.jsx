@@ -3,12 +3,13 @@ import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
+import MediaLinks from "../common/MediaLinks";
 
 export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
 
   const dropdown = useSpring({
-    maxHeight: isMenuOpen ? "215px" : "0px",
+    maxHeight: isMenuOpen ? "275px" : "0px",
     config: { duration: 200 },
   });
 
@@ -63,6 +64,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
             About
           </NavLink>
         </li>
+        <MediaLinks cssClass="nav-dropdown__media-links" />
       </ul>
     </animated.nav>
   );

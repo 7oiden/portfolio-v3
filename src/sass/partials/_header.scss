@@ -102,3 +102,15 @@
   font-size: 1.125rem;
   color: getColor(link);
 }
+
+.nav-dropdown__media-links {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+
+  & a  svg {
+    width: 1.5rem;
+    height: auto;
+    color: getColor(textLight);
+  }
+}

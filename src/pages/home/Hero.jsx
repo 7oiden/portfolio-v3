@@ -54,24 +54,26 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero__container">
-        <div className="hero__content">
-          <hgroup className="hero__hgroup">
-            <div className="hero__heading--top">Hello, my name is</div>
-            <Heading size="1" cssClass="hero__heading--main">
-              Tommy Johnsen<span className="hero__heading--dot">.</span>
-            </Heading>
-            <Heading size="2" cssClass="hero__heading--sub">
-              Frontend Developer, with a passion for creating great user
-              experiences.
-            </Heading>
-          </hgroup>
-          <HashLink smooth to="/about#contact" className="hero__button">
-            Get in touch
-          </HashLink>
+      <div className="hero__wrapper">
+        <div className="hero__container">
+          <div className="hero__content">
+            <hgroup className="hero__hgroup">
+              <div className="hero__heading--top">Hello, my name is</div>
+              <Heading size="1" cssClass="hero__heading--main">
+                Tommy Johnsen<span className="hero__heading--dot">.</span>
+              </Heading>
+              <Heading size="2" cssClass="hero__heading--sub">
+                Frontend Developer, with a passion for creating great user
+                experiences.
+              </Heading>
+            </hgroup>
+            <HashLink smooth to="/about#contact" className="hero__button">
+              Get in touch
+            </HashLink>
+          </div>
         </div>
+        <MediaLinks cssClass="hero__media-links" />
       </div>
-      <MediaLinks cssClass="hero__media-links" />
       <HashLink smooth to="/#intro" className="hero__scroll-down">
         <AnimatedIcon style={{ ...scroll, ...arrow }} />
       </HashLink>
