@@ -147,7 +147,7 @@
   height: 0;
   border-top: 0.5rem solid transparent;
   border-bottom: 0.5rem solid transparent;
-  border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
+  border-right: 1.5rem solid rgba(29, 43, 68, 0.8);
 
   @media (min-width: getBreakpoint(large)) {
     display: none;
@@ -168,7 +168,7 @@
 
   &--default {
     left: -1.45rem;
-    border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
+    border-right: 1.5rem solid rgba(16, 23, 40, 0.9);
 
     @media (min-width: getBreakpoint(large)) {
       display: none;
@@ -177,7 +177,7 @@
 
   &--left {
     left: -1.45rem;
-    border-right: 1.5rem solid rgba(25, 42, 77, 0.8);
+    border-right: 1.5rem solid rgba(16, 23, 40, 0.9);
     display: none;
 
     @media (min-width: getBreakpoint(large)) {
@@ -187,7 +187,7 @@
 
   &--right {
     right: -1.45rem;
-    border-left: 1.5rem solid rgba(25, 42, 77, 0.8);
+    border-left: 1.5rem solid rgba(16, 23, 40, 0.9);
     display: none;
 
     @media (min-width: getBreakpoint(large)) {

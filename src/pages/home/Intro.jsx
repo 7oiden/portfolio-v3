@@ -2,10 +2,14 @@ import Heading from "../../components/common/Heading";
 import avatar from "../../assets/images/avatar.png";
 import LinkBtn from "../../components/common/LinkBtn";
 import { ScrollToTop } from "../../utils/ScrollToTop";
+import { RxCornerTopLeft } from "react-icons/rx";
+import { RxCornerTopRight } from "react-icons/rx";
 
 export default function Intro() {
   return (
     <section className="intro section-wrapper" id="intro">
+      <RxCornerTopLeft className="corner-icon--top-left" />
+      <RxCornerTopRight className="corner-icon--top-right" />
       <div className="intro__container">
         <figure className="intro__avatar">
           <img
@@ -19,9 +23,8 @@ export default function Intro() {
           </Heading>
           <div className="paragraph-container mb mw">
             <p>
-              I&apos;m <em>Tommy</em>, a seasoned
-              structural engineer looking for a new career as a frontend
-              developer.
+              I&apos;m <em>Tommy</em>, a seasoned structural engineer looking
+              for a new career as a frontend developer.
             </p>
             <p>
               In the transformative year of 2022 I graduated as a frontend
@@ -32,8 +35,7 @@ export default function Intro() {
             </p>
             <p>
               I thrive on the dual excitement of designing and creating great{" "}
-              <em>user experiences</em>, and bringing them to life
-              through code.
+              <em>user experiences</em>, and bringing them to life through code.
             </p>
           </div>
           <ScrollToTop>

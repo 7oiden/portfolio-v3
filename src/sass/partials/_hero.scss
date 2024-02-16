@@ -4,7 +4,6 @@
   height: 100vh;
   margin: 0 auto;
   display: flex;
-  // flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -16,7 +15,7 @@
     width: 100%;
     display: flex;
     margin-bottom: 300px;
-
+    
     @media (min-width: getBreakpoint(large)) {
       margin-bottom: 300px;
     }
@@ -24,6 +23,7 @@
 
   &__container {
     @extend .inner-wrapper;
+    position: relative;
     max-width: 100%;
 
     @media (min-width: getBreakpoint(medium)) {
@@ -66,7 +66,7 @@
 .hero__scroll-down {
   position: absolute;
   left: 50%;
-  bottom: 125px;
+  bottom: 25%;
   transform-origin: center center;
   transform: translate(-50%, 0) rotate(90deg);
 
@@ -89,4 +89,26 @@
       color: getColor(accentCol1);
     }
   }
+}
+
+.border-hor {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 4px;
+  background-color: getColor(headingAccent);
+  border-radius: 25px;
+  opacity: 0.2;
+}
+
+.border-vert {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 4px;
+  height: 150px;
+  background-color: getColor(headingAccent);
+  border-radius: 25px;
+  opacity: 0.2;
 }

@@ -132,8 +132,44 @@
   }
 }
 
-#code-icon, #person-icon {
+#code-icon,
+#person-icon {
   width: 1.5rem;
   height: auto;
 }
 
+.corner-icon--top-left {
+  width: 2.5rem;
+  height: auto;
+  color: getColor(headingAccent);
+  position: absolute;
+  left: -8px;
+  top: 0;
+}
+
+.corner-icon--top-right {
+  font-size: 2.5rem;
+  height: auto;
+  color: getColor(headingAccent);
+  position: absolute;
+  right: -8px;
+  top: 0;
+}
+
+.corner-icon--bottom-left {
+  width: 2.5rem;
+  height: auto;
+  color: getColor(headingAccent);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.corner-icon--bottom-right {
+  width: 2.5rem;
+  height: auto;
+  color: getColor(headingAccent);
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
