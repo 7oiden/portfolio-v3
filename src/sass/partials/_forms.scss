@@ -62,7 +62,7 @@
   &:focus {
     outline: none;
     border: 1px solid getColor(accentCol2);
-    background-color: getColor(primaryBg);
+    background-color: getColor(secondaryBg);
     color: getColor(textLight);
   }
 
