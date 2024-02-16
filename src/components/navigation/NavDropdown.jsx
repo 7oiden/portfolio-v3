@@ -43,7 +43,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             <span className="nav__prefix">02.</span>
-            Projects
+            <span>Projects</span>
           </NavLink>
         </li>
         <li>
@@ -52,7 +52,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             <span className="nav__prefix">03.</span>
-            Background
+            <span>Background</span>
           </NavLink>
         </li>
         <li>
@@ -61,7 +61,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
             <span className="nav__prefix">04.</span>
-            About
+            <span>About</span>
           </NavLink>
         </li>
         <MediaLinks cssClass="nav-dropdown__media-links" />

@@ -1,9 +1,15 @@
 import PropTypes from "prop-types";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { MdMenu, MdClose } from "react-icons/md";
 import { useSprings, animated } from "react-spring";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
+  const location = useLocation();
+
+  const style = {
+    color: location.pathname === "/" ? "#38bdf8" : "#94a3b8",
+  };
+
   const iconSprings = useSprings(
     2,
     isMenuOpen
@@ -30,8 +36,13 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
 
   return (
     <nav className="nav">
-      <Link to="/" className="nav__logo" aria-label="Return to homepage">
-        01.
+      <Link
+        to="/"
+        style={style}
+        className="nav__logo"
+        aria-label="Return to homepage"
+      >
+        01
       </Link>
       <ul className="nav__link-list">
         <li>
@@ -41,8 +52,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            <span className="nav__prefix">02.</span>
-            <span>Projects</span>
+            <div className="nav__prefix">02</div>
+            <div>Projects</div>
           </NavLink>
         </li>
         <li>
@@ -52,8 +63,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            <span className="nav__prefix">03.</span>
-            <span>Background</span>
+            <div className="nav__prefix">03</div>
+            <div>Background</div>
           </NavLink>
         </li>
         <li>
@@ -63,8 +74,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            <span className="nav__prefix">04.</span>
-            <span>About</span>
+            <div className="nav__prefix">04</div>
+            <div>About</div>
           </NavLink>
         </li>
       </ul>

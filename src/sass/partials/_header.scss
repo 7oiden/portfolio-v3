@@ -2,24 +2,29 @@
   @extend .outer-wrapper;
   z-index: 100;
   position: relative;
+  padding: 1rem 0;
+  // background-color: pink;
 }
 
 .nav {
-  height: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
 
   &__logo {
-    font-size: 2.5rem;
+    font-size: 2rem;
     z-index: 1000;
     font-weight: 800;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: $logo;
-    color: getColor(headingAccent);
+    font-family: $link;
+    color: getColor(textLight);
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: 2.5rem;
+    }
   }
 
   &__link-list {
@@ -29,6 +34,7 @@
     font-weight: 400;
     color: getColor(link);
     font-size: getSize(navLinkS);
+    margin: 0.5rem 0;
 
     @media (min-width: getBreakpoint(large)) {
       display: flex;
@@ -37,6 +43,8 @@
   }
 
   &__link {
+    display: flex;
+    flex-direction: column;
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
 
@@ -61,8 +69,13 @@
   }
 
   &__prefix {
-    font-size: 1rem;
-    color: getColor(headingAccent);
+    font-size: 0.875rem;
+    color: getColor(textLight);
+    align-self: flex-end;
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: 0.875rem;
+    }
   }
 }
 
@@ -108,7 +121,7 @@
   gap: 2rem;
   margin-top: 1rem;
 
-  & a  svg {
+  & a svg {
     width: 1.5rem;
     height: auto;
     color: getColor(textLight);

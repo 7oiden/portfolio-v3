@@ -15,7 +15,7 @@
   &__wrapper {
     width: 100%;
     display: flex;
-    margin-bottom: 500px;
+    margin-bottom: 300px;
 
     @media (min-width: getBreakpoint(large)) {
       margin-bottom: 300px;
@@ -66,7 +66,7 @@
 .hero__scroll-down {
   position: absolute;
   left: 50%;
-  bottom: 25%;
+  bottom: 125px;
   transform-origin: center center;
   transform: translate(-50%, 0) rotate(90deg);
 
@@ -80,6 +80,10 @@
     cursor: pointer;
     transition: color 0.2s ease-in-out;
     color: getColor(headingAccent);
+
+    @media (min-width: getBreakpoint(large)) {
+    font-size: 4rem;
+  }
 
     &:hover {
       color: getColor(accentCol1);
