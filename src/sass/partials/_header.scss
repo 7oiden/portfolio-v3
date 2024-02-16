@@ -24,7 +24,7 @@
 
   &__link-list {
     display: none;
-    gap: 2.5rem;
+    gap: 3rem;
     list-style: none;
     font-weight: 400;
     color: getColor(link);
@@ -40,7 +40,7 @@
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
 
-    &:hover {
+    &:hover > * {
       font-weight: 500;
       color: getColor(accentCol1);
     }
@@ -59,9 +59,14 @@
       transform: scaleX(1);
     }
   }
+
+  &__prefix {
+    font-size: 1rem;
+    color: getColor(headingAccent);
+  }
 }
 
-.active-link {
+.active-link > * {
   color: getColor(accentCol1);
   font-weight: 600;
 }

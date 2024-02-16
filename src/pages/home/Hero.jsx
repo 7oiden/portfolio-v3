@@ -1,58 +1,80 @@
+import { useEffect, useRef } from "react";
 import Heading from "../../components/common/Heading";
 import { HashLink } from "react-router-hash-link";
 import MediaLinks from "../../components/common/MediaLinks";
-import { MdArrowForward } from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
-// import { FaChevronDown } from "react-icons/fa6";
+import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 export default function Hero() {
-  const [springs, api] = useSpring(() => ({
+  const arrow = useSpring({
     from: { x: 0 },
+    to: { x: 15 },
+    config: { duration: 900 },
+    loop: { reverse: true },
+  });
+
+  const AnimatedIcon = animated(MdOutlineKeyboardDoubleArrowRight);
+
+  const prevScrollY = useRef(0);
+
+  const [scroll, api] = useSpring(() => ({
+    from: {
+      display: "block",
+    },
   }));
 
-  const handleHover = () => {
-    api.start({
-      x: 8,
-    });
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 10) {
+      // Scrolling down
+      api.start({
+        to: { display: "none" },
+        config: { duration: 100 },
+      });
+    } else {
+      // At top of page
+      api.start({
+        to: { display: "block" },
+        config: { duration: 100 },
+      });
+    }
+
+    prevScrollY.current = currentScrollY;
   };
 
-  const handleHoverExit = () => {
-    api.start({
-      x: 0,
-    });
-  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <section className="hero">
       <div className="hero__container">
         <div className="hero__content">
           <hgroup className="hero__hgroup">
-            {/* <div className="hero__heading--thin">Hi, my name is</div> */}
+            <div className="hero__heading--top">Hello, my name is</div>
             <Heading size="1" cssClass="hero__heading--main">
               Tommy Johnsen<span className="hero__heading--dot">.</span>
             </Heading>
             <Heading size="2" cssClass="hero__heading--sub">
-              Frontend Developer
+              Frontend Developer, with a passion for creating great user
+              experiences.
             </Heading>
           </hgroup>
-          <HashLink
-            smooth
-            to="/about#contact"
-            className="hero__button"
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHoverExit}
-          >
+          <HashLink smooth to="/about#contact" className="hero__button">
             Get in touch
-            <animated.div style={{ ...springs }}>
-              <MdArrowForward className="hero__arrow-icon" />
-            </animated.div>
           </HashLink>
         </div>
       </div>
       <MediaLinks cssClass="hero__media-links" />
-      {/* <HashLink smooth to="/#intro" className="hero__scroll-down">
-          <FaChevronDown />
-      </HashLink> */}
+      <HashLink smooth to="/#intro" className="hero__scroll-down">
+        <AnimatedIcon style={{ ...scroll, ...arrow }} />
+      </HashLink>
     </section>
   );
 }

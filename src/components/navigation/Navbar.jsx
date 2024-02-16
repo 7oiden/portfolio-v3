@@ -31,7 +31,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
   return (
     <nav className="nav">
       <Link to="/" className="nav__logo" aria-label="Return to homepage">
-        #TJ.
+        01.
       </Link>
       <ul className="nav__link-list">
         <li>
@@ -41,7 +41,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            Projects
+            <span className="nav__prefix">02.</span>
+            <span>Projects</span>
           </NavLink>
         </li>
         <li>
@@ -51,7 +52,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            Background
+            <span className="nav__prefix">03.</span>
+            <span>Background</span>
           </NavLink>
         </li>
         <li>
@@ -61,7 +63,8 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            About
+            <span className="nav__prefix">04.</span>
+            <span>About</span>
           </NavLink>
         </li>
       </ul>

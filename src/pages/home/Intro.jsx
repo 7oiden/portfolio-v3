@@ -19,7 +19,7 @@ export default function Intro() {
           </Heading>
           <div className="paragraph-container mb mw">
             <p>
-              Hello! I&apos;m <em>Tommy</em>, a seasoned
+              I&apos;m <em>Tommy</em>, a seasoned
               structural engineer looking for a new career as a frontend
               developer.
             </p>

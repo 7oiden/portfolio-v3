@@ -38,8 +38,8 @@ em {
   &--main {
     font-weight: 700;
     font-size: getSize(heroHeadingS);
-    color: getColor(heroHeading);
-    text-shadow: 0 1px getColor(heroHeading);
+    color: getColor(textBright);
+    // text-shadow: 0 1px getColor(heroHeading);
 
     @media (min-width: getBreakpoint(medium)) {
       font-size: getSize(heroHeadingM);
@@ -50,18 +50,25 @@ em {
     }
   }
 
-  &--thin {
+  &--top {
+    font-family: $logo;
     font-weight: 400;
-    font-size: 1.5rem;
-    color: getColor(accentCol2);
+    font-size: getSize(heroTopHeadingM);
+    color: getColor(headingAccent);
+
+     @media (min-width: getBreakpoint(medium)) {
+      font-size: getSize(heroTopHeadingM);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: getSize(heroTopHeadingL);
+    }
   }
 
   &--sub {
     font-weight: 300;
-    font-size: 2.5rem;
     font-size: getSize(heroSubHeadingS);
-    color: getColor(textBright);
-    text-shadow: 0 1px getColor(textBright);
+    color: getColor(textLight);
 
     @media (min-width: getBreakpoint(medium)) {
       font-size: getSize(heroSubHeadingM);

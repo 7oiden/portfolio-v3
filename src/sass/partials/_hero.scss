@@ -2,17 +2,19 @@
   &__container {
     @extend .inner-wrapper;
     position: relative;
-    top: 15%;
+    top: 10%;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
     @media (min-width: getBreakpoint(medium)) {
       max-width: 600px;
     }
 
     @media (min-width: getBreakpoint(large)) {
+      top: 20%;
       max-width: 700px;
     }
 
@@ -39,7 +41,7 @@
     flex-direction: column;
     left: auto;
     right: 5%;
-    top: 15%;
+    top: 20%;
   }
 
   @media (min-width: getBreakpoint(xxLarge)) {
@@ -47,7 +49,6 @@
   }
 
   & a {
-    color: getColor(link);
     transition: color 0.2s ease-in-out;
 
     &:hover {
@@ -56,20 +57,26 @@
   }
 }
 
-// .hero__scroll-down {
-//   position: absolute;
-//   left: 50%;
-//   bottom: 15%;
-//   transform: translate(-50%, 0);
+.hero__scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  transform-origin: center center;
+  transform: translate(-50%, 0) rotate(90deg);
 
-//   & svg {
-//     color: getColor(link);
-//     font-size: 2rem;
-//     cursor: pointer;
-//     transition: color 0.2s ease-in-out;
+   @media (min-width: getBreakpoint(large)) {
+    bottom: 15%;
+  }
+ 
+  & svg {
+    color: getColor(link);
+    font-size: 3rem;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+     color: getColor(headingAccent);
 
-//     &:hover {
-//       color: getColor(accentCol1);
-//     }
-//   }
-// }
+    &:hover {
+      color: getColor(accentCol1);
+    }
+  }
+}
