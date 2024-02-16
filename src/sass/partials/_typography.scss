@@ -210,7 +210,10 @@ em {
 }
 
 .input-error {
+  position: relative;
   font-size: 0.875rem;
   font-weight: 400;
   color: getColor(errorIcon);
+  top: 5px;
+  left: 0;
 }

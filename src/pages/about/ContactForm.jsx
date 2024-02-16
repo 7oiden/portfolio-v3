@@ -114,35 +114,38 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
       <fieldset disabled={submitting} className="contact__fieldset">
         <div className="contact__input-container">
-          <label htmlFor="name">Name</label>
           <input
             className="contact__input"
             type="text"
             placeholder="Name"
             id="name"
-            autoComplete="name"
+            autoComplete="off"
             {...register("first_name")}
           />
+          <label htmlFor="name" className="contact__label">
+            Name
+          </label>
           {errors.first_name && (
             <span className="input-error">{errors.first_name.message}</span>
           )}
         </div>
         <div className="contact__input-container">
-          <label htmlFor="email">Email</label>
           <input
             className="contact__input"
             type="text"
             placeholder="Email"
             id="email"
-            autoComplete="email"
+            autoComplete="off"
             {...register("email")}
           />
+          <label htmlFor="email" className="contact__label">
+            Email
+          </label>
           {errors.email && (
             <span className="input-error">{errors.email.message}</span>
           )}
         </div>
         <div className="contact__input-container">
-          <label htmlFor="subject">Subject</label>
           <input
             className="contact__input"
             type="text"
@@ -151,12 +154,14 @@ export default function ContactForm() {
             autoComplete="off"
             {...register("subject")}
           />
+          <label htmlFor="subject" className="contact__label">
+            Subject
+          </label>
           {errors.subject && (
             <span className="input-error">{errors.subject.message}</span>
           )}
         </div>
         <div className="contact__input-container">
-          <label htmlFor="message">Message</label>
           <textarea
             className="contact__textarea"
             placeholder="Message"
@@ -164,6 +169,9 @@ export default function ContactForm() {
             autoComplete="off"
             {...register("message")}
           />
+          <label htmlFor="message" className="contact__label">
+            Your message
+          </label>
           {errors.message && (
             <span className="input-error">{errors.message.message}</span>
           )}
