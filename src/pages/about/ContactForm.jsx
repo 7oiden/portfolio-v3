@@ -6,6 +6,7 @@ import Banner from "../../components/alerts/Banner";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 import Spinner from "../../components/common/Spinner";
+import { MdClose } from "react-icons/md";
 
 const schema = yup.object().shape({
   first_name: yup
@@ -44,6 +45,7 @@ export default function ContactForm() {
     register,
     handleSubmit,
     reset,
+    resetField,
     formState,
     formState: { errors, isSubmitSuccessful },
   } = useForm({
@@ -110,6 +112,11 @@ export default function ContactForm() {
     return () => clearTimeout(timer);
   }, [submitted]);
 
+  const handleClearName = () => resetField("first_name");
+  const handleClearEmail = () => resetField("email");
+  const handleClearSubject = () => resetField("subject");
+  const handleClearMessage = () => resetField("message");
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
       <fieldset disabled={submitting} className="contact__fieldset">
@@ -125,6 +132,7 @@ export default function ContactForm() {
           <label htmlFor="name" className="contact__label">
             Name
           </label>
+          <MdClose onClick={handleClearName} className="contact__clear" />
           {errors.first_name && (
             <span className="input-error">{errors.first_name.message}</span>
           )}
@@ -141,6 +149,7 @@ export default function ContactForm() {
           <label htmlFor="email" className="contact__label">
             Email
           </label>
+          <MdClose onClick={handleClearEmail} className="contact__clear" />
           {errors.email && (
             <span className="input-error">{errors.email.message}</span>
           )}
@@ -157,6 +166,7 @@ export default function ContactForm() {
           <label htmlFor="subject" className="contact__label">
             Subject
           </label>
+          <MdClose onClick={handleClearSubject} className="contact__clear" />
           {errors.subject && (
             <span className="input-error">{errors.subject.message}</span>
           )}
@@ -170,8 +180,13 @@ export default function ContactForm() {
             {...register("message")}
           />
           <label htmlFor="message" className="contact__label">
-            Your message
+            Message
           </label>
+          <MdClose
+            onClick={handleClearMessage}
+            className="contact__clear"
+            id="clear-msg"
+          />
           {errors.message && (
             <span className="input-error">{errors.message.message}</span>
           )}
@@ -179,7 +194,7 @@ export default function ContactForm() {
       </fieldset>
       {submitting && showInfoMessage && (
         <Banner heading="Please hold!" status="info">
-          ...while the Heroku API is waking up.
+          While the Heroku API is waking up...
         </Banner>
       )}
       {submitted && (

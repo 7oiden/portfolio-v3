@@ -3,11 +3,11 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem 2rem 1rem 4rem;
+  padding: 1rem 2rem 1rem 3rem;
   align-items: flex-start;
   align-self: flex-start;
-  gap: 0.25rem;
-  border-radius: 4px;
+  gap: 0.5rem;
+  border-radius: 5px;
   background: #ecfdf5;
   position: relative;
 
@@ -29,8 +29,12 @@
 }
 
 .banner__heading {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1.125rem;
+  }
 
   &--success {
     color: getColor(successHeading);
@@ -50,8 +54,12 @@
 }
 
 .banner__text {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1rem;
+  }
 
   &--success {
     background-color: getColor(success);
@@ -75,11 +83,16 @@
 }
 
 .banner__icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.375rem;
+  height: 1.375rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
   &--success {
     color: getColor(successIcon);

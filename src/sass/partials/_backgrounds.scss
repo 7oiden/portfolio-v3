@@ -37,12 +37,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    // background-image: linear-gradient(
-    //     rgba(255, 255, 255, 0.025) 1px,
-    //     transparent 1px
-    //   ),
-    //   linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
-    // background-size: 100px 100px;
     background-image: linear-gradient(
         rgba(148, 163, 184, 0.03) 1px,
         transparent 1px
@@ -60,12 +54,10 @@
 .bg-text {
   position: absolute;
   bottom: 8rem;
-  // display: block;
   left: -5%;
   z-index: -100;
-  font-family: playfair-display, serif;
+  font-family: $background;
   font-weight: 600;
-  // color: rgba(255, 255, 255, 0.025);
   color: rgba(148, 163, 184, 0.025);
   font-size: 10rem;
   width: 105%;
