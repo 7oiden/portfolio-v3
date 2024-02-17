@@ -3,8 +3,12 @@
     @extend .card-styling;
     gap: 2.5rem;
     border-radius: 10px;
-    padding: 2.5rem;
+    padding: 2.5rem 1.5rem;
     margin-top: 2rem;
+
+    @media (min-width: getBreakpoint(small)) {
+    padding: 3rem 2rem;
+  }
   }
 
   &__fieldset {
@@ -49,8 +53,8 @@
 
   &:focus {
     outline: none;
-    border: 1px solid getColor(accentCol2);
-    outline: 1px solid getColor(accentCol2);
+    border: 1px solid getColor(accentCol1);
+    outline: 1px solid getColor(accentCol1);
   }
 
   &::placeholder {
@@ -75,7 +79,7 @@
   color: getColor(textLight);
   &:focus {
     outline: none;
-    border: 2px solid getColor(accentCol2);
+    border: 2px solid getColor(accentCol1);
   }
 }
 
@@ -98,7 +102,7 @@
   -webkit-appearance: none;
   position: absolute;
   top: 50%;
-  right: 0.5rem; // To visually align with inputs right edge
+  right: 0.75rem; // To visually align with inputs right edge
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -113,7 +117,7 @@
 
   &:hover,
   &:focus {
-    color: getColor(accentCol2);
+    color: getColor(accentCol1);
   }
 }
 

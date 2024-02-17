@@ -676,12 +676,15 @@ em {
 }
 
 .input-error {
-  position: relative;
+  display: block;
   font-size: 0.875rem;
   font-weight: 400;
   color: #f87171;
-  top: 5px;
-  left: 0;
+  padding-top: 0.25rem;
+}
+
+#textarea-error {
+  padding-top: 0;
 }
 
 .header {
@@ -1543,8 +1546,13 @@ img {
 .contact__form {
   gap: 2.5rem;
   border-radius: 10px;
-  padding: 2.5rem;
+  padding: 2.5rem 1.5rem;
   margin-top: 2rem;
+}
+@media (min-width: 576px) {
+  .contact__form {
+    padding: 3rem 2rem;
+  }
 }
 .contact__fieldset {
   display: flex;
@@ -1585,8 +1593,8 @@ img {
 .contact__input:focus,
 .contact__textarea:focus {
   outline: none;
-  border: 1px solid #5eead4;
-  outline: 1px solid #5eead4;
+  border: 1px solid #38bdf8;
+  outline: 1px solid #38bdf8;
 }
 .contact__input::-moz-placeholder, .contact__textarea::-moz-placeholder {
   color: transparent;
@@ -1614,7 +1622,7 @@ img {
 }
 .contact__input input:focus {
   outline: none;
-  border: 2px solid #5eead4;
+  border: 2px solid #38bdf8;
 }
 
 .contact__label {
@@ -1637,7 +1645,7 @@ img {
   -webkit-appearance: none;
   position: absolute;
   top: 50%;
-  right: 0.5rem;
+  right: 0.75rem;
   transform: translateY(-50%);
   background: none;
   border: none;
@@ -1651,7 +1659,7 @@ img {
   justify-content: center;
 }
 .contact__clear:hover, .contact__clear:focus {
-  color: #5eead4;
+  color: #38bdf8;
 }
 
 #clear-msg {

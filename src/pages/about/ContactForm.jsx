@@ -11,26 +11,26 @@ import { MdClose } from "react-icons/md";
 const schema = yup.object().shape({
   first_name: yup
     .string()
-    .required("Please enter your name")
-    .min(3, "Your name must be at least 3 characters")
-    .max(20, "Name can't be more than 20 characters"),
+    .required("* Please enter your name")
+    .min(3, "* Your name must be at least 3 characters")
+    .max(20, "* Name can't be more than 20 characters"),
 
   email: yup
     .string()
-    .required("Please enter your email address")
-    .email("Please enter a valid email address"),
+    .required("* Please enter your email address")
+    .email("* Please enter a valid email address"),
 
   subject: yup
     .string()
-    .required("Please enter a subject")
-    .min(4, "Subject must be at least 4 characters")
-    .max(20, "Subject can't be more than 20 characters"),
+    .required("* Please enter a subject")
+    .min(4, "* Subject must be at least 4 characters")
+    .max(20, "* Subject can't be more than 20 characters"),
 
   message: yup
     .string()
-    .required("Please enter your message")
-    .min(10, "Your message must be at least 10 characters")
-    .max(400, "Message can't be more than 400 characters"),
+    .required("* Please enter your message")
+    .min(10, "* Your message must be at least 10 characters")
+    .max(400, "* Message can't be more than 400 characters"),
 });
 
 export default function ContactForm() {
@@ -120,75 +120,85 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
       <fieldset disabled={submitting} className="contact__fieldset">
-        <div className="contact__input-container">
-          <input
-            className="contact__input"
-            type="text"
-            placeholder="Name"
-            id="name"
-            autoComplete="off"
-            {...register("first_name")}
-          />
-          <label htmlFor="name" className="contact__label">
-            Name
-          </label>
-          <MdClose onClick={handleClearName} className="contact__clear" />
+        <div>
+          <div className="contact__input-container">
+            <input
+              className="contact__input"
+              type="text"
+              placeholder="Name"
+              id="name"
+              autoComplete="off"
+              {...register("first_name")}
+            />
+            <label htmlFor="name" className="contact__label">
+              Name
+            </label>
+            <MdClose onClick={handleClearName} className="contact__clear" />
+          </div>
           {errors.first_name && (
             <span className="input-error">{errors.first_name.message}</span>
           )}
         </div>
-        <div className="contact__input-container">
-          <input
-            className="contact__input"
-            type="text"
-            placeholder="Email"
-            id="email"
-            autoComplete="off"
-            {...register("email")}
-          />
-          <label htmlFor="email" className="contact__label">
-            Email
-          </label>
-          <MdClose onClick={handleClearEmail} className="contact__clear" />
+        <div>
+          <div className="contact__input-container">
+            <input
+              className="contact__input"
+              type="text"
+              placeholder="Email"
+              id="email"
+              autoComplete="off"
+              {...register("email")}
+            />
+            <label htmlFor="email" className="contact__label">
+              Email
+            </label>
+            <MdClose onClick={handleClearEmail} className="contact__clear" />
+          </div>
           {errors.email && (
             <span className="input-error">{errors.email.message}</span>
           )}
         </div>
-        <div className="contact__input-container">
-          <input
-            className="contact__input"
-            type="text"
-            placeholder="Subject"
-            id="subject"
-            autoComplete="off"
-            {...register("subject")}
-          />
-          <label htmlFor="subject" className="contact__label">
-            Subject
-          </label>
-          <MdClose onClick={handleClearSubject} className="contact__clear" />
+        <div>
+          <div className="contact__input-container">
+            <input
+              className="contact__input"
+              type="text"
+              placeholder="Subject"
+              id="subject"
+              autoComplete="off"
+              {...register("subject")}
+            />
+            <label htmlFor="subject" className="contact__label">
+              Subject
+            </label>
+            <MdClose onClick={handleClearSubject} className="contact__clear" />
+          </div>
           {errors.subject && (
             <span className="input-error">{errors.subject.message}</span>
           )}
         </div>
-        <div className="contact__input-container">
-          <textarea
-            className="contact__textarea"
-            placeholder="Message"
-            id="message"
-            autoComplete="off"
-            {...register("message")}
-          />
-          <label htmlFor="message" className="contact__label">
-            Message
-          </label>
-          <MdClose
-            onClick={handleClearMessage}
-            className="contact__clear"
-            id="clear-msg"
-          />
+        <div>
+          <div className="contact__input-container">
+            <textarea
+              className="contact__textarea"
+              placeholder="Message"
+              id="message"
+              autoComplete="off"
+              {...register("message")}
+            />
+            <label htmlFor="message" className="contact__label">
+              Message
+            </label>
+            <MdClose
+              onClick={handleClearMessage}
+              className="contact__clear"
+              id="clear-msg"
+            />
+          </div>
           {errors.message && (
-            <span className="input-error">{errors.message.message}</span>
+            <span className="input-error" id="textarea-error">
+              {errors.message.message}
+            </span>
           )}
         </div>
       </fieldset>

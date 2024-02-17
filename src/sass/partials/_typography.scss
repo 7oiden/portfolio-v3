@@ -210,10 +210,15 @@ em {
 }
 
 .input-error {
-  position: relative;
+  display: block;
   font-size: 0.875rem;
   font-weight: 400;
   color: getColor(errorIcon);
-  top: 5px;
-  left: 0;
+  padding-top: 0.25rem;
 }
+
+#textarea-error {
+  padding-top: 0;
+}
+
+
