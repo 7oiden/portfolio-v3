@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import InfoBox from "./InfoBox";
 import { cloneElement } from "react";
-import { useSpring, animated } from "@react-spring/web";
 
 export default function PathSegment({
   id,
@@ -21,13 +20,8 @@ export default function PathSegment({
       <div className="path__date path__date--right">{date}</div>
     );
 
-    const pathExpand = useSpring({
-      maxHeight: "500px",
-      from: id > 3 ? { maxHeight: "0" } : { maxHeight: "500px" },
-    });
-
   return (
-    <animated.div style={{...pathExpand}}>
+    <>
       <div className="path__vert-line"></div>
       <div className="path__icon-container">
         {cloneElement(icon, { className: "path__icon" })}
@@ -44,7 +38,7 @@ export default function PathSegment({
         isSelected={isSelected}
         setIsSelected={setIsSelected}
       />
-    </animated.div>
+    </>
   );
 }
 

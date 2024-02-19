@@ -191,11 +191,11 @@
   justify-content: center;
   align-items: center;
   background-color: #122a45bf;
-  margin-top: 4rem;
+  margin-top: 6rem;
   padding: 1rem 0;
 
   @media (min-width: getBreakpoint(large)) {
-    margin-top: 6rem;
+    margin-top: 8rem;
     padding: 1.5rem 0;
   }
 }

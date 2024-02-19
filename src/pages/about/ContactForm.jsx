@@ -130,7 +130,11 @@ export default function ContactForm() {
               autoComplete="off"
               {...register("first_name")}
             />
-            <label htmlFor="name" className="contact__label">
+            <label
+              htmlFor="name"
+              className="contact__label"
+              style={{ color: errors.first_name ? "#f87171" : "inherit" }}
+            >
               Name
             </label>
             <MdClose onClick={handleClearName} className="contact__clear" />
@@ -149,7 +153,11 @@ export default function ContactForm() {
               autoComplete="off"
               {...register("email")}
             />
-            <label htmlFor="email" className="contact__label">
+            <label
+              htmlFor="email"
+              className="contact__label"
+              style={{ color: errors.email ? "#f87171" : "inherit" }}
+            >
               Email
             </label>
             <MdClose onClick={handleClearEmail} className="contact__clear" />
@@ -168,7 +176,11 @@ export default function ContactForm() {
               autoComplete="off"
               {...register("subject")}
             />
-            <label htmlFor="subject" className="contact__label">
+            <label
+              htmlFor="subject"
+              className="contact__label"
+              style={{ color: errors.subject ? "#f87171" : "inherit" }}
+            >
               Subject
             </label>
             <MdClose onClick={handleClearSubject} className="contact__clear" />
@@ -186,7 +198,11 @@ export default function ContactForm() {
               autoComplete="off"
               {...register("message")}
             />
-            <label htmlFor="message" className="contact__label">
+            <label
+              htmlFor="message"
+              className="contact__label"
+              style={{ color: errors.message ? "#f87171" : "inherit" }}
+            >
               Message
             </label>
             <MdClose

@@ -262,12 +262,12 @@ svg {
   justify-content: center;
   align-items: center;
   background-color: rgba(18, 42, 69, 0.7490196078);
-  margin-top: 4rem;
+  margin-top: 6rem;
   padding: 1rem 0;
 }
 @media (min-width: 992px) {
   .resume {
-    margin-top: 6rem;
+    margin-top: 8rem;
     padding: 1.5rem 0;
   }
 }
@@ -1373,7 +1373,7 @@ img {
 
 .show-button {
   position: relative;
-  top: 2.25rem;
+  top: 2.5rem;
   display: flex;
   gap: 0rem 0.5rem;
   align-items: center;
@@ -1579,12 +1579,14 @@ img {
 .contact__input,
 .contact__textarea {
   width: 100%;
-  height: 2.5rem;
+  height: 3.5rem;
+  padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 3rem;
-  border: 1px solid #66b0d8;
-  border-radius: 5px;
-  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(148, 163, 184, 0.4);
+  border-radius: 5px 5px 0 0;
+  background-color: rgba(148, 163, 184, 0.05);
   font-family: inter;
   font-size: 1rem;
   color: #e2e8f0;
@@ -1593,8 +1595,8 @@ img {
 .contact__input:focus,
 .contact__textarea:focus {
   outline: none;
-  border: 1px solid #38bdf8;
-  outline: 1px solid #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+  background-color: #0d121e;
 }
 .contact__input::-moz-placeholder, .contact__textarea::-moz-placeholder {
   color: transparent;
@@ -1614,7 +1616,7 @@ img {
   resize: none;
   height: 8rem;
   color: #e2e8f0;
-  padding-top: 0.5rem;
+  padding-top: 1.5rem;
 }
 
 .contact__input input {
@@ -1627,7 +1629,7 @@ img {
 
 .contact__label {
   position: absolute;
-  top: 1.25rem;
+  top: 1.75rem;
   left: 1rem;
   transform: translateY(-50%);
   font-size: 1rem;
@@ -1652,14 +1654,14 @@ img {
   border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
-  color: #94a3b8;
+  color: rgba(148, 163, 184, 0.4);
   transition: color 250ms;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .contact__clear:hover, .contact__clear:focus {
-  color: #38bdf8;
+  color: #94a3b8;
 }
 
 #clear-msg {
@@ -1667,24 +1669,24 @@ img {
 }
 
 .contact__input:not(:-moz-placeholder-shown) + .contact__label {
-  transform: translate(-1rem, -2.75rem) scale(0.875);
+  transform: translate(0, -1.5rem) scale(0.8);
   color: #38bdf8;
 }
 
 .contact__input:focus + .contact__label,
 .contact__input:not(:placeholder-shown) + .contact__label {
-  transform: translate(-1rem, -2.75rem) scale(0.875);
+  transform: translate(0, -1.5rem) scale(0.8);
   color: #38bdf8;
 }
 
 .contact__textarea:not(:-moz-placeholder-shown) + .contact__label {
-  transform: translate(-1rem, -2.75rem) scale(0.875);
+  transform: translate(0, -1.5rem) scale(0.8);
   color: #38bdf8;
 }
 
 .contact__textarea:focus + .contact__label,
 .contact__textarea:not(:placeholder-shown) + .contact__label {
-  transform: translate(-1rem, -2.75rem) scale(0.875);
+  transform: translate(0, -1.5rem) scale(0.8);
   color: #38bdf8;
 }
 

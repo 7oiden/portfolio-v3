@@ -40,7 +40,7 @@ export default function Intro() {
           </div>
           <ScrollToTop>
             <LinkBtn url="about" size="md" rotation="0deg">
-              Learn more about me
+              Learn more
             </LinkBtn>
           </ScrollToTop>
         </div>

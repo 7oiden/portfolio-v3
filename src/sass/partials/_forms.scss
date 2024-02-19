@@ -7,8 +7,8 @@
     margin-top: 2rem;
 
     @media (min-width: getBreakpoint(small)) {
-    padding: 3rem 2rem;
-  }
+      padding: 3rem 2rem;
+    }
   }
 
   &__fieldset {
@@ -40,12 +40,15 @@
 .contact__input,
 .contact__textarea {
   width: 100%;
-  height: 2.5rem;
+  height: 3.5rem;
+  padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 3rem;
-  border: 1px solid getColor(headingAccent);
-  border-radius: 5px;
-  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(148, 163, 184, 0.4);
+  // border-radius: 5px;
+  border-radius: 5px 5px 0 0;
+  background-color: rgba(148, 163, 184, 0.05);
   font-family: inter;
   font-size: 1rem;
   color: getColor(textBright);
@@ -53,8 +56,9 @@
 
   &:focus {
     outline: none;
-    border: 1px solid getColor(accentCol1);
-    outline: 1px solid getColor(accentCol1);
+    border-bottom: 2px solid getColor(accentCol1);
+    background-color: getColor(headerBg);
+    // outline: 1px solid getColor(accentCol1);
   }
 
   &::placeholder {
@@ -72,7 +76,7 @@
   resize: none;
   height: 8rem;
   color: getColor(textBright);
-  padding-top: 0.5rem;
+  padding-top: 1.5rem;
 }
 
 .contact__input input {
@@ -85,7 +89,7 @@
 
 .contact__label {
   position: absolute;
-  top: 1.25rem;
+  top: 1.75rem;
   left: 1rem;
   transform: translateY(-50%);
   font-size: 1rem;
@@ -102,14 +106,14 @@
   -webkit-appearance: none;
   position: absolute;
   top: 50%;
-  right: 0.75rem; // To visually align with inputs right edge
+  right: 0.75rem;
   transform: translateY(-50%);
   background: none;
   border: none;
   border-radius: 50%;
   height: 1.5rem;
   width: 1.5rem;
-  color: getColor(textLight);
+  color: rgba(148, 163, 184, 0.4);
   transition: color 250ms;
   display: flex;
   align-items: center;
@@ -117,23 +121,23 @@
 
   &:hover,
   &:focus {
-    color: getColor(accentCol1);
+    color: getColor(textLight);
   }
 }
 
 #clear-msg {
   top: 1.25rem;
-} 
+}
 
 .contact__input:focus + .contact__label,
 .contact__input:not(:placeholder-shown) + .contact__label {
-  transform: translate(-1rem, -2.75rem) scale(0.875);
+  transform: translate(0, -1.5rem) scale(0.8);
   color: getColor(accentCol1);
 }
 
 .contact__textarea:focus + .contact__label,
 .contact__textarea:not(:placeholder-shown) + .contact__label {
-  transform: translate(-1rem, -2.75rem) scale(0.875);
+  transform: translate(0, -1.5rem) scale(0.8);
   color: getColor(accentCol1);
 }
 

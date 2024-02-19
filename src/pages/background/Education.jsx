@@ -18,7 +18,10 @@ export default function Education() {
         </Heading>
         <div className="path__container">
           {slicedDataArr.map((entry) => (
-            <div key={entry.id} className="path__segment">
+            <div
+              key={entry.id}
+              className="path__segment"
+            >
               <PathSegment
                 id={entry.id}
                 key={entry.id}
