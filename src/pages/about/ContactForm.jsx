@@ -133,7 +133,7 @@ export default function ContactForm() {
             <label
               htmlFor="name"
               className="contact__label"
-              style={{ color: errors.first_name ? "#f87171" : "inherit" }}
+              style={{ color: errors.first_name ? "#f87171" : null }}
             >
               Name
             </label>
@@ -156,7 +156,7 @@ export default function ContactForm() {
             <label
               htmlFor="email"
               className="contact__label"
-              style={{ color: errors.email ? "#f87171" : "inherit" }}
+              style={{ color: errors.email ? "#f87171" : null }}
             >
               Email
             </label>
@@ -179,7 +179,7 @@ export default function ContactForm() {
             <label
               htmlFor="subject"
               className="contact__label"
-              style={{ color: errors.subject ? "#f87171" : "inherit" }}
+              style={{ color: errors.subject ? "#f87171" : null }}
             >
               Subject
             </label>
@@ -201,7 +201,7 @@ export default function ContactForm() {
             <label
               htmlFor="message"
               className="contact__label"
-              style={{ color: errors.message ? "#f87171" : "inherit" }}
+              style={{ color: errors.message ? "#f87171" : null }}
             >
               Message
             </label>

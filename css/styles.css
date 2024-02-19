@@ -506,6 +506,7 @@ em {
   }
 }
 .hero__heading--top {
+  display: block;
   font-family: "pixelify sans", sans-serif;
   font-weight: 400;
   font-size: 1.25rem;
@@ -549,6 +550,12 @@ em {
   .hero__heading {
     font-size: 5rem;
   }
+}
+
+.typed-cursor {
+  color: #94a3b8;
+  font-size: 2rem;
+  line-height: 1;
 }
 
 .page-heading {

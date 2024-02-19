@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import Heading from "../../components/common/Heading";
 import { HashLink } from "react-router-hash-link";
 import MediaLinks from "../../components/common/MediaLinks";
+import { ReactTyped } from "react-typed";
 import { useSpring, animated } from "@react-spring/web";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
@@ -58,7 +59,13 @@ export default function Hero() {
         <div className="hero__container">
           <div className="hero__content">
             <hgroup className="hero__hgroup">
-              <div className="hero__heading--top">Hello, my name is</div>
+              <ReactTyped
+                strings={["Hello, my name is"]}
+                typeSpeed={75}
+                showCursor={true}
+                className="hero__heading--top"
+              />
+              {/* <div className="hero__heading--top">Hello, my name is</div> */}
               <Heading size="1" cssClass="hero__heading--main">
                 Tommy Johnsen<span className="hero__heading--dot">.</span>
               </Heading>
