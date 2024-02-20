@@ -46,7 +46,6 @@
   padding-right: 2.5rem;
   border: none;
   border-bottom: 2px solid rgba(148, 163, 184, 0.4);
-  // border-radius: 5px;
   border-radius: 5px 5px 0 0;
   background-color: rgba(148, 163, 184, 0.05);
   font-family: inter;
@@ -74,10 +73,11 @@
 
 .contact__textarea {
   resize: none;
-  height: 10rem;
+  overflow-y: hidden;
+  min-height: 10rem;
   color: getColor(textBright);
   padding-top: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .contact__input input {
@@ -149,3 +149,4 @@
 .contact__textarea:placeholder-shown + .contact__label + .contact__clear {
   display: none;
 }
+

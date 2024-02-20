@@ -102,6 +102,12 @@ export default function ContactForm() {
   const handleClearSubject = () => resetField("your-subject");
   const handleClearMessage = () => resetField("your-message");
 
+  function handleResize(e) {
+    console.log(e.target.value);
+    e.target.style.height = "auto";
+    e.target.style.height = e.target.scrollHeight + "px";
+  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
       <fieldset disabled={submitting} className="contact__fieldset">
@@ -178,11 +184,13 @@ export default function ContactForm() {
         </div>
         <div>
           <div className="contact__input-container">
+            <div className="hider"></div>
             <textarea
               className="contact__textarea"
               placeholder="Message"
               id="message"
               autoComplete="off"
+              onInput={handleResize}
               {...register("your-message")}
             />
             <label
