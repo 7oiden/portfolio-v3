@@ -4,29 +4,29 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Banner from "../../components/alerts/Banner";
 import axios from "axios";
-import { BASE_URL } from "../../constants/api";
+import { FORM_URL } from "../../constants/api";
 import Spinner from "../../components/common/Spinner";
 import { MdClose } from "react-icons/md";
 
 const schema = yup.object().shape({
-  first_name: yup
+  "your-name": yup
     .string()
     .required("* Please enter your name")
     .min(3, "* Your name must be at least 3 characters")
     .max(20, "* Name can't be more than 20 characters"),
 
-  email: yup
+  "your-email": yup
     .string()
     .required("* Please enter your email address")
     .email("* Please enter a valid email address"),
 
-  subject: yup
+  "your-subject": yup
     .string()
     .required("* Please enter a subject")
     .min(4, "* Subject must be at least 4 characters")
     .max(20, "* Subject can't be more than 20 characters"),
 
-  message: yup
+  "your-message": yup
     .string()
     .required("* Please enter your message")
     .min(10, "* Your message must be at least 10 characters")
@@ -37,9 +37,8 @@ export default function ContactForm() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
-  const [showInfoMessage, setShowInfoMessage] = useState(false);
 
-  const url = BASE_URL + "contacts";
+  const url = FORM_URL;
 
   const {
     register,
@@ -51,25 +50,25 @@ export default function ContactForm() {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      first_name: "",
-      email: "",
-      subject: "",
-      message: "",
+      "your-name": "",
+      "your-email": "",
+      "your-subject": "",
+      "your-message": "",
     },
   });
 
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
-
-    const jsonData = {
-      data,
-    };
+    // console.log(data);
 
     try {
-      const response = await axios.post(url, jsonData);
-      console.log("response", response.data);
+      const response = await axios.post(url, data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      console.log("response", response.request);
       setSubmitting(true);
       setSubmitted(true);
     } catch (error) {
@@ -88,20 +87,6 @@ export default function ContactForm() {
   }, [formState, reset]);
 
   useEffect(() => {
-    let infoMessageTimer;
-    if (submitting) {
-      // Show info message after 3 seconds
-      infoMessageTimer = setTimeout(() => {
-        setShowInfoMessage(true);
-      }, 3000);
-    }
-
-    return () => {
-      clearTimeout(infoMessageTimer);
-    };
-  }, [submitting]);
-
-  useEffect(() => {
     let timer;
     if (submitted) {
       // Hide success message after 4 seconds
@@ -112,10 +97,10 @@ export default function ContactForm() {
     return () => clearTimeout(timer);
   }, [submitted]);
 
-  const handleClearName = () => resetField("first_name");
-  const handleClearEmail = () => resetField("email");
-  const handleClearSubject = () => resetField("subject");
-  const handleClearMessage = () => resetField("message");
+  const handleClearName = () => resetField("your-name");
+  const handleClearEmail = () => resetField("your-email");
+  const handleClearSubject = () => resetField("your-subject");
+  const handleClearMessage = () => resetField("your-message");
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
@@ -128,19 +113,19 @@ export default function ContactForm() {
               placeholder="Name"
               id="name"
               autoComplete="off"
-              {...register("first_name")}
+              {...register("your-name")}
             />
             <label
               htmlFor="name"
               className="contact__label"
-              style={{ color: errors.first_name ? "#f87171" : null }}
+              style={{ color: errors["your-name"] ? "#f87171" : null }}
             >
               Name
             </label>
             <MdClose onClick={handleClearName} className="contact__clear" />
           </div>
-          {errors.first_name && (
-            <span className="input-error">{errors.first_name.message}</span>
+          {errors["your-name"] && (
+            <span className="input-error">{errors["your-name"].message}</span>
           )}
         </div>
         <div>
@@ -151,19 +136,19 @@ export default function ContactForm() {
               placeholder="Email"
               id="email"
               autoComplete="off"
-              {...register("email")}
+              {...register("your-email")}
             />
             <label
               htmlFor="email"
               className="contact__label"
-              style={{ color: errors.email ? "#f87171" : null }}
+              style={{ color: errors["your-email"] ? "#f87171" : null }}
             >
               Email
             </label>
             <MdClose onClick={handleClearEmail} className="contact__clear" />
           </div>
-          {errors.email && (
-            <span className="input-error">{errors.email.message}</span>
+          {errors["your-email"] && (
+            <span className="input-error">{errors["your-email"].message}</span>
           )}
         </div>
         <div>
@@ -174,19 +159,21 @@ export default function ContactForm() {
               placeholder="Subject"
               id="subject"
               autoComplete="off"
-              {...register("subject")}
+              {...register("your-subject")}
             />
             <label
               htmlFor="subject"
               className="contact__label"
-              style={{ color: errors.subject ? "#f87171" : null }}
+              style={{ color: errors["your-subject"] ? "#f87171" : null }}
             >
               Subject
             </label>
             <MdClose onClick={handleClearSubject} className="contact__clear" />
           </div>
-          {errors.subject && (
-            <span className="input-error">{errors.subject.message}</span>
+          {errors["your-subject"] && (
+            <span className="input-error">
+              {errors["your-subject"].message}
+            </span>
           )}
         </div>
         <div>
@@ -196,12 +183,12 @@ export default function ContactForm() {
               placeholder="Message"
               id="message"
               autoComplete="off"
-              {...register("message")}
+              {...register("your-message")}
             />
             <label
               htmlFor="message"
               className="contact__label"
-              style={{ color: errors.message ? "#f87171" : null }}
+              style={{ color: errors["your-message"] ? "#f87171" : null }}
             >
               Message
             </label>
@@ -211,18 +198,13 @@ export default function ContactForm() {
               id="clear-msg"
             />
           </div>
-          {errors.message && (
+          {errors["your-message"] && (
             <span className="input-error" id="textarea-error">
-              {errors.message.message}
+              {errors["your-message"].message}
             </span>
           )}
         </div>
       </fieldset>
-      {submitting && showInfoMessage && (
-        <Banner heading="Please hold!" status="info">
-          While the Heroku API is waking up...
-        </Banner>
-      )}
       {submitted && (
         <Banner heading="Thank you for your message!" status="success">
           I will get back to you shortly.
@@ -237,7 +219,7 @@ export default function ContactForm() {
         {submitting ? (
           <>
             <Spinner />
-            Submitting
+            Submitting...
           </>
         ) : (
           "Send"
