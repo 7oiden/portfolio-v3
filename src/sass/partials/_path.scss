@@ -168,7 +168,7 @@
 
   &--default {
     left: -1.45rem;
-    border-right: 1.5rem solid getColor(cardBg);
+    border-right: 1.5rem solid getColor(cardBgSm);
 
     @media (min-width: getBreakpoint(large)) {
       display: none;
@@ -177,21 +177,21 @@
 
   &--left {
     left: -1.45rem;
-    border-right: 1.5rem solid getColor(cardBg);
     display: none;
 
     @media (min-width: getBreakpoint(large)) {
       display: block;
+      border-right: 1.5rem solid getColor(cardBgLg);
     }
   }
 
   &--right {
     right: -1.45rem;
-    border-left: 1.5rem solid getColor(cardBg);
     display: none;
 
     @media (min-width: getBreakpoint(large)) {
       display: block;
+      border-left: 1.5rem solid getColor(cardBgLg);
     }
   }
 }

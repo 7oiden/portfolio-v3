@@ -13,19 +13,27 @@
 
   &__logo {
     // z-index: 1000;
-    width: 3rem;
-    height: 3rem;
+    width: 2.25rem;
+    height: 2.25rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: getColor(badgeBg);
     border-radius: 50%;
+
+    @media (min-width: getBreakpoint(large)) {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   &__logo-inner {
     font-family: $link;
-    font-size: 1.25rem;
     font-weight: 800;
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: 1.25rem;
+    }
   }
 
   &__link-list {

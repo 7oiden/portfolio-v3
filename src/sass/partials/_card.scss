@@ -3,8 +3,12 @@
   flex-direction: column;
   box-shadow: 0 6px 8px rgba(32, 41, 63, 0.2);
   // background-color: rgba(15, 23, 42, 1);
-  background-color: getColor(cardBg);
+  background-color: getColor(cardBgSm);
   border-top: 1px solid rgba(113, 124, 154, 0.1);
+
+  @media (min-width: getBreakpoint(large)) {
+    background-color: getColor(cardBgLg);
+  }
 }
 
 .project {
