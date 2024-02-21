@@ -19,7 +19,7 @@ export default function PathToggleBtn({ setNumToShow, dataArr }) {
 
   return (
     <div
-      className="show-button"
+      className="path__toggle-btn"
       onClick={toggleShow}
       aria-expanded={isExpanded}
     >

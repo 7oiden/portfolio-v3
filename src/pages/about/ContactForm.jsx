@@ -103,7 +103,6 @@ export default function ContactForm() {
   const handleClearMessage = () => resetField("your-message");
 
   function handleResize(e) {
-    console.log(e.target.value);
     e.target.style.height = "auto";
     e.target.style.height = e.target.scrollHeight + "px";
   }
@@ -223,7 +222,7 @@ export default function ContactForm() {
           {serverError}
         </Banner>
       )}
-      <button className="contact__btn">
+      <button className="button contact__button">
         {submitting ? (
           <>
             <Spinner />

@@ -74,7 +74,7 @@ export default function Hero() {
                 experiences.
               </Heading>
             </hgroup>
-            <HashLink smooth to="/about#contact" className="hero__button">
+            <HashLink smooth to="/about#contact" className=" button hero__button">
               Get in touch
             </HashLink>
           </div>

@@ -15,10 +15,6 @@
     width: 100%;
     display: flex;
     margin-bottom: 300px;
-    
-    @media (min-width: getBreakpoint(large)) {
-      margin-bottom: 300px;
-    }
   }
 
   &__container {
@@ -32,9 +28,6 @@
 
     @media (min-width: getBreakpoint(large)) {
       max-width: 700px;
-    }
-
-    @media (min-width: getBreakpoint(xLarge)) {
     }
   }
 
@@ -91,24 +84,3 @@
   }
 }
 
-.border-hor {
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 200px;
-  height: 4px;
-  background-color: getColor(headingAccent);
-  border-radius: 25px;
-  opacity: 0.2;
-}
-
-.border-vert {
-  position: absolute;
-  bottom: -50px;
-  right: -50px;
-  width: 4px;
-  height: 150px;
-  background-color: getColor(headingAccent);
-  border-radius: 25px;
-  opacity: 0.2;
-}

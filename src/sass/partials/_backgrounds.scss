@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(16, 30, 67);
+  background: rgb(15, 23, 42);
   background-attachment: scroll;
   // background: radial-gradient(
   //   circle,
@@ -15,16 +15,17 @@
   background-image: linear-gradient(
     28deg,
     rgba(15, 23, 42, 1) 4%,
-    rgba(16, 30, 67, 1) 27%,
-    rgb(33, 61, 140) 50%,
-    rgba(15, 23, 42, 1) 93%
+    rgba(16, 30, 67, 1) 40%,
+    rgba(29, 78, 216, 1) 70%,
+    rgba(15, 23, 42, 1) 85%
   );
-  opacity: 0.4;
+  opacity: 0;
   z-index: -300;
-  position: fixed;
-  background-attachment: fixed;
 
   @media (min-width: getBreakpoint(large)) {
+    position: fixed;
+    background-attachment: fixed;
+    opacity: 0.15;
   }
 }
 

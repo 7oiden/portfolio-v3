@@ -1,5 +1,5 @@
 import Heading from "../../components/common/Heading";
-import mapPng from "../../assets/images/norway2.png";
+import mapPng from "../../assets/images/norway.png";
 import { Link } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import { MdArrowForward } from "react-icons/md";
@@ -106,8 +106,8 @@ export default function Biography() {
             dedicated professional.
           </p>
         </div>
-        <div className="map-image">
-          <div className="test">
+        <div className="map">
+          <div className="map__heading">
             <div>Home</div>
             <MdOutlineKeyboardDoubleArrowRight className="location-marker__arrow" />
           </div>
