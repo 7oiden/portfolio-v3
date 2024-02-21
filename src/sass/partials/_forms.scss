@@ -47,7 +47,8 @@
   border: none;
   border-bottom: 2px solid rgba(87, 109, 139, 0.2);
   border-radius: 5px 5px 0 0;
-  background-color: rgba(87, 109, 139, 0.05);
+  // background-color: rgba(87, 109, 139, 0.075);
+  background-color: rgba(93, 116, 148, 0.075);
   font-family: inter;
   font-size: 1rem;
   color: getColor(textBright);
@@ -74,7 +75,7 @@
 .contact__textarea {
   resize: none;
   overflow-y: hidden;
-  min-height: 10rem;
+  min-height: 8rem;
   color: getColor(textBright);
   padding-top: 1.75rem;
   padding-bottom: 1rem;

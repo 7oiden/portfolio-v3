@@ -123,7 +123,7 @@ export default function ContactForm() {
             <label
               htmlFor="name"
               className="contact__label"
-              style={{ color: errors["your-name"] ? "#f87171" : null }}
+              style={{ color: errors["your-name"] ? "#f47777" : null }}
             >
               Name
             </label>
@@ -146,7 +146,7 @@ export default function ContactForm() {
             <label
               htmlFor="email"
               className="contact__label"
-              style={{ color: errors["your-email"] ? "#f87171" : null }}
+              style={{ color: errors["your-email"] ? "#f47777" : null }}
             >
               Email
             </label>
@@ -169,7 +169,7 @@ export default function ContactForm() {
             <label
               htmlFor="subject"
               className="contact__label"
-              style={{ color: errors["your-subject"] ? "#f87171" : null }}
+              style={{ color: errors["your-subject"] ? "#f47777" : null }}
             >
               Subject
             </label>
@@ -195,7 +195,7 @@ export default function ContactForm() {
             <label
               htmlFor="message"
               className="contact__label"
-              style={{ color: errors["your-message"] ? "#f87171" : null }}
+              style={{ color: errors["your-message"] ? "#f47777" : null }}
             >
               Message
             </label>

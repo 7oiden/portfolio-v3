@@ -12,18 +12,20 @@
   background-color: transparent;
 
   &__logo {
-    font-size: 2rem;
-    z-index: 1000;
-    font-weight: 800;
+    // z-index: 1000;
+    width: 3rem;
+    height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: $link;
-    color: getColor(textLight);
+    background-color: getColor(badgeBg);
+    border-radius: 50%;
+  }
 
-    @media (min-width: getBreakpoint(large)) {
-      font-size: 2.5rem;
-    }
+  &__logo-inner {
+    font-family: $link;
+    font-size: 1.25rem;
+    font-weight: 800;
   }
 
   &__link-list {

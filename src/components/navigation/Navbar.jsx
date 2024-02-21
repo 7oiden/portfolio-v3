@@ -42,7 +42,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
         className="nav__logo"
         aria-label="Return to homepage"
       >
-        01.
+        <span className="nav__logo-inner">01</span>
       </Link>
       <ul className="nav__link-list">
         <li>
