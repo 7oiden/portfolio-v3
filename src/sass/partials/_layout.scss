@@ -133,13 +133,13 @@
 .skills__grid-section-1 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .skills__grid-section-2 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 
   @media (min-width: getBreakpoint(small)) {
     flex-direction: row;

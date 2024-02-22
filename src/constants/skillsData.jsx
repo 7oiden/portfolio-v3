@@ -38,7 +38,7 @@ export const developmentArr = [
   { title: "JSE6", icon: <FaJs /> },
   { title: "React", icon: <FaReact /> },
   { title: "Next.js", icon: <SiNextdotjs /> },
-  { title: "Wordpress", icon: <FaWordpress /> },
+  { title: "WordPress", icon: <FaWordpress /> },
 ];
 
 export const designArr = [
