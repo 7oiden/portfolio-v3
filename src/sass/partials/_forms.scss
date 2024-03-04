@@ -45,9 +45,8 @@
   padding-left: 1rem;
   padding-right: 2.5rem;
   border: none;
-  border-bottom: 2px solid rgba(87, 109, 139, 0.2);
+  border-bottom: 2px solid rgba(87, 109, 139, 0.3);
   border-radius: 5px 5px 0 0;
-  // background-color: rgba(87, 109, 139, 0.075);
   background-color: rgba(93, 116, 148, 0.075);
   font-family: inter;
   font-size: 1rem;
@@ -150,4 +149,3 @@
 .contact__textarea:placeholder-shown + .contact__label + .contact__clear {
   display: none;
 }
-
