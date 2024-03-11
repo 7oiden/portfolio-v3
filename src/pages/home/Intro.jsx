@@ -37,6 +37,11 @@ export default function Intro() {
               I thrive on the dual excitement of designing and creating great{" "}
               <em>user experiences</em>, and bringing them to life through code.
             </p>
+            <p>
+              At the moment I&apos;m creating a new website for a local
+              entrepreneur in <em>React</em>, while taking a course on{" "}
+              <em>AI Engineering</em> at Scrimba.
+            </p>
           </div>
           <ScrollToTop>
             <LinkBtn url="about" size="md" rotation="0deg">
