@@ -112,6 +112,11 @@
       font-size: 1.25rem;
     }
   }
+
+  &--disabled {
+    cursor: default;
+    color: getColor(textDisabled);
+  } 
 }
 
 .nav__toggle-btn {

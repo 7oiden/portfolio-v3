@@ -12,7 +12,6 @@ export default function LinkBtn({
   size = "sm",
   position = "left",
 }) {
-  
   const [springs, api] = useSpring(() => ({
     from: { x: 0, y: 0, transform: "rotate(-45deg)" },
   }));
@@ -32,10 +31,17 @@ export default function LinkBtn({
   };
 
   let linkClass = `link-btn--${size}`;
+  let disabledClass = "";
+
+  if (!url) {
+    disabledClass = "link-btn--disabled";
+  }
+
   const allLinkClasses = classNames(
     "link-container",
     `link-container--${position}`,
-    linkClass
+    linkClass,
+    disabledClass
   );
 
   let iconClass = `link-icon--${size}`;
@@ -44,8 +50,8 @@ export default function LinkBtn({
   return (
     <Link
       to={url}
-      onMouseEnter={handleHover}
-      onMouseLeave={handleHoverExit}
+      onMouseEnter={url ? handleHover : null}
+      onMouseLeave={url ? handleHoverExit : null}
       className={allLinkClasses}
     >
       {icon ? <SiGithub className="project-btn__icon" /> : null}
@@ -59,7 +65,7 @@ export default function LinkBtn({
 
 LinkBtn.propTypes = {
   children: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  url: PropTypes.string,
   icon: PropTypes.bool,
   size: PropTypes.string,
   position: PropTypes.string,

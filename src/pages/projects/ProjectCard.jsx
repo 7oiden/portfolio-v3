@@ -60,9 +60,11 @@ export default function ProjectCard({
         </div>
         <Link
           to={siteUrl}
-          className="project__link"
-          onMouseEnter={handleHover}
-          onMouseLeave={handleHoverExit}
+          className={
+            siteUrl ? "project__link" : "project__link project__link--disabled"
+          }
+          onMouseEnter={siteUrl ? handleHover : null}
+          onMouseLeave={siteUrl ? handleHoverExit : null}
         >
           <div className="project__image">
             <img src={image} alt={imageAlt} className="project__image" />
@@ -73,14 +75,16 @@ export default function ProjectCard({
               style={{ transform: "rotate(-45deg)" }}
             />
           </div>
-          <div className="project__overlay">
-            <span>Go to live site at:</span>
-            <div className="overlay__body">
-              <SiNetlify size="1.5rem" />
-              <span className="overlay__text">Netlify</span>
-              <AnimatedIcon size="1.5rem" style={{ ...springs }} />
+          {siteUrl && (
+            <div className="project__overlay">
+              <span>Go to live site at:</span>
+              <div className="overlay__body">
+                <SiNetlify size="1.5rem" />
+                <span className="overlay__text">Netlify</span>
+                <AnimatedIcon size="1.5rem" style={{ ...springs }} />
+              </div>
             </div>
-          </div>
+          )}
         </Link>
       </div>
       <div className="card">
@@ -99,21 +103,25 @@ export default function ProjectCard({
         </div>
         <div className="card__body">
           <p>{description[0]}</p>
-          <animated.div style={{ ...textAppear }}>
-            <p id="content-to-toggle" className="card__hidden mb">
-              {description[1]}
-            </p>
-          </animated.div>
+          {description.length > 1 && (
+            <animated.div style={{ ...textAppear }}>
+              <p id="content-to-toggle" className="card__hidden mb">
+                {description[1]}
+              </p>
+            </animated.div>
+          )}
         </div>
-        <InfoToggler
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          position="left"
-          aria-expanded={isOpen}
-          aria-controls="content-to-toggle"
-        >
-          {isOpen ? "Show less" : "Read more"}
-        </InfoToggler>
+        {description.length > 1 && (
+          <InfoToggler
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+            position="left"
+            aria-expanded={isOpen}
+            aria-controls="content-to-toggle"
+          >
+            {isOpen ? "Show less" : "Read more"}
+          </InfoToggler>
+        )}
         <div className="badge-grid">
           {tools.map((tool) => (
             <TextBadge key={tool}>{tool}</TextBadge>
@@ -131,7 +139,7 @@ ProjectCard.propTypes = {
   type: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   description: PropTypes.array.isRequired,
-  siteUrl: PropTypes.string.isRequired,
-  codeUrl: PropTypes.string.isRequired,
+  siteUrl: PropTypes.string,
+  codeUrl: PropTypes.string,
   tools: PropTypes.array.isRequired,
 };

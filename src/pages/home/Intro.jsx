@@ -38,7 +38,7 @@ export default function Intro() {
               <em>user experiences</em>, and bringing them to life through code.
             </p>
             <p>
-              At the moment I&apos;m creating a new website for a local
+              Currently I&apos;m creating a new website for a local
               entrepreneur in <em>React</em>, while taking a course on{" "}
               <em>AI Engineering</em> at Scrimba.
             </p>

@@ -41,6 +41,11 @@
 
   &__link {
     position: relative;
+
+    &--disabled {
+      pointer-events: none;
+      filter: blur(2px) grayscale(1) opacity(0.5);
+    }
   }
 
   &__overlay {

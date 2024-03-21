@@ -1,4 +1,4 @@
-export const projectData = [
+export const schoolProjectData = [
   {
     id: 1,
     title: "Holidaze",
@@ -13,7 +13,15 @@ export const projectData = [
     image_alt: "Screenshot of the Holidaze site home page on desktop",
     netlify_url: "https://holidaze-v2.netlify.app",
     github_url: "https://github.com/7oiden/holidaze-exam-2-v2.git",
-    tools: ["react", "sass", "bootstrap", "wordpress", "strapi", "heroku"],
+    tools: [
+      "react",
+      "sass",
+      "bootstrap",
+      "wordpress",
+      "strapi",
+      "heroku",
+      "adobe XD",
+    ],
   },
   {
     id: 2,
@@ -29,7 +37,7 @@ export const projectData = [
     image_alt: "The Portfolio version 2 site home page on desktop",
     netlify_url: "https://tommy-johnsen-portfolio.netlify.app",
     github_url: "https://github.com/7oiden/my-portfolio.git",
-    tools: ["HTML", "javascript", "sass"],
+    tools: ["HTML", "javascript", "sass", "adobe XD"],
   },
   {
     id: 3,
@@ -45,7 +53,7 @@ export const projectData = [
     image_alt: "Screenshot of the Mercury Shoes site home page on desktop",
     netlify_url: "https://mercury-shoes.netlify.app",
     github_url: "https://github.com/7oiden/mercury-shoes-sp2.git",
-    tools: ["HTML", "javascript", "sass", "strapi", "heroku"],
+    tools: ["HTML", "javascript", "sass", "strapi", "heroku", "adobe XD"],
   },
   {
     id: 4,
@@ -61,7 +69,7 @@ export const projectData = [
     image_alt: "Screenshot of The Passionate Photography home page on desktop",
     netlify_url: "https://passionate-photography-7oiden.netlify.app",
     github_url: "https://github.com/7oiden/passionate-photography-exam-1.git",
-    tools: ["HTML", "javascript", "CSS", "wordpress"],
+    tools: ["HTML", "javascript", "CSS", "wordpress", "adobe XD"],
   },
   {
     id: 5,
@@ -77,6 +85,24 @@ export const projectData = [
     image_alt: "Screenshot of the Community Science Museum homepage on desktop",
     netlify_url: "https://csm-bergen.netlify.app",
     github_url: "https://github.com/7oiden/community-science-museum-sp1.git",
-    tools: ["HTML", "javascript", "CSS"],
+    tools: ["HTML", "javascript", "CSS", "adobe XD"],
+  },
+];
+
+export const realProjectData = [
+  {
+    id: 1,
+    title: "Storesund Service",
+    type: "Business Website",
+    date: "March 2024",
+    description: [
+      "I'm currently building a new business website for a local heat-pump/air-condition service technician. This is still very much a work in progress, so please check back later!",
+    ],
+    image:
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1711049632/storesund-service-screenshot_peikrr.png",
+    image_alt: "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
+    netlify_url: null,
+    github_url: null,
+    tools: ["react", "tailwind", "adobe XD"],
   },
 ];
