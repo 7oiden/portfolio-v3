@@ -94,7 +94,7 @@ export const realProjectData = [
     id: 1,
     title: "Storesund Service",
     type: "Business Website",
-    date: "March 2024",
+    date: "Q2 2024",
     description: [
       "I'm currently building a new business website for a local heat-pump/air-condition service technician. This is still very much a work in progress, so please check back later!",
     ],
