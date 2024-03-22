@@ -31,7 +31,7 @@
   font-size: 1.125rem;
 
   @media (min-width: getBreakpoint(large)) {
-    margin-top: 2rem; 
+    margin-top: 2rem;
     font-size: 1.25rem;
   }
 }
@@ -41,12 +41,6 @@
     font-size: 1.125rem;
   }
 }
-
-// .button-container {
-//   display: flex;
-//   align-items: center;
-//   gap: 1rem;
-// }
 
 .path__toggle-btn {
   position: relative;
@@ -116,7 +110,7 @@
   &--disabled {
     cursor: default;
     color: getColor(textDisabled);
-  } 
+  }
 }
 
 .nav__toggle-btn {
@@ -220,3 +214,11 @@
     }
   }
 }
+
+// .project-btn__text {
+//   display: none;
+
+//    @media (min-width: getBreakpoint(xSmall)) {
+//     display: block;
+//   }
+// }

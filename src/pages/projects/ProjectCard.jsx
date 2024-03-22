@@ -93,15 +93,15 @@ export default function ProjectCard({
             <Heading size="3" cssClass="card__heading">
               {title}
             </Heading>
-            <Heading size="4" cssClass="card__sub-heading">
-              {type}
-            </Heading>
+              <Heading size="4" cssClass="card__sub-heading">
+                {type}
+              </Heading>
           </hgroup>
           <LinkBtn url={codeUrl} icon size="md" position="right">
             GitHub
           </LinkBtn>
         </div>
-        <div className="card__body">
+        <div className="card__text">
           <p>{description[0]}</p>
           {description.length > 1 && (
             <animated.div style={{ ...textAppear }}>
