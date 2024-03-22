@@ -91,9 +91,9 @@
   @extend .card-styling;
   position: relative;
   border-radius: 10px;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   gap: 1rem;
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
 
   @media (min-width: getBreakpoint(large)) {
     padding: 1.5rem 2rem 2rem 2rem;

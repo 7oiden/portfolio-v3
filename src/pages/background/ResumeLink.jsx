@@ -9,7 +9,7 @@ export default function ResumeLink() {
 
   const handleHover = () => {
     api.start({
-      y: -6,
+      y: 6,
     });
   };
 
