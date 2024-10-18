@@ -33,6 +33,7 @@
     gap: 0.5rem;
     font-weight: 600;
     text-transform: uppercase;
+    color: getColor(headingAccent);
 
     @media (min-width: getBreakpoint(large)) {
       font-size: 1.125rem;

@@ -21,7 +21,7 @@ export const educationData = [
     id: 2,
     title: "Frontend Development",
     institution: "Noroff",
-    date: "Aug '21 - Jun '22",
+    date: "Aug '20 - Jun '22",
     description: [
       "The Frontend Development course at Noroff is a 2 year full time study. The course covers HTML, CSS, Javascript, React, Wordpress, Strapi and more.",
       "The course is delivered online, and is a combination of lectures, assignments and projects. The course is delivered in English, and is a mix of Norwegian and international students.",

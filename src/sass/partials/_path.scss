@@ -44,6 +44,7 @@
   width: 40%;
   padding-top: 0.5rem;
   display: none;
+  color: getColor(accentCol1);
 
   @media (min-width: getBreakpoint(large)) {
     display: block;
@@ -69,6 +70,7 @@
     white-space: nowrap;
     transform-origin: bottom left;
     transform: rotate(-90deg);
+    color: getColor(accentCol1);
 
     @media (min-width: getBreakpoint(large)) {
       display: none;

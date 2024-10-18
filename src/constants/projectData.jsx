@@ -94,15 +94,16 @@ export const realProjectData = [
     id: 1,
     title: "Storesund Service",
     type: "Business Website",
-    date: "Q2 2024",
+    date: "Q4 2024",
     description: [
       "I'm currently building a new business website for a local heat-pump/air-condition service technician. This is still very much a work in progress, so please check back later!",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1711049632/storesund-service-screenshot_peikrr.png",
-    image_alt: "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
+    image_alt:
+      "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
     netlify_url: null,
-    github_url: null,
-    tools: ["react", "tailwind", "adobe XD"],
+    github_url: "https://github.com/7oiden/storesund-service-2024",
+    tools: ["react", "sass", "adobe XD"],
   },
 ];

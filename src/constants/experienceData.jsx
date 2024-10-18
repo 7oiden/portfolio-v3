@@ -9,7 +9,7 @@ export const experienceData = [
     id: 1,
     title: "Developer, Warehouse and Logistics",
     company: "Box Protector AS",
-    date: "Mar '23 - Jan '24",
+    date: "Jun '23 - Jan '24",
     description: [
       "This company runs an e-commerce shop where they are selling retro games and equipment, Pokemon collectables as well as protecting casing for these items.",
       "As the sole employee in I was involved in most daily operations which included warehouse logistics, packing, shipping, product photography, customer service, maintaining the web site, adding new products to the site etc.",
@@ -21,7 +21,7 @@ export const experienceData = [
     id: 2,
     title: "Team Leader Engineering",
     company: "NOBI Voss",
-    date: "Aug '18 - May '19",
+    date: "Jan '18 - May '19",
     description: [
       "Project management, as well as responsible for resource management and planning with associated personnel responsibility for the engineering department.",
       "I also worked on implementing LEAN workflow principles in the engineering department.",
@@ -33,7 +33,7 @@ export const experienceData = [
     id: 3,
     title: "Project Engineer",
     company: "Spenncon AS",
-    date: "Aug '14 - Jun '18",
+    date: "Aug '14 - Jan '18",
     description: [
       "Led project management efforts for a contractor company specializing in the production, engineering, and assembly of concrete slabs.",
       "Managed end-to-end project lifecycle, from conception to completion, ensuring adherence to strict quality standards and project timelines",
