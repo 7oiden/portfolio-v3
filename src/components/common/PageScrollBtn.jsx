@@ -5,7 +5,8 @@ import { useSpring, animated } from "@react-spring/web";
 export default function PageScrollBtn() {
   const [springs, api] = useSpring(() => ({
     from: {
-      display: "none",
+      opacity: 0,
+      visibility: "hidden",
       transform: "translate(50%, 50%)",
     },
   }));
@@ -15,23 +16,19 @@ export default function PageScrollBtn() {
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
 
-    if (currentScrollY > prevScrollY.current) {
-      // Scrolling down
+    if (currentScrollY > prevScrollY.current || currentScrollY < 100) {
+      // Scrolling down or near top of page
       api.start({
-        to: { display: "none" },
-        config: { duration: 100 },
-      });
-    } else if (currentScrollY < 100) {
-      // At top of page
-      api.start({
-        to: { display: "none" },
-        config: { duration: 100 },
+        opacity: 0,
+        onRest: () => api.start({ visibility: "hidden" }), // Hide after fade-out
+        config: { duration: 300 },
       });
     } else {
       // Scrolling up
       api.start({
-        to: { display: "block" },
-        config: { duration: 100 },
+        opacity: 1,
+        visibility: "visible", // Show immediately for fade-in
+        config: { duration: 300 },
       });
     }
 
