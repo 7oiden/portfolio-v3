@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="footer__heading">
             <p>Tommy Johnsen </p>
             <FaCopyright />
-            <span>2024</span>
+            <span>2026</span>
           </div>
           <LinkBtn
             url="mailto: tommy.johnsen@live.com"

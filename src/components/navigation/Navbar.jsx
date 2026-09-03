@@ -36,14 +36,20 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
 
   return (
     <nav className="nav">
-      <Link
-        to="/"
-        style={style}
-        className="nav__logo"
-        aria-label="Return to homepage"
-      >
-        <span className="nav__logo-inner">01</span>
-      </Link>
+      <ul className="nav__link-list">
+        <li>
+            <NavLink
+             to="/"
+             className={({ isActive }) =>
+               isActive ? "nav__link active-link" : "nav__link"
+             }
+          >
+            <div className="nav__prefix">01</div>
+            <div>Home</div>
+          </NavLink>
+        </li>
+      </ul>
+
       <ul className="nav__link-list">
         <li>
           <NavLink

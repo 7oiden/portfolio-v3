@@ -92,18 +92,80 @@ export const schoolProjectData = [
 export const realProjectData = [
   {
     id: 1,
-    title: "Storesund Service",
+    title: "Eidesjøen Grendalag",
+    type: "Booking Platform Website",
+    date: "Q3 2026",
+    description: [
+      "This is a new site for my local Grendalag. The site is built with NextJS and styled using Tailwind, while Sanity is used for the content management system. It features a user-friendly interface for booking appointments and managing user accounts.",
+    ],
+    image:
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1788456799/eidesjoen-grendalag-hero_mpmsyx.png",
+    image_alt: "Screenshot of the Herifra.no site home page on desktop",
+    netlify_url: "eidesjoen-grendalag-oohbtnwn0-7oidens-projects.vercel.app",
+    github_url: "",
+    tools: ["NextJS", "Tailwind", "Cursor", "Sanity"],
+  },
+  {
+    id: 2,
+    title: "Stjernedryss",
     type: "Business Website",
-    date: "Q4 2024",
+    date: "Q3 2026",
     description: [
       "I'm currently building a new business website for a local heat-pump/air-condition service technician. This is still very much a work in progress, so please check back later!",
     ],
     image:
-      "https://res.cloudinary.com/dhd2paq70/image/upload/v1711049632/storesund-service-screenshot_peikrr.png",
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1788455960/stjernedryss-lamding-page_yy2ev2.png",
     image_alt:
       "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
-    netlify_url: null,
-    github_url: "https://github.com/7oiden/storesund-service-2024",
-    tools: ["react", "sass", "adobe XD"],
+    netlify_url: "https://stjernedryss.netlify.app/",
+    github_url: null,
+    tools: ["NextJS", "Tailwind", "Cursor", "Supabase"],
+  },
+  {
+    id: 3,
+    title: "Storesund Service",
+    type: "Business Website",
+    date: "Q3 2026",
+    description: [
+      "I'm currently building a new business website for a local heat-pump/air-condition service technician. This is still very much a work in progress, so please check back later!",
+    ],
+    image:
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1788455660/storesund-service-hero_up2mnl.png",
+    image_alt:
+      "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
+    netlify_url: "https://storesund-service.netlify.app",
+    github_url: null,
+    tools: ["NextJS", "Tailwind", "Cursor", "Supabase"],
+  },
+  {
+    id: 4,
+    title: "Storesund Utleie",
+    type: "Business Website",
+    date: "Q3 2026",
+    description: [
+      "I'm currently building a new business website for a local heat-pump/air-condition service technician. This is still very much a work in progress, so please check back later!",
+    ],
+    image:
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1788456261/storesund-utleie-hero_drhhj8.png",
+    image_alt:
+      "Screenshot of blurred image of the hero section of the Hugo Storesund Utleie site on desktop",
+    netlify_url: "https://storesund-utleie.netlify.app/",
+    github_url: null,
+    tools: ["NextJS", "Tailwind", "Cursor", "Supabase"],
+  },
+  {
+    id: 5,
+    title: "Herifra",
+    type: "Booking Platform Website",
+    date: "Q3 - Q4 2025",
+    description: [
+      "Herifra.no is a booking platform website designed for a fictional company. The site is built with React + Vite and styled using Sass, while Supabase is used for the backend. It features a user-friendly interface for booking appointments and managing user accounts.",
+    ],
+    image:
+      "https://res.cloudinary.com/dhd2paq70/image/upload/v1762432814/herifra-hero_fjiz0k.png",
+    image_alt: "Screenshot of the Herifra.no site home page on desktop",
+    netlify_url: "https://www.herifra.no",
+    github_url: "",
+    tools: ["react", "vite", "sass", "supabase", "stripe", "sendgrid"],
   },
 ];

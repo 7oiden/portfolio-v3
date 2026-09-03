@@ -2,14 +2,14 @@ import Heading from "../../components/common/Heading";
 import avatar from "../../assets/images/avatar.png";
 import LinkBtn from "../../components/common/LinkBtn";
 import { ScrollToTop } from "../../utils/ScrollToTop";
-import { RxCornerTopLeft } from "react-icons/rx";
-import { RxCornerTopRight } from "react-icons/rx";
+// import { RxCornerTopLeft } from "react-icons/rx";
+// import { RxCornerTopRight } from "react-icons/rx";
 
 export default function Intro() {
   return (
     <section className="intro section-wrapper" id="intro">
-      <RxCornerTopLeft className="corner-icon--top-left" />
-      <RxCornerTopRight className="corner-icon--top-right" />
+      {/* <RxCornerTopLeft className="corner-icon--top-left" />
+      <RxCornerTopRight className="corner-icon--top-right" /> */}
       <div className="intro__container">
         <figure className="intro__avatar">
           <img

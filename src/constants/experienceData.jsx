@@ -2,9 +2,20 @@ import { FaGamepad } from "react-icons/fa";
 import { RiTeamFill } from "react-icons/ri";
 import { MdEngineering } from "react-icons/md";
 import { MdFactory } from "react-icons/md";
-import { FaWarehouse } from "react-icons/fa";
+import { FaWarehouse, FaReact } from "react-icons/fa";
 
 export const experienceData = [
+  { id: 8,
+    title: "Fullstack Developer In-house",
+    company: "Herifra AS",
+    date: "Jun '25 - Sep '25",
+    description: [
+      "As a fullstack developer in-house at Herifra AS, I worked on various client projects, contributing to the development and maintenance of web applications using modern frontend and backend technologies.",
+      "I collaborated with a team of developers and designers to implement responsive designs, optimize user experiences, and ensure cross-browser compatibility.",
+    ],
+    url: "https://herifra.no/",
+    icon: <FaReact />,
+  },
   {
     id: 1,
     title: "Developer, Warehouse and Logistics",

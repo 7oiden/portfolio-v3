@@ -6,7 +6,12 @@ import {
   FaWordpress,
   FaFigma,
 } from "react-icons/fa";
-import { SiNextdotjs, SiAdobexd, SiAdobephotoshop } from "react-icons/si";
+import {
+  SiNextdotjs,
+  SiAdobexd,
+  SiAdobephotoshop,
+  SiSupabase,
+} from "react-icons/si";
 
 export const toolsArr = [
   "Git + GitHub",
@@ -18,6 +23,7 @@ export const toolsArr = [
   "Firebase",
   "Sass",
   "Bootstrap",
+  "Supabase",
 ];
 
 export const knowledgeArr = [
@@ -39,6 +45,7 @@ export const developmentArr = [
   { title: "React", icon: <FaReact /> },
   { title: "Next.js", icon: <SiNextdotjs /> },
   { title: "WordPress", icon: <FaWordpress /> },
+  { title: "Supabase", icon: <SiSupabase /> },
 ];
 
 export const designArr = [

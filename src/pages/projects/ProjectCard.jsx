@@ -90,16 +90,16 @@ export default function ProjectCard({
       <div className="card">
         <div className="card__header">
           <hgroup>
-            <Heading size="3" cssClass="card__heading">
-              {title}
-            </Heading>
             <Heading size="4" cssClass="card__sub-heading">
               {type}
             </Heading>
+            <Heading size="3" cssClass="card__heading">
+              {title}
+            </Heading>
           </hgroup>
-            <LinkBtn url={codeUrl} icon size="md" position="right">
-              GitHub
-            </LinkBtn>
+          <LinkBtn url={codeUrl} icon size="md" position="right">
+            GitHub
+          </LinkBtn>
         </div>
         <div className="card__text">
           <p>{description[0]}</p>

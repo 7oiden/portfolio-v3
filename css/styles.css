@@ -359,7 +359,7 @@ svg {
   z-index: -100;
   font-family: "playfair display sans", serif;
   font-weight: 600;
-  color: rgba(148, 163, 184, 0.025);
+  color: rgba(148, 163, 184, 0.029);
   font-size: 10rem;
   width: 105%;
   overflow: hidden;
@@ -668,13 +668,12 @@ em {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #132f4b;
   border-radius: 50%;
 }
 @media (min-width: 992px) {
   .nav__logo {
-    width: 3rem;
-    height: 3rem;
+    width: 4rem;
+    height: 4rem;
   }
 }
 .nav__logo-inner {
@@ -1057,12 +1056,12 @@ img {
   display: flex;
   flex-direction: column;
   box-shadow: 0 6px 8px rgba(32, 41, 63, 0.2);
-  background-color: rgba(21, 38, 64, 0.65);
+  background-color: rgba(23, 42, 69, 0.8);
   border-top: 1px solid rgba(113, 124, 154, 0.1);
 }
 @media (min-width: 992px) {
   .card-styling, .info-box, .contact__form, .card {
-    background-color: rgba(21, 38, 64, 0.8);
+    background-color: rgba(23, 42, 69, 0.8);
   }
 }
 
@@ -1088,6 +1087,7 @@ img {
   gap: 0.5rem;
   font-weight: 600;
   text-transform: uppercase;
+  color: #66b0d8;
 }
 @media (min-width: 992px) {
   .project__date {
@@ -1552,7 +1552,7 @@ img {
   top: 1.25rem;
 }
 
-.contact__input:not(:-moz-placeholder-shown) + .contact__label {
+.contact__input:not(:-moz-placeholder) + .contact__label {
   transform: translate(0, -1.5rem) scale(0.8);
   color: #38bdf8;
 }
@@ -1563,7 +1563,7 @@ img {
   color: #38bdf8;
 }
 
-.contact__textarea:not(:-moz-placeholder-shown) + .contact__label {
+.contact__textarea:not(:-moz-placeholder) + .contact__label {
   transform: translate(0, -1.5rem) scale(0.8);
   color: #38bdf8;
 }
@@ -1574,7 +1574,7 @@ img {
   color: #38bdf8;
 }
 
-.contact__input:-moz-placeholder-shown + .contact__label + .contact__clear {
+.contact__input:-moz-placeholder + .contact__label + .contact__clear {
   display: none;
 }
 
@@ -1582,7 +1582,7 @@ img {
   display: none;
 }
 
-.contact__textarea:-moz-placeholder-shown + .contact__label + .contact__clear {
+.contact__textarea:-moz-placeholder + .contact__label + .contact__clear {
   display: none;
 }
 
@@ -1634,6 +1634,7 @@ img {
   width: 40%;
   padding-top: 0.5rem;
   display: none;
+  color: #38bdf8;
 }
 @media (min-width: 992px) {
   .path__date {
@@ -1658,6 +1659,7 @@ img {
   white-space: nowrap;
   transform-origin: bottom left;
   transform: rotate(-90deg);
+  color: #38bdf8;
 }
 @media (min-width: 992px) {
   .path__date--mobile {
@@ -1757,7 +1759,7 @@ img {
 }
 .info-box__marker--default {
   left: -1.45rem;
-  border-right: 1.5rem solid rgba(21, 38, 64, 0.65);
+  border-right: 1.5rem solid rgba(23, 42, 69, 0.8);
 }
 @media (min-width: 992px) {
   .info-box__marker--default {
@@ -1771,7 +1773,7 @@ img {
 @media (min-width: 992px) {
   .info-box__marker--left {
     display: block;
-    border-right: 1.5rem solid rgba(21, 38, 64, 0.8);
+    border-right: 1.5rem solid rgba(23, 42, 69, 0.8);
   }
 }
 .info-box__marker--right {
@@ -1781,7 +1783,7 @@ img {
 @media (min-width: 992px) {
   .info-box__marker--right {
     display: block;
-    border-left: 1.5rem solid rgba(21, 38, 64, 0.8);
+    border-left: 1.5rem solid rgba(23, 42, 69, 0.8);
   }
 }
 
