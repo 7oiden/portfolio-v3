@@ -33,22 +33,6 @@ em {
   font-size: getSize(heroHeadingS);
   color: getColor(heroHeading);
 
-  &--top {
-    display: block;
-    font-family: $logo;
-    font-weight: 400;
-    font-size: getSize(heroTopHeadingM);
-    color: getColor(headingAccent);
-
-    @media (min-width: getBreakpoint(medium)) {
-      font-size: getSize(heroTopHeadingM);
-    }
-
-    @media (min-width: getBreakpoint(large)) {
-      font-size: getSize(heroTopHeadingL);
-    }
-  }
-
   &--main {
     font-weight: 700;
     font-size: getSize(heroHeadingS);
@@ -90,12 +74,6 @@ em {
   @media (min-width: getBreakpoint(large)) {
     font-size: getSize(heroHeadingL);
   }
-}
-
-.typed-cursor {
-  color: getColor(textLight);
-  font-size: 2rem;
-  line-height: 1;
 }
 
 .page-heading {

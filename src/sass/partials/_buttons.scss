@@ -114,15 +114,26 @@
 }
 
 .nav__toggle-btn {
-  display: block;
-  width: 2rem;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
   z-index: 1000;
+  width: auto;
+  font-family: $link;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: getColor(accentCol1);
+  background-color: transparent;
+  border: 2px solid getColor(accentCol1);
+  border-radius: 64px;
+  padding: 0.35rem 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 
-  & > svg {
-    width: 100%;
-    height: auto;
-    color: getColor(link);
+  &[aria-expanded="true"] {
+    background-color: getColor(accentCol1);
+    color: getColor(buttonBg);
   }
 
   @media (min-width: getBreakpoint(large)) {

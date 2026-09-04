@@ -1,12 +1,19 @@
 import { useEffect, useRef } from "react";
 import Heading from "../../components/common/Heading";
 import { HashLink } from "react-router-hash-link";
+import { Link } from "react-router-dom";
 import MediaLinks from "../../components/common/MediaLinks";
-import { ReactTyped } from "react-typed";
+import LinkBtn from "../../components/common/LinkBtn";
 import { useSpring, animated } from "@react-spring/web";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import {
+  MdArrowForward,
+  MdOutlineKeyboardDoubleArrowRight,
+} from "react-icons/md";
+import { realProjectData } from "../../constants/projectData";
 
 export default function Hero() {
+  const featuredProject = realProjectData[0];
+
   const arrow = useSpring({
     from: { x: 0 },
     to: { x: 15 },
@@ -28,13 +35,11 @@ export default function Hero() {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY > 10) {
-      // Scrolling down
       api.start({
         to: { display: "none" },
         config: { duration: 100 },
       });
     } else {
-      // At top of page
       api.start({
         to: { display: "block" },
         config: { duration: 100 },
@@ -59,25 +64,41 @@ export default function Hero() {
         <div className="hero__container">
           <div className="hero__content">
             <hgroup className="hero__hgroup">
-              <ReactTyped
-                strings={["Hello, my name is"]}
-                typeSpeed={75}
-                showCursor={true}
-                className="hero__heading--top"
-              />
-              {/* <div className="hero__heading--top">Hello, my name is</div> */}
               <Heading size="1" cssClass="hero__heading--main">
                 Tommy Johnsen<span className="hero__heading--dot">.</span>
               </Heading>
               <Heading size="2" cssClass="hero__heading--sub">
-                Frontend Developer, with a passion for creating great user
-                experiences.
+                Frontend developer building websites and apps for local
+                businesses.
               </Heading>
             </hgroup>
-            <HashLink smooth to="/about#contact" className=" button hero__button">
-              Get in touch
-            </HashLink>
+            <div className="hero__actions">
+              <HashLink
+                smooth
+                to="/about#contact"
+                className="button hero__button"
+              >
+                Get in touch
+              </HashLink>
+              <LinkBtn url="projects" size="md">
+                View work
+              </LinkBtn>
+            </div>
           </div>
+          <Link to="projects" className="hero__feature">
+            <img
+              src={featuredProject.image}
+              alt={`${featuredProject.title} website`}
+              className="hero__feature-image"
+            />
+            <div className="hero__feature-meta">
+              <span className="hero__feature-label">Latest work</span>
+              <span className="hero__feature-title">
+                {featuredProject.title}
+                <MdArrowForward className="hero__feature-icon" />
+              </span>
+            </div>
+          </Link>
         </div>
         <MediaLinks cssClass="hero__media-links" />
       </div>

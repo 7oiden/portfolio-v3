@@ -1,51 +1,18 @@
 import PropTypes from "prop-types";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import { MdMenu, MdClose } from "react-icons/md";
-import { useSprings, animated } from "react-spring";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
-  const location = useLocation();
-
-  const style = {
-    color: location.pathname === "/" ? "#38bdf8" : "#94a3b8",
-  };
-
-  const iconSprings = useSprings(
-    2,
-    isMenuOpen
-      ? [
-          { transform: "scale(0)", display: "none", config: { duration: 200 } },
-          {
-            transform: "scale(1)",
-            display: "block",
-            config: { duration: 200 },
-          },
-        ]
-      : [
-          {
-            transform: "scale(1)",
-            display: "block",
-            config: { duration: 200 },
-          },
-          { transform: "scale(0)", display: "none", config: { duration: 200 } },
-        ]
-  );
-
-  const AnimatedMenu = animated(MdMenu);
-  const AnimatedClose = animated(MdClose);
-
   return (
     <nav className="nav">
       <ul className="nav__link-list">
         <li>
-            <NavLink
-             to="/"
-             className={({ isActive }) =>
-               isActive ? "nav__link active-link" : "nav__link"
-             }
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "nav__link active-link" : "nav__link"
+            }
           >
-            <div className="nav__prefix">01</div>
-            <div>Home</div>
+            Home
           </NavLink>
         </li>
       </ul>
@@ -58,8 +25,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            <div className="nav__prefix">02</div>
-            <div>Projects</div>
+            Projects
           </NavLink>
         </li>
         <li>
@@ -69,8 +35,7 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            <div className="nav__prefix">03</div>
-            <div>Background</div>
+            Background
           </NavLink>
         </li>
         <li>
@@ -80,15 +45,19 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            <div className="nav__prefix">04</div>
-            <div>About</div>
+            About
           </NavLink>
         </li>
       </ul>
-      <div className="nav__toggle-btn" onClick={handleToggle}>
-        <AnimatedMenu style={iconSprings[0]} />
-        <AnimatedClose style={iconSprings[1]} />
-      </div>
+      <button
+        type="button"
+        className="nav__toggle-btn"
+        onClick={handleToggle}
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-nav"
+      >
+        {isMenuOpen ? "Lukk" : "Meny"}
+      </button>
     </nav>
   );
 }

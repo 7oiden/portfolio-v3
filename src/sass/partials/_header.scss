@@ -1,8 +1,13 @@
 .header {
   @extend .outer-wrapper;
-  z-index: 100;
-  position: relative;
-  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  padding: 0.75rem 0;
+  background-color: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.1);
 }
 
 .nav {
@@ -42,7 +47,7 @@
     font-weight: 400;
     color: getColor(link);
     font-size: getSize(navLinkS);
-    margin: 0.5rem 0;
+    margin: 0;
 
     @media (min-width: getBreakpoint(large)) {
       display: flex;
@@ -51,12 +56,11 @@
   }
 
   &__link {
-    display: flex;
-    flex-direction: column;
+    display: block;
     border-top: 2px solid transparent;
     border-bottom: 2px solid transparent;
 
-    &:hover > * {
+    &:hover {
       font-weight: 500;
       color: getColor(accentCol1);
     }
@@ -75,18 +79,10 @@
       transform: scaleX(1);
     }
   }
-
-  &__prefix {
-    font-size: 0.875rem;
-    color: getColor(textLight);
-    align-self: flex-end;
-
-    @media (min-width: getBreakpoint(large)) {
-      font-size: 0.875rem;
-    }
-  }
 }
 
+.nav__link.active-link,
+.active-link,
 .active-link > * {
   color: getColor(accentCol1);
   font-weight: 600;

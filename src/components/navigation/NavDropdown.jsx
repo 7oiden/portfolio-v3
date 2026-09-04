@@ -9,7 +9,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
 
   const dropdown = useSpring({
-    maxHeight: isMenuOpen ? "275px" : "0px",
+    maxHeight: isMenuOpen ? "340px" : "0px",
     config: { duration: 200 },
   });
 
@@ -35,14 +35,25 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   }, []);
 
   return (
-    <animated.nav className="nav__dropdown" style={{ ...dropdown }}>
+    <animated.nav
+      id="mobile-nav"
+      className="nav__dropdown"
+      style={{ ...dropdown }}
+    >
       <ul className="nav-dropdown__links-list">
+        <li>
+          <NavLink
+            to="/"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
+          >
+            <span>Home</span>
+          </NavLink>
+        </li>
         <li>
           <NavLink
             to="projects"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            {/* <span className="nav__prefix">02. </span> */}
             <span>Projects</span>
           </NavLink>
         </li>
@@ -51,7 +62,6 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
             to="background"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            {/* <span className="nav__prefix">03. </span> */}
             <span>Background</span>
           </NavLink>
         </li>
@@ -60,7 +70,6 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
             to="about"
             className={({ isActive }) => (isActive ? "active-link" : "")}
           >
-            {/* <span className="nav__prefix">04. </span> */}
             <span>About</span>
           </NavLink>
         </li>
