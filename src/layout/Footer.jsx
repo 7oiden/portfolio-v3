@@ -13,7 +13,7 @@ export default function Footer() {
             <span>2026</span>
           </div>
           <LinkBtn
-            url="mailto: tommy.johnsen@live.com"
+            url="mailto:tommy.johnsen@live.com"
             size="sm"
             rotation="-45deg"
           >

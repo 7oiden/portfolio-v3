@@ -161,8 +161,10 @@ em {
 }
 
 .text-badge__text {
-  color: getColor(accentCol2);
-  font-size: getSize(badgeText);
+  color: getColor(headingAccent);
+  font-family: $link;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
 .path__heading {

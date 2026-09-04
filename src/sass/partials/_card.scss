@@ -202,18 +202,6 @@
   .badge-grid {
     margin-top: 0.15rem;
   }
-
-  .text-badge {
-    background-color: getColor(primaryBg);
-    border: 1px solid rgba(113, 124, 154, 0.2);
-  }
-
-  .text-badge__text {
-    color: getColor(headingAccent);
-    font-family: $link;
-    font-size: 0.75rem;
-    font-weight: 500;
-  }
 }
 
 .overlay__body {
