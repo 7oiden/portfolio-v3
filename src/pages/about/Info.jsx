@@ -8,7 +8,7 @@ export default function Info() {
       <div className="info__heading-group">
         <p className="info__kicker">Personal profile</p>
         <Heading size="2" cssClass="info__heading">
-          A bit more about me.
+          Know me better.
         </Heading>
       </div>
       <div className="info__groups">

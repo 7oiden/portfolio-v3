@@ -122,6 +122,36 @@
 .biography {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
+
+  &__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: getColor(headingAccent);
+  }
+
+  &__heading {
+    font-size: getSize(sectionHeadingS);
+    font-weight: 600;
+    line-height: 1.25;
+    color: getColor(textBright);
+
+    @media (min-width: getBreakpoint(medium)) {
+      font-size: getSize(sectionHeadingM);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: getSize(sectionHeadingL);
+    }
+  }
 
   &__wrapper {
     display: flex;
@@ -135,6 +165,27 @@
     @media (min-width: getBreakpoint(twoXLarge)) {
       gap: 8rem;
     }
+  }
+
+  &__place {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.25rem;
+    font-family: $link;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: getColor(headingAccent);
+
+    @media (min-width: getBreakpoint(large)) {
+      display: none;
+    }
+  }
+
+  &__place-icon {
+    width: 1rem;
+    height: auto;
+    transform: rotate(-45deg);
   }
 }
 
