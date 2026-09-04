@@ -9,11 +9,17 @@
   padding: 2rem 0 5rem;
 
   @media (min-width: getBreakpoint(large)) {
+    width: 85%;
     padding: 1rem 0 4rem;
   }
 
   @media (min-width: getBreakpoint(xLarge)) {
-    width: 85%;
+    width: 80%;
+  }
+
+  @media (min-width: getBreakpoint(twoXLarge)) {
+    width: 75%;
+    max-width: 1440px;
   }
 
   &__container {
@@ -39,6 +45,10 @@
     gap: 1.5rem;
     flex: 1 1 48%;
     min-width: 0;
+
+    @media (min-width: getBreakpoint(twoXLarge)) {
+      max-width: 680px;
+    }
   }
 
   &__actions {
@@ -46,6 +56,11 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 1rem 1.75rem;
+    margin-top: 0.5rem;
+
+    @media (min-width: getBreakpoint(large)) {
+      margin-top: 0.75rem;
+    }
 
     .hero__button {
       margin-top: 0;
