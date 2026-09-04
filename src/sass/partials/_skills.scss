@@ -1,0 +1,82 @@
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: getColor(headingAccent);
+  }
+
+  &__heading {
+    font-size: getSize(sectionHeadingS);
+    font-weight: 600;
+    line-height: 1.25;
+    color: getColor(textBright);
+
+    @media (min-width: getBreakpoint(medium)) {
+      font-size: getSize(sectionHeadingM);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: getSize(sectionHeadingL);
+    }
+  }
+
+  &__groups {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (min-width: getBreakpoint(medium)) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: getColor(headerBg);
+    border: 1px solid rgba(113, 124, 154, 0.12);
+    box-shadow: 0 6px 8px rgba(32, 41, 63, 0.2);
+  }
+
+  &__card-label {
+    margin: 0;
+    padding: 0.75rem 1rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: getColor(headingAccent);
+    border-bottom: 1px solid rgba(113, 124, 154, 0.15);
+  }
+
+  &__card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin: 0;
+    padding: 1rem;
+    list-style: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: getColor(textBright);
+  }
+}

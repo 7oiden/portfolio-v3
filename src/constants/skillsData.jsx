@@ -1,56 +1,14 @@
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaReact,
-  FaWordpress,
-  FaFigma,
-} from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiAdobexd,
-  SiAdobephotoshop,
-  SiSupabase,
-} from "react-icons/si";
-
-export const toolsArr = [
-  "Git + GitHub",
-  "VS Code",
-  "Postman",
-  "Hotjar",
-  "Strapi",
-  "Heroku",
-  "Sanity",
-  "Sass",
-  "Bootstrap",
-  "Supabase",
-];
-
-export const knowledgeArr = [
-  "Design Principles",
-  "Interaction Design",
-  "UI Design",
-  "UX Design",
-  "Responsive Design",
-  "Prototyping",
-  "Accessability",
-  "SEO",
-  "Project Methodology",
-  "AI Agentic Workflow",
-];
-
-export const developmentArr = [
-  { title: "HTML5", icon: <FaHtml5 /> },
-  { title: "CSS3", icon: <FaCss3Alt /> },
-  { title: "JSE6", icon: <FaJs /> },
-  { title: "React", icon: <FaReact /> },
-  { title: "Next.js", icon: <SiNextdotjs /> },
-  { title: "WordPress", icon: <FaWordpress /> },
-  { title: "Supabase", icon: <SiSupabase /> },
-];
-
-export const designArr = [
-  { title: "Adobe XD", icon: <SiAdobexd /> },
-  { title: "Figma", icon: <FaFigma /> },
-  { title: "Photoshop", icon: <SiAdobephotoshop /> },
+export const skillGroups = [
+  {
+    label: "Frontend",
+    items: ["HTML, CSS & Sass", "JavaScript", "React", "Next.js", "WordPress"],
+  },
+  {
+    label: "Design",
+    items: ["Figma", "UI & UX", "Accessibility", "Responsive design", "SEO"],
+  },
+  {
+    label: "Tools",
+    items: ["Git & GitHub", "Sanity", "Supabase", "AI workflows"],
+  },
 ];

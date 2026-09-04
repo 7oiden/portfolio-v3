@@ -1,15 +1,3 @@
-.skills__badge-list {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-
-  & > li {
-    list-style: none;
-  }
-}
-
 .skills__list {
   list-style: none;
   display: flex;
@@ -24,29 +12,6 @@
     gap: 0.75rem;
     margin-left: 0;
   }
-}
-
-.skill-badge__item {
-  width: 75px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.skill-badge__icon-container {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: getColor(badgeBg);
-  border-radius: 50%;
-}
-
-.skill-badge__label {
-  font-size: 0.875rem;
-  font-weight: 500;
 }
 
 .text-badge {
