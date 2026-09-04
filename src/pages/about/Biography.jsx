@@ -42,7 +42,7 @@ export default function Biography() {
           </a>
         </div>
         <div className="map">
-          <img src={mapPng} alt="" />
+          <img src={mapPng} alt="" width="500" height="594" />
           <a
             href={BERGEN_MAPS_URL}
             target="_blank"

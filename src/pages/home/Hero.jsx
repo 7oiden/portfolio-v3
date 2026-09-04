@@ -23,47 +23,45 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero__wrapper">
-        <div className="hero__container">
-          <div className="hero__content">
-            <hgroup className="hero__hgroup">
-              <Heading size="1" cssClass="hero__heading--main">
-                Tommy Johnsen<span className="hero__heading--dot">.</span>
-              </Heading>
-              <Heading size="2" cssClass="hero__heading--sub">
-                Frontend developer building websites and apps for local
-                businesses.
-              </Heading>
-            </hgroup>
-            <div className="hero__actions">
-              <HashLink
-                smooth
-                to="/about#contact"
-                className="button hero__button"
-              >
-                Get in touch
-              </HashLink>
-              <LinkBtn url="projects" size="md">
-                View work
-              </LinkBtn>
-            </div>
+      <div className="hero__container">
+        <div className="hero__content">
+          <MediaLinks cssClass="hero__media-links" />
+          <hgroup className="hero__hgroup">
+            <Heading size="1" cssClass="hero__heading--main">
+              Tommy Johnsen<span className="hero__heading--dot">.</span>
+            </Heading>
+            <Heading size="2" cssClass="hero__heading--sub">
+              Frontend developer building websites and apps for local
+              businesses.
+            </Heading>
+          </hgroup>
+          <div className="hero__actions">
+            <HashLink
+              smooth
+              to="/about#contact"
+              className="button hero__button"
+            >
+              Get in touch
+            </HashLink>
+            <LinkBtn url="projects" size="md">
+              View work
+            </LinkBtn>
           </div>
-          <Link to="projects" className="hero__feature">
-            <img
-              src={featuredProject.image}
-              alt={`${featuredProject.title} website`}
-              className="hero__feature-image"
-            />
-            <div className="hero__feature-meta">
-              <span className="hero__feature-label">Latest work</span>
-              <span className="hero__feature-title">
-                {featuredProject.title}
-                <MdArrowForward className="hero__feature-icon" />
-              </span>
-            </div>
-          </Link>
         </div>
-        <MediaLinks cssClass="hero__media-links" />
+        <Link to="projects" className="hero__feature">
+          <img
+            src={featuredProject.image}
+            alt={`${featuredProject.title} website`}
+            className="hero__feature-image"
+          />
+          <div className="hero__feature-meta">
+            <span className="hero__feature-label">Latest work</span>
+            <span className="hero__feature-title">
+              {featuredProject.title}
+              <MdArrowForward className="hero__feature-icon" />
+            </span>
+          </div>
+        </Link>
       </div>
       <HashLink
         smooth
