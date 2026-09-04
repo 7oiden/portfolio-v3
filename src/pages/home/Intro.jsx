@@ -2,49 +2,55 @@ import Heading from "../../components/common/Heading";
 import avatar from "../../assets/images/avatar.png";
 import LinkBtn from "../../components/common/LinkBtn";
 import { ScrollToTop } from "../../utils/ScrollToTop";
-// import { RxCornerTopLeft } from "react-icons/rx";
-// import { RxCornerTopRight } from "react-icons/rx";
+
+const facts = [
+  { label: "Background", value: "Structural engineering" },
+  { label: "Working with", value: "Local businesses" },
+  { label: "Building with", value: "React & AI" },
+];
 
 export default function Intro() {
   return (
     <section className="intro section-wrapper" id="intro">
-      {/* <RxCornerTopLeft className="corner-icon--top-left" />
-      <RxCornerTopRight className="corner-icon--top-right" /> */}
       <div className="intro__container">
-        <figure className="intro__avatar">
-          <img
-            src={avatar}
-            alt="A 3D graphics avatar head shot of myself wearing a Discord t-shirt"
-          />
+        <figure className="intro__portrait">
+          <img src={avatar} alt="Portrait of Tommy Johnsen" />
+          <figcaption className="intro__portrait-meta">
+            <span className="intro__portrait-label">Based in Bergen</span>
+            <span className="intro__portrait-name">Tommy Johnsen</span>
+          </figcaption>
         </figure>
         <div className="intro__body">
-          <Heading size="3" cssClass="section-heading">
-            Introduction
-          </Heading>
-          <div className="paragraph-container mb mw">
+          <div className="intro__heading-group">
+            <p className="intro__kicker">About me</p>
+            <Heading size="3" cssClass="intro__heading">
+              From structural engineering to frontend.
+            </Heading>
+          </div>
+          <div className="intro__copy paragraph-container">
             <p>
-              I&apos;m <em>Tommy</em>, a seasoned structural engineer looking
-              for a new career as a frontend developer.
+              I&apos;m Tommy. I spent over a decade as a structural engineer,
+              running large construction projects. In 2020 I switched to
+              frontend — the same kind of problem-solving, plus the visual craft
+              I never quite got to use in engineering.
             </p>
             <p>
-              In the transformative year of 2022 I graduated as a frontend
-              developer from{" "}
-              <em>Noroff School of Technology and Digital Media</em>, and has
-              since also completed the Frontend Career Path, a comprehensive
-              6-month online course at <em>Scrimba</em>.
-            </p>
-            <p>
-              I thrive on the dual excitement of designing and creating great{" "}
-              <em>user experiences</em>, and bringing them to life through code.
-            </p>
-            <p>
-              Currently I&apos;m creating a new website for a local
-              entrepreneur in <em>React</em>, while taking a course on{" "}
-              <em>AI Engineering</em> at Scrimba.
+              I now build websites and apps for local businesses. Right now
+              that&apos;s a new site for an entrepreneur, in{" "}
+              <em>React</em>, while I take an <em>AI Engineering</em> course at
+              Scrimba.
             </p>
           </div>
+          <ul className="intro__facts">
+            {facts.map((fact) => (
+              <li key={fact.label} className="intro__fact">
+                <span className="intro__fact-label">{fact.label}</span>
+                <span className="intro__fact-value">{fact.value}</span>
+              </li>
+            ))}
+          </ul>
           <ScrollToTop>
-            <LinkBtn url="about" size="md" rotation="0deg">
+            <LinkBtn url="about" size="md">
               Learn more
             </LinkBtn>
           </ScrollToTop>
