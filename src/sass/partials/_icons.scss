@@ -55,12 +55,6 @@
   color: getColor(accentCol1);
   cursor: pointer;
   flex-shrink: 0;
-
-  &-path {
-    width: 1.5rem;
-    height: auto;
-    margin-left: 0;
-  }
 }
 
 .show-icon {
@@ -71,12 +65,6 @@
   &--up {
     transform: rotate(180deg);
   }
-}
-
-.path__icon {
-  width: 1.5rem;
-  height: auto;
-  color: getColor(link);
 }
 
 .menu-icon {
