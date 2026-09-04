@@ -67,12 +67,15 @@ export default function ProjectCard({
           <div className="project__image">
             <img src={image} alt={imageAlt} className="project__image" />
           </div>
-          <div className="mobile__icon">
-            <MdArrowForward
-              size="1.5rem"
-              style={{ transform: "rotate(-45deg)" }}
-            />
-          </div>
+          {siteUrl && (
+            <div className="mobile__icon">
+              <span>Go to the live site</span>
+              <MdArrowForward
+                size="1.25rem"
+                style={{ transform: "rotate(-45deg)" }}
+              />
+            </div>
+          )}
           {siteUrl && (
             <div className="project__overlay">
               <div className="overlay__body">
