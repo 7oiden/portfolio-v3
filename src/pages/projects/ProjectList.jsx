@@ -50,7 +50,6 @@ export default function ProjectList() {
               image={project.image}
               imageAlt={project.image_alt}
               description={project.description}
-              siteUrl={project.netlify_url}
               codeUrl={project.github_url}
               tools={project.tools}
               compact

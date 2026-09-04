@@ -99,52 +99,11 @@
     }
   }
 
-  &__link {
-    position: relative;
-    display: block;
-    border-radius: 10px;
-    overflow: hidden;
-
-    &--disabled {
-      pointer-events: none;
-      filter: blur(2px) grayscale(1) opacity(0.5);
-    }
-  }
-
-  &__overlay {
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    background-color: rgba(0, 0, 0, 0.8);
-    transition: opacity 0.3s ease;
-    border-radius: 10px;
-    color: getColor(accentCol2);
-    opacity: 0;
-    font-size: 1rem;
-
-    @media (min-width: getBreakpoint(large)) {
-      display: flex;
-    }
-  }
-
   &__btn-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 2rem;
-  }
-}
-
-.project__link:hover .project__overlay {
-  @media (min-width: getBreakpoint(large)) {
-    opacity: 1;
   }
 }
 
@@ -172,17 +131,14 @@
 
   &__header {
     display: flex;
-    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.5rem 1rem;
     border-bottom: 1px solid rgba(113, 124, 154, 0.15);
     padding-bottom: 0.9rem;
 
-    @media (min-width: getBreakpoint(xSmall)) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-start;
+    > .link-container {
+      flex-shrink: 0;
     }
   }
 
@@ -191,7 +147,9 @@
     flex-direction: column;
     gap: 0.85rem;
     line-height: 1.6;
-    color: getColor(textBright);
+    color: #aebfd5;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(113, 124, 154, 0.15);
     overflow: hidden;
   }
 
@@ -201,31 +159,5 @@
 
   .badge-grid {
     margin-top: 0.15rem;
-  }
-}
-
-.overlay__body {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-.mobile__icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.35rem;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 0.4rem 0.65rem;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 10px 0 10px 0;
-  color: getColor(accentCol1);
-  font-size: 0.8rem;
-  white-space: nowrap;
-
-  @media (min-width: getBreakpoint(large)) {
-    display: none;
   }
 }

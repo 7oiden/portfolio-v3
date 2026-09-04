@@ -8,7 +8,6 @@ export default function Layout() {
 
   return (
     <>
-      <div className="bg-pattern"></div>
       <Header />
       <main>
         <Outlet />
