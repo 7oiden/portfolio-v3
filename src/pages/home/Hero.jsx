@@ -1,61 +1,24 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import Heading from "../../components/common/Heading";
 import { HashLink } from "react-router-hash-link";
 import { Link } from "react-router-dom";
 import MediaLinks from "../../components/common/MediaLinks";
 import LinkBtn from "../../components/common/LinkBtn";
-import { useSpring, animated } from "@react-spring/web";
-import {
-  MdArrowForward,
-  MdOutlineKeyboardDoubleArrowRight,
-} from "react-icons/md";
+import { MdArrowForward } from "react-icons/md";
+import { FaArrowRightLong } from "react-icons/fa6";
 import { realProjectData } from "../../constants/projectData";
 
 export default function Hero() {
   const featuredProject = realProjectData[0];
-
-  const arrow = useSpring({
-    from: { x: 0 },
-    to: { x: 15 },
-    config: { duration: 900 },
-    loop: { reverse: true },
-  });
-
-  const AnimatedIcon = animated(MdOutlineKeyboardDoubleArrowRight);
-
-  const prevScrollY = useRef(0);
-
-  const [scroll, api] = useSpring(() => ({
-    from: {
-      display: "block",
-    },
-  }));
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > 10) {
-      api.start({
-        to: { display: "none" },
-        config: { duration: 100 },
-      });
-    } else {
-      api.start({
-        to: { display: "block" },
-        config: { duration: 100 },
-      });
-    }
-
-    prevScrollY.current = currentScrollY;
-  };
+  const [showScrollCue, setShowScrollCue] = useState(true);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setShowScrollCue(window.scrollY <= 10);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -102,8 +65,17 @@ export default function Hero() {
         </div>
         <MediaLinks cssClass="hero__media-links" />
       </div>
-      <HashLink smooth to="/#intro" className="hero__scroll-down">
-        <AnimatedIcon style={{ ...scroll, ...arrow }} />
+      <HashLink
+        smooth
+        to="/#intro"
+        className={`hero__scroll-down ${
+          showScrollCue ? "" : "hero__scroll-down--hidden"
+        }`}
+        aria-hidden={!showScrollCue}
+        tabIndex={showScrollCue ? undefined : -1}
+      >
+        <span>Scroll down</span>
+        <FaArrowRightLong className="hero__scroll-down-icon" />
       </HashLink>
     </section>
   );
