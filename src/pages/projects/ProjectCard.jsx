@@ -3,12 +3,10 @@ import { useState } from "react";
 import Heading from "../../components/common/Heading";
 import TextBadge from "../../components/common/TextBadge";
 import { Link } from "react-router-dom";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { SiNetlify } from "react-icons/si";
+import { MdArrowForward, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import InfoToggler from "../../components/common/InfoToggler";
 import { useSpring, animated } from "@react-spring/web";
 import LinkBtn from "../../components/common/LinkBtn";
-import { MdArrowForward } from "react-icons/md";
 
 export default function ProjectCard({
   image,
@@ -77,10 +75,8 @@ export default function ProjectCard({
           </div>
           {siteUrl && (
             <div className="project__overlay">
-              <span>Go to live site at:</span>
               <div className="overlay__body">
-                <SiNetlify size="1.5rem" />
-                <span className="overlay__text">Netlify</span>
+                <span>Visit live site</span>
                 <AnimatedIcon size="1.5rem" style={{ ...springs }} />
               </div>
             </div>

@@ -20,7 +20,7 @@ export const toolsArr = [
   "Hotjar",
   "Strapi",
   "Heroku",
-  "Firebase",
+  "Sanity",
   "Sass",
   "Bootstrap",
   "Supabase",
@@ -36,6 +36,7 @@ export const knowledgeArr = [
   "Accessability",
   "SEO",
   "Project Methodology",
+  "AI Agentic Workflow",
 ];
 
 export const developmentArr = [
