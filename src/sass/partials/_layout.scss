@@ -114,18 +114,6 @@
   }
 }
 
-.project__grid {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-  margin-top: 1rem;
-
-  @media (min-width: getBreakpoint(large)) {
-    gap: 6rem;
-    max-width: 100%;
-  }
-}
-
 .badge-grid {
   display: flex;
   flex-wrap: wrap;

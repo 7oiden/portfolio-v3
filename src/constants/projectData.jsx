@@ -96,7 +96,8 @@ export const realProjectData = [
     type: "Booking Platform Website",
     date: "Q3 2026",
     description: [
-      "This is a new site for my local Grendalag. The site is built with NextJS and styled using Tailwind, while Sanity is used for the content management system. It features a user-friendly interface for booking appointments and managing user accounts.",
+      "This is a new site for my local Grendalag. The site is built with Next.js and styled using Tailwind, while Sanity is used for the content management system.",
+      "It features a user-friendly interface for booking appointments and managing user accounts.",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788456799/eidesjoen-grendalag-hero_mpmsyx.png",
@@ -111,7 +112,8 @@ export const realProjectData = [
     type: "Kids Reward App",
     date: "Q3 2026",
     description: [
-      "Stjernedryss is an app where parents can reward their kids for good behavior. The app is built with NextJS and styled using Tailwind, while Supabase is used for the backend. It features a user-friendly interface for rewarding kids and managing user accounts. The kids can view their progress at their own dedicated children friendly page, to see stars earned and the progress towards the next reward.",
+      "Stjernedryss is an app where parents can reward their kids for good behavior. The app is built with Next.js and styled using Tailwind, while Supabase is used for the backend.",
+      "Kids get their own page to see stars earned and the progress towards the next reward.",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788455960/stjernedryss-lamding-page_yy2ev2.png",
@@ -127,7 +129,8 @@ export const realProjectData = [
     type: "Business Website",
     date: "Q3 2026",
     description: [
-      "I'm currently building a new business website for a heat-pump/air-condition service technician. The site is built with NextJS and styled using Tailwind, while Supabase is used for the backend. It features a user-friendly interface for booking appointments and managing user accounts.",
+      "I am currently building a new business website for a heat-pump and air-conditioning service technician. The site is built with Next.js and styled using Tailwind, while Supabase is used for the backend.",
+      "It features a user-friendly interface for booking appointments and managing user accounts.",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788455660/storesund-service-hero_up2mnl.png",
@@ -143,7 +146,8 @@ export const realProjectData = [
     type: "Business Website",
     date: "Q3 2026",
     description: [
-      "I'm currently building a new business website for a local heat-pump/air-condition service technician.",
+      "I am currently building a new business website for a local heat-pump and air-conditioning rental company.",
+      "The site is built with Next.js and styled using Tailwind, while Supabase is used for the backend.",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788456261/storesund-utleie-hero_drhhj8.png",
@@ -159,7 +163,8 @@ export const realProjectData = [
     type: "Booking Platform Website",
     date: "Q3 - Q4 2025",
     description: [
-      "Herifra.no is a booking platform website designed for a fictional company. The site is built with React + Vite and styled using Sass, while Supabase is used for the backend. It features a user-friendly interface for booking appointments and managing user accounts.",
+      "Herifra.no is a booking platform built with React and Vite, styled with Sass, and backed by Supabase.",
+      "It includes booking flows, account management, Stripe payments, and email via SendGrid.",
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1762432814/herifra-hero_fjiz0k.png",

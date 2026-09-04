@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import classNames from "classnames";
 import Heading from "../../components/common/Heading";
 import TextBadge from "../../components/common/TextBadge";
 import { Link } from "react-router-dom";
-import { MdArrowForward, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import InfoToggler from "../../components/common/InfoToggler";
+import {
+  MdArrowForward,
+  MdOutlineKeyboardDoubleArrowRight,
+} from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
 import LinkBtn from "../../components/common/LinkBtn";
 
@@ -18,8 +20,11 @@ export default function ProjectCard({
   tools,
   siteUrl,
   codeUrl,
+  featured = false,
+  compact = false,
 }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const hasRepo = Boolean(codeUrl && String(codeUrl).trim());
+  const paragraphs = compact ? description.slice(0, 1) : description;
 
   const AnimatedIcon = animated(MdArrowForward);
 
@@ -43,14 +48,13 @@ export default function ProjectCard({
     });
   };
 
-  const textAppear = useSpring({
-    maxHeight: isOpen ? "180px" : "0",
-    opacity: isOpen ? "1" : "0",
-    config: { duration: 250 },
-  });
-
   return (
-    <div className="project">
+    <div
+      className={classNames("project", {
+        "project--featured": featured,
+        "project--archive": compact,
+      })}
+    >
       <div className="project__col">
         <div className="project__date">
           <p>{date}</p>
@@ -65,7 +69,7 @@ export default function ProjectCard({
           onMouseLeave={siteUrl ? handleHoverExit : null}
         >
           <div className="project__image">
-            <img src={image} alt={imageAlt} className="project__image" />
+            <img src={image} alt={imageAlt} />
           </div>
           {siteUrl && (
             <div className="mobile__icon">
@@ -96,31 +100,22 @@ export default function ProjectCard({
               {title}
             </Heading>
           </hgroup>
-          <LinkBtn url={codeUrl} icon size="md" position="right">
-            GitHub
-          </LinkBtn>
-        </div>
-        <div className="card__text">
-          <p>{description[0]}</p>
-          {description.length > 1 && (
-            <animated.div style={{ ...textAppear }}>
-              <p id="content-to-toggle" className="card__hidden mb">
-                {description[1]}
-              </p>
-            </animated.div>
+          {hasRepo && (
+            <LinkBtn
+              url={codeUrl}
+              icon
+              size={compact ? "sm" : "md"}
+              position="right"
+            >
+              GitHub
+            </LinkBtn>
           )}
         </div>
-        {description.length > 1 && (
-          <InfoToggler
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-            position="left"
-            aria-expanded={isOpen}
-            aria-controls="content-to-toggle"
-          >
-            {isOpen ? "Show less" : "Read more"}
-          </InfoToggler>
-        )}
+        <div className="card__text">
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
         <div className="badge-grid">
           {tools.map((tool) => (
             <TextBadge key={tool}>{tool}</TextBadge>
@@ -141,4 +136,6 @@ ProjectCard.propTypes = {
   siteUrl: PropTypes.string,
   codeUrl: PropTypes.string,
   tools: PropTypes.array.isRequired,
+  featured: PropTypes.bool,
+  compact: PropTypes.bool,
 };

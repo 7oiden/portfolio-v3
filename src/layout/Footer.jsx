@@ -7,7 +7,6 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__item">
-          <p>Designed and developed by:</p>
           <div className="footer__heading">
             <p>Tommy Johnsen </p>
             <FaCopyright />

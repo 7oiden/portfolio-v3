@@ -12,5 +12,15 @@ img {
 
 .project__image {
   border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background-color: getColor(headerBg);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
 }
 
