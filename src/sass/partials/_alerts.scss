@@ -7,24 +7,30 @@
   align-items: flex-start;
   align-self: flex-start;
   gap: 0.5rem;
-  border-radius: 5px;
-  background: #ecfdf5;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: relative;
 
   &--success {
     background-color: getColor(success);
+    border-color: getColor(successBorder);
   }
 
   &--warning {
     background-color: getColor(warning);
+    border-color: getColor(warningBorder);
   }
 
   &--error {
     background-color: getColor(error);
+    border-color: getColor(errorBorder);
   }
 
   &--info {
     background-color: getColor(info);
+    border-color: getColor(infoBorder);
   }
 }
 
@@ -62,22 +68,18 @@
   }
 
   &--success {
-    background-color: getColor(success);
     color: getColor(successText);
   }
 
   &--warning {
-    background-color: getColor(warning);
     color: getColor(warningText);
   }
 
   &--error {
-    background-color: getColor(error);
     color: getColor(errorText);
   }
 
   &--info {
-    background-color: getColor(info);
     color: getColor(infoText);
   }
 }
