@@ -4,35 +4,38 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Banner from "../../components/alerts/Banner";
 import axios from "axios";
-import { FORM_URL } from "../../constants/api";
+import { FORM_URL, WEB3FORMS_KEY } from "../../constants/api";
 import Spinner from "../../components/common/Spinner";
 import { MdClose } from "react-icons/md";
 import { useLocale } from "../../i18n/useLocale";
 
 function createSchema(validation) {
   return yup.object().shape({
-    "your-name": yup
+    name: yup
       .string()
       .required(validation.nameRequired)
       .min(3, validation.nameMin)
       .max(20, validation.nameMax),
 
-    "your-email": yup
+    email: yup
       .string()
       .required(validation.emailRequired)
       .email(validation.emailInvalid),
 
-    "your-subject": yup
+    subject: yup
       .string()
       .required(validation.subjectRequired)
       .min(4, validation.subjectMin)
       .max(20, validation.subjectMax),
 
-    "your-message": yup
+    message: yup
       .string()
       .required(validation.messageRequired)
       .min(10, validation.messageMin)
       .max(400, validation.messageMax),
+
+    // Honeypot, declared so yup passes it through to Web3Forms
+    botcheck: yup.boolean(),
   });
 }
 
@@ -47,8 +50,6 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
 
-  const url = FORM_URL;
-
   const {
     register,
     handleSubmit,
@@ -60,30 +61,43 @@ export default function ContactForm() {
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      "your-name": "",
-      "your-email": "",
-      "your-subject": "",
-      "your-message": "",
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      botcheck: false,
     },
   });
 
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    // console.log(data);
+
+    const { botcheck, ...fields } = data;
 
     try {
-      const response = await axios.post(url, data, {
-        headers: {
-          "Content-Type": "multipart/form-data",
+      const response = await axios.post(
+        FORM_URL,
+        {
+          ...fields,
+          access_key: WEB3FORMS_KEY,
+          from_name: fields.name,
+          replyto: fields.email,
+          // Sent only when tripped, mirroring an unchecked native checkbox
+          ...(botcheck && { botcheck }),
         },
-      });
-      console.log("response", response.request);
-      setSubmitting(true);
+        { headers: { Accept: "application/json" } },
+      );
+
+      // Web3Forms reports rejections with a 200 and success: false
+      if (!response.data?.success) {
+        throw new Error(response.data?.message ?? "Submission rejected");
+      }
+
       setSubmitted(true);
     } catch (error) {
-      console.log("error", error);
-      setServerError(error.toString());
+      // Rejections arrive as a 400 body, which axios turns into a status-only message
+      setServerError(error.response?.data?.message ?? error.message);
     } finally {
       setSubmitting(false);
     }
@@ -111,10 +125,10 @@ export default function ContactForm() {
     return () => clearTimeout(timer);
   }, [submitted]);
 
-  const handleClearName = () => resetField("your-name");
-  const handleClearEmail = () => resetField("your-email");
-  const handleClearSubject = () => resetField("your-subject");
-  const handleClearMessage = () => resetField("your-message");
+  const handleClearName = () => resetField("name");
+  const handleClearEmail = () => resetField("email");
+  const handleClearSubject = () => resetField("subject");
+  const handleClearMessage = () => resetField("message");
 
   function handleClearKeyDown(event, clearField) {
     if (event.key === "Enter" || event.key === " ") {
@@ -130,6 +144,14 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
+      <input
+        type="checkbox"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        {...register("botcheck")}
+      />
       <fieldset disabled={submitting} className="contact__fieldset">
         <div>
           <div className="contact__input-container">
@@ -139,12 +161,12 @@ export default function ContactForm() {
               placeholder={formCopy.fields.name}
               id="name"
               autoComplete="off"
-              {...register("your-name")}
+              {...register("name")}
             />
             <label
               htmlFor="name"
               className="contact__label"
-              style={{ color: errors["your-name"] ? "#f47777" : null }}
+              style={{ color: errors["name"] ? "#f47777" : null }}
             >
               {formCopy.fields.name}
             </label>
@@ -157,8 +179,8 @@ export default function ContactForm() {
               aria-label={`${formCopy.clearField}: ${formCopy.fields.name}`}
             />
           </div>
-          {errors["your-name"] && (
-            <span className="input-error">{errors["your-name"].message}</span>
+          {errors["name"] && (
+            <span className="input-error">{errors["name"].message}</span>
           )}
         </div>
         <div>
@@ -169,12 +191,12 @@ export default function ContactForm() {
               placeholder={formCopy.fields.email}
               id="email"
               autoComplete="off"
-              {...register("your-email")}
+              {...register("email")}
             />
             <label
               htmlFor="email"
               className="contact__label"
-              style={{ color: errors["your-email"] ? "#f47777" : null }}
+              style={{ color: errors["email"] ? "#f47777" : null }}
             >
               {formCopy.fields.email}
             </label>
@@ -187,8 +209,8 @@ export default function ContactForm() {
               aria-label={`${formCopy.clearField}: ${formCopy.fields.email}`}
             />
           </div>
-          {errors["your-email"] && (
-            <span className="input-error">{errors["your-email"].message}</span>
+          {errors["email"] && (
+            <span className="input-error">{errors["email"].message}</span>
           )}
         </div>
         <div>
@@ -199,12 +221,12 @@ export default function ContactForm() {
               placeholder={formCopy.fields.subject}
               id="subject"
               autoComplete="off"
-              {...register("your-subject")}
+              {...register("subject")}
             />
             <label
               htmlFor="subject"
               className="contact__label"
-              style={{ color: errors["your-subject"] ? "#f47777" : null }}
+              style={{ color: errors["subject"] ? "#f47777" : null }}
             >
               {formCopy.fields.subject}
             </label>
@@ -219,9 +241,9 @@ export default function ContactForm() {
               aria-label={`${formCopy.clearField}: ${formCopy.fields.subject}`}
             />
           </div>
-          {errors["your-subject"] && (
+          {errors["subject"] && (
             <span className="input-error">
-              {errors["your-subject"].message}
+              {errors["subject"].message}
             </span>
           )}
         </div>
@@ -234,12 +256,12 @@ export default function ContactForm() {
               id="message"
               autoComplete="off"
               onInput={handleResize}
-              {...register("your-message")}
+              {...register("message")}
             />
             <label
               htmlFor="message"
               className="contact__label"
-              style={{ color: errors["your-message"] ? "#f47777" : null }}
+              style={{ color: errors["message"] ? "#f47777" : null }}
             >
               {formCopy.fields.message}
             </label>
@@ -255,9 +277,9 @@ export default function ContactForm() {
               aria-label={`${formCopy.clearField}: ${formCopy.fields.message}`}
             />
           </div>
-          {errors["your-message"] && (
+          {errors["message"] && (
             <span className="input-error" id="textarea-error">
-              {errors["your-message"].message}
+              {errors["message"].message}
             </span>
           )}
         </div>
