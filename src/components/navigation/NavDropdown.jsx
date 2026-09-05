@@ -4,9 +4,18 @@ import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import MediaLinks from "../common/MediaLinks";
+import { useLocale } from "../../i18n/useLocale";
+
+const navItems = [
+  { path: "/", key: "home" },
+  { path: "projects", key: "projects" },
+  { path: "background", key: "background" },
+  { path: "about", key: "about" },
+];
 
 export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
+  const { copy } = useLocale();
 
   const dropdown = useSpring({
     maxHeight: isMenuOpen ? "340px" : "0px",
@@ -39,40 +48,20 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
       id="mobile-nav"
       className="nav__dropdown"
       style={{ ...dropdown }}
+      aria-hidden={!isMenuOpen}
+      inert={isMenuOpen ? undefined : ""}
     >
       <ul className="nav-dropdown__links-list">
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-          >
-            <span>Home</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="projects"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-          >
-            <span>Projects</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="background"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-          >
-            <span>Background</span>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="about"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-          >
-            <span>About</span>
-          </NavLink>
-        </li>
+        {navItems.map((item) => (
+          <li key={item.path}>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              <span>{copy.nav[item.key]}</span>
+            </NavLink>
+          </li>
+        ))}
         <MediaLinks cssClass="nav-dropdown__media-links" />
       </ul>
     </animated.nav>

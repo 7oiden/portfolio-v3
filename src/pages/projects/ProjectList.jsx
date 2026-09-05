@@ -1,18 +1,23 @@
 import Heading from "../../components/common/Heading";
 import {
-  schoolProjectData,
-  realProjectData,
+  getSchoolProjectData,
+  getRealProjectData,
 } from "../../constants/projectData";
 import ProjectCard from "./ProjectCard";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function ProjectList() {
+  const { locale, copy } = useLocale();
+  const realProjectData = getRealProjectData(locale);
+  const schoolProjectData = getSchoolProjectData(locale);
+
   return (
     <>
       <section className="projects section-wrapper">
         <div className="projects__heading-group">
-          <p className="projects__kicker">Selected work</p>
+          <p className="projects__kicker">{copy.projects.selectedKicker}</p>
           <Heading size="2" cssClass="projects__heading">
-            Sites and apps for local businesses.
+            {copy.projects.selectedHeading}
           </Heading>
         </div>
         <div className="project__grid">
@@ -35,9 +40,9 @@ export default function ProjectList() {
       </section>
       <section className="projects projects--archive section-wrapper">
         <div className="projects__heading-group">
-          <p className="projects__kicker">Archive</p>
+          <p className="projects__kicker">{copy.projects.archiveKicker}</p>
           <Heading size="2" cssClass="projects__heading projects__heading--muted">
-            Noroff school projects.
+            {copy.projects.archiveHeading}
           </Heading>
         </div>
         <div className="project__grid project__grid--archive">

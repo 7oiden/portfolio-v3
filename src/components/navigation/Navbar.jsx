@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
+  const { locale, setLocale, copy } = useLocale();
+
   return (
     <nav className="nav">
       <ul className="nav__link-list">
@@ -12,52 +15,81 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
               isActive ? "nav__link active-link" : "nav__link"
             }
           >
-            Home
+            {copy.nav.home}
           </NavLink>
         </li>
       </ul>
 
-      <ul className="nav__link-list">
-        <li>
-          <NavLink
-            to="projects"
-            className={({ isActive }) =>
-              isActive ? "nav__link active-link" : "nav__link"
-            }
+      <div className="nav__controls">
+        <div
+          className="language-selector"
+          role="group"
+          aria-label={copy.nav.languageLabel}
+        >
+          <button
+            type="button"
+            className="language-selector__option"
+            aria-pressed={locale === "nb"}
+            aria-label="Norsk"
+            onClick={() => setLocale("nb")}
           >
-            Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="background"
-            className={({ isActive }) =>
-              isActive ? "nav__link active-link" : "nav__link"
-            }
+            NO
+          </button>
+          <span className="language-selector__divider" aria-hidden="true">
+            /
+          </span>
+          <button
+            type="button"
+            className="language-selector__option"
+            aria-pressed={locale === "en"}
+            aria-label="English"
+            onClick={() => setLocale("en")}
           >
-            Background
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="about"
-            className={({ isActive }) =>
-              isActive ? "nav__link active-link" : "nav__link"
-            }
-          >
-            About
-          </NavLink>
-        </li>
-      </ul>
-      <button
-        type="button"
-        className="nav__toggle-btn"
-        onClick={handleToggle}
-        aria-expanded={isMenuOpen}
-        aria-controls="mobile-nav"
-      >
-        {isMenuOpen ? "Lukk" : "Meny"}
-      </button>
+            EN
+          </button>
+        </div>
+        <ul className="nav__link-list">
+          <li>
+            <NavLink
+              to="projects"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              {copy.nav.projects}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="background"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              {copy.nav.background}
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="about"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              {copy.nav.about}
+            </NavLink>
+          </li>
+        </ul>
+        <button
+          type="button"
+          className="nav__toggle-btn"
+          onClick={handleToggle}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-nav"
+        >
+          {isMenuOpen ? copy.nav.close : copy.nav.menu}
+        </button>
+      </div>
     </nav>
   );
 }

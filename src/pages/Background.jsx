@@ -1,30 +1,34 @@
 import Heading from "../components/common/Heading";
 import CareerSection from "./background/CareerSection";
 import ResumeLink from "./background/ResumeLink";
-import { experienceData } from "../constants/experienceData";
-import { educationData } from "../constants/educationData";
+import { getExperienceData } from "../constants/experienceData";
+import { getEducationData } from "../constants/educationData";
+import { useLocale } from "../i18n/useLocale";
 
 export default function Background() {
+  const { locale, copy } = useLocale();
+  const experienceData = getExperienceData(locale);
+  const educationData = getEducationData(locale);
+
   return (
     <>
       <Heading size="1" cssClass="page-heading">
-        Background<span className="page-heading__dot">.</span>
+        {copy.career.pageTitle}
+        <span className="page-heading__dot">.</span>
       </Heading>
       <section className="career career--intro section-wrapper">
         <div className="career__heading-group">
-          <p className="career__kicker">Career</p>
+          <p className="career__kicker">{copy.career.kicker}</p>
           <Heading size="2" cssClass="career__heading">
-            Work and study.
+            {copy.career.heading}
           </Heading>
         </div>
-        <p className="career__lead">
-          Currently freelance, open to a full-time frontend role.
-        </p>
+        <p className="career__lead">{copy.career.lead}</p>
         <ResumeLink />
       </section>
-      <CareerSection kicker="Experience" entries={experienceData} />
+      <CareerSection kicker={copy.career.experience} entries={experienceData} />
       <CareerSection
-        kicker="Education"
+        kicker={copy.career.education}
         entries={educationData}
         variant="education"
       />

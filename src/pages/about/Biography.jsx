@@ -1,43 +1,42 @@
 import Heading from "../../components/common/Heading";
 import mapPng from "../../assets/images/norway.png";
 import { MdArrowForward } from "react-icons/md";
+import { useLocale } from "../../i18n/useLocale";
 
 const BERGEN_MAPS_URL = "https://maps.app.goo.gl/GPHnNxc53yVv1Uv5A";
 
 export default function Biography() {
+  const { copy } = useLocale();
+  const biography = copy.about.biography;
+
   return (
     <section className="biography section-wrapper">
       <div className="biography__heading-group">
-        <p className="biography__kicker">Biography</p>
+        <p className="biography__kicker">{biography.kicker}</p>
         <Heading size="2" cssClass="biography__heading">
-          How I got here.
+          {biography.heading}
         </Heading>
       </div>
       <div className="biography__wrapper">
         <div className="paragraph-container">
           <p>
-            I&apos;m originally from Sunnmøre. I moved to <em>Bergen</em> in
-            2004 to study, and I&apos;ve been in the area — more or less — ever
-            since.
+            {biography.originBefore}
+            <em>Bergen</em>
+            {biography.originAfter}
           </p>
           <p>
-            Before this I spent over a decade as a structural engineer, mostly
-            on large construction projects. In 2020 I enrolled in{" "}
-            <em>Noroff&apos;s</em> frontend program as a full-time online
-            student. I wanted the analytical side of engineering, plus the
-            visual work I never quite got to do there.
+            {biography.careerBefore}
+            <em>Noroff</em>
+            {biography.careerAfter}
           </p>
-          <p>
-            That mix is still what holds my attention: logic on one side,
-            making something you can see on the other.
-          </p>
+          <p>{biography.finalParagraph}</p>
           <a
             href={BERGEN_MAPS_URL}
             target="_blank"
             rel="noreferrer"
             className="biography__place"
           >
-            Based in the Bergen area
+            {biography.place}
             <MdArrowForward className="biography__place-icon" />
           </a>
         </div>

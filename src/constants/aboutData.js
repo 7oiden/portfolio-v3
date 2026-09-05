@@ -23,3 +23,41 @@ export const attributesArr = [
   "Quality oriented",
   "Analytical skills",
 ];
+
+const norwegianAboutData = {
+  hobbies: [
+    "fotografering",
+    "dataspill",
+    "fotball",
+    "litteratur",
+    "film",
+    "trening",
+    "vitenskap",
+    "friluftsliv",
+    "mindfulness",
+    "metaverset",
+    "psykologi",
+  ],
+  attributes: [
+    "Nøyaktig",
+    "Løsningsorientert",
+    "Lærevillig",
+    "Organisert",
+    "God kommunikasjonsevne",
+    "Estetisk sans",
+    "Tar ansvar",
+    "Kvalitetsbevisst",
+    "Analytisk",
+  ],
+};
+
+export function getAboutData(locale) {
+  if (locale === "nb") {
+    return norwegianAboutData;
+  }
+
+  return {
+    hobbies: hobbiesArr,
+    attributes: attributesArr,
+  };
+}

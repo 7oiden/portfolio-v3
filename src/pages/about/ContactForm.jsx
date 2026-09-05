@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,33 +7,42 @@ import axios from "axios";
 import { FORM_URL } from "../../constants/api";
 import Spinner from "../../components/common/Spinner";
 import { MdClose } from "react-icons/md";
+import { useLocale } from "../../i18n/useLocale";
 
-const schema = yup.object().shape({
-  "your-name": yup
-    .string()
-    .required("* Please enter your name")
-    .min(3, "* Your name must be at least 3 characters")
-    .max(20, "* Name can't be more than 20 characters"),
+function createSchema(validation) {
+  return yup.object().shape({
+    "your-name": yup
+      .string()
+      .required(validation.nameRequired)
+      .min(3, validation.nameMin)
+      .max(20, validation.nameMax),
 
-  "your-email": yup
-    .string()
-    .required("* Please enter your email address")
-    .email("* Please enter a valid email address"),
+    "your-email": yup
+      .string()
+      .required(validation.emailRequired)
+      .email(validation.emailInvalid),
 
-  "your-subject": yup
-    .string()
-    .required("* Please enter a subject")
-    .min(4, "* Subject must be at least 4 characters")
-    .max(20, "* Subject can't be more than 20 characters"),
+    "your-subject": yup
+      .string()
+      .required(validation.subjectRequired)
+      .min(4, validation.subjectMin)
+      .max(20, validation.subjectMax),
 
-  "your-message": yup
-    .string()
-    .required("* Please enter your message")
-    .min(10, "* Your message must be at least 10 characters")
-    .max(400, "* Message can't be more than 400 characters"),
-});
+    "your-message": yup
+      .string()
+      .required(validation.messageRequired)
+      .min(10, validation.messageMin)
+      .max(400, validation.messageMax),
+  });
+}
 
 export default function ContactForm() {
+  const { locale, copy } = useLocale();
+  const formCopy = copy.form;
+  const schema = useMemo(
+    () => createSchema(formCopy.validation),
+    [formCopy.validation],
+  );
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
@@ -45,6 +54,7 @@ export default function ContactForm() {
     handleSubmit,
     reset,
     resetField,
+    clearErrors,
     formState,
     formState: { errors, isSubmitSuccessful },
   } = useForm({
@@ -87,6 +97,10 @@ export default function ContactForm() {
   }, [formState, reset]);
 
   useEffect(() => {
+    clearErrors();
+  }, [clearErrors, locale]);
+
+  useEffect(() => {
     let timer;
     if (submitted) {
       // Hide success message after 4 seconds
@@ -102,6 +116,13 @@ export default function ContactForm() {
   const handleClearSubject = () => resetField("your-subject");
   const handleClearMessage = () => resetField("your-message");
 
+  function handleClearKeyDown(event, clearField) {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      clearField();
+    }
+  }
+
   function handleResize(e) {
     e.target.style.height = "auto";
     e.target.style.height = e.target.scrollHeight + "px";
@@ -115,7 +136,7 @@ export default function ContactForm() {
             <input
               className="contact__input"
               type="text"
-              placeholder="Name"
+              placeholder={formCopy.fields.name}
               id="name"
               autoComplete="off"
               {...register("your-name")}
@@ -125,9 +146,16 @@ export default function ContactForm() {
               className="contact__label"
               style={{ color: errors["your-name"] ? "#f47777" : null }}
             >
-              Name
+              {formCopy.fields.name}
             </label>
-            <MdClose onClick={handleClearName} className="contact__clear" />
+            <MdClose
+              onClick={handleClearName}
+              onKeyDown={(event) => handleClearKeyDown(event, handleClearName)}
+              className="contact__clear"
+              role="button"
+              tabIndex={0}
+              aria-label={`${formCopy.clearField}: ${formCopy.fields.name}`}
+            />
           </div>
           {errors["your-name"] && (
             <span className="input-error">{errors["your-name"].message}</span>
@@ -138,7 +166,7 @@ export default function ContactForm() {
             <input
               className="contact__input"
               type="text"
-              placeholder="Email"
+              placeholder={formCopy.fields.email}
               id="email"
               autoComplete="off"
               {...register("your-email")}
@@ -148,9 +176,16 @@ export default function ContactForm() {
               className="contact__label"
               style={{ color: errors["your-email"] ? "#f47777" : null }}
             >
-              Email
+              {formCopy.fields.email}
             </label>
-            <MdClose onClick={handleClearEmail} className="contact__clear" />
+            <MdClose
+              onClick={handleClearEmail}
+              onKeyDown={(event) => handleClearKeyDown(event, handleClearEmail)}
+              className="contact__clear"
+              role="button"
+              tabIndex={0}
+              aria-label={`${formCopy.clearField}: ${formCopy.fields.email}`}
+            />
           </div>
           {errors["your-email"] && (
             <span className="input-error">{errors["your-email"].message}</span>
@@ -161,7 +196,7 @@ export default function ContactForm() {
             <input
               className="contact__input"
               type="text"
-              placeholder="Subject"
+              placeholder={formCopy.fields.subject}
               id="subject"
               autoComplete="off"
               {...register("your-subject")}
@@ -171,9 +206,18 @@ export default function ContactForm() {
               className="contact__label"
               style={{ color: errors["your-subject"] ? "#f47777" : null }}
             >
-              Subject
+              {formCopy.fields.subject}
             </label>
-            <MdClose onClick={handleClearSubject} className="contact__clear" />
+            <MdClose
+              onClick={handleClearSubject}
+              onKeyDown={(event) =>
+                handleClearKeyDown(event, handleClearSubject)
+              }
+              className="contact__clear"
+              role="button"
+              tabIndex={0}
+              aria-label={`${formCopy.clearField}: ${formCopy.fields.subject}`}
+            />
           </div>
           {errors["your-subject"] && (
             <span className="input-error">
@@ -186,7 +230,7 @@ export default function ContactForm() {
             <div className="hider"></div>
             <textarea
               className="contact__textarea"
-              placeholder="Message"
+              placeholder={formCopy.fields.message}
               id="message"
               autoComplete="off"
               onInput={handleResize}
@@ -197,12 +241,18 @@ export default function ContactForm() {
               className="contact__label"
               style={{ color: errors["your-message"] ? "#f47777" : null }}
             >
-              Message
+              {formCopy.fields.message}
             </label>
             <MdClose
               onClick={handleClearMessage}
+              onKeyDown={(event) =>
+                handleClearKeyDown(event, handleClearMessage)
+              }
               className="contact__clear"
               id="clear-msg"
+              role="button"
+              tabIndex={0}
+              aria-label={`${formCopy.clearField}: ${formCopy.fields.message}`}
             />
           </div>
           {errors["your-message"] && (
@@ -213,23 +263,23 @@ export default function ContactForm() {
         </div>
       </fieldset>
       {submitted && (
-        <Banner heading="Thank you for your message!" status="success">
-          I will get back to you shortly.
+        <Banner heading={formCopy.successHeading} status="success">
+          {formCopy.successBody}
         </Banner>
       )}
       {serverError && (
-        <Banner heading="Something went wrong!" status="error">
-          {serverError}
+        <Banner heading={formCopy.errorHeading} status="error">
+          {formCopy.errorBody}
         </Banner>
       )}
-      <button className="button contact__button">
+      <button type="submit" className="button contact__button">
         {submitting ? (
           <>
             <Spinner />
-            Submitting...
+            {formCopy.submitting}
           </>
         ) : (
-          "Send"
+          formCopy.send
         )}
       </button>
     </form>

@@ -45,3 +45,48 @@ export const experienceData = [
     url: null,
   },
 ];
+
+const norwegianExperienceText = {
+  freelance: {
+    title: "Frontendutvikler",
+    org: "Frilanser",
+    date: "Sep 2025 – i dag",
+    summary:
+      "Jeg bygger nettsider og apper for lokale bedrifter. For tiden jobber jeg med en ny React-side for en næringsdrivende.",
+  },
+  herifra: {
+    title: "Fullstackutvikler",
+    date: "Jun 2025 – sep 2025",
+    summary:
+      "Internt arbeid med kundenes webapper i Herifra-teamet — utvikling og vedlikehold av både grensesnitt og backend.",
+  },
+  "box-protector": {
+    title: "Utvikler, lager og logistikk",
+    date: "Jun 2023 – jan 2024",
+    summary:
+      "Eneste ansatte i en nettbutikk for retrospill. Jeg driftet nettstedet og produktkatalogen, i tillegg til lager, pakking, fotografering og kundeservice.",
+  },
+  nobi: {
+    title: "Teamleder, prosjektering",
+    date: "Jan 2018 – mai 2019",
+    summary:
+      "Prosjektledelse, planlegging og personalansvar for prosjekteringsavdelingen. Innførte LEAN-arbeidsflyt i teamet.",
+  },
+  "project-engineer": {
+    title: "Prosjektingeniør",
+    date: "Aug 2008 – jan 2018",
+    summary:
+      "Prosjektering av prefabrikkerte betongelementer for produksjon, konstruksjon og montasje. De siste årene jobbet jeg med de største og mest komplekse prosjektene.",
+  },
+};
+
+export function getExperienceData(locale) {
+  if (locale !== "nb") {
+    return experienceData;
+  }
+
+  return experienceData.map((entry) => ({
+    ...entry,
+    ...norwegianExperienceText[entry.id],
+  }));
+}

@@ -1,7 +1,10 @@
 import PropTypes from "prop-types";
 import { MdArrowForward } from "react-icons/md";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function CareerEntry({ title, org, date, summary, url }) {
+  const { copy } = useLocale();
+
   return (
     <li className="career__item">
       <p className="career__date">{date}</p>
@@ -16,7 +19,7 @@ export default function CareerEntry({ title, org, date, summary, url }) {
             rel="noreferrer"
             className="career__link"
           >
-            More info
+            {copy.common.moreInfo}
             <MdArrowForward className="career__link-icon" />
           </a>
         )}

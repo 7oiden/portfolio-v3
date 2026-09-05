@@ -1,35 +1,37 @@
 import Heading from "../../components/common/Heading";
 import TextBadge from "../../components/common/TextBadge";
-import { hobbiesArr, attributesArr } from "../../constants/aboutData";
+import { getAboutData } from "../../constants/aboutData";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function Info() {
+  const { locale, copy } = useLocale();
+  const info = copy.about.info;
+  const { hobbies, attributes } = getAboutData(locale);
+
   return (
     <section className="info section-wrapper">
       <div className="info__heading-group">
-        <p className="info__kicker">Personal profile</p>
+        <p className="info__kicker">{info.kicker}</p>
         <Heading size="2" cssClass="info__heading">
-          Know me better.
+          {info.heading}
         </Heading>
       </div>
       <div className="info__groups">
         <article className="info__card">
-          <h3 className="info__card-label">Interests</h3>
+          <h3 className="info__card-label">{info.interests}</h3>
           <div className="info__card-body">
-            <p>
-              I keep a wide range of interests — it keeps the mind sharp and the
-              work less one-note.
-            </p>
+            <p>{info.interestsIntro}</p>
             <div className="badge-grid">
-              {hobbiesArr.map((hobby) => (
+              {hobbies.map((hobby) => (
                 <TextBadge key={hobby}>{hobby}</TextBadge>
               ))}
             </div>
           </div>
         </article>
         <article className="info__card">
-          <h3 className="info__card-label">How I work</h3>
+          <h3 className="info__card-label">{info.howIWork}</h3>
           <ul className="info__card-list">
-            {attributesArr.map((item) => (
+            {attributes.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>

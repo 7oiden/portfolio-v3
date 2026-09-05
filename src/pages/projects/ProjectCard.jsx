@@ -4,6 +4,7 @@ import Heading from "../../components/common/Heading";
 import TextBadge from "../../components/common/TextBadge";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import LinkBtn from "../../components/common/LinkBtn";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function ProjectCard({
   image,
@@ -18,6 +19,7 @@ export default function ProjectCard({
   featured = false,
   compact = false,
 }) {
+  const { copy } = useLocale();
   const hasRepo = Boolean(codeUrl && String(codeUrl).trim());
   const paragraphs = compact ? description.slice(0, 1) : description;
 
@@ -49,7 +51,7 @@ export default function ProjectCard({
           </hgroup>
           {!compact && siteUrl && (
             <LinkBtn url={siteUrl} size="md" position="right">
-              Live site
+              {copy.projects.liveSite}
             </LinkBtn>
           )}
           {compact && hasRepo && (

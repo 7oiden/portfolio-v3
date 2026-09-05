@@ -101,7 +101,8 @@ export const realProjectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788456799/eidesjoen-grendalag-hero_mpmsyx.png",
-    image_alt: "Screenshot of the Herifra.no site home page on desktop",
+    image_alt:
+      "Screenshot of the Eidesjøen Grendalag site home page on desktop",
     netlify_url: "https://eidesjoen-grendalag.vercel.app/",
     github_url: "",
     tools: ["NextJS", "Tailwind", "Cursor", "Sanity"],
@@ -117,8 +118,7 @@ export const realProjectData = [
     ],
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788455960/stjernedryss-lamding-page_yy2ev2.png",
-    image_alt:
-      "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
+    image_alt: "Screenshot of the Stjernedryss landing page on desktop",
     netlify_url: "https://stjernedryss.netlify.app/",
     github_url: null,
     tools: ["NextJS", "Tailwind", "Cursor", "Supabase"],
@@ -135,7 +135,7 @@ export const realProjectData = [
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788455660/storesund-service-hero_up2mnl.png",
     image_alt:
-      "Screenshot of blurred image of the hero section of the Hugo Storesund Service site on desktop",
+      "Screenshot of the Storesund Service site home page on desktop",
     netlify_url: "https://storesund-service.netlify.app",
     github_url: null,
     tools: ["NextJS", "Tailwind", "Cursor", "Supabase"],
@@ -152,7 +152,7 @@ export const realProjectData = [
     image:
       "https://res.cloudinary.com/dhd2paq70/image/upload/v1788456261/storesund-utleie-hero_drhhj8.png",
     image_alt:
-      "Screenshot of blurred image of the hero section of the Hugo Storesund Utleie site on desktop",
+      "Screenshot of the Storesund Utleie site home page on desktop",
     netlify_url: "https://storesund-utleie.netlify.app/",
     github_url: null,
     tools: ["NextJS", "Tailwind", "Cursor", "Supabase"],
@@ -174,3 +174,123 @@ export const realProjectData = [
     tools: ["react", "vite", "sass", "supabase", "stripe", "sendgrid"],
   },
 ];
+
+const norwegianProjectText = {
+  school: {
+    1: {
+      type: "Prosjekteksamen 2",
+      date: "Mai 2022",
+      description: [
+        "Holidaze er en overnattingsportal for et lokalt turistbyrå i Bergen. Nettstedet er bygget med React, React-Bootstrap og Sass. Det har en kundeside med bestilling og en administrasjonsside for henvendelser, bestillinger og nye overnattingssteder.",
+        "WooCommerce-API-et brukes til overnattingssteder, omtaler og autentisering. Strapi lagrer bestillings- og kontakthenvendelser, mens Google Maps viser kartdata basert på adressene.",
+      ],
+      image_alt: "Skjermbilde av forsiden til Holidaze på datamaskin",
+    },
+    2: {
+      type: "Modulprosjekt",
+      date: "Jan 2022",
+      description: [
+        "Dette var mitt første ordentlige forsøk på å lage en personlig portefølje, og et obligatorisk prosjekt som avsluttet porteføljemodulen ved Noroff.",
+        "Nettstedet ble bygget på én uke med HTML, vanlig JavaScript og Sass. Det er responsivt og utviklet med en mobil-først-tilnærming.",
+      ],
+      image_alt:
+        "Forsiden til den andre versjonen av porteføljen på datamaskin",
+    },
+    3: {
+      type: "Semesterprosjekt 2",
+      date: "Des 2021",
+      description: [
+        "Mercury Shoes er en nettbutikk for løpesko, bygget med HTML, vanlig JavaScript og Sass. Kundesiden har handlekurv med lokal lagring, mens administrasjonssiden lar brukeren legge til, redigere og slette produkter. Produktdata hentes fra Strapi.",
+        "Prosjektet ble levert i det andre året av frontendstudiet ved Noroff. Det fikk senere et visuelt løft og ny funksjonalitet, blant annet favoritter, under porteføljearbeidet i 2022.",
+      ],
+      image_alt: "Skjermbilde av forsiden til Mercury Shoes på datamaskin",
+    },
+    4: {
+      type: "Prosjekteksamen 1",
+      date: "Mai 2021",
+      description: [
+        "Passionate Photography er en blogg for den fiktive fotografen Christopher Duvall. Nettstedet er bygget med HTML, vanlig JavaScript og CSS, og inneholder forside, bloggoversikt, innlegg, om-side og kontaktside.",
+        "Innholdet ligger i en WordPress-installasjon som brukes som headless CMS, og hentes gjennom WordPress REST API.",
+      ],
+      image_alt:
+        "Skjermbilde av forsiden til Passionate Photography på datamaskin",
+    },
+    5: {
+      type: "Semesterprosjekt 1",
+      date: "Des 2020",
+      description: [
+        "Community Science Museum er et fiktivt, lokalt vitensenter for barn. Nettstedet er utviklet med HTML og CSS.",
+        "Prosjektet var en fire ukers oppgave i det første året av frontendstudiet ved Noroff og ble levert i desember 2020.",
+      ],
+      image_alt:
+        "Skjermbilde av forsiden til Community Science Museum på datamaskin",
+    },
+  },
+  real: {
+    1: {
+      type: "Nettside med booking",
+      date: "3. kvartal 2026",
+      description: [
+        "Dette er en ny nettside for det lokale grendalaget mitt. Den er bygget med Next.js og Tailwind, med Sanity som publiseringsløsning.",
+        "Løsningen har et brukervennlig grensesnitt for bestilling og administrasjon av brukerkontoer.",
+      ],
+      image_alt:
+        "Skjermbilde av forsiden til Eidesjøen Grendalag på datamaskin",
+    },
+    2: {
+      type: "Belønningsapp for barn",
+      date: "3. kvartal 2026",
+      description: [
+        "Stjernedryss er en app der foreldre kan belønne barn for god oppførsel. Den er bygget med Next.js og Tailwind, med Supabase som backend.",
+        "Barna får sin egen side der de kan se opptjente stjerner og fremgangen mot neste belønning.",
+      ],
+      image_alt: "Skjermbilde av landingssiden til Stjernedryss",
+    },
+    3: {
+      type: "Bedriftsnettside",
+      date: "3. kvartal 2026",
+      description: [
+        "Jeg bygger en ny nettside for en servicetekniker innen varmepumper og klimaanlegg. Den er bygget med Next.js og Tailwind, med Supabase som backend.",
+        "Løsningen har et brukervennlig grensesnitt for bestilling og administrasjon av brukerkontoer.",
+      ],
+      image_alt: "Skjermbilde av forsiden til Storesund Service",
+    },
+    4: {
+      type: "Bedriftsnettside",
+      date: "3. kvartal 2026",
+      description: [
+        "Jeg bygger en ny nettside for et lokalt utleiefirma innen varmepumper og klimaanlegg.",
+        "Nettstedet er bygget med Next.js og Tailwind, med Supabase som backend.",
+      ],
+      image_alt: "Skjermbilde av forsiden til Storesund Utleie",
+    },
+    5: {
+      type: "Nettside med booking",
+      date: "3.–4. kvartal 2025",
+      description: [
+        "Herifra.no er en bookingplattform bygget med React og Vite, stylet med Sass og støttet av Supabase.",
+        "Den omfatter bestillingsflyt, kontoadministrasjon, Stripe-betalinger og e-post via SendGrid.",
+      ],
+      image_alt: "Skjermbilde av forsiden til Herifra.no på datamaskin",
+    },
+  },
+};
+
+function localizeProjects(projects, locale, group) {
+  if (locale !== "nb") {
+    return projects;
+  }
+
+  return projects.map((project) => ({
+    ...project,
+    ...norwegianProjectText[group][project.id],
+  }));
+}
+
+export function getSchoolProjectData(locale) {
+  return localizeProjects(schoolProjectData, locale, "school");
+}
+
+export function getRealProjectData(locale) {
+  return localizeProjects(realProjectData, locale, "real");
+}

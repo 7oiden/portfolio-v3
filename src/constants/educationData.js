@@ -27,3 +27,34 @@ export const educationData = [
     url: null,
   },
 ];
+
+const norwegianEducationText = {
+  "scrimba-ai": {
+    date: "Pågående",
+    summary:
+      "Deltidskurs i AI Engineering ved siden av arbeidet som frilanser.",
+  },
+  noroff: {
+    title: "Frontendutvikling",
+    date: "Aug 2020 – jun 2022",
+    summary:
+      "Toårig fulltidsstudium på nett: HTML, CSS, JavaScript, React og tilhørende verktøy.",
+  },
+  bachelor: {
+    title: "Bachelor i byggingeniørfag",
+    date: "Aug 2005 – jun 2008",
+    summary:
+      "Fordypning i konstruksjonsteknikk med stål, tre og betong. Mitt første møte med programmering var VBA for Excel.",
+  },
+};
+
+export function getEducationData(locale) {
+  if (locale !== "nb") {
+    return educationData;
+  }
+
+  return educationData.map((entry) => ({
+    ...entry,
+    ...norwegianEducationText[entry.id],
+  }));
+}

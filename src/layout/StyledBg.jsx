@@ -1,15 +1,11 @@
 import { useLocation } from "react-router-dom";
+import { useLocale } from "../i18n/useLocale";
 
 export default function StyledBg() {
   const locationPath = useLocation().pathname;
-
-  let bgText
-
-  if (locationPath === "/") {
-    bgText = "Home."
-  } else {
-    bgText = locationPath.slice(1).charAt(0).toUpperCase() + locationPath.slice(2) + "."
-  }
+  const { copy } = useLocale();
+  const pageKey = locationPath === "/" ? "home" : locationPath.slice(1);
+  const bgText = copy.backgroundText[pageKey] ?? copy.backgroundText.home;
 
   return (
     <div className="bg-text">

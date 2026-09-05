@@ -1,8 +1,10 @@
 import { useEffect, useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useSpring, animated } from "@react-spring/web";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function PageScrollBtn() {
+  const { copy } = useLocale();
   const [springs, api] = useSpring(() => ({
     from: {
       opacity: 0,
@@ -55,7 +57,7 @@ export default function PageScrollBtn() {
       style={{ ...springs }}
     >
       <div className="page-scroll__container">
-        <span className="page-scroll__text">To top</span>
+        <span className="page-scroll__text">{copy.common.toTop}</span>
         <FaArrowRightLong className="page-scroll__icon" size={20} />
       </div>
     </animated.div>
