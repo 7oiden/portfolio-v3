@@ -121,10 +121,27 @@
 
 .page-scroll {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  cursor: pointer;
+  bottom: 1.25rem;
+  right: 1.25rem;
   z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  color: getColor(textLight);
+  background-color: rgba(13, 18, 30, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(113, 124, 154, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    opacity 0.25s ease-in-out,
+    color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
 
   @media (min-width: getBreakpoint(large)) {
     bottom: 5%;
@@ -135,60 +152,26 @@
     right: 7.5%;
   }
 
-  &__container {
-    width: 100px;
-    height: 100px;
-    background-color: getColor(accentCol1);
-    color: getColor(link);
-    border-radius: 50%;
-    box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
-    opacity: 0.72;
-    transition: opacity 0.2s ease-in-out;
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    color: getColor(accentCol1);
+    border-color: rgba(56, 189, 248, 0.45);
+  }
 
-    .page-scroll:hover & {
-      opacity: 1;
-    }
+  &:focus-visible {
+    outline: 2px solid getColor(accentCol1);
+    outline-offset: 3px;
+  }
 
-    @media (min-width: getBreakpoint(large)) {
-      width: auto;
-      height: auto;
-      background-color: transparent;
-      border: 1px solid getColor(accentCol1);
-      border-radius: 64px;
-      display: flex;
-      gap: 0.75rem;
-      justify-content: center;
-      align-items: center;
-      padding: 0.375rem 1rem;
-      transform-origin: center;
-      transform: rotate(-90deg) translate(50%, -50%);
-      color: getColor(accentCol1);
-      font-family: $link;
-      line-height: 1;
-      box-shadow: none;
-    }
+  &--hidden {
+    opacity: 0;
+    pointer-events: none;
   }
 
   &__icon {
-    transform: rotate(-90deg);
-    position: absolute;
-    left: 20px;
-    top: 20px;
-
-    @media (min-width: getBreakpoint(large)) {
-      transform: rotate(0);
-      position: static;
-    }
-  }
-
-  &__text {
-    display: none;
-
-    @media (min-width: getBreakpoint(large)) {
-      display: block;
-      font-size: 1rem;
-      font-weight: 500;
-    }
+    width: 1.25rem;
+    height: 1.25rem;
   }
 }
 

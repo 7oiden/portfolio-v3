@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import MediaLinks from "../../components/common/MediaLinks";
 import LinkBtn from "../../components/common/LinkBtn";
 import { MdArrowForward } from "react-icons/md";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { FiChevronDown } from "react-icons/fi";
 import { getRealProjectData } from "../../constants/projectData";
 import { useLocale } from "../../i18n/useLocale";
 
@@ -74,9 +74,9 @@ export default function Hero() {
         }`}
         aria-hidden={!showScrollCue}
         tabIndex={showScrollCue ? undefined : -1}
+        aria-label={copy.home.hero.scrollDown}
       >
-        <span>{copy.home.hero.scrollDown}</span>
-        <FaArrowRightLong className="hero__scroll-down-icon" />
+        <FiChevronDown className="hero__scroll-down-icon" aria-hidden="true" />
       </HashLink>
     </section>
   );
