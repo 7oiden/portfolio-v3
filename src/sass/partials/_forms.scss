@@ -212,5 +212,16 @@
 .contact__input:not(:placeholder-shown) + .contact__label--error,
 .contact__textarea:focus + .contact__label--error,
 .contact__textarea:not(:placeholder-shown) + .contact__label--error {
-  color: getColor(errorInput);
+  color: getColor(errorHeading);
+}
+
+// Outranks the focus underline, so the field keeps reading as invalid
+// while the visitor is correcting it
+.contact__input[aria-invalid="true"],
+.contact__textarea[aria-invalid="true"] {
+  border-bottom-color: getColor(errorHeading);
+
+  &:focus {
+    border-bottom-color: getColor(errorHeading);
+  }
 }
