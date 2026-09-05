@@ -1,5 +1,5 @@
 import Heading from "../../components/common/Heading";
-import mapPng from "../../assets/images/norway.png";
+import mapImage from "../../assets/images/norway.webp";
 import { MdArrowForward } from "react-icons/md";
 import { useLocale } from "../../i18n/useLocale";
 
@@ -41,7 +41,7 @@ export default function Biography() {
           </a>
         </div>
         <div className="map">
-          <img src={mapPng} alt="" width="500" height="594" />
+          <img src={mapImage} alt="" width="500" height="594" />
           <a
             href={BERGEN_MAPS_URL}
             target="_blank"
