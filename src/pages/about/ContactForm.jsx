@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
+import classnames from "classnames";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -56,8 +57,7 @@ export default function ContactForm() {
     reset,
     resetField,
     clearErrors,
-    formState,
-    formState: { errors, isSubmitSuccessful },
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
@@ -95,6 +95,7 @@ export default function ContactForm() {
       }
 
       setSubmitted(true);
+      reset();
     } catch (error) {
       // Rejections arrive as a 400 body, which axios turns into a status-only message
       setServerError(error.response?.data?.message ?? error.message);
@@ -102,13 +103,6 @@ export default function ContactForm() {
       setSubmitting(false);
     }
   }
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [formState, reset]);
 
   useEffect(() => {
     clearErrors();
@@ -129,13 +123,6 @@ export default function ContactForm() {
   const handleClearEmail = () => resetField("email");
   const handleClearSubject = () => resetField("subject");
   const handleClearMessage = () => resetField("message");
-
-  function handleClearKeyDown(event, clearField) {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      clearField();
-    }
-  }
 
   function handleResize(e) {
     e.target.style.height = "auto";
@@ -161,26 +148,31 @@ export default function ContactForm() {
               placeholder={formCopy.fields.name}
               id="name"
               autoComplete="off"
+              aria-invalid={!!errors["name"]}
+              aria-describedby={errors["name"] ? "name-error" : undefined}
               {...register("name")}
             />
             <label
               htmlFor="name"
-              className="contact__label"
-              style={{ color: errors["name"] ? "#f47777" : null }}
+              className={classnames("contact__label", {
+                "contact__label--error": errors["name"],
+              })}
             >
               {formCopy.fields.name}
             </label>
-            <MdClose
+            <button
+              type="button"
               onClick={handleClearName}
-              onKeyDown={(event) => handleClearKeyDown(event, handleClearName)}
               className="contact__clear"
-              role="button"
-              tabIndex={0}
               aria-label={`${formCopy.clearField}: ${formCopy.fields.name}`}
-            />
+            >
+              <MdClose aria-hidden="true" />
+            </button>
           </div>
           {errors["name"] && (
-            <span className="input-error">{errors["name"].message}</span>
+            <span className="input-error" id="name-error">
+              {errors["name"].message}
+            </span>
           )}
         </div>
         <div>
@@ -191,26 +183,31 @@ export default function ContactForm() {
               placeholder={formCopy.fields.email}
               id="email"
               autoComplete="off"
+              aria-invalid={!!errors["email"]}
+              aria-describedby={errors["email"] ? "email-error" : undefined}
               {...register("email")}
             />
             <label
               htmlFor="email"
-              className="contact__label"
-              style={{ color: errors["email"] ? "#f47777" : null }}
+              className={classnames("contact__label", {
+                "contact__label--error": errors["email"],
+              })}
             >
               {formCopy.fields.email}
             </label>
-            <MdClose
+            <button
+              type="button"
               onClick={handleClearEmail}
-              onKeyDown={(event) => handleClearKeyDown(event, handleClearEmail)}
               className="contact__clear"
-              role="button"
-              tabIndex={0}
               aria-label={`${formCopy.clearField}: ${formCopy.fields.email}`}
-            />
+            >
+              <MdClose aria-hidden="true" />
+            </button>
           </div>
           {errors["email"] && (
-            <span className="input-error">{errors["email"].message}</span>
+            <span className="input-error" id="email-error">
+              {errors["email"].message}
+            </span>
           )}
         </div>
         <div>
@@ -221,28 +218,29 @@ export default function ContactForm() {
               placeholder={formCopy.fields.subject}
               id="subject"
               autoComplete="off"
+              aria-invalid={!!errors["subject"]}
+              aria-describedby={errors["subject"] ? "subject-error" : undefined}
               {...register("subject")}
             />
             <label
               htmlFor="subject"
-              className="contact__label"
-              style={{ color: errors["subject"] ? "#f47777" : null }}
+              className={classnames("contact__label", {
+                "contact__label--error": errors["subject"],
+              })}
             >
               {formCopy.fields.subject}
             </label>
-            <MdClose
+            <button
+              type="button"
               onClick={handleClearSubject}
-              onKeyDown={(event) =>
-                handleClearKeyDown(event, handleClearSubject)
-              }
               className="contact__clear"
-              role="button"
-              tabIndex={0}
               aria-label={`${formCopy.clearField}: ${formCopy.fields.subject}`}
-            />
+            >
+              <MdClose aria-hidden="true" />
+            </button>
           </div>
           {errors["subject"] && (
-            <span className="input-error">
+            <span className="input-error" id="subject-error">
               {errors["subject"].message}
             </span>
           )}
@@ -256,26 +254,27 @@ export default function ContactForm() {
               id="message"
               autoComplete="off"
               onInput={handleResize}
+              aria-invalid={!!errors["message"]}
+              aria-describedby={errors["message"] ? "textarea-error" : undefined}
               {...register("message")}
             />
             <label
               htmlFor="message"
-              className="contact__label"
-              style={{ color: errors["message"] ? "#f47777" : null }}
+              className={classnames("contact__label", {
+                "contact__label--error": errors["message"],
+              })}
             >
               {formCopy.fields.message}
             </label>
-            <MdClose
+            <button
+              type="button"
               onClick={handleClearMessage}
-              onKeyDown={(event) =>
-                handleClearKeyDown(event, handleClearMessage)
-              }
               className="contact__clear"
               id="clear-msg"
-              role="button"
-              tabIndex={0}
               aria-label={`${formCopy.clearField}: ${formCopy.fields.message}`}
-            />
+            >
+              <MdClose aria-hidden="true" />
+            </button>
           </div>
           {errors["message"] && (
             <span className="input-error" id="textarea-error">

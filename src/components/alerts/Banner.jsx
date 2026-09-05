@@ -7,9 +7,11 @@ import BannerText from "./BannerText";
 export default function Banner({ children, status, heading }) {
   let statusClass = `banner--${status.toLowerCase()}`;
   const allClasses = classnames("banner", statusClass);
+  // Failures interrupt; confirmations wait for a pause in the output
+  const isAlert = status === "error" || status === "warning";
 
   return (
-    <div className={allClasses}>
+    <div className={allClasses} role={isAlert ? "alert" : "status"}>
       <BannerIcon status={status} />
       <BannerHeading status={status} heading={heading} />
       <BannerText status={status}>{children}</BannerText>
