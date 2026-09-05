@@ -29,6 +29,7 @@
 .hero__button {
   margin-top: 1rem;
   font-size: 1.125rem;
+  border-radius: 64px;
 
   @media (min-width: getBreakpoint(large)) {
     margin-top: 2rem;
@@ -37,6 +38,8 @@
 }
 
 .contact__button {
+  border-radius: 64px;
+
   @media (min-width: getBreakpoint(large)) {
     font-size: 1.125rem;
   }
@@ -110,11 +113,6 @@
   padding: 0.35rem 1.1rem;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-
-  &[aria-expanded="true"] {
-    background-color: getColor(accentCol1);
-    color: getColor(buttonBg);
-  }
 
   @media (min-width: getBreakpoint(large)) {
     display: none;

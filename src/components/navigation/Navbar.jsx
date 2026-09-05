@@ -7,48 +7,45 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
 
   return (
     <nav className="nav">
-      <ul className="nav__link-list">
-        <li>
-          <NavLink
-            to="/"
-            className={({ isActive }) =>
-              isActive ? "nav__link active-link" : "nav__link"
-            }
-          >
-            {copy.nav.home}
-          </NavLink>
-        </li>
-      </ul>
-
-      <div className="nav__controls">
-        <div
-          className="language-selector"
-          role="group"
-          aria-label={copy.nav.languageLabel}
+      <div
+        className="language-selector"
+        role="group"
+        aria-label={copy.nav.languageLabel}
+      >
+        <button
+          type="button"
+          className="language-selector__option"
+          aria-pressed={locale === "nb"}
+          aria-label="Norsk"
+          onClick={() => setLocale("nb")}
         >
-          <button
-            type="button"
-            className="language-selector__option"
-            aria-pressed={locale === "nb"}
-            aria-label="Norsk"
-            onClick={() => setLocale("nb")}
-          >
-            NO
-          </button>
-          <span className="language-selector__divider" aria-hidden="true">
-            /
-          </span>
-          <button
-            type="button"
-            className="language-selector__option"
-            aria-pressed={locale === "en"}
-            aria-label="English"
-            onClick={() => setLocale("en")}
-          >
-            EN
-          </button>
-        </div>
+          NO
+        </button>
+        <span className="language-selector__divider" aria-hidden="true">
+          /
+        </span>
+        <button
+          type="button"
+          className="language-selector__option"
+          aria-pressed={locale === "en"}
+          aria-label="English"
+          onClick={() => setLocale("en")}
+        >
+          EN
+        </button>
+      </div>
+      <div className="nav__controls">
         <ul className="nav__link-list">
+          <li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "nav__link active-link" : "nav__link"
+              }
+            >
+              {copy.nav.home}
+            </NavLink>
+          </li>
           <li>
             <NavLink
               to="projects"

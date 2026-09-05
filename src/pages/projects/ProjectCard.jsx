@@ -5,6 +5,7 @@ import TextBadge from "../../components/common/TextBadge";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import LinkBtn from "../../components/common/LinkBtn";
 import { useLocale } from "../../i18n/useLocale";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function ProjectCard({
   image,
@@ -50,9 +51,16 @@ export default function ProjectCard({
             </Heading>
           </hgroup>
           {!compact && siteUrl && (
-            <LinkBtn url={siteUrl} size="md" position="right">
-              {copy.projects.liveSite}
-            </LinkBtn>
+            <a
+              href={siteUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="project__site-link"
+              aria-label={copy.projects.liveSite}
+              data-tooltip={copy.projects.liveSite}
+            >
+              <FiExternalLink aria-hidden="true" />
+            </a>
           )}
           {compact && hasRepo && (
             <LinkBtn

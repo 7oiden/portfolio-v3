@@ -105,6 +105,72 @@
     align-items: center;
     gap: 2rem;
   }
+
+  &__site-link {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    color: getColor(accentCol1);
+    background-color: transparent;
+    border: 1px solid rgba(65, 222, 226, 0.45);
+    border-radius: 50%;
+    transition:
+      color 0.2s ease-in-out,
+      background-color 0.2s ease-in-out,
+      border-color 0.2s ease-in-out;
+
+    svg {
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+
+    &::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      z-index: 10;
+      top: calc(100% + 0.5rem);
+      right: 0;
+      padding: 0.35rem 0.55rem;
+      font-family: $link;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1;
+      white-space: nowrap;
+      color: getColor(textLight);
+      background-color: getColor(headerBg);
+      border: 1px solid rgba(113, 124, 154, 0.22);
+      border-radius: 4px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-0.25rem);
+      transition:
+        opacity 0.16s ease-in-out,
+        transform 0.16s ease-in-out;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: getColor(buttonBg);
+      background-color: getColor(accentCol1);
+      border-color: getColor(accentCol1);
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    &:focus-visible {
+      outline: 2px solid getColor(accentCol1);
+      outline-offset: 3px;
+    }
+  }
 }
 
 .card {
