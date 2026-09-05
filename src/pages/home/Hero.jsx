@@ -44,7 +44,7 @@ export default function Hero() {
             >
               {copy.home.hero.getInTouch}
             </HashLink>
-            <LinkBtn url="projects" size="md">
+            <LinkBtn url="projects" size="md" horizontalArrow>
               {copy.home.hero.viewWork}
             </LinkBtn>
           </div>

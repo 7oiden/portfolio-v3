@@ -21,9 +21,6 @@ export default function Navbar({ handleToggle, isMenuOpen }) {
         >
           NO
         </button>
-        <span className="language-selector__divider" aria-hidden="true">
-          /
-        </span>
         <button
           type="button"
           className="language-selector__option"

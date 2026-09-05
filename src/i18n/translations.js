@@ -25,11 +25,11 @@ export const translations = {
     home: {
       hero: {
         subtitle:
-          "Frontendutvikler som bygger nettsider og apper for lokale bedrifter.",
+          "Frontendutvikler som bygger nettsider for små og mellomstore bedrifter.",
         getInTouch: "Ta kontakt",
         viewWork: "Se arbeid",
         latestWork: "Siste arbeid",
-        scrollDown: "Rull ned",
+        scrollDown: "Skroll",
         imageSuffix: "nettside",
       },
       intro: {

@@ -11,15 +11,20 @@ export default function LinkBtn({
   icon,
   size = "sm",
   position = "left",
+  horizontalArrow = false,
 }) {
   const [springs, api] = useSpring(() => ({
-    from: { x: 0, y: 0, transform: "rotate(-45deg)" },
+    from: {
+      x: 0,
+      y: 0,
+      transform: horizontalArrow ? "rotate(0deg)" : "rotate(-45deg)",
+    },
   }));
 
   const handleHover = () => {
     api.start({
       x: 6,
-      y: -6,
+      y: horizontalArrow ? 0 : -6,
     });
   };
 
@@ -69,4 +74,5 @@ LinkBtn.propTypes = {
   icon: PropTypes.bool,
   size: PropTypes.string,
   position: PropTypes.string,
+  horizontalArrow: PropTypes.bool,
 };
