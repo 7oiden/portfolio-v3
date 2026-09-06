@@ -157,14 +157,15 @@
   -webkit-appearance: none;
   position: absolute;
   top: 50%;
-  right: 0.75rem;
+  right: 0.7rem;
   transform: translateY(-50%);
   background: none;
   border: none;
   border-radius: 50%;
-  height: 1.5rem;
-  width: 1.5rem;
-  color: rgba(148, 163, 184, 0.4);
+  height: 1.25rem;
+  width: 1.25rem;
+  font-size: 1.25rem;
+  color: getColor(textLight);
   transition: color 250ms;
   display: flex;
   align-items: center;
@@ -172,12 +173,13 @@
 
   &:hover,
   &:focus {
-    color: getColor(textLight);
+    color: getColor(textBright);
   }
 
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
   }
 }
 
