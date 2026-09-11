@@ -49,7 +49,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: getColor(link);
   color: getColor(accentCol1);
   font-size: 1.125rem;
 
@@ -80,13 +79,6 @@
     font-size: 1rem;
     @media (min-width: getBreakpoint(large)) {
       font-size: 1.125rem;
-    }
-  }
-
-  &--lg {
-    font-size: 1.125rem;
-    @media (min-width: getBreakpoint(large)) {
-      font-size: 1.25rem;
     }
   }
 
@@ -148,10 +140,6 @@
     right: 5%;
   }
 
-  @media (min-width: getBreakpoint(xxLarge)) {
-    right: 7.5%;
-  }
-
   &:hover,
   &:focus-visible {
     opacity: 1;
@@ -174,11 +162,3 @@
     height: 1.25rem;
   }
 }
-
-// .project-btn__text {
-//   display: none;
-
-//    @media (min-width: getBreakpoint(xSmall)) {
-//     display: block;
-//   }
-// }

@@ -34,10 +34,6 @@
 .nav {
   width: 90%;
   margin: 0 auto;
-
-  @media (min-width: getBreakpoint(xxLarge)) {
-    width: 85%;
-  }
 }
 
 .footer__container {
@@ -46,15 +42,6 @@
 
 .outer-wrapper {
   width: 100%;
-}
-
-.inner-wrapper {
-  width: 85%;
-  margin: 0 auto;
-
-  @media (min-width: getBreakpoint(large)) {
-    width: 80%;
-  }
 }
 
 .page-heading {
@@ -86,14 +73,6 @@
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
-}
-
-.mt {
-  margin-top: 1rem;
-}
-
-.mb {
-  margin-bottom: 1rem;
 }
 
 .biography {
@@ -164,8 +143,4 @@
     height: auto;
     transform: rotate(-45deg);
   }
-}
-
-.mw {
-  max-width: 750px;
 }

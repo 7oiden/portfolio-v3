@@ -1,13 +1,3 @@
-.hero__arrow-icon {
-  width: 1.5rem;
-  height: auto;
-  color: getColor(accentCol1);
-
-  @media (min-width: getBreakpoint(large)) {
-    width: 1.75rem;
-  }
-}
-
 .link-arrow-icon {
   width: 100%;
   height: auto;
@@ -22,39 +12,6 @@
   &--md {
     font-size: 1.5rem;
   }
-
-  &--lg {
-    font-size: 1.75rem;
-  }
-}
-
-.sub-heading-icon {
-  width: 1.25rem;
-  height: auto;
-}
-
-.show-icon {
-  width: 1.5rem;
-  height: auto;
-  color: getColor(accentCol1);
-
-  &--up {
-    transform: rotate(180deg);
-  }
-}
-
-.menu-icon {
-  width: 2rem;
-  height: auto;
-  color: getColor(link);
-  cursor: pointer;
-  align-self: flex-end;
-  right: 0;
-
-  & > svg {
-    width: 100%;
-    height: auto;
-  }
 }
 
 .project__date-icon {
@@ -67,10 +24,6 @@
   width: 2rem;
   height: auto;
   color: inherit;
-
-  &--small {
-    width: 1.25rem;
-  }
 }
 
 .download-file-icon {
@@ -82,30 +35,6 @@
   }
 }
 
-#code-icon,
-#person-icon {
-  width: 1.5rem;
-  height: auto;
-}
-
-.corner-icon--top-left {
-  width: 2.5rem;
-  height: auto;
-  color: getColor(headingAccent);
-  position: absolute;
-  left: -8px;
-  top: 0;
-}
-
-.corner-icon--top-right {
-  font-size: 2.5rem;
-  height: auto;
-  color: getColor(headingAccent);
-  position: absolute;
-  right: -8px;
-  top: 0;
-}
-
 .project-btn__icon {
   width: 1.25rem;
   height: auto;
@@ -114,21 +43,3 @@
     width: 1.375rem;
   }
 }
-
-// .corner-icon--bottom-left {
-//   width: 2.5rem;
-//   height: auto;
-//   color: getColor(headingAccent);
-//   position: absolute;
-//   left: 0;
-//   bottom: 0;
-// }
-
-// .corner-icon--bottom-right {
-//   width: 2.5rem;
-//   height: auto;
-//   color: getColor(headingAccent);
-//   position: absolute;
-//   right: 0;
-//   bottom: 0;
-// }

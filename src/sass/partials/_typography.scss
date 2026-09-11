@@ -30,9 +30,6 @@ em {
 }
 
 .hero__heading {
-  font-size: getSize(heroHeadingS);
-  color: getColor(heroHeading);
-
   &--main {
     font-weight: 700;
     font-size: getSize(heroHeadingS);
@@ -66,14 +63,6 @@ em {
     color: getColor(headingAccent);
     text-shadow: 0 1px getColor(headingAccent);
   }
-
-  @media (min-width: getBreakpoint(medium)) {
-    font-size: getSize(heroHeadingM);
-  }
-
-  @media (min-width: getBreakpoint(large)) {
-    font-size: getSize(heroHeadingL);
-  }
 }
 
 .page-heading {
@@ -94,38 +83,6 @@ em {
   }
 }
 
-.section-heading {
-  font-size: getSize(sectionHeadingS);
-  font-weight: 500;
-  color: getColor(textBright);
-
-  @media (min-width: getBreakpoint(medium)) {
-    font-size: getSize(sectionHeadingM);
-  }
-
-  @media (min-width: getBreakpoint(large)) {
-    font-size: getSize(sectionHeadingL);
-  }
-}
-
-.sub-heading {
-  font-size: getSize(subHeadingS);
-  font-weight: 500;
-  color: getColor(headingAccent);
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-
-  @media (min-width: getBreakpoint(medium)) {
-    font-size: getSize(subHeadingM);
-  }
-
-  @media (min-width: getBreakpoint(large)) {
-    font-size: getSize(subHeadingL);
-  }
-}
-
 .footer__heading {
   display: flex;
   align-items: center;
@@ -137,7 +94,6 @@ em {
 .card__heading {
   font-size: 1.25rem;
   font-weight: 500;
-  color: getColor(textBright);
   color: rgb(203 213 225);
 
   @media (min-width: getBreakpoint(large)) {
@@ -154,10 +110,6 @@ em {
   color: getColor(headingAccent);
   text-transform: uppercase;
   margin: 0;
-
-  @media (min-width: getBreakpoint(large)) {
-    font-size: 0.75rem;
-  }
 }
 
 .text-badge__text {
@@ -173,10 +125,6 @@ em {
   font-weight: 400;
   color: getColor(errorInput);
   padding-top: 0.5rem;
-}
-
-#textarea-error {
-  padding-top: 0.25rem;
 }
 
  

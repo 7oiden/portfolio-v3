@@ -1,14 +1,10 @@
 $main-heading: "inter", sans-serif;
-$secondary-heading: "inter", sans-serif;
 $paragraph: "inter", sans-serif;
 $link: "JetBrains Mono", sans-serif;
 
 $colors: (
   primaryBg: #0f172a,
-  secondaryBg: #101e43,
   headerBg: #0d121e,
-  // cardBgSm: rgba(21, 38, 64, 0.65),
-  // cardBgLg: rgba(21, 38, 64, 0.8),
   cardBgSm: rgba(23, 42, 69, 0.8),
   cardBgLg: rgba(23, 42, 69, 0.8),
   headingAccent: #66b0d8,
@@ -18,9 +14,7 @@ $colors: (
   textDisabled: #5b6f97,
   link: #e2e8f0,
   accentCol1: #38bdf8,
-  accentCol2: #5eead4,
   buttonBg: #0d121e,
-  badgeBg: #132f4b,
   // Alerts, tinted for the dark theme rather than the usual light-mode pastels
   success: rgba(16, 56, 50, 0.6),
   successBorder: rgba(52, 211, 153, 0.28),
@@ -50,7 +44,6 @@ $colors: (
 }
 
 $breakpoints: (
-  xSmall: 420px,
   small: 576px,
   medium: 768px,
   large: 992px,
@@ -78,19 +71,7 @@ $fontSizes: (
   sectionHeadingS: 1.5rem,
   sectionHeadingM: 1.75rem,
   sectionHeadingL: 2rem,
-  subHeadingS: 1.125rem,
-  subHeadingM: 1.25rem,
-  subHeadingL: 1.3125rem,
-  sectionBodyTextS: 1rem,
-  sectionBodyTextM: 1.25rem,
-  sectionBodyTextL: 1.5rem,
-  cardBodyTextS: 1rem,
-  cardBodyTextM: 1rem,
-  cardBodyTextL: 1.125rem,
   navLinkS: 1.125rem,
-  navLinkM: 1.3125rem,
-  navLinkL: 1.5rem,
-  badgeText: 0.875rem,
 );
 
 @function getSize($fontSize) {
