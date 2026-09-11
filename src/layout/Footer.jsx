@@ -12,11 +12,7 @@ export default function Footer() {
             <FaCopyright />
             <span>2026</span>
           </div>
-          <LinkBtn
-            url="mailto:tommy.johnsen@live.com"
-            size="sm"
-            rotation="-45deg"
-          >
+          <LinkBtn url="mailto:tommy.johnsen@live.com" size="sm">
             tommy.johnsen@live.com
           </LinkBtn>
           <MediaLinks cssClass="footer__media-links" />

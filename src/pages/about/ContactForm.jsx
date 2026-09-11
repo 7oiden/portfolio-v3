@@ -1,5 +1,4 @@
 import { useState, useEffect, useMemo } from "react";
-import classnames from "classnames";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,7 +6,7 @@ import Banner from "../../components/alerts/Banner";
 import axios from "axios";
 import { FORM_URL, WEB3FORMS_KEY } from "../../constants/api";
 import Spinner from "../../components/common/Spinner";
-import { MdClose } from "react-icons/md";
+import FormField from "../../components/common/FormField";
 import { useLocale } from "../../i18n/useLocale";
 
 function createSchema(validation) {
@@ -111,7 +110,6 @@ export default function ContactForm() {
   useEffect(() => {
     let timer;
     if (submitted) {
-      // Hide success message after 4 seconds
       timer = setTimeout(() => {
         setSubmitted(false);
       }, 4000);
@@ -119,15 +117,22 @@ export default function ContactForm() {
     return () => clearTimeout(timer);
   }, [submitted]);
 
-  const handleClearName = () => resetField("name");
-  const handleClearEmail = () => resetField("email");
-  const handleClearSubject = () => resetField("subject");
-  const handleClearMessage = () => resetField("message");
-
   function handleResize(e) {
     e.target.style.height = "auto";
     e.target.style.height = e.target.scrollHeight + "px";
   }
+
+  const fields = [
+    { name: "name", autoComplete: "name" },
+    { name: "email", type: "email", autoComplete: "email" },
+    { name: "subject", autoComplete: "off" },
+    {
+      name: "message",
+      as: "textarea",
+      autoComplete: "off",
+      onInput: handleResize,
+    },
+  ];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
@@ -140,148 +145,21 @@ export default function ContactForm() {
         {...register("botcheck")}
       />
       <fieldset disabled={submitting} className="contact__fieldset">
-        <div>
-          <div className="contact__input-container">
-            <input
-              className="contact__input"
-              type="text"
-              placeholder={formCopy.fields.name}
-              id="name"
-              autoComplete="off"
-              aria-invalid={!!errors["name"]}
-              aria-describedby={errors["name"] ? "name-error" : undefined}
-              {...register("name")}
-            />
-            <label
-              htmlFor="name"
-              className={classnames("contact__label", {
-                "contact__label--error": errors["name"],
-              })}
-            >
-              {formCopy.fields.name}
-            </label>
-            <button
-              type="button"
-              onClick={handleClearName}
-              className="contact__clear"
-              aria-label={`${formCopy.clearField}: ${formCopy.fields.name}`}
-            >
-              <MdClose aria-hidden="true" />
-            </button>
-          </div>
-          {errors["name"] && (
-            <span className="input-error" id="name-error">
-              {errors["name"].message}
-            </span>
-          )}
-        </div>
-        <div>
-          <div className="contact__input-container">
-            <input
-              className="contact__input"
-              type="text"
-              placeholder={formCopy.fields.email}
-              id="email"
-              autoComplete="off"
-              aria-invalid={!!errors["email"]}
-              aria-describedby={errors["email"] ? "email-error" : undefined}
-              {...register("email")}
-            />
-            <label
-              htmlFor="email"
-              className={classnames("contact__label", {
-                "contact__label--error": errors["email"],
-              })}
-            >
-              {formCopy.fields.email}
-            </label>
-            <button
-              type="button"
-              onClick={handleClearEmail}
-              className="contact__clear"
-              aria-label={`${formCopy.clearField}: ${formCopy.fields.email}`}
-            >
-              <MdClose aria-hidden="true" />
-            </button>
-          </div>
-          {errors["email"] && (
-            <span className="input-error" id="email-error">
-              {errors["email"].message}
-            </span>
-          )}
-        </div>
-        <div>
-          <div className="contact__input-container">
-            <input
-              className="contact__input"
-              type="text"
-              placeholder={formCopy.fields.subject}
-              id="subject"
-              autoComplete="off"
-              aria-invalid={!!errors["subject"]}
-              aria-describedby={errors["subject"] ? "subject-error" : undefined}
-              {...register("subject")}
-            />
-            <label
-              htmlFor="subject"
-              className={classnames("contact__label", {
-                "contact__label--error": errors["subject"],
-              })}
-            >
-              {formCopy.fields.subject}
-            </label>
-            <button
-              type="button"
-              onClick={handleClearSubject}
-              className="contact__clear"
-              aria-label={`${formCopy.clearField}: ${formCopy.fields.subject}`}
-            >
-              <MdClose aria-hidden="true" />
-            </button>
-          </div>
-          {errors["subject"] && (
-            <span className="input-error" id="subject-error">
-              {errors["subject"].message}
-            </span>
-          )}
-        </div>
-        <div>
-          <div className="contact__input-container">
-            <div className="hider"></div>
-            <textarea
-              className="contact__textarea"
-              placeholder={formCopy.fields.message}
-              id="message"
-              autoComplete="off"
-              onInput={handleResize}
-              aria-invalid={!!errors["message"]}
-              aria-describedby={errors["message"] ? "textarea-error" : undefined}
-              {...register("message")}
-            />
-            <label
-              htmlFor="message"
-              className={classnames("contact__label", {
-                "contact__label--error": errors["message"],
-              })}
-            >
-              {formCopy.fields.message}
-            </label>
-            <button
-              type="button"
-              onClick={handleClearMessage}
-              className="contact__clear"
-              id="clear-msg"
-              aria-label={`${formCopy.clearField}: ${formCopy.fields.message}`}
-            >
-              <MdClose aria-hidden="true" />
-            </button>
-          </div>
-          {errors["message"] && (
-            <span className="input-error" id="textarea-error">
-              {errors["message"].message}
-            </span>
-          )}
-        </div>
+        {fields.map((field) => (
+          <FormField
+            key={field.name}
+            name={field.name}
+            label={formCopy.fields[field.name]}
+            register={register}
+            error={errors[field.name]}
+            onClear={() => resetField(field.name)}
+            clearLabel={formCopy.clearField}
+            type={field.type}
+            as={field.as}
+            autoComplete={field.autoComplete}
+            onInput={field.onInput}
+          />
+        ))}
       </fieldset>
       {submitted && (
         <Banner heading={formCopy.successHeading} status="success">

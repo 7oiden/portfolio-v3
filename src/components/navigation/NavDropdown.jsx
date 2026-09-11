@@ -1,17 +1,10 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import MediaLinks from "../common/MediaLinks";
 import { useLocale } from "../../i18n/useLocale";
-
-const navItems = [
-  { path: "/", key: "home" },
-  { path: "projects", key: "projects" },
-  { path: "background", key: "background" },
-  { path: "about", key: "about" },
-];
+import { routes } from "../../constants/routes";
 
 export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
@@ -28,15 +21,12 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   }, [location]);
 
   useEffect(() => {
-    // Adds a resize event listener to the window
     const handleResize = () => {
-      // Closes the dropdown when the window is resized
       setIsMenuOpen(false);
     };
 
     window.addEventListener("resize", handleResize);
 
-    // Cleanup: removes the event listener when the component is unmounted
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -52,13 +42,14 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
       inert={isMenuOpen ? undefined : ""}
     >
       <ul className="nav-dropdown__links-list">
-        {navItems.map((item) => (
-          <li key={item.path}>
+        {routes.map((route) => (
+          <li key={route.path}>
             <NavLink
-              to={item.path}
+              to={route.path}
+              end={route.path === "/"}
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
-              <span>{copy.nav[item.key]}</span>
+              <span>{copy.nav[route.key]}</span>
             </NavLink>
           </li>
         ))}

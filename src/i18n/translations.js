@@ -15,6 +15,9 @@ export const translations = {
       toTop: "Til toppen",
       githubLabel: "Besøk GitHub-profilen min",
       linkedinLabel: "Besøk LinkedIn-profilen min",
+      notFoundTitle: "Siden ble ikke funnet",
+      notFoundBody: "Denne adressen finnes ikke.",
+      backHome: "Til forsiden",
     },
     backgroundText: {
       home: "Hjem.",
@@ -149,6 +152,9 @@ export const translations = {
       toTop: "To top",
       githubLabel: "Visit my GitHub page",
       linkedinLabel: "Visit my LinkedIn profile",
+      notFoundTitle: "Page not found",
+      notFoundBody: "This address doesn't exist.",
+      backHome: "Back home",
     },
     backgroundText: {
       home: "Home.",

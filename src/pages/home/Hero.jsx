@@ -44,12 +44,12 @@ export default function Hero() {
             >
               {copy.home.hero.getInTouch}
             </HashLink>
-            <LinkBtn url="projects" size="md" horizontalArrow>
+            <LinkBtn url="/projects" size="md" horizontalArrow>
               {copy.home.hero.viewWork}
             </LinkBtn>
           </div>
         </div>
-        <Link to="projects" className="hero__feature">
+        <Link to="/projects" className="hero__feature">
           <img
             src={featuredProject.image}
             alt={`${featuredProject.title} ${copy.home.hero.imageSuffix}`}

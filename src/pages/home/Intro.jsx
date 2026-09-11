@@ -1,7 +1,6 @@
 import Heading from "../../components/common/Heading";
 import avatar from "../../assets/images/avatar.png";
 import LinkBtn from "../../components/common/LinkBtn";
-import { ScrollToTop } from "../../utils/ScrollToTop";
 import { useLocale } from "../../i18n/useLocale";
 
 export default function Intro() {
@@ -43,11 +42,9 @@ export default function Intro() {
               </li>
             ))}
           </ul>
-          <ScrollToTop>
-            <LinkBtn url="about" size="md">
-              {intro.learnMore}
-            </LinkBtn>
-          </ScrollToTop>
+          <LinkBtn url="/about" size="md">
+            {intro.learnMore}
+          </LinkBtn>
         </div>
       </div>
     </section>

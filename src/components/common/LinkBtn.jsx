@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { MdArrowForward } from "react-icons/md";
 import { useSpring, animated } from "@react-spring/web";
 import classNames from "classnames";
 import { SiGithub } from "react-icons/si";
+import AppLink from "./AppLink";
 
 export default function LinkBtn({
   children,
@@ -53,8 +53,8 @@ export default function LinkBtn({
   const allIconClasses = classNames("link-arrow-icon", iconClass);
 
   return (
-    <Link
-      to={url}
+    <AppLink
+      href={url}
       onMouseEnter={url ? handleHover : null}
       onMouseLeave={url ? handleHoverExit : null}
       className={allLinkClasses}
@@ -64,7 +64,7 @@ export default function LinkBtn({
       <animated.div style={{ ...springs }} className={allIconClasses}>
         <MdArrowForward />
       </animated.div>
-    </Link>
+    </AppLink>
   );
 }
 
