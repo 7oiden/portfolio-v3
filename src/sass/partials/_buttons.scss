@@ -138,6 +138,8 @@
   @media (min-width: getBreakpoint(large)) {
     bottom: 5%;
     right: 5%;
+    width: 3rem;
+    height: 3rem;
   }
 
   &:hover,
