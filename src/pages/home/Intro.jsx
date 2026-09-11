@@ -2,6 +2,7 @@ import Heading from "../../components/common/Heading";
 import avatar from "../../assets/images/avatar.png";
 import LinkBtn from "../../components/common/LinkBtn";
 import { useLocale } from "../../i18n/useLocale";
+import { site } from "../../config/site";
 
 export default function Intro() {
   const { copy } = useLocale();
@@ -14,7 +15,7 @@ export default function Intro() {
           <img src={avatar} alt={intro.portraitAlt} />
           <figcaption className="intro__portrait-meta">
             <span className="intro__portrait-label">{intro.basedIn}</span>
-            <span className="intro__portrait-name">Tommy Johnsen</span>
+            <span className="intro__portrait-name">{site.name}</span>
           </figcaption>
         </figure>
         <div className="intro__body">

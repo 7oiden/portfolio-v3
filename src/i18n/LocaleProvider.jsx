@@ -1,15 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import { LocaleContext } from "./LocaleContext";
-import { translations } from "./translations";
+import { content, locales } from "../content";
 
 const STORAGE_KEY = "portfolio-locale";
-const VALID_LOCALES = ["nb", "en"];
 
 function getInitialLocale() {
   try {
     const savedLocale = window.localStorage.getItem(STORAGE_KEY);
-    return VALID_LOCALES.includes(savedLocale) ? savedLocale : "nb";
+    return locales.includes(savedLocale) ? savedLocale : "nb";
   } catch {
     return "nb";
   }
@@ -19,7 +18,7 @@ export default function LocaleProvider({ children }) {
   const [locale, setLocaleState] = useState(getInitialLocale);
 
   const setLocale = (nextLocale) => {
-    if (VALID_LOCALES.includes(nextLocale)) {
+    if (locales.includes(nextLocale)) {
       setLocaleState(nextLocale);
     }
   };
@@ -38,7 +37,7 @@ export default function LocaleProvider({ children }) {
     () => ({
       locale,
       setLocale,
-      copy: translations[locale],
+      copy: content[locale],
     }),
     [locale],
   );

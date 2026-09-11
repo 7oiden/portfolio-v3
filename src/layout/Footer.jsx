@@ -1,6 +1,7 @@
 import LinkBtn from "../components/common/LinkBtn";
 import MediaLinks from "../components/common/MediaLinks";
 import { FaCopyright } from "react-icons/fa";
+import { site } from "../config/site";
 
 export default function Footer() {
   return (
@@ -8,12 +9,12 @@ export default function Footer() {
       <div className="footer__container">
         <div className="footer__item">
           <div className="footer__heading">
-            <p>Tommy Johnsen </p>
+            <p>{site.name} </p>
             <FaCopyright />
             <span>2026</span>
           </div>
-          <LinkBtn url="mailto:tommy.johnsen@live.com" size="sm">
-            tommy.johnsen@live.com
+          <LinkBtn url={`mailto:${site.email}`} size="sm">
+            {site.email}
           </LinkBtn>
           <MediaLinks cssClass="footer__media-links" />
         </div>

@@ -2,6 +2,7 @@ import Heading from "../../components/common/Heading";
 import LinkBtn from "../../components/common/LinkBtn";
 import ContactForm from "./ContactForm";
 import { useLocale } from "../../i18n/useLocale";
+import { site } from "../../config/site";
 
 export default function Contact() {
   const { copy } = useLocale();
@@ -16,8 +17,8 @@ export default function Contact() {
       </div>
       <div className="contact__lead">
         <p className="contact__intro">{copy.about.contact.intro}</p>
-        <LinkBtn url="mailto:tommy.johnsen@live.com" size="md">
-          tommy.johnsen@live.com
+        <LinkBtn url={`mailto:${site.email}`} size="md">
+          {site.email}
         </LinkBtn>
       </div>
       <ContactForm />

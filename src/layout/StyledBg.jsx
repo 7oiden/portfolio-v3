@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useLocale } from "../i18n/useLocale";
-import { getPageKey } from "../constants/routes";
+import { getPageKey } from "../content/routes";
 
 export default function StyledBg() {
   const locationPath = useLocation().pathname;

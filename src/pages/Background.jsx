@@ -1,14 +1,10 @@
 import Heading from "../components/common/Heading";
 import CareerSection from "./background/CareerSection";
 import ResumeLink from "./background/ResumeLink";
-import { getExperienceData } from "../constants/experienceData";
-import { getEducationData } from "../constants/educationData";
 import { useLocale } from "../i18n/useLocale";
 
 export default function Background() {
-  const { locale, copy } = useLocale();
-  const experienceData = getExperienceData(locale);
-  const educationData = getEducationData(locale);
+  const { copy } = useLocale();
 
   return (
     <>
@@ -26,10 +22,13 @@ export default function Background() {
         <p className="career__lead">{copy.career.lead}</p>
         <ResumeLink />
       </section>
-      <CareerSection kicker={copy.career.experience} entries={experienceData} />
       <CareerSection
-        kicker={copy.career.education}
-        entries={educationData}
+        kicker={copy.career.experienceLabel}
+        entries={copy.career.experience}
+      />
+      <CareerSection
+        kicker={copy.career.educationLabel}
+        entries={copy.career.education}
         variant="education"
       />
     </>

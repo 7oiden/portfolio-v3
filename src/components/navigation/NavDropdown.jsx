@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useSpring, animated } from "@react-spring/web";
 import MediaLinks from "../common/MediaLinks";
 import { useLocale } from "../../i18n/useLocale";
-import { routes } from "../../constants/routes";
+import { routes } from "../../content/routes";
 
 export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();

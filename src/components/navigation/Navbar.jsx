@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { useLocale } from "../../i18n/useLocale";
-import { routes } from "../../constants/routes";
+import { routes } from "../../content/routes";
 
 export default function Navbar({ handleToggle, isMenuOpen }) {
   const { locale, setLocale, copy } = useLocale();

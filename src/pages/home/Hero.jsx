@@ -6,12 +6,12 @@ import MediaLinks from "../../components/common/MediaLinks";
 import LinkBtn from "../../components/common/LinkBtn";
 import { MdArrowForward } from "react-icons/md";
 import { FiChevronDown } from "react-icons/fi";
-import { getRealProjectData } from "../../constants/projectData";
 import { useLocale } from "../../i18n/useLocale";
+import { site } from "../../config/site";
 
 export default function Hero() {
-  const { locale, copy } = useLocale();
-  const featuredProject = getRealProjectData(locale)[0];
+  const { copy } = useLocale();
+  const featuredProject = copy.projects.selected[0];
   const [showScrollCue, setShowScrollCue] = useState(true);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function Hero() {
           <MediaLinks cssClass="hero__media-links" />
           <hgroup className="hero__hgroup">
             <Heading size="1" cssClass="hero__heading--main">
-              Tommy Johnsen<span className="hero__heading--dot">.</span>
+              {site.name}<span className="hero__heading--dot">.</span>
             </Heading>
             <Heading size="2" cssClass="hero__heading--sub">
               {copy.home.hero.subtitle}

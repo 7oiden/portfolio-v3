@@ -1,15 +1,10 @@
 import Heading from "../../components/common/Heading";
-import {
-  getSchoolProjectData,
-  getRealProjectData,
-} from "../../constants/projectData";
 import ProjectCard from "./ProjectCard";
 import { useLocale } from "../../i18n/useLocale";
 
 export default function ProjectList() {
-  const { locale, copy } = useLocale();
-  const realProjectData = getRealProjectData(locale);
-  const schoolProjectData = getSchoolProjectData(locale);
+  const { copy } = useLocale();
+  const { selected, archive } = copy.projects;
 
   return (
     <>
@@ -21,17 +16,17 @@ export default function ProjectList() {
           </Heading>
         </div>
         <div className="project__grid">
-          {realProjectData.map((project, index) => (
+          {selected.map((project, index) => (
             <ProjectCard
               key={project.id}
               title={project.title}
               type={project.type}
               date={project.date}
               image={project.image}
-              imageAlt={project.image_alt}
+              imageAlt={project.imageAlt}
               description={project.description}
-              siteUrl={project.netlify_url}
-              codeUrl={project.github_url}
+              siteUrl={project.siteUrl}
+              codeUrl={project.githubUrl}
               tools={project.tools}
               featured={index === 0}
             />
@@ -46,16 +41,16 @@ export default function ProjectList() {
           </Heading>
         </div>
         <div className="project__grid project__grid--archive">
-          {schoolProjectData.map((project) => (
+          {archive.map((project) => (
             <ProjectCard
               key={project.id}
               title={project.title}
               type={project.type}
               date={project.date}
               image={project.image}
-              imageAlt={project.image_alt}
+              imageAlt={project.imageAlt}
               description={project.description}
-              codeUrl={project.github_url}
+              codeUrl={project.githubUrl}
               tools={project.tools}
               compact
             />

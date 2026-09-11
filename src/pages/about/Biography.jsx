@@ -2,8 +2,7 @@ import Heading from "../../components/common/Heading";
 import mapImage from "../../assets/images/norway.webp";
 import { MdArrowForward } from "react-icons/md";
 import { useLocale } from "../../i18n/useLocale";
-
-const BERGEN_MAPS_URL = "https://maps.app.goo.gl/GPHnNxc53yVv1Uv5A";
+import { site } from "../../config/site";
 
 export default function Biography() {
   const { copy } = useLocale();
@@ -31,7 +30,7 @@ export default function Biography() {
           </p>
           <p>{biography.finalParagraph}</p>
           <a
-            href={BERGEN_MAPS_URL}
+            href={site.mapsUrl}
             target="_blank"
             rel="noreferrer"
             className="biography__place"
@@ -43,7 +42,7 @@ export default function Biography() {
         <div className="map">
           <img src={mapImage} alt="" width="500" height="594" />
           <a
-            href={BERGEN_MAPS_URL}
+            href={site.mapsUrl}
             target="_blank"
             rel="noreferrer"
             className="location-marker"

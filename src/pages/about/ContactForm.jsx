@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Banner from "../../components/alerts/Banner";
 import axios from "axios";
-import { FORM_URL, WEB3FORMS_KEY } from "../../constants/api";
+import { site } from "../../config/site";
 import Spinner from "../../components/common/Spinner";
 import FormField from "../../components/common/FormField";
 import { useLocale } from "../../i18n/useLocale";
@@ -76,10 +76,10 @@ export default function ContactForm() {
 
     try {
       const response = await axios.post(
-        FORM_URL,
+        site.formUrl,
         {
           ...fields,
-          access_key: WEB3FORMS_KEY,
+          access_key: site.formKey,
           from_name: fields.name,
           replyto: fields.email,
           // Sent only when tripped, mirroring an unchecked native checkbox

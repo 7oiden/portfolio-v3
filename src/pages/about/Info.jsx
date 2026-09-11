@@ -1,12 +1,10 @@
 import Heading from "../../components/common/Heading";
 import TextBadge from "../../components/common/TextBadge";
-import { getAboutData } from "../../constants/aboutData";
 import { useLocale } from "../../i18n/useLocale";
 
 export default function Info() {
-  const { locale, copy } = useLocale();
+  const { copy } = useLocale();
   const info = copy.about.info;
-  const { hobbies, attributes } = getAboutData(locale);
 
   return (
     <section className="info section-wrapper">
@@ -22,7 +20,7 @@ export default function Info() {
           <div className="info__card-body">
             <p>{info.interestsIntro}</p>
             <div className="badge-grid">
-              {hobbies.map((hobby) => (
+              {info.hobbies.map((hobby) => (
                 <TextBadge key={hobby}>{hobby}</TextBadge>
               ))}
             </div>
@@ -31,7 +29,7 @@ export default function Info() {
         <article className="info__card">
           <h3 className="info__card-label">{info.howIWork}</h3>
           <ul className="info__card-list">
-            {attributes.map((item) => (
+            {info.attributes.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
