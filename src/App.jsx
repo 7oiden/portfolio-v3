@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Background from "./pages/Background";
 import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 import { ScrollToTop } from "./utils/ScrollToTop";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/background" element={<Background />} />
               <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </ScrollToTop>

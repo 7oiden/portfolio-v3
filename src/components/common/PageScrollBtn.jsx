@@ -1,66 +1,41 @@
-import { useEffect, useRef } from "react";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { useSpring, animated } from "@react-spring/web";
+import { useEffect, useState } from "react";
+import { FiChevronUp } from "react-icons/fi";
+import { useLocale } from "../../i18n/useLocale";
 
 export default function PageScrollBtn() {
-  const [springs, api] = useSpring(() => ({
-    from: {
-      display: "none",
-      transform: "translate(50%, 50%)",
-    },
-  }));
+  const { copy } = useLocale();
+  const [showButton, setShowButton] = useState(false);
 
-  const prevScrollY = useRef(0);
+  useEffect(() => {
+    let prevScrollY = window.scrollY;
 
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
 
-    if (currentScrollY > prevScrollY.current) {
-      // Scrolling down
-      api.start({
-        to: { display: "none" },
-        config: { duration: 100 },
-      });
-    } else if (currentScrollY < 100) {
-      // At top of page
-      api.start({
-        to: { display: "none" },
-        config: { duration: 100 },
-      });
-    } else {
-      // Scrolling up
-      api.start({
-        to: { display: "block" },
-        config: { duration: 100 },
-      });
-    }
+      // Only offered while scrolling back up, and never near the top
+      setShowButton(currentScrollY < prevScrollY && currentScrollY > 100);
+      prevScrollY = currentScrollY;
+    };
 
-    prevScrollY.current = currentScrollY;
-  };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   function handleScrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
-    <animated.div
-      className="page-scroll"
+    <button
+      type="button"
       onClick={handleScrollToTop}
-      style={{ ...springs }}
+      className={`page-scroll ${showButton ? "" : "page-scroll--hidden"}`}
+      aria-hidden={!showButton}
+      tabIndex={showButton ? undefined : -1}
+      aria-label={copy.common.toTop}
     >
-      <div className="page-scroll__container">
-        <span className="page-scroll__text">To top</span>
-        <FaArrowRightLong className="page-scroll__icon" size={20} />
-      </div>
-    </animated.div>
+      <FiChevronUp className="page-scroll__icon" aria-hidden="true" />
+    </button>
   );
 }

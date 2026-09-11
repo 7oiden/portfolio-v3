@@ -1,16 +1,71 @@
 .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  &__heading-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  &__lead {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  &__kicker {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: getColor(headingAccent);
+  }
+
+  &__heading {
+    font-size: getSize(sectionHeadingS);
+    font-weight: 600;
+    line-height: 1.25;
+    color: getColor(textBright);
+
+    @media (min-width: getBreakpoint(medium)) {
+      font-size: getSize(sectionHeadingM);
+    }
+
+    @media (min-width: getBreakpoint(large)) {
+      font-size: getSize(sectionHeadingL);
+    }
+  }
+
+  &__intro {
+    margin: 0;
+    max-width: 36rem;
+    line-height: 1.6;
+    color: getColor(textBright);
+  }
+
   &__form {
     @extend .card-styling;
-    gap: 1.5rem;
+    width: 100%;
+    max-width: 32rem;
+    gap: 2.5rem;
     border-radius: 10px;
-    padding: 2rem;
-    margin-top: 2rem;
+    padding: 2.5rem 1.5rem;
+    background-color: getColor(headerBg);
+    border: 1px solid rgba(113, 124, 154, 0.16);
+
+    @media (min-width: getBreakpoint(small)) {
+      padding: 3rem 2rem;
+    }
   }
 
   &__fieldset {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.75rem;
     border: none;
     margin: 0;
     padding: 0;
@@ -21,67 +76,139 @@
     }
   }
 
-  &__ {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-
-  &__link-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-
   &__input-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-
-    & label {
-      font-size: 0.875rem;
-      font-weight: 500;
-      color: getColor(textLight);
-    }
+    position: relative;
   }
 }
 
 .contact__input,
 .contact__textarea {
-  padding: 0.5rem;
-  border-radius: 4px;
-  border: 1px solid getColor(headingAccent);
-  background-color: transparent;
+  width: 100%;
+  height: 3.5rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
+  border: none;
+  border-bottom: 2px solid rgba(113, 124, 154, 0.22);
+  border-radius: 5px 5px 0 0;
+  background-color: #151c2e;
   font-family: inter;
-  font-size: inherit;
-  color: getColor(textLight);
+  font-size: 1rem;
+  color: getColor(textBright);
+  transition: border-color 250ms, background-color 250ms;
 
   &:focus {
     outline: none;
-    border: 1px solid getColor(accentCol2);
-    background-color: getColor(primaryBg);
-    color: getColor(textLight);
+    border-bottom: 2px solid getColor(accentCol1);
+    background-color: #0a0e18;
   }
 
   &::placeholder {
-    color: getColor(textLight);
+    color: transparent;
+  }
+
+  &::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
   }
 }
 
 .contact__textarea {
   resize: none;
-  height: 8rem;
-  color: getColor(textLight);
+  overflow-y: hidden;
+  min-height: 8rem;
+  color: getColor(textBright);
+  padding-top: 1.75rem;
+  padding-bottom: 1rem;
 }
 
-.contact__input input {
+.contact__label {
+  position: absolute;
+  top: 1.75rem;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  font-weight: 500;
   color: getColor(textLight);
+  transform-origin: left center;
+  transition: all 250ms;
+}
+
+.contact__clear {
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  top: 50%;
+  right: 0.7rem;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  height: 1.25rem;
+  width: 1.25rem;
+  font-size: 1.25rem;
+  color: getColor(textLight);
+  transition: color 250ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
   &:focus {
-    outline: none;
-    border: 1px solid getColor(accentCol2);
-    background-color: getColor(primaryBg);
+    color: getColor(textBright);
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+  }
+}
+
+#clear-msg {
+  top: 1.25rem;
+}
+
+.contact__input:focus + .contact__label,
+.contact__input:not(:placeholder-shown) + .contact__label {
+  transform: translate(0, -1.5rem) scale(0.8);
+  color: getColor(accentCol1);
+}
+
+.contact__textarea:focus + .contact__label,
+.contact__textarea:not(:placeholder-shown) + .contact__label {
+  transform: translate(0, -1.5rem) scale(0.8);
+  color: getColor(accentCol1);
+}
+
+.contact__input:placeholder-shown + .contact__label + .contact__clear {
+  display: none;
+}
+
+.contact__textarea:placeholder-shown + .contact__label + .contact__clear {
+  display: none;
+}
+
+// Listed against the float states too, so an invalid field stays flagged
+// while it is focused or filled
+.contact__label--error,
+.contact__input:focus + .contact__label--error,
+.contact__input:not(:placeholder-shown) + .contact__label--error,
+.contact__textarea:focus + .contact__label--error,
+.contact__textarea:not(:placeholder-shown) + .contact__label--error {
+  color: getColor(errorHeading);
+}
+
+// Outranks the focus underline, so the field keeps reading as invalid
+// while the visitor is correcting it
+.contact__input[aria-invalid="true"],
+.contact__textarea[aria-invalid="true"] {
+  border-bottom-color: getColor(errorHeading);
+
+  &:focus {
+    border-bottom-color: getColor(errorHeading);
   }
 }

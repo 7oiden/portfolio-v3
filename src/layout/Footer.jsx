@@ -1,24 +1,24 @@
 import LinkBtn from "../components/common/LinkBtn";
 import MediaLinks from "../components/common/MediaLinks";
 import { FaCopyright } from "react-icons/fa";
+import { site } from "../config/site";
+
+function currentYear() {
+  return new Date().getFullYear();
+}
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__item">
-          <p>Designed and developed by:</p>
           <div className="footer__heading">
-            <p>Tommy Johnsen </p>
+            <p>{site.name} </p>
             <FaCopyright />
-            <span>2024</span>
+            <span>{currentYear()}</span>
           </div>
-          <LinkBtn
-            url="mailto: tommy.johnsen@live.com"
-            size="sm"
-            rotation="-45deg"
-          >
-            tommy.johnsen@live.com
+          <LinkBtn url={`mailto:${site.email}`} size="sm">
+            {site.email}
           </LinkBtn>
           <MediaLinks cssClass="footer__media-links" />
         </div>

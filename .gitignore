@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Live Sass Compiler output; Vite bundles src/sass instead
+css/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

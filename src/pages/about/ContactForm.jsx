@@ -1,108 +1,115 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Banner from "../../components/alerts/Banner";
 import axios from "axios";
-import { BASE_URL } from "../../constants/api";
+import { site } from "../../config/site";
 import Spinner from "../../components/common/Spinner";
+import FormField from "../../components/common/FormField";
+import { useLocale } from "../../i18n/useLocale";
 
-const schema = yup.object().shape({
-  first_name: yup
-    .string()
-    .required("Please enter your name")
-    .min(3, "Your name must be at least 3 characters")
-    .max(20, "Name can't be more than 20 characters"),
+function createSchema(validation) {
+  return yup.object().shape({
+    name: yup
+      .string()
+      .required(validation.nameRequired)
+      .min(3, validation.nameMin)
+      .max(20, validation.nameMax),
 
-  email: yup
-    .string()
-    .required("Please enter your email address")
-    .email("Please enter a valid email address"),
+    email: yup
+      .string()
+      .required(validation.emailRequired)
+      .email(validation.emailInvalid),
 
-  subject: yup
-    .string()
-    .required("Please enter a subject")
-    .min(4, "Subject must be at least 4 characters")
-    .max(20, "Subject can't be more than 20 characters"),
+    subject: yup
+      .string()
+      .required(validation.subjectRequired)
+      .min(4, validation.subjectMin)
+      .max(20, validation.subjectMax),
 
-  message: yup
-    .string()
-    .required("Please enter your message")
-    .min(10, "Your message must be at least 10 characters")
-    .max(400, "Message can't be more than 400 characters"),
-});
+    message: yup
+      .string()
+      .required(validation.messageRequired)
+      .min(10, validation.messageMin)
+      .max(400, validation.messageMax),
+
+    // Honeypot, declared so yup passes it through to Web3Forms
+    botcheck: yup.boolean(),
+  });
+}
 
 export default function ContactForm() {
+  const { locale, copy } = useLocale();
+  const formCopy = copy.form;
+  const schema = useMemo(
+    () => createSchema(formCopy.validation),
+    [formCopy.validation],
+  );
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [serverError, setServerError] = useState(null);
-  const [showInfoMessage, setShowInfoMessage] = useState(false);
-
-  const url = BASE_URL + "contacts";
 
   const {
     register,
     handleSubmit,
     reset,
-    formState,
-    formState: { errors, isSubmitSuccessful },
+    resetField,
+    clearErrors,
+    formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
     defaultValues: {
-      first_name: "",
+      name: "",
       email: "",
       subject: "",
       message: "",
+      botcheck: false,
     },
   });
 
   async function onSubmit(data) {
     setSubmitting(true);
     setServerError(null);
-    console.log(data);
 
-    const jsonData = {
-      data,
-    };
+    const { botcheck, ...fields } = data;
 
     try {
-      const response = await axios.post(url, jsonData);
-      console.log("response", response.data);
-      setSubmitting(true);
+      const response = await axios.post(
+        site.formUrl,
+        {
+          ...fields,
+          access_key: site.formKey,
+          from_name: fields.name,
+          replyto: fields.email,
+          // Sent only when tripped, mirroring an unchecked native checkbox
+          ...(botcheck && { botcheck }),
+        },
+        { headers: { Accept: "application/json" } },
+      );
+
+      // Web3Forms reports rejections with a 200 and success: false
+      if (!response.data?.success) {
+        throw new Error(response.data?.message ?? "Submission rejected");
+      }
+
       setSubmitted(true);
+      reset();
     } catch (error) {
-      console.log("error", error);
-      setServerError(error.toString());
+      // Rejections arrive as a 400 body, which axios turns into a status-only message
+      setServerError(error.response?.data?.message ?? error.message);
     } finally {
       setSubmitting(false);
     }
   }
 
   useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [formState, reset]);
-
-  useEffect(() => {
-    let infoMessageTimer;
-    if (submitting) {
-      // Show info message after 3 seconds
-      infoMessageTimer = setTimeout(() => {
-        setShowInfoMessage(true);
-      }, 3000);
-    }
-
-    return () => {
-      clearTimeout(infoMessageTimer);
-    };
-  }, [submitting]);
+    clearErrors();
+  }, [clearErrors, locale]);
 
   useEffect(() => {
     let timer;
     if (submitted) {
-      // Hide success message after 4 seconds
       timer = setTimeout(() => {
         setSubmitted(false);
       }, 4000);
@@ -110,88 +117,68 @@ export default function ContactForm() {
     return () => clearTimeout(timer);
   }, [submitted]);
 
+  function handleResize(e) {
+    e.target.style.height = "auto";
+    e.target.style.height = e.target.scrollHeight + "px";
+  }
+
+  const fields = [
+    { name: "name", autoComplete: "name" },
+    { name: "email", type: "email", autoComplete: "email" },
+    { name: "subject", autoComplete: "off" },
+    {
+      name: "message",
+      as: "textarea",
+      autoComplete: "off",
+      onInput: handleResize,
+    },
+  ];
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact__form">
+      <input
+        type="checkbox"
+        style={{ display: "none" }}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        {...register("botcheck")}
+      />
       <fieldset disabled={submitting} className="contact__fieldset">
-        <div className="contact__input-container">
-          <label htmlFor="name">Name</label>
-          <input
-            className="contact__input"
-            type="text"
-            placeholder="Name"
-            id="name"
-            autoComplete="name"
-            {...register("first_name")}
+        {fields.map((field) => (
+          <FormField
+            key={field.name}
+            name={field.name}
+            label={formCopy.fields[field.name]}
+            register={register}
+            error={errors[field.name]}
+            onClear={() => resetField(field.name)}
+            clearLabel={formCopy.clearField}
+            type={field.type}
+            as={field.as}
+            autoComplete={field.autoComplete}
+            onInput={field.onInput}
           />
-          {errors.first_name && (
-            <span className="input-error">{errors.first_name.message}</span>
-          )}
-        </div>
-        <div className="contact__input-container">
-          <label htmlFor="email">Email</label>
-          <input
-            className="contact__input"
-            type="text"
-            placeholder="Email"
-            id="email"
-            autoComplete="email"
-            {...register("email")}
-          />
-          {errors.email && (
-            <span className="input-error">{errors.email.message}</span>
-          )}
-        </div>
-        <div className="contact__input-container">
-          <label htmlFor="subject">Subject</label>
-          <input
-            className="contact__input"
-            type="text"
-            placeholder="Subject"
-            id="subject"
-            autoComplete="off"
-            {...register("subject")}
-          />
-          {errors.subject && (
-            <span className="input-error">{errors.subject.message}</span>
-          )}
-        </div>
-        <div className="contact__input-container">
-          <label htmlFor="message">Message</label>
-          <textarea
-            className="contact__textarea"
-            placeholder="Message"
-            id="message"
-            autoComplete="off"
-            {...register("message")}
-          />
-          {errors.message && (
-            <span className="input-error">{errors.message.message}</span>
-          )}
-        </div>
+        ))}
       </fieldset>
-      {submitting && showInfoMessage && (
-        <Banner heading="Please hold!" status="info">
-          ...while the Heroku API is waking up.
-        </Banner>
-      )}
       {submitted && (
-        <Banner heading="Thank you for your message!" status="success">
-          I will get back to you shortly.
+        <Banner heading={formCopy.successHeading} status="success">
+          {formCopy.successBody}
         </Banner>
       )}
       {serverError && (
-        <Banner heading="Something went wrong!" status="error">
-          {serverError}
+        <Banner heading={formCopy.errorHeading} status="error">
+          {formCopy.errorBody}
         </Banner>
       )}
-      <button className="contact__btn">
+      <button type="submit" className="button contact__button">
         {submitting ? (
           <>
             <Spinner />
-            Submitting
+            {formCopy.submitting}
           </>
         ) : (
-          "Send"
+          formCopy.send
         )}
       </button>
     </form>

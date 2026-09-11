@@ -3,34 +3,44 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem 2rem 1rem 4rem;
+  padding: 1rem 2rem 1rem 3rem;
   align-items: flex-start;
   align-self: flex-start;
-  gap: 0.25rem;
-  border-radius: 4px;
-  background: #ecfdf5;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   position: relative;
 
   &--success {
     background-color: getColor(success);
+    border-color: getColor(successBorder);
   }
 
   &--warning {
     background-color: getColor(warning);
+    border-color: getColor(warningBorder);
   }
 
   &--error {
     background-color: getColor(error);
+    border-color: getColor(errorBorder);
   }
 
   &--info {
     background-color: getColor(info);
+    border-color: getColor(infoBorder);
   }
 }
 
 .banner__heading {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 500;
+
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1.125rem;
+  }
 
   &--success {
     color: getColor(successHeading);
@@ -50,36 +60,41 @@
 }
 
 .banner__text {
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
 
+  @media (min-width: getBreakpoint(large)) {
+    font-size: 1rem;
+  }
+
   &--success {
-    background-color: getColor(success);
     color: getColor(successText);
   }
 
   &--warning {
-    background-color: getColor(warning);
     color: getColor(warningText);
   }
 
   &--error {
-    background-color: getColor(error);
     color: getColor(errorText);
   }
 
   &--info {
-    background-color: getColor(info);
     color: getColor(infoText);
   }
 }
 
 .banner__icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.375rem;
+  height: 1.375rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
+
+  @media (min-width: getBreakpoint(large)) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
   &--success {
     color: getColor(successIcon);
@@ -98,16 +113,27 @@
   }
 }
 
-.spinner-container {
+.spinner__container {
   width: 1rem;
   height: 1rem;
 }
 
 .spinner {
-  border: 0.1rem solid getColor(headingAccent);
+  border: 0.1rem solid getColor(accentCol1);
   border-top: 0.1rem solid transparent;
   margin: 0 auto;
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
+  animation: spinner-rotate 1s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }

@@ -1,14 +1,11 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import classNames from "classnames";
 import Heading from "../../components/common/Heading";
 import TextBadge from "../../components/common/TextBadge";
-import { Link } from "react-router-dom";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
-import { SiNetlify } from "react-icons/si";
-import InfoToggler from "../../components/common/InfoToggler";
-import { useSpring, animated } from "@react-spring/web";
 import LinkBtn from "../../components/common/LinkBtn";
-import { MdArrowForward } from "react-icons/md";
+import { useLocale } from "../../i18n/useLocale";
+import { FiExternalLink } from "react-icons/fi";
 
 export default function ProjectCard({
   image,
@@ -20,100 +17,67 @@ export default function ProjectCard({
   tools,
   siteUrl,
   codeUrl,
+  featured = false,
+  compact = false,
 }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const AnimatedIcon = animated(MdArrowForward);
-
-  const [springs, api] = useSpring(() => ({
-    from: { x: 0, y: 0, transform: "rotate(-45deg)" },
-  }));
-
-  const handleHover = () => {
-    api.start({
-      x: 6,
-      y: -6,
-      delay: 250,
-    });
-  };
-
-  const handleHoverExit = () => {
-    api.start({
-      x: 0,
-      y: 0,
-      loop: false,
-    });
-  };
-
-  const textAppear = useSpring({
-    maxHeight: isOpen ? "180px" : "0",
-    opacity: isOpen ? "1" : "0",
-    config: { duration: 250 },
-  });
+  const { copy } = useLocale();
+  const hasRepo = Boolean(codeUrl && String(codeUrl).trim());
+  const paragraphs = compact ? description.slice(0, 1) : description;
 
   return (
-    <div className="project">
+    <div
+      className={classNames("project", {
+        "project--featured": featured,
+        "project--archive": compact,
+      })}
+    >
       <div className="project__col">
         <div className="project__date">
           <p>{date}</p>
           <MdOutlineKeyboardDoubleArrowRight className="project__date-icon" />
         </div>
-        <Link
-          to={siteUrl}
-          className="project__link"
-          onMouseEnter={handleHover}
-          onMouseLeave={handleHoverExit}
-        >
-          <div className="project__image">
-            <img src={image} alt={imageAlt} className="project__image" />
-          </div>
-          <div className="mobile__icon">
-            <MdArrowForward
-              size="1.5rem"
-              style={{ transform: "rotate(-45deg)" }}
-            />
-          </div>
-          <div className="project__overlay">
-            <span>Go to live site at:</span>
-            <div className="overlay__body">
-              <SiNetlify size="1.5rem" />
-              <span className="overlay__text">Netlify</span>
-              <AnimatedIcon size="1.5rem" style={{ ...springs }} />
-            </div>
-          </div>
-        </Link>
+        <div className="project__image">
+          <img src={image} alt={imageAlt} />
+        </div>
       </div>
       <div className="card">
         <div className="card__header">
           <hgroup>
-            <Heading size="3" cssClass="card__heading">
-              {title}
-            </Heading>
             <Heading size="4" cssClass="card__sub-heading">
               {type}
             </Heading>
+            <Heading size="3" cssClass="card__heading">
+              {title}
+            </Heading>
           </hgroup>
-          <LinkBtn url={codeUrl} icon size="md" position="right">
-            GitHub
-          </LinkBtn>
+          {!compact && siteUrl && (
+            <a
+              href={siteUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="project__site-link"
+              aria-label={copy.projects.liveSite}
+              data-tooltip={copy.projects.liveSite}
+            >
+              <FiExternalLink aria-hidden="true" />
+            </a>
+          )}
+          {compact && hasRepo && (
+            <LinkBtn
+              url={codeUrl}
+              icon
+              size={compact ? "sm" : "md"}
+              position="right"
+            >
+              GitHub
+            </LinkBtn>
+          )}
         </div>
-        <div className="card__body">
-          <p>{description[0]}</p>
-          <animated.div style={{ ...textAppear }}>
-            <p id="content-to-toggle" className="card__hidden mb">
-              {description[1]}
-            </p>
-          </animated.div>
+        <div className="card__text">
+          {paragraphs.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
         </div>
-        <InfoToggler
-          isOpen={isOpen}
-          setIsOpen={setIsOpen}
-          position="left"
-          aria-expanded={isOpen}
-          aria-controls="content-to-toggle"
-        >
-          {isOpen ? "Show less" : "Read more"}
-        </InfoToggler>
         <div className="badge-grid">
           {tools.map((tool) => (
             <TextBadge key={tool}>{tool}</TextBadge>
@@ -131,7 +95,9 @@ ProjectCard.propTypes = {
   type: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   description: PropTypes.array.isRequired,
-  siteUrl: PropTypes.string.isRequired,
-  codeUrl: PropTypes.string.isRequired,
+  siteUrl: PropTypes.string,
+  codeUrl: PropTypes.string,
   tools: PropTypes.array.isRequired,
+  featured: PropTypes.bool,
+  compact: PropTypes.bool,
 };

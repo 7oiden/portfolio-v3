@@ -20,3 +20,26 @@
   }
 }
 
+.footer__media-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+
+  & a {
+    color: getColor(link);
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: getColor(accentCol1);
+    }
+  }
+
+  & a svg {
+    color: getColor(textLight);
+
+    &:hover {
+      color: getColor(accentCol1);
+    }
+  }
+}
+

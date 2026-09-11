@@ -1,27 +1,21 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaInstagram } from "react-icons/fa";
+import { useLocale } from "../../i18n/useLocale";
+import AppLink from "./AppLink";
+import { site } from "../../config/site";
 
 export default function MediaLinks({ cssClass }) {
+  const { copy } = useLocale();
+
   return (
     <div className={cssClass}>
-      <Link to="https://github.com/7oiden" aria-label="Visit my GitHub page">
+      <AppLink href={site.githubUrl} aria-label={copy.common.githubLabel}>
         <FaGithub className="media-icon" />
-      </Link>
-      <Link
-        to="https://www.instagram.com/7oiden/"
-        aria-label="Visit my Instagram account"
-      >
-        <FaInstagram className="media-icon" />
-      </Link>
-      <Link
-        to="https://www.linkedin.com/in/tommy-j-16b56678/"
-        aria-label="Visit my LinkedIn profile"
-      >
+      </AppLink>
+      <AppLink href={site.linkedinUrl} aria-label={copy.common.linkedinLabel}>
         <FaLinkedinIn className="media-icon" />
-      </Link>
+      </AppLink>
     </div>
   );
 }

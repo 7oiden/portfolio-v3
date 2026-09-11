@@ -1,39 +1,42 @@
 $main-heading: "inter", sans-serif;
-$secondary-heading: "inter", sans-serif;
 $paragraph: "inter", sans-serif;
 $link: "JetBrains Mono", sans-serif;
-$background: "playfair-display", serif;
-$logo: "pixelify sans", sans-serif;
 
 $colors: (
   primaryBg: #0f172a,
-  secondaryBg: #101e43,
   headerBg: #0d121e,
+  cardBgSm: rgba(23, 42, 69, 0.8),
+  cardBgLg: rgba(23, 42, 69, 0.8),
   headingAccent: #66b0d8,
   heroHeading: #fff,
   textBright: #e2e8f0,
   textLight: #94a3b8,
-  textDisabled: #6b7280,
+  textDisabled: #5b6f97,
   link: #e2e8f0,
   accentCol1: #38bdf8,
-  accentCol2: #5eead4,
   buttonBg: #0d121e,
-  badgeBg: #132f4b,
-  // Alerts
-  successHeading: #065f46,
-  successText: #047857,
-  successIcon: #34d399,
-  errorHeading: #92400e,
-  errorText: #fd740b,
-  errorIcon: #f87171,
-  warning: #fffbeb,
-  warningHeading: #92400e,
-  warningText: #b45309,
-  warningIcon: #fbbf24,
-  info: #eff6ff,
-  infoHeading: #1e40af,
-  infoText: #1c51b9,
-  infoIcon: #60a5fa,
+  // Alerts, tinted for the dark theme rather than the usual light-mode pastels
+  success: rgba(16, 56, 50, 0.6),
+  successBorder: rgba(52, 211, 153, 0.28),
+  successHeading: #6ee7b7,
+  successText: #9dc9bb,
+  successIcon: #6ee7b7,
+  error: rgba(76, 24, 45, 0.6),
+  errorBorder: rgba(251, 113, 133, 0.3),
+  errorHeading: #fda4af,
+  errorText: #e0a8b6,
+  errorIcon: #fda4af,
+  errorInput: #fb7185,
+  warning: rgba(61, 45, 18, 0.6),
+  warningBorder: rgba(251, 191, 36, 0.28),
+  warningHeading: #fcd34d,
+  warningText: #d3bf8d,
+  warningIcon: #fcd34d,
+  info: rgba(17, 44, 71, 0.6),
+  infoBorder: rgba(56, 189, 248, 0.28),
+  infoHeading: #7dd3fc,
+  infoText: #a6c4da,
+  infoIcon: #7dd3fc,
 );
 
 @function getColor($color) {
@@ -41,7 +44,6 @@ $colors: (
 }
 
 $breakpoints: (
-  xSmall: 420px,
   small: 576px,
   medium: 768px,
   large: 992px,
@@ -60,28 +62,16 @@ $fontSizes: (
   heroHeadingS: 3rem,
   heroHeadingM: 4rem,
   heroHeadingL: 5rem,
-  heroSubHeadingS: 1.5rem,
-  heroSubHeadingM: 2rem,
-  heroSubHeadingL: 2.5rem,
+  heroSubHeadingS: 1.125rem,
+  heroSubHeadingM: 1.5rem,
+  heroSubHeadingL: 1.75rem,
   pageHeadingS: 2.5rem,
   pageHeadingM: 3rem,
   pageHeadingL: 4rem,
   sectionHeadingS: 1.5rem,
   sectionHeadingM: 1.75rem,
   sectionHeadingL: 2rem,
-  subHeadingS: 1.125rem,
-  subHeadingM: 1.25rem,
-  subHeadingL: 1.3125rem,
-  sectionBodyTextS: 1rem,
-  sectionBodyTextM: 1.25rem,
-  sectionBodyTextL: 1.5rem,
-  cardBodyTextS: 1rem,
-  cardBodyTextM: 1rem,
-  cardBodyTextL: 1.125rem,
   navLinkS: 1.125rem,
-  navLinkM: 1.3125rem,
-  navLinkL: 1.5rem,
-  badgeText: 0.875rem,
 );
 
 @function getSize($fontSize) {
