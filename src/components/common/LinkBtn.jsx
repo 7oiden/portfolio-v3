@@ -1,6 +1,5 @@
 import PropTypes from "prop-types";
 import { MdArrowForward } from "react-icons/md";
-import { useSpring, animated } from "@react-spring/web";
 import classNames from "classnames";
 import { SiGithub } from "react-icons/si";
 import AppLink from "./AppLink";
@@ -13,28 +12,6 @@ export default function LinkBtn({
   position = "left",
   horizontalArrow = false,
 }) {
-  const [springs, api] = useSpring(() => ({
-    from: {
-      x: 0,
-      y: 0,
-      transform: horizontalArrow ? "rotate(0deg)" : "rotate(-45deg)",
-    },
-  }));
-
-  const handleHover = () => {
-    api.start({
-      x: 6,
-      y: horizontalArrow ? 0 : -6,
-    });
-  };
-
-  const handleHoverExit = () => {
-    api.start({
-      x: 0,
-      y: 0,
-    });
-  };
-
   let linkClass = `link-btn--${size}`;
   let disabledClass = "";
 
@@ -45,6 +22,7 @@ export default function LinkBtn({
   const allLinkClasses = classNames(
     "link-container",
     `link-container--${position}`,
+    { "link-container--horizontal": horizontalArrow },
     linkClass,
     disabledClass
   );
@@ -53,17 +31,12 @@ export default function LinkBtn({
   const allIconClasses = classNames("link-arrow-icon", iconClass);
 
   return (
-    <AppLink
-      href={url}
-      onMouseEnter={url ? handleHover : null}
-      onMouseLeave={url ? handleHoverExit : null}
-      className={allLinkClasses}
-    >
+    <AppLink href={url} className={allLinkClasses}>
       {icon ? <SiGithub className="project-btn__icon" /> : null}
       <span>{children}</span>
-      <animated.div style={{ ...springs }} className={allIconClasses}>
+      <div className={allIconClasses}>
         <MdArrowForward />
-      </animated.div>
+      </div>
     </AppLink>
   );
 }

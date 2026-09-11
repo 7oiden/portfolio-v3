@@ -131,9 +131,15 @@
   height: auto;
   top: 0;
   margin: 0 auto;
+  max-height: 0;
   background-color: getColor(headerBg);
   overflow: hidden;
   box-shadow: 0 6px 8px 1px rgb(0 0 0 / 0.1);
+  transition: max-height 0.2s ease;
+
+  &--open {
+    max-height: 340px;
+  }
 
   @media (min-width: getBreakpoint(large)) {
     display: none;

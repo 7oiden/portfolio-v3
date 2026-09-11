@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useSpring, animated } from "@react-spring/web";
 import MediaLinks from "../common/MediaLinks";
 import { useLocale } from "../../i18n/useLocale";
 import { routes } from "../../content/routes";
@@ -9,11 +8,6 @@ import { routes } from "../../content/routes";
 export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   const location = useLocation();
   const { copy } = useLocale();
-
-  const dropdown = useSpring({
-    maxHeight: isMenuOpen ? "340px" : "0px",
-    config: { duration: 200 },
-  });
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -34,10 +28,9 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
   }, []);
 
   return (
-    <animated.nav
+    <nav
       id="mobile-nav"
-      className="nav__dropdown"
-      style={{ ...dropdown }}
+      className={isMenuOpen ? "nav__dropdown nav__dropdown--open" : "nav__dropdown"}
       aria-hidden={!isMenuOpen}
       inert={isMenuOpen ? undefined : ""}
     >
@@ -55,7 +48,7 @@ export default function NavDropdown({ isMenuOpen, setIsMenuOpen }) {
         ))}
         <MediaLinks cssClass="nav-dropdown__media-links" />
       </ul>
-    </animated.nav>
+    </nav>
   );
 }
 

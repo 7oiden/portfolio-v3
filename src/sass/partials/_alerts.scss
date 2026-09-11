@@ -125,4 +125,15 @@
   border-radius: 50%;
   width: 1rem;
   height: 1rem;
+  animation: spinner-rotate 1s linear infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@keyframes spinner-rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }

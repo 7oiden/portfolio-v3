@@ -2,6 +2,20 @@
   width: 100%;
   height: auto;
   color: inherit;
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease-in-out;
+
+  .link-container--horizontal & {
+    transform: rotate(0deg);
+  }
+
+  .link-container:not(.link-btn--disabled):is(:hover, :focus-visible) & {
+    transform: translate(6px, -6px) rotate(-45deg);
+  }
+
+  .link-container--horizontal:not(.link-btn--disabled):is(:hover, :focus-visible) & {
+    transform: translate(6px, 0) rotate(0deg);
+  }
 }
 
 .link-icon {
